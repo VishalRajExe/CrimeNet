@@ -1827,3 +1827,9 @@ visualizer_app.clientside_callback(
     Input('tabs', 'value'),
     prevent_initial_call=False
 )
+
+# ------------------------------------------------------------------------------------------------- #
+# REGISTER CASE DASHBOARD CALLBACKS (CASE MANAGEMENT, FILTERING, CREATION, DOSSIER, WORKSPACE CONTEXT)
+# ------------------------------------------------------------------------------------------------- #
+from visualizer.case_dashboard import register_dashboard_callbacks
+register_dashboard_callbacks(visualizer_app)

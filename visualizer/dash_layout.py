@@ -10,6 +10,7 @@ if path2root not in sys.path:
 
 
 from visualizer import dash_formatter
+from visualizer.case_dashboard import build_global_nav_bar, build_dashboard_view
 
 
 def init_layout(style, dataset_list, external_dataset_list= []):
@@ -17,7 +18,7 @@ def init_layout(style, dataset_list, external_dataset_list= []):
     The whole layout needed to initialize a Dash app.
     :return:  Layout for a Dash app.
     """
-    return html.Div(children=[
+    workspace_content = html.Div(children=[
         html.Div(children=[
             html.Div(className='nine columns', id='main', children=[
                 html.Div(id="original_network_button_div", hidden=True, children=[
@@ -222,6 +223,22 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                  children=[advanced_search, edit_element, add_element, delete_element, merge_element,
                            add_node, add_edge, export_image, confirm_load, confirm_load2,
                            confirm_file_load, confirm_file_load2])
+    ])
+
+    return html.Div(id='crimenet-root-app', children=[
+        dcc.Store(id='active-case-store', storage_type='session', data=None),
+        dcc.Store(id='dossier-active-case-id-store', storage_type='session', data=None),
+        build_global_nav_bar(),
+        html.Div(
+            id='case-dashboard-view',
+            style={'display': 'block'},
+            children=[build_dashboard_view()]
+        ),
+        html.Div(
+            id='workspace-view',
+            style={'display': 'none'},
+            children=[workspace_content]
+        ),
     ])
 
 

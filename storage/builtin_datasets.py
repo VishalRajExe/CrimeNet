@@ -995,11 +995,11 @@ class ActiveNetwork(BuiltinDataset):
             self.elements.append(element)
             self.active_nodes[node] = {'expandable': expandable, 'element_index': len(self.elements) - 1}
 
-        if 'weight' in self.edges[0]['properties']:
+        if self.edges and 'weight' in self.edges[0].get('properties', {}):
             min_weight = float('inf')
             max_weight = 0
             for edge in self.edges:
-                if 'weight' in edge['properties']:
+                if 'weight' in edge.get('properties', {}):
                     if edge['properties']['weight'] < min_weight:
                         min_weight = edge['properties']['weight']
                     elif edge['properties']['weight'] > max_weight:
