@@ -20,8 +20,8 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+/lib/
+/lib64/
 parts/
 sdist/
 var/
@@ -140,8 +140,8 @@ dmypy.json
 # Reference repo folder (user will delete after study)
 repo/
 analysis_results/*.json
-
-# GraphRAG transient index data and third party repo
+# GraphRAG transient index data, reports, and backend storage
 storage/graphrag_data/
 graphrag-main/
 generated_reports/
+backend_storage/

@@ -1,0 +1,3932 @@
+{
+  "id": "israel_lea_case2",
+  "name": "Israel LEA Case 2",
+  "description": "Law enforcement intercepted communication case 2",
+  "numNodes": 124,
+  "numEdges": 178,
+  "nodes": [
+    {
+      "id": "SID_17",
+      "label": "SID_17",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1",
+          "38"
+        ]
+      }
+    },
+    {
+      "id": "SID_0",
+      "label": "SID_0",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "49",
+          "38",
+          "9",
+          "27",
+          "43",
+          "71",
+          "58",
+          "51",
+          "68",
+          "59",
+          "70",
+          "20",
+          "26",
+          "56",
+          "1",
+          "72",
+          "42",
+          "57",
+          "63",
+          "37",
+          "19",
+          "31",
+          "32",
+          "60",
+          "46",
+          "62",
+          "65",
+          "50",
+          "45"
+        ],
+        "callee_numbers": [
+          "6",
+          "64",
+          "NA_callee_number_#3",
+          "82",
+          "38",
+          "9",
+          "27",
+          "89",
+          "24",
+          "80",
+          "17",
+          "15",
+          "93",
+          "40",
+          "43",
+          "58",
+          "88",
+          "59",
+          "34",
+          "70",
+          "23",
+          "69",
+          "83",
+          "26",
+          "10",
+          "56",
+          "1",
+          "7",
+          "84",
+          "72",
+          "42",
+          "57",
+          "63",
+          "75",
+          "NA_callee_number_#2",
+          "18",
+          "86",
+          "22",
+          "37",
+          "2",
+          "16",
+          "55",
+          "90",
+          "67",
+          "19",
+          "31",
+          "32",
+          "60",
+          "92",
+          "79",
+          "29",
+          "85",
+          "62",
+          "65",
+          "39",
+          "33",
+          "91",
+          "5",
+          "28",
+          "77",
+          "87"
+        ]
+      }
+    },
+    {
+      "id": "SID_11",
+      "label": "SID_11",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1",
+          "31",
+          "42"
+        ],
+        "callee_numbers": [
+          "1",
+          "42"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_1",
+      "label": "SID_SMS_sender_use_number_1",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_38",
+      "label": "SID_SMS_sender_use_number_38",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "38"
+        ],
+        "callee_numbers": [
+          "38"
+        ]
+      }
+    },
+    {
+      "id": "SID_18",
+      "label": "SID_18",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1",
+          "47"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_35",
+      "label": "SID_35",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_20",
+      "label": "SID_SMS_sender_use_number_20",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "20"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_58",
+      "label": "SID_SMS_sender_use_number_58",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "58"
+        ],
+        "callee_numbers": [
+          "58"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_42",
+      "label": "SID_SMS_sender_use_number_42",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "42"
+        ],
+        "callee_numbers": [
+          "42"
+        ]
+      }
+    },
+    {
+      "id": "SID_26",
+      "label": "SID_26",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1",
+          "56"
+        ],
+        "callee_numbers": [
+          "1",
+          "28"
+        ]
+      }
+    },
+    {
+      "id": "SID_16",
+      "label": "SID_16",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1",
+          "28"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_63",
+      "label": "SID_SMS_sender_use_number_63",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "63"
+        ]
+      }
+    },
+    {
+      "id": "SID_13",
+      "label": "SID_13",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_39",
+      "label": "SID_SMS_sender_use_number_39",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "39"
+        ]
+      }
+    },
+    {
+      "id": "SID_25",
+      "label": "SID_25",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_22",
+      "label": "SID_22",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_88",
+      "label": "SID_SMS_sender_use_number_88",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "88"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_72",
+      "label": "SID_SMS_sender_use_number_72",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "72"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_23",
+      "label": "SID_SMS_sender_use_number_23",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "23"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_81",
+      "label": "SID_SMS_sender_use_number_81",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "81"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_94",
+      "label": "SID_SMS_sender_use_number_94",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "94"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_56",
+      "label": "SID_SMS_sender_use_number_56",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "56"
+        ],
+        "callee_numbers": [
+          "56"
+        ]
+      }
+    },
+    {
+      "id": "SID_34",
+      "label": "SID_34",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_1",
+      "label": "SID_1",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "73",
+          "38",
+          "27",
+          "66",
+          "1"
+        ],
+        "callee_numbers": [
+          "63",
+          "18",
+          "38",
+          "27",
+          "8",
+          "56",
+          "1",
+          "41",
+          "42"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_31",
+      "label": "SID_SMS_sender_use_number_31",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "31"
+        ],
+        "callee_numbers": [
+          "31"
+        ]
+      }
+    },
+    {
+      "id": "SID_37",
+      "label": "SID_37",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_7",
+      "label": "SID_7",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_67",
+      "label": "SID_SMS_sender_use_number_67",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "67"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_54",
+      "label": "SID_SMS_sender_use_number_54",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "54"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_62",
+      "label": "SID_SMS_sender_use_number_62",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "62"
+        ],
+        "callee_numbers": [
+          "62"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_35",
+      "label": "SID_SMS_sender_use_number_35",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "35"
+        ],
+        "callee_numbers": [
+          "35"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_61",
+      "label": "SID_SMS_sender_use_number_61",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "61"
+        ],
+        "callee_numbers": [
+          "61"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_caller_number",
+      "label": "SID_SMS_sender_use_number_NA_caller_number",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "NA_caller_number"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_9",
+      "label": "SID_SMS_sender_use_number_9",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "9"
+        ]
+      }
+    },
+    {
+      "id": "SID_15",
+      "label": "SID_15",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_64",
+      "label": "SID_SMS_sender_use_number_64",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "64"
+        ],
+        "callee_numbers": [
+          "64"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_48",
+      "label": "SID_SMS_sender_use_number_48",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "48"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#0",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#0",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#0"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_27",
+      "label": "SID_SMS_sender_use_number_27",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "27"
+        ],
+        "callee_numbers": [
+          "27"
+        ]
+      }
+    },
+    {
+      "id": "SID_36",
+      "label": "SID_36",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_20",
+      "label": "SID_20",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_50",
+      "label": "SID_50",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_10",
+      "label": "SID_10",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_31",
+      "label": "SID_31",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "41",
+          "56"
+        ]
+      }
+    },
+    {
+      "id": "SID_44",
+      "label": "SID_44",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "41"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_41",
+      "label": "SID_SMS_sender_use_number_41",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "41"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_76",
+      "label": "SID_SMS_sender_use_number_76",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "76"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_6",
+      "label": "SID_SMS_sender_use_number_6",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_43",
+      "label": "SID_SMS_sender_use_number_43",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "43"
+        ]
+      }
+    },
+    {
+      "id": "SID_32",
+      "label": "SID_32",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_9",
+      "label": "SID_9",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1",
+          "64"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_57",
+      "label": "SID_SMS_sender_use_number_57",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "57"
+        ],
+        "callee_numbers": [
+          "57"
+        ]
+      }
+    },
+    {
+      "id": "SID_42",
+      "label": "SID_42",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_21",
+      "label": "SID_21",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_60",
+      "label": "SID_SMS_sender_use_number_60",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "60"
+        ],
+        "callee_numbers": [
+          "60"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_59",
+      "label": "SID_SMS_sender_use_number_59",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "59"
+        ],
+        "callee_numbers": [
+          "59"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#1",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#1",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_30",
+      "label": "SID_SMS_sender_use_number_30",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "30"
+        ]
+      }
+    },
+    {
+      "id": "SID_8",
+      "label": "SID_8",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_14",
+      "label": "SID_14",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_3",
+      "label": "SID_SMS_sender_use_number_3",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "3"
+        ],
+        "callee_numbers": [
+          "3"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_21",
+      "label": "SID_SMS_sender_use_number_21",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "21"
+        ],
+        "callee_numbers": [
+          "21"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_44",
+      "label": "SID_SMS_sender_use_number_44",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "44"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_74",
+      "label": "SID_SMS_sender_use_number_74",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "74"
+        ]
+      }
+    },
+    {
+      "id": "SID_47",
+      "label": "SID_47",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_5",
+      "label": "SID_5",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_65",
+      "label": "SID_SMS_sender_use_number_65",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "65"
+        ]
+      }
+    },
+    {
+      "id": "SID_12",
+      "label": "SID_12",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_33",
+      "label": "SID_33",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_38",
+      "label": "SID_38",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_14",
+      "label": "SID_SMS_sender_use_number_14",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "14"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_36",
+      "label": "SID_SMS_sender_use_number_36",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "36"
+        ],
+        "callee_numbers": [
+          "36"
+        ]
+      }
+    },
+    {
+      "id": "SID_28",
+      "label": "SID_28",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_15",
+      "label": "SID_SMS_sender_use_number_15",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "15"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_8",
+      "label": "SID_SMS_sender_use_number_8",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "8"
+        ]
+      }
+    },
+    {
+      "id": "SID_46",
+      "label": "SID_46",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1",
+          "42"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_37",
+      "label": "SID_SMS_sender_use_number_37",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "37"
+        ],
+        "callee_numbers": [
+          "37"
+        ]
+      }
+    },
+    {
+      "id": "SID_6",
+      "label": "SID_6",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_4",
+      "label": "SID_SMS_sender_use_number_4",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "4"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#4",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#4",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#4"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#5",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#5",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#5"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#6",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#6",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#6"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#7",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#7",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#7"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_33",
+      "label": "SID_SMS_sender_use_number_33",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "33"
+        ]
+      }
+    },
+    {
+      "id": "SID_29",
+      "label": "SID_29",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#8",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#8",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#8"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_32",
+      "label": "SID_SMS_sender_use_number_32",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "32"
+        ],
+        "callee_numbers": [
+          "32"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_69",
+      "label": "SID_SMS_sender_use_number_69",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "69"
+        ],
+        "callee_numbers": [
+          "69"
+        ]
+      }
+    },
+    {
+      "id": "SID_48",
+      "label": "SID_48",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_operator",
+      "label": "SID_operator",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_92",
+      "label": "SID_SMS_sender_use_number_92",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "92"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_11",
+      "label": "SID_SMS_sender_use_number_11",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_82",
+      "label": "SID_SMS_sender_use_number_82",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "82"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_90",
+      "label": "SID_SMS_sender_use_number_90",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "90"
+        ]
+      }
+    },
+    {
+      "id": "SID_40",
+      "label": "SID_40",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_91",
+      "label": "SID_SMS_sender_use_number_91",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "91"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_16",
+      "label": "SID_SMS_sender_use_number_16",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "16"
+        ]
+      }
+    },
+    {
+      "id": "SID_30",
+      "label": "SID_30",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_34",
+      "label": "SID_SMS_sender_use_number_34",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "34"
+        ]
+      }
+    },
+    {
+      "id": "SID_3",
+      "label": "SID_3",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_4",
+      "label": "SID_4",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "52"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_12",
+      "label": "SID_SMS_sender_use_number_12",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "12"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_25",
+      "label": "SID_SMS_sender_use_number_25",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "25"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_83",
+      "label": "SID_SMS_sender_use_number_83",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "83"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_66",
+      "label": "SID_SMS_sender_use_number_66",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "66"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_19",
+      "label": "SID_SMS_sender_use_number_19",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "19"
+        ],
+        "callee_numbers": [
+          "19"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_0",
+      "label": "SID_SMS_sender_use_number_0",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "0"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_18",
+      "label": "SID_SMS_sender_use_number_18",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "18"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#9",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#9",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#9"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_13",
+      "label": "SID_SMS_sender_use_number_13",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "13"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_26",
+      "label": "SID_SMS_sender_use_number_26",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "26"
+        ],
+        "callee_numbers": [
+          "26"
+        ]
+      }
+    },
+    {
+      "id": "SID_41",
+      "label": "SID_41",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_28",
+      "label": "SID_SMS_sender_use_number_28",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "28"
+        ],
+        "callee_numbers": [
+          "28"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_55",
+      "label": "SID_SMS_sender_use_number_55",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "55"
+        ],
+        "callee_numbers": [
+          "55"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_40",
+      "label": "SID_SMS_sender_use_number_40",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "40"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_NA_callee_number_#10",
+      "label": "SID_SMS_sender_use_number_NA_callee_number_#10",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "NA_callee_number_#10"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_70",
+      "label": "SID_SMS_sender_use_number_70",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "70"
+        ],
+        "callee_numbers": [
+          "70"
+        ]
+      }
+    },
+    {
+      "id": "SID_24",
+      "label": "SID_24",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ],
+        "callee_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_23",
+      "label": "SID_23",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_78",
+      "label": "SID_SMS_sender_use_number_78",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "callee_numbers": [
+          "78"
+        ]
+      }
+    },
+    {
+      "id": "SID_45",
+      "label": "SID_45",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "caller_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_46",
+      "label": "SID_SMS_sender_use_number_46",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "46"
+        ]
+      }
+    },
+    {
+      "id": "SID_SMS_sender_use_number_53",
+      "label": "SID_SMS_sender_use_number_53",
+      "type": "sms_sender",
+      "properties": {
+        "type": "SMS_sender",
+        "caller_numbers": [
+          "53"
+        ],
+        "callee_numbers": [
+          "53"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_SID_0_SID_17_0",
+      "source": "SID_0",
+      "target": "SID_17",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 12,
+      "properties": {
+        "observed": true,
+        "weight": 12,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_11_SID_0_1",
+      "source": "SID_11",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 123,
+      "properties": {
+        "observed": true,
+        "weight": 123,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_38_SID_SMS_sender_use_number_1_2",
+      "source": "SID_SMS_sender_use_number_38",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 46,
+      "properties": {
+        "observed": true,
+        "weight": 46,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_18_SID_0_3",
+      "source": "SID_18",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 41,
+      "properties": {
+        "observed": true,
+        "weight": 41,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_35_SID_0_4",
+      "source": "SID_35",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_18_5",
+      "source": "SID_0",
+      "target": "SID_18",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 14,
+      "properties": {
+        "observed": true,
+        "weight": 14,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_20_6",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_20",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 5,
+      "properties": {
+        "observed": true,
+        "weight": 5,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_38_7",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_38",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 43,
+      "properties": {
+        "observed": true,
+        "weight": 43,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_58_8",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_58",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 57,
+      "properties": {
+        "observed": true,
+        "weight": 57,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_42_9",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_42",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 33,
+      "properties": {
+        "observed": true,
+        "weight": 33,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_26_10",
+      "source": "SID_0",
+      "target": "SID_26",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 17,
+      "properties": {
+        "observed": true,
+        "weight": 17,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_17_SID_0_11",
+      "source": "SID_17",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 12,
+      "properties": {
+        "observed": true,
+        "weight": 12,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_11_12",
+      "source": "SID_0",
+      "target": "SID_11",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 43,
+      "properties": {
+        "observed": true,
+        "weight": 43,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_16_13",
+      "source": "SID_0",
+      "target": "SID_16",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_63_14",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_63",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_26_SID_0_15",
+      "source": "SID_26",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 21,
+      "properties": {
+        "observed": true,
+        "weight": 21,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_13_SID_0_16",
+      "source": "SID_13",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_16_SID_0_17",
+      "source": "SID_16",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 8,
+      "properties": {
+        "observed": true,
+        "weight": 8,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_39_SID_SMS_sender_use_number_1_18",
+      "source": "SID_SMS_sender_use_number_39",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_25_19",
+      "source": "SID_0",
+      "target": "SID_25",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 6,
+      "properties": {
+        "observed": true,
+        "weight": 6,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_25_SID_0_20",
+      "source": "SID_25",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_22_SID_0_21",
+      "source": "SID_22",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_88_22",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_88",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_42_SID_SMS_sender_use_number_1_23",
+      "source": "SID_SMS_sender_use_number_42",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 36,
+      "properties": {
+        "observed": true,
+        "weight": 36,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_72_SID_SMS_sender_use_number_1_24",
+      "source": "SID_SMS_sender_use_number_72",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_23_25",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_23",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_81_26",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_81",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_94_27",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_94",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_56_28",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_56",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 18,
+      "properties": {
+        "observed": true,
+        "weight": 18,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_56_SID_SMS_sender_use_number_1_29",
+      "source": "SID_SMS_sender_use_number_56",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 18,
+      "properties": {
+        "observed": true,
+        "weight": 18,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_34_30",
+      "source": "SID_0",
+      "target": "SID_34",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_34_SID_0_31",
+      "source": "SID_34",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_17_SID_1_32",
+      "source": "SID_17",
+      "target": "SID_1",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_31_SID_SMS_sender_use_number_1_33",
+      "source": "SID_SMS_sender_use_number_31",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 39,
+      "properties": {
+        "observed": true,
+        "weight": 39,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_37_34",
+      "source": "SID_0",
+      "target": "SID_37",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_7_SID_0_35",
+      "source": "SID_7",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 9,
+      "properties": {
+        "observed": true,
+        "weight": 9,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_67_SID_SMS_sender_use_number_1_36",
+      "source": "SID_SMS_sender_use_number_67",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_54_SID_SMS_sender_use_number_1_37",
+      "source": "SID_SMS_sender_use_number_54",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_62_38",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_62",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 21,
+      "properties": {
+        "observed": true,
+        "weight": 21,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_35_39",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_35",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_61_40",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_61",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_61_SID_SMS_sender_use_number_1_41",
+      "source": "SID_SMS_sender_use_number_61",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_62_SID_SMS_sender_use_number_1_42",
+      "source": "SID_SMS_sender_use_number_62",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_35_SID_SMS_sender_use_number_1_43",
+      "source": "SID_SMS_sender_use_number_35",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_NA_caller_number_SID_SMS_sender_use_number_1_44",
+      "source": "SID_SMS_sender_use_number_NA_caller_number",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_31_45",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_31",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 43,
+      "properties": {
+        "observed": true,
+        "weight": 43,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_9_SID_SMS_sender_use_number_1_46",
+      "source": "SID_SMS_sender_use_number_9",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_7_47",
+      "source": "SID_0",
+      "target": "SID_7",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_15_SID_0_48",
+      "source": "SID_15",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_64_SID_SMS_sender_use_number_1_49",
+      "source": "SID_SMS_sender_use_number_64",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 28,
+      "properties": {
+        "observed": true,
+        "weight": 28,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_48_SID_SMS_sender_use_number_1_50",
+      "source": "SID_SMS_sender_use_number_48",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#0_51",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#0",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_27_52",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_27",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 20,
+      "properties": {
+        "observed": true,
+        "weight": 20,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_36_SID_0_53",
+      "source": "SID_36",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_36_54",
+      "source": "SID_0",
+      "target": "SID_36",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 10,
+      "properties": {
+        "observed": true,
+        "weight": 10,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_20_55",
+      "source": "SID_0",
+      "target": "SID_20",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_50_SID_0_56",
+      "source": "SID_50",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 5,
+      "properties": {
+        "observed": true,
+        "weight": 5,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_10_SID_0_57",
+      "source": "SID_10",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 11,
+      "properties": {
+        "observed": true,
+        "weight": 11,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_27_SID_SMS_sender_use_number_1_58",
+      "source": "SID_SMS_sender_use_number_27",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 13,
+      "properties": {
+        "observed": true,
+        "weight": 13,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_7_SID_31_59",
+      "source": "SID_7",
+      "target": "SID_31",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_7_SID_1_60",
+      "source": "SID_7",
+      "target": "SID_1",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_7_SID_44_61",
+      "source": "SID_7",
+      "target": "SID_44",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_41_62",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_41",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_26_SID_31_63",
+      "source": "SID_26",
+      "target": "SID_31",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_26_SID_1_64",
+      "source": "SID_26",
+      "target": "SID_1",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_76_65",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_76",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_6_66",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_6",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_43_SID_SMS_sender_use_number_1_67",
+      "source": "SID_SMS_sender_use_number_43",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_9_SID_32_68",
+      "source": "SID_9",
+      "target": "SID_32",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_57_SID_SMS_sender_use_number_1_69",
+      "source": "SID_SMS_sender_use_number_57",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 21,
+      "properties": {
+        "observed": true,
+        "weight": 21,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_42_70",
+      "source": "SID_0",
+      "target": "SID_42",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_21_71",
+      "source": "SID_0",
+      "target": "SID_21",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_42_SID_0_72",
+      "source": "SID_42",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_60_73",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_60",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_1_SID_17_74",
+      "source": "SID_1",
+      "target": "SID_17",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_59_SID_SMS_sender_use_number_1_75",
+      "source": "SID_SMS_sender_use_number_59",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 74,
+      "properties": {
+        "observed": true,
+        "weight": 74,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_64_76",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_64",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 13,
+      "properties": {
+        "observed": true,
+        "weight": 13,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#1_77",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_30_78",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_30",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_8_SID_0_79",
+      "source": "SID_8",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_21_SID_0_80",
+      "source": "SID_21",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_9_SID_0_81",
+      "source": "SID_9",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_14_SID_0_82",
+      "source": "SID_14",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_3_SID_SMS_sender_use_number_1_83",
+      "source": "SID_SMS_sender_use_number_3",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 12,
+      "properties": {
+        "observed": true,
+        "weight": 12,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_1_SID_18_84",
+      "source": "SID_1",
+      "target": "SID_18",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_1_85",
+      "source": "SID_0",
+      "target": "SID_1",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_21_SID_SMS_sender_use_number_1_86",
+      "source": "SID_SMS_sender_use_number_21",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_21_87",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_21",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_57_88",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_57",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_1_89",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_44_SID_SMS_sender_use_number_1_90",
+      "source": "SID_SMS_sender_use_number_44",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 5,
+      "properties": {
+        "observed": true,
+        "weight": 5,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_74_SID_SMS_sender_use_number_1_91",
+      "source": "SID_SMS_sender_use_number_74",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_47_SID_0_92",
+      "source": "SID_47",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_5_SID_0_93",
+      "source": "SID_5",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_59_94",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_59",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 77,
+      "properties": {
+        "observed": true,
+        "weight": 77,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_10_95",
+      "source": "SID_0",
+      "target": "SID_10",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_65_96",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_65",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_12_97",
+      "source": "SID_0",
+      "target": "SID_12",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_33_98",
+      "source": "SID_0",
+      "target": "SID_33",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_38_SID_0_99",
+      "source": "SID_38",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_14_100",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_14",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_36_SID_SMS_sender_use_number_1_101",
+      "source": "SID_SMS_sender_use_number_36",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_36_102",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_36",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_3_103",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_3",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_18_SID_28_104",
+      "source": "SID_18",
+      "target": "SID_28",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_60_SID_SMS_sender_use_number_1_105",
+      "source": "SID_SMS_sender_use_number_60",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_0_106",
+      "source": "SID_0",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_15_107",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_15",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_8_SID_SMS_sender_use_number_1_108",
+      "source": "SID_SMS_sender_use_number_8",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_36_SID_1_109",
+      "source": "SID_36",
+      "target": "SID_1",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_46_110",
+      "source": "SID_0",
+      "target": "SID_46",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_46_SID_0_111",
+      "source": "SID_46",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 13,
+      "properties": {
+        "observed": true,
+        "weight": 13,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_37_SID_SMS_sender_use_number_1_112",
+      "source": "SID_SMS_sender_use_number_37",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_37_113",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_37",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_6_114",
+      "source": "SID_0",
+      "target": "SID_6",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_58_SID_SMS_sender_use_number_1_115",
+      "source": "SID_SMS_sender_use_number_58",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_4_116",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_4",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#4_117",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#4",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#5_118",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#5",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#6_119",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#6",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#7_120",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#7",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_33_SID_SMS_sender_use_number_1_121",
+      "source": "SID_SMS_sender_use_number_33",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_29_SID_0_122",
+      "source": "SID_29",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#8_123",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#8",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_32_SID_SMS_sender_use_number_1_124",
+      "source": "SID_SMS_sender_use_number_32",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_69_125",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_69",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_69_SID_SMS_sender_use_number_1_126",
+      "source": "SID_SMS_sender_use_number_69",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_48_127",
+      "source": "SID_0",
+      "target": "SID_48",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_11_SID_46_128",
+      "source": "SID_11",
+      "target": "SID_46",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_operator_SID_0_129",
+      "source": "SID_operator",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_92_130",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_92",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_11_131",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_11",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_82_132",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_82",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 5,
+      "properties": {
+        "observed": true,
+        "weight": 5,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_90_133",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_90",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 5,
+      "properties": {
+        "observed": true,
+        "weight": 5,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_40_SID_0_134",
+      "source": "SID_40",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_91_135",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_91",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_16_136",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_16",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_30_SID_0_137",
+      "source": "SID_30",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_34_138",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_34",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 5,
+      "properties": {
+        "observed": true,
+        "weight": 5,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_3_SID_0_139",
+      "source": "SID_3",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_32_140",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_32",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 9,
+      "properties": {
+        "observed": true,
+        "weight": 9,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_4_SID_0_141",
+      "source": "SID_4",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_12_142",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_12",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_25_143",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_25",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_83_144",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_83",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_66_SID_SMS_sender_use_number_1_145",
+      "source": "SID_SMS_sender_use_number_66",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_19_146",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_19",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_5_147",
+      "source": "SID_0",
+      "target": "SID_5",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_0_148",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_0",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_48_SID_0_149",
+      "source": "SID_48",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 13,
+      "properties": {
+        "observed": true,
+        "weight": 13,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_18_150",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_18",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 14,
+      "properties": {
+        "observed": true,
+        "weight": 14,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#9_151",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#9",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_11_SID_1_152",
+      "source": "SID_11",
+      "target": "SID_1",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_19_SID_SMS_sender_use_number_1_153",
+      "source": "SID_SMS_sender_use_number_19",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 5,
+      "properties": {
+        "observed": true,
+        "weight": 5,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_13_154",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_13",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_26_SID_SMS_sender_use_number_1_155",
+      "source": "SID_SMS_sender_use_number_26",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 6,
+      "properties": {
+        "observed": true,
+        "weight": 6,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_41_156",
+      "source": "SID_0",
+      "target": "SID_41",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_28_157",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_28",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 10,
+      "properties": {
+        "observed": true,
+        "weight": 10,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_55_158",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_55",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_55_SID_SMS_sender_use_number_1_159",
+      "source": "SID_SMS_sender_use_number_55",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_26_160",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_26",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_0_161",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_0",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_28_SID_SMS_sender_use_number_1_162",
+      "source": "SID_SMS_sender_use_number_28",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_40_163",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_40",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_NA_callee_number_#10_164",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_NA_callee_number_#10",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_70_SID_SMS_sender_use_number_1_165",
+      "source": "SID_SMS_sender_use_number_70",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_70_166",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_70",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_0_SID_24_167",
+      "source": "SID_0",
+      "target": "SID_24",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_24_SID_0_168",
+      "source": "SID_24",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_23_SID_0_169",
+      "source": "SID_23",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_7_SID_16_170",
+      "source": "SID_7",
+      "target": "SID_16",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_7_SID_26_171",
+      "source": "SID_7",
+      "target": "SID_26",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_78_172",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_78",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_1_SID_0_173",
+      "source": "SID_1",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_45_SID_0_174",
+      "source": "SID_45",
+      "target": "SID_0",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_46_SID_SMS_sender_use_number_1_175",
+      "source": "SID_SMS_sender_use_number_46",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_53_SID_SMS_sender_use_number_1_176",
+      "source": "SID_SMS_sender_use_number_53",
+      "target": "SID_SMS_sender_use_number_1",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_SID_SMS_sender_use_number_1_SID_SMS_sender_use_number_53_177",
+      "source": "SID_SMS_sender_use_number_1",
+      "target": "SID_SMS_sender_use_number_53",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "SMS"
+      }
+    }
+  ]
+}

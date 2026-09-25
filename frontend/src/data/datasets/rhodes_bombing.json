@@ -1,0 +1,1933 @@
+{
+  "id": "rhodes_bombing",
+  "name": "Rhodes Bombing",
+  "description": "Rhodes bombing covert network",
+  "numNodes": 22,
+  "numEdges": 129,
+  "nodes": [
+    {
+      "id": "Alexandros_Giotopoulos",
+      "label": "Alexandros Giotopoulos",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Alexandros Giotopoulos",
+        "role": "operational",
+        "faction": "1st Generation Leadership Faction",
+        "num_resources": 1
+      }
+    },
+    {
+      "id": "Anna",
+      "label": "Anna",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Anna",
+        "role": "operational",
+        "faction": "1st Generation Leadership Faction",
+        "num_resources": 0
+      }
+    },
+    {
+      "id": "Christodoulos_Xiros",
+      "label": "Christodoulos Xiros",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Christodoulos Xiros",
+        "role": "operational",
+        "faction": "Koufontinas Faction",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Constantinos_Karatsolis",
+      "label": "Constantinos Karatsolis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Constantinos Karatsolis",
+        "role": "leader",
+        "faction": "Sardanopoulos Faction",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Constantinos_Telios",
+      "label": "Constantinos Telios",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Constantinos Telios"
+      }
+    },
+    {
+      "id": "Dimitris_Koufontinas",
+      "label": "Dimitris Koufontinas",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Dimitris Koufontinas",
+        "role": "operational",
+        "faction": "Koufontinas Faction",
+        "num_resources": 3
+      }
+    },
+    {
+      "id": "Dionysis_Georgiadis",
+      "label": "Dionysis Georgiadis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Dionysis Georgiadis"
+      }
+    },
+    {
+      "id": "Elias_Gaglias",
+      "label": "Elias Gaglias",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Elias Gaglias"
+      }
+    },
+    {
+      "id": "Fotis",
+      "label": "Fotis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Fotis",
+        "role": "leader",
+        "faction": "Sardanopoulos Faction",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Iraklis_Kostaris",
+      "label": "Iraklis Kostaris",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Iraklis Kostaris",
+        "role": "operational",
+        "faction": "1st Generation Leadership Faction",
+        "num_resources": 0
+      }
+    },
+    {
+      "id": "Nikitas",
+      "label": "Nikitas",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Nikitas",
+        "role": "leader",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Ojurk_Hanuz",
+      "label": "Ojurk Hanuz",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ojurk Hanuz",
+        "role": "leader",
+        "faction": "Sardanopoulos Faction",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Patroclos_Tselentis",
+      "label": "Patroclos Tselentis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Patroclos Tselentis",
+        "role": "operational",
+        "faction": "Sardanopoulos Faction",
+        "num_resources": 0
+      }
+    },
+    {
+      "id": "Pavlos_Serifis",
+      "label": "Pavlos Serifis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Pavlos Serifis",
+        "role": "operational",
+        "faction": "Sardanopoulos Faction",
+        "num_resources": 1
+      }
+    },
+    {
+      "id": "Sardanopoulos",
+      "label": "Sardanopoulos",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Sardanopoulos",
+        "role": "leader",
+        "faction": "Koufontinas Faction",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Savas_Xiros",
+      "label": "Savas Xiros",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Savas Xiros",
+        "role": "operational",
+        "faction": "1st Generation Leadership Faction",
+        "num_resources": 0
+      }
+    },
+    {
+      "id": "Sotirios_Kondylis",
+      "label": "Sotirios Kondylis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Sotirios Kondylis"
+      }
+    },
+    {
+      "id": "Thomas_Serifis",
+      "label": "Thomas Serifis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Thomas Serifis",
+        "role": "leader",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Vassilis_Tzortzatos",
+      "label": "Vassilis Tzortzatos",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Vassilis Tzortzatos"
+      }
+    },
+    {
+      "id": "Vassilis_Xiros",
+      "label": "Vassilis Xiros",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Vassilis Xiros",
+        "role": "leader",
+        "faction": "Koufontinas Faction",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Yiannis",
+      "label": "Yiannis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Yiannis",
+        "role": "leader",
+        "num_resources": 2
+      }
+    },
+    {
+      "id": "Yiannis_Skandalis",
+      "label": "Yiannis Skandalis",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Yiannis Skandalis",
+        "role": "leader",
+        "num_resources": 2
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_Alexandros_Giotopoulos_Anna_0",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Anna",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Christodoulos_Xiros_1",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Constantinos_Telios_2",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Constantinos_Telios",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Dimitris_Koufontinas_3",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Fotis_4",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Fotis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Nikitas_5",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Nikitas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Pavlos_Serifis_6",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Sardanopoulos_7",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Sardanopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Savas_Xiros_8",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Alexandros_Giotopoulos_Yiannis_9",
+      "source": "Alexandros_Giotopoulos",
+      "target": "Yiannis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Anna_Alexandros_Giotopoulos_10",
+      "source": "Anna",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Anna_Fotis_11",
+      "source": "Anna",
+      "target": "Fotis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Anna_Nikitas_12",
+      "source": "Anna",
+      "target": "Nikitas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Anna_Pavlos_Serifis_13",
+      "source": "Anna",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Anna_Sardanopoulos_14",
+      "source": "Anna",
+      "target": "Sardanopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Anna_Yiannis_15",
+      "source": "Anna",
+      "target": "Yiannis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Alexandros_Giotopoulos_16",
+      "source": "Christodoulos_Xiros",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Dimitris_Koufontinas_17",
+      "source": "Christodoulos_Xiros",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Iraklis_Kostaris_18",
+      "source": "Christodoulos_Xiros",
+      "target": "Iraklis_Kostaris",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Ojurk_Hanuz_19",
+      "source": "Christodoulos_Xiros",
+      "target": "Ojurk_Hanuz",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Patroclos_Tselentis_20",
+      "source": "Christodoulos_Xiros",
+      "target": "Patroclos_Tselentis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Pavlos_Serifis_21",
+      "source": "Christodoulos_Xiros",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Savas_Xiros_22",
+      "source": "Christodoulos_Xiros",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Thomas_Serifis_23",
+      "source": "Christodoulos_Xiros",
+      "target": "Thomas_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Vassilis_Xiros_24",
+      "source": "Christodoulos_Xiros",
+      "target": "Vassilis_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Yiannis_25",
+      "source": "Christodoulos_Xiros",
+      "target": "Yiannis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Christodoulos_Xiros_Yiannis_Skandalis_26",
+      "source": "Christodoulos_Xiros",
+      "target": "Yiannis_Skandalis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Constantinos_Karatsolis_Iraklis_Kostaris_27",
+      "source": "Constantinos_Karatsolis",
+      "target": "Iraklis_Kostaris",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Constantinos_Karatsolis_Pavlos_Serifis_28",
+      "source": "Constantinos_Karatsolis",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Constantinos_Karatsolis_Thomas_Serifis_29",
+      "source": "Constantinos_Karatsolis",
+      "target": "Thomas_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Constantinos_Telios_Alexandros_Giotopoulos_30",
+      "source": "Constantinos_Telios",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Constantinos_Telios_Elias_Gaglias_31",
+      "source": "Constantinos_Telios",
+      "target": "Elias_Gaglias",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Constantinos_Telios_Savas_Xiros_32",
+      "source": "Constantinos_Telios",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Alexandros_Giotopoulos_33",
+      "source": "Dimitris_Koufontinas",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Christodoulos_Xiros_34",
+      "source": "Dimitris_Koufontinas",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Iraklis_Kostaris_35",
+      "source": "Dimitris_Koufontinas",
+      "target": "Iraklis_Kostaris",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Ojurk_Hanuz_36",
+      "source": "Dimitris_Koufontinas",
+      "target": "Ojurk_Hanuz",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Patroclos_Tselentis_37",
+      "source": "Dimitris_Koufontinas",
+      "target": "Patroclos_Tselentis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Pavlos_Serifis_38",
+      "source": "Dimitris_Koufontinas",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Sardanopoulos_39",
+      "source": "Dimitris_Koufontinas",
+      "target": "Sardanopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Savas_Xiros_40",
+      "source": "Dimitris_Koufontinas",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Vassilis_Xiros_41",
+      "source": "Dimitris_Koufontinas",
+      "target": "Vassilis_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dimitris_Koufontinas_Yiannis_Skandalis_42",
+      "source": "Dimitris_Koufontinas",
+      "target": "Yiannis_Skandalis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dionysis_Georgiadis_Savas_Xiros_43",
+      "source": "Dionysis_Georgiadis",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Elias_Gaglias_Constantinos_Telios_44",
+      "source": "Elias_Gaglias",
+      "target": "Constantinos_Telios",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fotis_Alexandros_Giotopoulos_45",
+      "source": "Fotis",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fotis_Anna_46",
+      "source": "Fotis",
+      "target": "Anna",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fotis_Nikitas_47",
+      "source": "Fotis",
+      "target": "Nikitas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fotis_Pavlos_Serifis_48",
+      "source": "Fotis",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fotis_Sardanopoulos_49",
+      "source": "Fotis",
+      "target": "Sardanopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fotis_Savas_Xiros_50",
+      "source": "Fotis",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Iraklis_Kostaris_Christodoulos_Xiros_51",
+      "source": "Iraklis_Kostaris",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Iraklis_Kostaris_Constantinos_Karatsolis_52",
+      "source": "Iraklis_Kostaris",
+      "target": "Constantinos_Karatsolis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Iraklis_Kostaris_Dimitris_Koufontinas_53",
+      "source": "Iraklis_Kostaris",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Iraklis_Kostaris_Pavlos_Serifis_54",
+      "source": "Iraklis_Kostaris",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Iraklis_Kostaris_Thomas_Serifis_55",
+      "source": "Iraklis_Kostaris",
+      "target": "Thomas_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Iraklis_Kostaris_Vassilis_Xiros_56",
+      "source": "Iraklis_Kostaris",
+      "target": "Vassilis_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nikitas_Alexandros_Giotopoulos_57",
+      "source": "Nikitas",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nikitas_Anna_58",
+      "source": "Nikitas",
+      "target": "Anna",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nikitas_Fotis_59",
+      "source": "Nikitas",
+      "target": "Fotis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nikitas_Pavlos_Serifis_60",
+      "source": "Nikitas",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nikitas_Sardanopoulos_61",
+      "source": "Nikitas",
+      "target": "Sardanopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nikitas_Savas_Xiros_62",
+      "source": "Nikitas",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ojurk_Hanuz_Christodoulos_Xiros_63",
+      "source": "Ojurk_Hanuz",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ojurk_Hanuz_Dimitris_Koufontinas_64",
+      "source": "Ojurk_Hanuz",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ojurk_Hanuz_Patroclos_Tselentis_65",
+      "source": "Ojurk_Hanuz",
+      "target": "Patroclos_Tselentis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ojurk_Hanuz_Pavlos_Serifis_66",
+      "source": "Ojurk_Hanuz",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ojurk_Hanuz_Yiannis_Skandalis_67",
+      "source": "Ojurk_Hanuz",
+      "target": "Yiannis_Skandalis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Patroclos_Tselentis_Christodoulos_Xiros_68",
+      "source": "Patroclos_Tselentis",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Patroclos_Tselentis_Dimitris_Koufontinas_69",
+      "source": "Patroclos_Tselentis",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Patroclos_Tselentis_Ojurk_Hanuz_70",
+      "source": "Patroclos_Tselentis",
+      "target": "Ojurk_Hanuz",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Patroclos_Tselentis_Pavlos_Serifis_71",
+      "source": "Patroclos_Tselentis",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Patroclos_Tselentis_Thomas_Serifis_72",
+      "source": "Patroclos_Tselentis",
+      "target": "Thomas_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Patroclos_Tselentis_Yiannis_Skandalis_73",
+      "source": "Patroclos_Tselentis",
+      "target": "Yiannis_Skandalis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Alexandros_Giotopoulos_74",
+      "source": "Pavlos_Serifis",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Anna_75",
+      "source": "Pavlos_Serifis",
+      "target": "Anna",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Christodoulos_Xiros_76",
+      "source": "Pavlos_Serifis",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Constantinos_Karatsolis_77",
+      "source": "Pavlos_Serifis",
+      "target": "Constantinos_Karatsolis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Dimitris_Koufontinas_78",
+      "source": "Pavlos_Serifis",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Fotis_79",
+      "source": "Pavlos_Serifis",
+      "target": "Fotis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Iraklis_Kostaris_80",
+      "source": "Pavlos_Serifis",
+      "target": "Iraklis_Kostaris",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Nikitas_81",
+      "source": "Pavlos_Serifis",
+      "target": "Nikitas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Ojurk_Hanuz_82",
+      "source": "Pavlos_Serifis",
+      "target": "Ojurk_Hanuz",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Patroclos_Tselentis_83",
+      "source": "Pavlos_Serifis",
+      "target": "Patroclos_Tselentis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Sardanopoulos_84",
+      "source": "Pavlos_Serifis",
+      "target": "Sardanopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Thomas_Serifis_85",
+      "source": "Pavlos_Serifis",
+      "target": "Thomas_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Yiannis_86",
+      "source": "Pavlos_Serifis",
+      "target": "Yiannis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pavlos_Serifis_Yiannis_Skandalis_87",
+      "source": "Pavlos_Serifis",
+      "target": "Yiannis_Skandalis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sardanopoulos_Alexandros_Giotopoulos_88",
+      "source": "Sardanopoulos",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sardanopoulos_Anna_89",
+      "source": "Sardanopoulos",
+      "target": "Anna",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sardanopoulos_Dimitris_Koufontinas_90",
+      "source": "Sardanopoulos",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sardanopoulos_Iraklis_Kostaris_91",
+      "source": "Sardanopoulos",
+      "target": "Iraklis_Kostaris",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sardanopoulos_Nikitas_92",
+      "source": "Sardanopoulos",
+      "target": "Nikitas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sardanopoulos_Pavlos_Serifis_93",
+      "source": "Sardanopoulos",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Alexandros_Giotopoulos_94",
+      "source": "Savas_Xiros",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Christodoulos_Xiros_95",
+      "source": "Savas_Xiros",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Constantinos_Telios_96",
+      "source": "Savas_Xiros",
+      "target": "Constantinos_Telios",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Dimitris_Koufontinas_97",
+      "source": "Savas_Xiros",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Dionysis_Georgiadis_98",
+      "source": "Savas_Xiros",
+      "target": "Dionysis_Georgiadis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Fotis_99",
+      "source": "Savas_Xiros",
+      "target": "Fotis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Nikitas_100",
+      "source": "Savas_Xiros",
+      "target": "Nikitas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Sotirios_Kondylis_101",
+      "source": "Savas_Xiros",
+      "target": "Sotirios_Kondylis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Vassilis_Tzortzatos_102",
+      "source": "Savas_Xiros",
+      "target": "Vassilis_Tzortzatos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Vassilis_Xiros_103",
+      "source": "Savas_Xiros",
+      "target": "Vassilis_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Savas_Xiros_Yiannis_104",
+      "source": "Savas_Xiros",
+      "target": "Yiannis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sotirios_Kondylis_Savas_Xiros_105",
+      "source": "Sotirios_Kondylis",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thomas_Serifis_Christodoulos_Xiros_106",
+      "source": "Thomas_Serifis",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thomas_Serifis_Constantinos_Karatsolis_107",
+      "source": "Thomas_Serifis",
+      "target": "Constantinos_Karatsolis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thomas_Serifis_Dimitris_Koufontinas_108",
+      "source": "Thomas_Serifis",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thomas_Serifis_Iraklis_Kostaris_109",
+      "source": "Thomas_Serifis",
+      "target": "Iraklis_Kostaris",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thomas_Serifis_Patroclos_Tselentis_110",
+      "source": "Thomas_Serifis",
+      "target": "Patroclos_Tselentis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thomas_Serifis_Pavlos_Serifis_111",
+      "source": "Thomas_Serifis",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thomas_Serifis_Yiannis_112",
+      "source": "Thomas_Serifis",
+      "target": "Yiannis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Vassilis_Tzortzatos_Savas_Xiros_113",
+      "source": "Vassilis_Tzortzatos",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Vassilis_Xiros_Christodoulos_Xiros_114",
+      "source": "Vassilis_Xiros",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Vassilis_Xiros_Dimitris_Koufontinas_115",
+      "source": "Vassilis_Xiros",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Vassilis_Xiros_Iraklis_Kostaris_116",
+      "source": "Vassilis_Xiros",
+      "target": "Iraklis_Kostaris",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Vassilis_Xiros_Savas_Xiros_117",
+      "source": "Vassilis_Xiros",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Alexandros_Giotopoulos_118",
+      "source": "Yiannis",
+      "target": "Alexandros_Giotopoulos",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Anna_119",
+      "source": "Yiannis",
+      "target": "Anna",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Christodoulos_Xiros_120",
+      "source": "Yiannis",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Pavlos_Serifis_121",
+      "source": "Yiannis",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Savas_Xiros_122",
+      "source": "Yiannis",
+      "target": "Savas_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Thomas_Serifis_123",
+      "source": "Yiannis",
+      "target": "Thomas_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Skandalis_Christodoulos_Xiros_124",
+      "source": "Yiannis_Skandalis",
+      "target": "Christodoulos_Xiros",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Skandalis_Dimitris_Koufontinas_125",
+      "source": "Yiannis_Skandalis",
+      "target": "Dimitris_Koufontinas",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Skandalis_Ojurk_Hanuz_126",
+      "source": "Yiannis_Skandalis",
+      "target": "Ojurk_Hanuz",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Skandalis_Patroclos_Tselentis_127",
+      "source": "Yiannis_Skandalis",
+      "target": "Patroclos_Tselentis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Yiannis_Skandalis_Pavlos_Serifis_128",
+      "source": "Yiannis_Skandalis",
+      "target": "Pavlos_Serifis",
+      "label": "past_connection",
+      "type": "past_connection",
+      "weight": 1,
+      "properties": {
+        "type": "past_connection",
+        "observed": true,
+        "weight": 1
+      }
+    }
+  ]
+}

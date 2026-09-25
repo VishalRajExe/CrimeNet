@@ -1,0 +1,3776 @@
+{
+  "id": "911_hijackers",
+  "name": "911 Hijackers",
+  "description": "Covert terrorist network responsible for 9/11 attacks",
+  "numNodes": 60,
+  "numEdges": 242,
+  "nodes": [
+    {
+      "id": "Satam_Suqami",
+      "label": "Satam Suqami",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Satam Suqami",
+        "flight": "AA #11 WTC North",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Wail_Alshehri",
+      "label": "Wail Alshehri",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Wail Alshehri",
+        "flight": "AA #11 WTC North",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Majed_Moqed",
+      "label": "Majed Moqed",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Majed Moqed",
+        "flight": "AA #77 Pentagon",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Waleed_Alshehri",
+      "label": "Waleed Alshehri",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Waleed Alshehri",
+        "flight": "AA #11 WTC North",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Salem_Alhazmi*",
+      "label": "Salem Alhazmi*",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Salem Alhazmi*",
+        "flight": "AA #77 Pentagon",
+        "attend_Las_Vegas_Meeting": true
+      }
+    },
+    {
+      "id": "Khalid_Al-Mihdhar",
+      "label": "Khalid Al-Mihdhar",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Khalid Al-Mihdhar",
+        "flight": "AA #77 Pentagon",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Hani_Hanjour",
+      "label": "Hani Hanjour",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Hani Hanjour",
+        "flight": "AA #77 Pentagon",
+        "attend_Las_Vegas_Meeting": true
+      }
+    },
+    {
+      "id": "Abdul_Aziz_Al-Omari*",
+      "label": "Abdul Aziz Al-Omari*",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Abdul Aziz Al-Omari*",
+        "flight": "AA #11 WTC North",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Ahmed_Alghamdi",
+      "label": "Ahmed Alghamdi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ahmed Alghamdi",
+        "flight": "UA #175 WTC South",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Ahmed_Alnami",
+      "label": "Ahmed Alnami",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ahmed Alnami",
+        "flight": "UA #93 Pennsylvania",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mohamed_Atta",
+      "label": "Mohamed Atta",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mohamed Atta",
+        "flight": "AA #11 WTC North",
+        "attend_Las_Vegas_Meeting": true
+      }
+    },
+    {
+      "id": "Marwan_Al-Shehhi",
+      "label": "Marwan Al-Shehhi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Marwan Al-Shehhi",
+        "flight": "UA #175 WTC South",
+        "attend_Las_Vegas_Meeting": true
+      }
+    },
+    {
+      "id": "Fayez_Ahmed",
+      "label": "Fayez Ahmed",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Fayez Ahmed",
+        "flight": "UA #175 WTC South",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Nawaf_Alhazmi",
+      "label": "Nawaf Alhazmi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Nawaf Alhazmi",
+        "flight": "AA #77 Pentagon",
+        "attend_Las_Vegas_Meeting": true
+      }
+    },
+    {
+      "id": "Ziad_Jarrah",
+      "label": "Ziad Jarrah",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ziad Jarrah",
+        "flight": "UA #93 Pennsylvania",
+        "attend_Las_Vegas_Meeting": true
+      }
+    },
+    {
+      "id": "Mohand_Alshehri*",
+      "label": "Mohand Alshehri*",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mohand Alshehri*",
+        "flight": "UA #175 WTC South",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Saeed_Alghamdi*",
+      "label": "Saeed Alghamdi*",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Saeed Alghamdi*",
+        "flight": "UA #93 Pennsylvania",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Ahmed_Al_Haznawi",
+      "label": "Ahmed Al Haznawi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ahmed Al Haznawi",
+        "flight": "UA #93 Pennsylvania",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Hamza_Alghamdi",
+      "label": "Hamza Alghamdi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Hamza Alghamdi",
+        "flight": "UA #175 WTC South",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Raed_Hijazi",
+      "label": "Raed Hijazi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Raed Hijazi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Nabil_al-Marabh",
+      "label": "Nabil al-Marabh",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Nabil al-Marabh",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mustafa_Ahamend_al-Hisawi",
+      "label": "Mustafa Ahamend al-Hisawi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mustafa Ahamend al-Hisawi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mamoun_Darkazanli",
+      "label": "Mamoun Darkazanli",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mamoun Darkazanli",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Zakariya_Essabar",
+      "label": "Zakariya Essabar",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Zakariya Essabar",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Said_Bahaji",
+      "label": "Said Bahaji",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Said Bahaji",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mounir_El_Motassadeq",
+      "label": "Mounir El Motassadeq",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mounir El Motassadeq",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Zacarias_Moussaoui",
+      "label": "Zacarias Moussaoui",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Zacarias Moussaoui",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Ramzi_Bin_al-Shibh",
+      "label": "Ramzi Bin al-Shibh",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ramzi Bin al-Shibh",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Agus_Budiman",
+      "label": "Agus Budiman",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Agus Budiman",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Ahed_Khalil_Ibrahim_Samir_Al-Ani",
+      "label": "Ahed Khalil Ibrahim Samir Al-Ani",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ahed Khalil Ibrahim Samir Al-Ani",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Lofti_Raissi",
+      "label": "Lofti Raissi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Lofti Raissi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Rayed_Mohammed_Abdullah",
+      "label": "Rayed Mohammed Abdullah",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Rayed Mohammed Abdullah",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Bandar_Alhazmi",
+      "label": "Bandar Alhazmi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Bandar Alhazmi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Faisal_Al_Salmi",
+      "label": "Faisal Al Salmi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Faisal Al Salmi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Osama_Awadallah",
+      "label": "Osama Awadallah",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Osama Awadallah",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Abdussattar_Shaikh",
+      "label": "Abdussattar Shaikh",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Abdussattar Shaikh",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mohamed_Abdi",
+      "label": "Mohamed Abdi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mohamed Abdi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mohamed_Belfas",
+      "label": "Mohamed Belfas",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mohamed Belfas",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Imad_Eddin_Baraat_Yarkas",
+      "label": "Imad Eddin Baraat Yarkas",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Imad Eddin Baraat Yarkas",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Tarek_Maaroufi",
+      "label": "Tarek Maaroufi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Tarek Maaroufi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Abu_Qatada",
+      "label": "Abu Qatada",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Abu Qatada",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Djamal_Benghal",
+      "label": "Djamal Benghal",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Djamal Benghal",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Jerome_Courtaillier",
+      "label": "Jerome Courtaillier",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Jerome Courtaillier",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "David_Courtaillier",
+      "label": "David Courtaillier",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "David Courtaillier",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Ahmen_Ressam",
+      "label": "Ahmen Ressam",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ahmen Ressam",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Abu_Walid",
+      "label": "Abu Walid",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Abu Walid",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Jean-Marc_Grandvisir",
+      "label": "Jean-Marc Grandvisir",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Jean-Marc Grandvisir",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Abu_Zubeida",
+      "label": "Abu Zubeida",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Abu Zubeida",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Nizar_Trabelsi",
+      "label": "Nizar Trabelsi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Nizar Trabelsi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Haydar_Abu_Doha",
+      "label": "Haydar Abu Doha",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Haydar Abu Doha",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mehdi_Khammoun",
+      "label": "Mehdi Khammoun",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mehdi Khammoun",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Mohammed_Bensakhria",
+      "label": "Mohammed Bensakhria",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Mohammed Bensakhria",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Lased_Ben_Heni",
+      "label": "Lased Ben Heni",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Lased Ben Heni",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Essid_Sami_Ben_Khemail",
+      "label": "Essid Sami Ben Khemail",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Essid Sami Ben Khemail",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Seifallah_ben_Hassine",
+      "label": "Seifallah ben Hassine",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Seifallah ben Hassine",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Essoussi_Laaroussi",
+      "label": "Essoussi Laaroussi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Essoussi Laaroussi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Fahid_al_Shakri",
+      "label": "Fahid al Shakri",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Fahid al Shakri",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Madjid_Sahoune",
+      "label": "Madjid Sahoune",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Madjid Sahoune",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Samir_Kishk",
+      "label": "Samir Kishk",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Samir Kishk",
+        "attend_Las_Vegas_Meeting": false
+      }
+    },
+    {
+      "id": "Kamel_Daoudi",
+      "label": "Kamel Daoudi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Kamel Daoudi",
+        "attend_Las_Vegas_Meeting": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_Majed_Moqed_Khalid_Al-Mihdhar_0",
+      "source": "Majed_Moqed",
+      "target": "Khalid_Al-Mihdhar",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Majed_Moqed_Nawaf_Alhazmi_1",
+      "source": "Majed_Moqed",
+      "target": "Nawaf_Alhazmi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Khalid_Al-Mihdhar_Majed_Moqed_2",
+      "source": "Khalid_Al-Mihdhar",
+      "target": "Majed_Moqed",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Khalid_Al-Mihdhar_Nawaf_Alhazmi_3",
+      "source": "Khalid_Al-Mihdhar",
+      "target": "Nawaf_Alhazmi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Hani_Hanjour_Ahmed_Alghamdi_4",
+      "source": "Hani_Hanjour",
+      "target": "Ahmed_Alghamdi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nawaf_Alhazmi_Majed_Moqed_5",
+      "source": "Nawaf_Alhazmi",
+      "target": "Majed_Moqed",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nawaf_Alhazmi_Khalid_Al-Mihdhar_6",
+      "source": "Nawaf_Alhazmi",
+      "target": "Khalid_Al-Mihdhar",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nawaf_Alhazmi_Saeed_Alghamdi*_7",
+      "source": "Nawaf_Alhazmi",
+      "target": "Saeed_Alghamdi*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Salem_Alhazmi*_Marwan_Al-Shehhi_8",
+      "source": "Salem_Alhazmi*",
+      "target": "Marwan_Al-Shehhi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alnami_Ahmed_Alghamdi_9",
+      "source": "Ahmed_Alnami",
+      "target": "Ahmed_Alghamdi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alnami_Marwan_Al-Shehhi_10",
+      "source": "Ahmed_Alnami",
+      "target": "Marwan_Al-Shehhi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alghamdi_Hani_Hanjour_11",
+      "source": "Ahmed_Alghamdi",
+      "target": "Hani_Hanjour",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alghamdi_Ahmed_Alnami_12",
+      "source": "Ahmed_Alghamdi",
+      "target": "Ahmed_Alnami",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alghamdi_Marwan_Al-Shehhi_13",
+      "source": "Ahmed_Alghamdi",
+      "target": "Marwan_Al-Shehhi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Saeed_Alghamdi*_Nawaf_Alhazmi_14",
+      "source": "Saeed_Alghamdi*",
+      "target": "Nawaf_Alhazmi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Saeed_Alghamdi*_Mohand_Alshehri*_15",
+      "source": "Saeed_Alghamdi*",
+      "target": "Mohand_Alshehri*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Saeed_Alghamdi*_Fayez_Ahmed_16",
+      "source": "Saeed_Alghamdi*",
+      "target": "Fayez_Ahmed",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Hamza_Alghamdi_Satam_Suqami_17",
+      "source": "Hamza_Alghamdi",
+      "target": "Satam_Suqami",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Al_Haznawi_Waleed_Alshehri_18",
+      "source": "Ahmed_Al_Haznawi",
+      "target": "Waleed_Alshehri",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Al_Haznawi_Satam_Suqami_19",
+      "source": "Ahmed_Al_Haznawi",
+      "target": "Satam_Suqami",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohand_Alshehri*_Saeed_Alghamdi*_20",
+      "source": "Mohand_Alshehri*",
+      "target": "Saeed_Alghamdi*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohand_Alshehri*_Fayez_Ahmed_21",
+      "source": "Mohand_Alshehri*",
+      "target": "Fayez_Ahmed",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohand_Alshehri*_Mohamed_Atta_22",
+      "source": "Mohand_Alshehri*",
+      "target": "Mohamed_Atta",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Saeed_Alghamdi*_23",
+      "source": "Fayez_Ahmed",
+      "target": "Saeed_Alghamdi*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Mohand_Alshehri*_24",
+      "source": "Fayez_Ahmed",
+      "target": "Mohand_Alshehri*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Ziad_Jarrah_25",
+      "source": "Fayez_Ahmed",
+      "target": "Ziad_Jarrah",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Mohamed_Atta_26",
+      "source": "Fayez_Ahmed",
+      "target": "Mohamed_Atta",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ziad_Jarrah_Fayez_Ahmed_27",
+      "source": "Ziad_Jarrah",
+      "target": "Fayez_Ahmed",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ziad_Jarrah_Abdul_Aziz_Al-Omari*_28",
+      "source": "Ziad_Jarrah",
+      "target": "Abdul_Aziz_Al-Omari*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Salem_Alhazmi*_29",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Salem_Alhazmi*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Ahmed_Alnami_30",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Ahmed_Alnami",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Ahmed_Alghamdi_31",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Ahmed_Alghamdi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Ahmed_Al_Haznawi_32",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Ahmed_Al_Haznawi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Waleed_Alshehri_33",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Waleed_Alshehri",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Satam_Suqami_34",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Satam_Suqami",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Atta_Mohand_Alshehri*_35",
+      "source": "Mohamed_Atta",
+      "target": "Mohand_Alshehri*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Atta_Fayez_Ahmed_36",
+      "source": "Mohamed_Atta",
+      "target": "Fayez_Ahmed",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Atta_Wail_Alshehri_37",
+      "source": "Mohamed_Atta",
+      "target": "Wail_Alshehri",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdul_Aziz_Al-Omari*_Ziad_Jarrah_38",
+      "source": "Abdul_Aziz_Al-Omari*",
+      "target": "Ziad_Jarrah",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdul_Aziz_Al-Omari*_Satam_Suqami_39",
+      "source": "Abdul_Aziz_Al-Omari*",
+      "target": "Satam_Suqami",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Wail_Alshehri_Mohamed_Atta_40",
+      "source": "Wail_Alshehri",
+      "target": "Mohamed_Atta",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Wail_Alshehri_Waleed_Alshehri_41",
+      "source": "Wail_Alshehri",
+      "target": "Waleed_Alshehri",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Wail_Alshehri_Satam_Suqami_42",
+      "source": "Wail_Alshehri",
+      "target": "Satam_Suqami",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Hamza_Alghamdi_43",
+      "source": "Satam_Suqami",
+      "target": "Hamza_Alghamdi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Ahmed_Al_Haznawi_44",
+      "source": "Satam_Suqami",
+      "target": "Ahmed_Al_Haznawi",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Abdul_Aziz_Al-Omari*_45",
+      "source": "Satam_Suqami",
+      "target": "Abdul_Aziz_Al-Omari*",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Waleed_Alshehri_46",
+      "source": "Satam_Suqami",
+      "target": "Waleed_Alshehri",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Wail_Alshehri_47",
+      "source": "Satam_Suqami",
+      "target": "Wail_Alshehri",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Hani_Hanjour_Ahmed_Alghamdi_48",
+      "source": "Hani_Hanjour",
+      "target": "Ahmed_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alnami_Ahmed_Alghamdi_49",
+      "source": "Ahmed_Alnami",
+      "target": "Ahmed_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alnami_Marwan_Al-Shehhi_50",
+      "source": "Ahmed_Alnami",
+      "target": "Marwan_Al-Shehhi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alghamdi_Hani_Hanjour_51",
+      "source": "Ahmed_Alghamdi",
+      "target": "Hani_Hanjour",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alghamdi_Ahmed_Alnami_52",
+      "source": "Ahmed_Alghamdi",
+      "target": "Ahmed_Alnami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Alghamdi_Marwan_Al-Shehhi_53",
+      "source": "Ahmed_Alghamdi",
+      "target": "Marwan_Al-Shehhi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Ahmed_Alnami_54",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Ahmed_Alnami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Ahmed_Alghamdi_55",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Ahmed_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Salem_Alhazmi*_56",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Salem_Alhazmi*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Ahmed_Al_Haznawi_57",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Ahmed_Al_Haznawi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Waleed_Alshehri_58",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Waleed_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Marwan_Al-Shehhi_Satam_Suqami_59",
+      "source": "Marwan_Al-Shehhi",
+      "target": "Satam_Suqami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Salem_Alhazmi*_Marwan_Al-Shehhi_60",
+      "source": "Salem_Alhazmi*",
+      "target": "Marwan_Al-Shehhi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Al_Haznawi_Waleed_Alshehri_61",
+      "source": "Ahmed_Al_Haznawi",
+      "target": "Waleed_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmed_Al_Haznawi_Satam_Suqami_62",
+      "source": "Ahmed_Al_Haznawi",
+      "target": "Satam_Suqami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Hamza_Alghamdi_Satam_Suqami_63",
+      "source": "Hamza_Alghamdi",
+      "target": "Satam_Suqami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Ahmed_Al_Haznawi_64",
+      "source": "Satam_Suqami",
+      "target": "Ahmed_Al_Haznawi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Hamza_Alghamdi_65",
+      "source": "Satam_Suqami",
+      "target": "Hamza_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Waleed_Alshehri_66",
+      "source": "Satam_Suqami",
+      "target": "Waleed_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Wail_Alshehri_67",
+      "source": "Satam_Suqami",
+      "target": "Wail_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Satam_Suqami_Abdul_Aziz_Al-Omari*_68",
+      "source": "Satam_Suqami",
+      "target": "Abdul_Aziz_Al-Omari*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Wail_Alshehri_Waleed_Alshehri_69",
+      "source": "Wail_Alshehri",
+      "target": "Waleed_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Wail_Alshehri_Satam_Suqami_70",
+      "source": "Wail_Alshehri",
+      "target": "Satam_Suqami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Wail_Alshehri_Mohamed_Atta_71",
+      "source": "Wail_Alshehri",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdul_Aziz_Al-Omari*_Satam_Suqami_72",
+      "source": "Abdul_Aziz_Al-Omari*",
+      "target": "Satam_Suqami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdul_Aziz_Al-Omari*_Ziad_Jarrah_73",
+      "source": "Abdul_Aziz_Al-Omari*",
+      "target": "Ziad_Jarrah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ziad_Jarrah_Abdul_Aziz_Al-Omari*_74",
+      "source": "Ziad_Jarrah",
+      "target": "Abdul_Aziz_Al-Omari*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ziad_Jarrah_Fayez_Ahmed_75",
+      "source": "Ziad_Jarrah",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Atta_Wail_Alshehri_76",
+      "source": "Mohamed_Atta",
+      "target": "Wail_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Atta_Fayez_Ahmed_77",
+      "source": "Mohamed_Atta",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Atta_Mohand_Alshehri*_78",
+      "source": "Mohamed_Atta",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Ziad_Jarrah_79",
+      "source": "Fayez_Ahmed",
+      "target": "Ziad_Jarrah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Mohamed_Atta_80",
+      "source": "Fayez_Ahmed",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Mohand_Alshehri*_81",
+      "source": "Fayez_Ahmed",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fayez_Ahmed_Saeed_Alghamdi*_82",
+      "source": "Fayez_Ahmed",
+      "target": "Saeed_Alghamdi*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohand_Alshehri*_Mohamed_Atta_83",
+      "source": "Mohand_Alshehri*",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohand_Alshehri*_Fayez_Ahmed_84",
+      "source": "Mohand_Alshehri*",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohand_Alshehri*_Saeed_Alghamdi*_85",
+      "source": "Mohand_Alshehri*",
+      "target": "Saeed_Alghamdi*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Saeed_Alghamdi*_Fayez_Ahmed_86",
+      "source": "Saeed_Alghamdi*",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Saeed_Alghamdi*_Mohand_Alshehri*_87",
+      "source": "Saeed_Alghamdi*",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Saeed_Alghamdi*_Nawaf_Alhazmi_88",
+      "source": "Saeed_Alghamdi*",
+      "target": "Nawaf_Alhazmi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nawaf_Alhazmi_Saeed_Alghamdi*_89",
+      "source": "Nawaf_Alhazmi",
+      "target": "Saeed_Alghamdi*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nawaf_Alhazmi_Khalid_Al-Mihdhar_90",
+      "source": "Nawaf_Alhazmi",
+      "target": "Khalid_Al-Mihdhar",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nawaf_Alhazmi_Majed_Moqed_91",
+      "source": "Nawaf_Alhazmi",
+      "target": "Majed_Moqed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Khalid_Al-Mihdhar_Nawaf_Alhazmi_92",
+      "source": "Khalid_Al-Mihdhar",
+      "target": "Nawaf_Alhazmi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Khalid_Al-Mihdhar_Majed_Moqed_93",
+      "source": "Khalid_Al-Mihdhar",
+      "target": "Majed_Moqed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Majed_Moqed_Nawaf_Alhazmi_94",
+      "source": "Majed_Moqed",
+      "target": "Nawaf_Alhazmi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Majed_Moqed_Khalid_Al-Mihdhar_95",
+      "source": "Majed_Moqed",
+      "target": "Khalid_Al-Mihdhar",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Raed_Hijazi_Waleed_Alshehri_96",
+      "source": "Raed_Hijazi",
+      "target": "Waleed_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Raed_Hijazi_Majed_Moqed_97",
+      "source": "Raed_Hijazi",
+      "target": "Majed_Moqed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Raed_Hijazi_Nabil_al-Marabh_98",
+      "source": "Raed_Hijazi",
+      "target": "Nabil_al-Marabh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nabil_al-Marabh_Hamza_Alghamdi_99",
+      "source": "Nabil_al-Marabh",
+      "target": "Hamza_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nabil_al-Marabh_Waleed_Alshehri_100",
+      "source": "Nabil_al-Marabh",
+      "target": "Waleed_Alshehri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nabil_al-Marabh_Majed_Moqed_101",
+      "source": "Nabil_al-Marabh",
+      "target": "Majed_Moqed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nabil_al-Marabh_Raed_Hijazi_102",
+      "source": "Nabil_al-Marabh",
+      "target": "Raed_Hijazi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mustafa_Ahamend_al-Hisawi_Ziad_Jarrah_103",
+      "source": "Mustafa_Ahamend_al-Hisawi",
+      "target": "Ziad_Jarrah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mustafa_Ahamend_al-Hisawi_Fayez_Ahmed_104",
+      "source": "Mustafa_Ahamend_al-Hisawi",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mustafa_Ahamend_al-Hisawi_Mohand_Alshehri*_105",
+      "source": "Mustafa_Ahamend_al-Hisawi",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mustafa_Ahamend_al-Hisawi_Nawaf_Alhazmi_106",
+      "source": "Mustafa_Ahamend_al-Hisawi",
+      "target": "Nawaf_Alhazmi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mamoun_Darkazanli_Fayez_Ahmed_107",
+      "source": "Mamoun_Darkazanli",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mamoun_Darkazanli_Mohand_Alshehri*_108",
+      "source": "Mamoun_Darkazanli",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mamoun_Darkazanli_Said_Bahaji_109",
+      "source": "Mamoun_Darkazanli",
+      "target": "Said_Bahaji",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zakariya_Essabar_Mohamed_Atta_110",
+      "source": "Zakariya_Essabar",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zakariya_Essabar_Fayez_Ahmed_111",
+      "source": "Zakariya_Essabar",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zakariya_Essabar_Mohand_Alshehri*_112",
+      "source": "Zakariya_Essabar",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zakariya_Essabar_Said_Bahaji_113",
+      "source": "Zakariya_Essabar",
+      "target": "Said_Bahaji",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zakariya_Essabar_Ramzi_Bin_al-Shibh_114",
+      "source": "Zakariya_Essabar",
+      "target": "Ramzi_Bin_al-Shibh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Said_Bahaji_Mohamed_Atta_115",
+      "source": "Said_Bahaji",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Said_Bahaji_Fayez_Ahmed_116",
+      "source": "Said_Bahaji",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Said_Bahaji_Mohand_Alshehri*_117",
+      "source": "Said_Bahaji",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Said_Bahaji_Mamoun_Darkazanli_118",
+      "source": "Said_Bahaji",
+      "target": "Mamoun_Darkazanli",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Said_Bahaji_Zakariya_Essabar_119",
+      "source": "Said_Bahaji",
+      "target": "Zakariya_Essabar",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Said_Bahaji_Mounir_El_Motassadeq_120",
+      "source": "Said_Bahaji",
+      "target": "Mounir_El_Motassadeq",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Said_Bahaji_Ramzi_Bin_al-Shibh_121",
+      "source": "Said_Bahaji",
+      "target": "Ramzi_Bin_al-Shibh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mounir_El_Motassadeq_Fayez_Ahmed_122",
+      "source": "Mounir_El_Motassadeq",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mounir_El_Motassadeq_Mohand_Alshehri*_123",
+      "source": "Mounir_El_Motassadeq",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mounir_El_Motassadeq_Said_Bahaji_124",
+      "source": "Mounir_El_Motassadeq",
+      "target": "Said_Bahaji",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mounir_El_Motassadeq_Ramzi_Bin_al-Shibh_125",
+      "source": "Mounir_El_Motassadeq",
+      "target": "Ramzi_Bin_al-Shibh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zacarias_Moussaoui_Mohand_Alshehri*_126",
+      "source": "Zacarias_Moussaoui",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zacarias_Moussaoui_Ramzi_Bin_al-Shibh_127",
+      "source": "Zacarias_Moussaoui",
+      "target": "Ramzi_Bin_al-Shibh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zacarias_Moussaoui_Abu_Qatada_128",
+      "source": "Zacarias_Moussaoui",
+      "target": "Abu_Qatada",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zacarias_Moussaoui_Djamal_Benghal_129",
+      "source": "Zacarias_Moussaoui",
+      "target": "Djamal_Benghal",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zacarias_Moussaoui_Jerome_Courtaillier_130",
+      "source": "Zacarias_Moussaoui",
+      "target": "Jerome_Courtaillier",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zacarias_Moussaoui_David_Courtaillier_131",
+      "source": "Zacarias_Moussaoui",
+      "target": "David_Courtaillier",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zacarias_Moussaoui_Ahmen_Ressam_132",
+      "source": "Zacarias_Moussaoui",
+      "target": "Ahmen_Ressam",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Mohamed_Atta_133",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Fayez_Ahmed_134",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Mohand_Alshehri*_135",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Zakariya_Essabar_136",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Zakariya_Essabar",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Said_Bahaji_137",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Said_Bahaji",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Mounir_El_Motassadeq_138",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Mounir_El_Motassadeq",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Zacarias_Moussaoui_139",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Zacarias_Moussaoui",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ramzi_Bin_al-Shibh_Agus_Budiman_140",
+      "source": "Ramzi_Bin_al-Shibh",
+      "target": "Agus_Budiman",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Agus_Budiman_Mohamed_Atta_141",
+      "source": "Agus_Budiman",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Agus_Budiman_Fayez_Ahmed_142",
+      "source": "Agus_Budiman",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Agus_Budiman_Mohand_Alshehri*_143",
+      "source": "Agus_Budiman",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Agus_Budiman_Ramzi_Bin_al-Shibh_144",
+      "source": "Agus_Budiman",
+      "target": "Ramzi_Bin_al-Shibh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahed_Khalil_Ibrahim_Samir_Al-Ani_Mohand_Alshehri*_145",
+      "source": "Ahed_Khalil_Ibrahim_Samir_Al-Ani",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lofti_Raissi_Ahmed_Alghamdi_146",
+      "source": "Lofti_Raissi",
+      "target": "Ahmed_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lofti_Raissi_Mohamed_Atta_147",
+      "source": "Lofti_Raissi",
+      "target": "Mohamed_Atta",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lofti_Raissi_Fayez_Ahmed_148",
+      "source": "Lofti_Raissi",
+      "target": "Fayez_Ahmed",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lofti_Raissi_Mohand_Alshehri*_149",
+      "source": "Lofti_Raissi",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lofti_Raissi_Rayed_Mohammed_Abdullah_150",
+      "source": "Lofti_Raissi",
+      "target": "Rayed_Mohammed_Abdullah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rayed_Mohammed_Abdullah_Ahmed_Alghamdi_151",
+      "source": "Rayed_Mohammed_Abdullah",
+      "target": "Ahmed_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rayed_Mohammed_Abdullah_Rayed_Mohammed_Abdullah_152",
+      "source": "Rayed_Mohammed_Abdullah",
+      "target": "Rayed_Mohammed_Abdullah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rayed_Mohammed_Abdullah_Bandar_Alhazmi_153",
+      "source": "Rayed_Mohammed_Abdullah",
+      "target": "Bandar_Alhazmi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rayed_Mohammed_Abdullah_Faisal_Al_Salmi_154",
+      "source": "Rayed_Mohammed_Abdullah",
+      "target": "Faisal_Al_Salmi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bandar_Alhazmi_Ahmed_Alghamdi_155",
+      "source": "Bandar_Alhazmi",
+      "target": "Ahmed_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bandar_Alhazmi_Rayed_Mohammed_Abdullah_156",
+      "source": "Bandar_Alhazmi",
+      "target": "Rayed_Mohammed_Abdullah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Faisal_Al_Salmi_Ahmed_Alghamdi_157",
+      "source": "Faisal_Al_Salmi",
+      "target": "Ahmed_Alghamdi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Faisal_Al_Salmi_Rayed_Mohammed_Abdullah_158",
+      "source": "Faisal_Al_Salmi",
+      "target": "Rayed_Mohammed_Abdullah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Osama_Awadallah_Ahmed_Alnami_159",
+      "source": "Osama_Awadallah",
+      "target": "Ahmed_Alnami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Osama_Awadallah_Marwan_Al-Shehhi_160",
+      "source": "Osama_Awadallah",
+      "target": "Marwan_Al-Shehhi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Osama_Awadallah_Abdussattar_Shaikh_161",
+      "source": "Osama_Awadallah",
+      "target": "Abdussattar_Shaikh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdussattar_Shaikh_Ahmed_Alnami_162",
+      "source": "Abdussattar_Shaikh",
+      "target": "Ahmed_Alnami",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdussattar_Shaikh_Marwan_Al-Shehhi_163",
+      "source": "Abdussattar_Shaikh",
+      "target": "Marwan_Al-Shehhi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdussattar_Shaikh_Osama_Awadallah_164",
+      "source": "Abdussattar_Shaikh",
+      "target": "Osama_Awadallah",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Abdi_Marwan_Al-Shehhi_165",
+      "source": "Mohamed_Abdi",
+      "target": "Marwan_Al-Shehhi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Belfas_Agus_Budiman_166",
+      "source": "Mohamed_Belfas",
+      "target": "Agus_Budiman",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohamed_Belfas_Ahed_Khalil_Ibrahim_Samir_Al-Ani_167",
+      "source": "Mohamed_Belfas",
+      "target": "Ahed_Khalil_Ibrahim_Samir_Al-Ani",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Imad_Eddin_Baraat_Yarkas_Mohand_Alshehri*_168",
+      "source": "Imad_Eddin_Baraat_Yarkas",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Imad_Eddin_Baraat_Yarkas_Ramzi_Bin_al-Shibh_169",
+      "source": "Imad_Eddin_Baraat_Yarkas",
+      "target": "Ramzi_Bin_al-Shibh",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Imad_Eddin_Baraat_Yarkas_Tarek_Maaroufi_170",
+      "source": "Imad_Eddin_Baraat_Yarkas",
+      "target": "Tarek_Maaroufi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Imad_Eddin_Baraat_Yarkas_Abu_Qatada_171",
+      "source": "Imad_Eddin_Baraat_Yarkas",
+      "target": "Abu_Qatada",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Imad_Eddin_Baraat_Yarkas_172",
+      "source": "Tarek_Maaroufi",
+      "target": "Imad_Eddin_Baraat_Yarkas",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Abu_Qatada_173",
+      "source": "Tarek_Maaroufi",
+      "target": "Abu_Qatada",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Mohammed_Bensakhria_174",
+      "source": "Tarek_Maaroufi",
+      "target": "Mohammed_Bensakhria",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Essid_Sami_Ben_Khemail_175",
+      "source": "Tarek_Maaroufi",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Seifallah_ben_Hassine_176",
+      "source": "Tarek_Maaroufi",
+      "target": "Seifallah_ben_Hassine",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Essoussi_Laaroussi_177",
+      "source": "Tarek_Maaroufi",
+      "target": "Essoussi_Laaroussi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Imad_Eddin_Baraat_Yarkas_178",
+      "source": "Tarek_Maaroufi",
+      "target": "Imad_Eddin_Baraat_Yarkas",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Abu_Qatada_179",
+      "source": "Tarek_Maaroufi",
+      "target": "Abu_Qatada",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Mohammed_Bensakhria_180",
+      "source": "Tarek_Maaroufi",
+      "target": "Mohammed_Bensakhria",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Essid_Sami_Ben_Khemail_181",
+      "source": "Tarek_Maaroufi",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Seifallah_ben_Hassine_182",
+      "source": "Tarek_Maaroufi",
+      "target": "Seifallah_ben_Hassine",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tarek_Maaroufi_Essoussi_Laaroussi_183",
+      "source": "Tarek_Maaroufi",
+      "target": "Essoussi_Laaroussi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Qatada_Zacarias_Moussaoui_184",
+      "source": "Abu_Qatada",
+      "target": "Zacarias_Moussaoui",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Qatada_Imad_Eddin_Baraat_Yarkas_185",
+      "source": "Abu_Qatada",
+      "target": "Imad_Eddin_Baraat_Yarkas",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Qatada_Tarek_Maaroufi_186",
+      "source": "Abu_Qatada",
+      "target": "Tarek_Maaroufi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Qatada_Djamal_Benghal_187",
+      "source": "Abu_Qatada",
+      "target": "Djamal_Benghal",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Qatada_Abu_Walid_188",
+      "source": "Abu_Qatada",
+      "target": "Abu_Walid",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Zacarias_Moussaoui_189",
+      "source": "Djamal_Benghal",
+      "target": "Zacarias_Moussaoui",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Abu_Qatada_190",
+      "source": "Djamal_Benghal",
+      "target": "Abu_Qatada",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Jerome_Courtaillier_191",
+      "source": "Djamal_Benghal",
+      "target": "Jerome_Courtaillier",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_David_Courtaillier_192",
+      "source": "Djamal_Benghal",
+      "target": "David_Courtaillier",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Ahmen_Ressam_193",
+      "source": "Djamal_Benghal",
+      "target": "Ahmen_Ressam",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Abu_Walid_194",
+      "source": "Djamal_Benghal",
+      "target": "Abu_Walid",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Jean-Marc_Grandvisir_195",
+      "source": "Djamal_Benghal",
+      "target": "Jean-Marc_Grandvisir",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Abu_Zubeida_196",
+      "source": "Djamal_Benghal",
+      "target": "Abu_Zubeida",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Djamal_Benghal_Nizar_Trabelsi_197",
+      "source": "Djamal_Benghal",
+      "target": "Nizar_Trabelsi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Jerome_Courtaillier_Zacarias_Moussaoui_198",
+      "source": "Jerome_Courtaillier",
+      "target": "Zacarias_Moussaoui",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Jerome_Courtaillier_Djamal_Benghal_199",
+      "source": "Jerome_Courtaillier",
+      "target": "Djamal_Benghal",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Jerome_Courtaillier_David_Courtaillier_200",
+      "source": "Jerome_Courtaillier",
+      "target": "David_Courtaillier",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Jerome_Courtaillier_Kamel_Daoudi_201",
+      "source": "Jerome_Courtaillier",
+      "target": "Kamel_Daoudi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_David_Courtaillier_Zacarias_Moussaoui_202",
+      "source": "David_Courtaillier",
+      "target": "Zacarias_Moussaoui",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_David_Courtaillier_Jerome_Courtaillier_203",
+      "source": "David_Courtaillier",
+      "target": "Jerome_Courtaillier",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmen_Ressam_Zacarias_Moussaoui_204",
+      "source": "Ahmen_Ressam",
+      "target": "Zacarias_Moussaoui",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmen_Ressam_Haydar_Abu_Doha_205",
+      "source": "Ahmen_Ressam",
+      "target": "Haydar_Abu_Doha",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Walid_Abu_Qatada_206",
+      "source": "Abu_Walid",
+      "target": "Abu_Qatada",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Walid_Djamal_Benghal_207",
+      "source": "Abu_Walid",
+      "target": "Djamal_Benghal",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Walid_Kamel_Daoudi_208",
+      "source": "Abu_Walid",
+      "target": "Kamel_Daoudi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Jean-Marc_Grandvisir_Djamal_Benghal_209",
+      "source": "Jean-Marc_Grandvisir",
+      "target": "Djamal_Benghal",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Zubeida_Djamal_Benghal_210",
+      "source": "Abu_Zubeida",
+      "target": "Djamal_Benghal",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nizar_Trabelsi_Djamal_Benghal_211",
+      "source": "Nizar_Trabelsi",
+      "target": "Djamal_Benghal",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Haydar_Abu_Doha_Ahmen_Ressam_212",
+      "source": "Haydar_Abu_Doha",
+      "target": "Ahmen_Ressam",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Haydar_Abu_Doha_Essid_Sami_Ben_Khemail_213",
+      "source": "Haydar_Abu_Doha",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Haydar_Abu_Doha_Madjid_Sahoune_214",
+      "source": "Haydar_Abu_Doha",
+      "target": "Madjid_Sahoune",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mehdi_Khammoun_Haydar_Abu_Doha_215",
+      "source": "Mehdi_Khammoun",
+      "target": "Haydar_Abu_Doha",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mehdi_Khammoun_Mohammed_Bensakhria_216",
+      "source": "Mehdi_Khammoun",
+      "target": "Mohammed_Bensakhria",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mehdi_Khammoun_Essid_Sami_Ben_Khemail_217",
+      "source": "Mehdi_Khammoun",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohammed_Bensakhria_Tarek_Maaroufi_218",
+      "source": "Mohammed_Bensakhria",
+      "target": "Tarek_Maaroufi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohammed_Bensakhria_Mehdi_Khammoun_219",
+      "source": "Mohammed_Bensakhria",
+      "target": "Mehdi_Khammoun",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohammed_Bensakhria_Lased_Ben_Heni_220",
+      "source": "Mohammed_Bensakhria",
+      "target": "Lased_Ben_Heni",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mohammed_Bensakhria_Essid_Sami_Ben_Khemail_221",
+      "source": "Mohammed_Bensakhria",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lased_Ben_Heni_Mohammed_Bensakhria_222",
+      "source": "Lased_Ben_Heni",
+      "target": "Mohammed_Bensakhria",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lased_Ben_Heni_Essid_Sami_Ben_Khemail_223",
+      "source": "Lased_Ben_Heni",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Mohand_Alshehri*_224",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Mohand_Alshehri*",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Tarek_Maaroufi_225",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Tarek_Maaroufi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Haydar_Abu_Doha_226",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Haydar_Abu_Doha",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Mehdi_Khammoun_227",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Mehdi_Khammoun",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Mohammed_Bensakhria_228",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Mohammed_Bensakhria",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Lased_Ben_Heni_229",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Lased_Ben_Heni",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Seifallah_ben_Hassine_230",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Seifallah_ben_Hassine",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Essoussi_Laaroussi_231",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Essoussi_Laaroussi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Fahid_al_Shakri_232",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Fahid_al_Shakri",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Madjid_Sahoune_233",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Madjid_Sahoune",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essid_Sami_Ben_Khemail_Samir_Kishk_234",
+      "source": "Essid_Sami_Ben_Khemail",
+      "target": "Samir_Kishk",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Seifallah_ben_Hassine_Tarek_Maaroufi_235",
+      "source": "Seifallah_ben_Hassine",
+      "target": "Tarek_Maaroufi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Seifallah_ben_Hassine_Essid_Sami_Ben_Khemail_236",
+      "source": "Seifallah_ben_Hassine",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essoussi_Laaroussi_Tarek_Maaroufi_237",
+      "source": "Essoussi_Laaroussi",
+      "target": "Tarek_Maaroufi",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Essoussi_Laaroussi_Essid_Sami_Ben_Khemail_238",
+      "source": "Essoussi_Laaroussi",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fahid_al_Shakri_Essid_Sami_Ben_Khemail_239",
+      "source": "Fahid_al_Shakri",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Madjid_Sahoune_Essid_Sami_Ben_Khemail_240",
+      "source": "Madjid_Sahoune",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Samir_Kishk_Essid_Sami_Ben_Khemail_241",
+      "source": "Samir_Kishk",
+      "target": "Essid_Sami_Ben_Khemail",
+      "label": "other_associate",
+      "type": "other_associate",
+      "weight": 1,
+      "properties": {
+        "type": "other_associate",
+        "observed": true,
+        "weight": 1
+      }
+    }
+  ]
+}

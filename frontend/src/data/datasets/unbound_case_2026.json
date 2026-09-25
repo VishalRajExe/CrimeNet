@@ -1,0 +1,1717 @@
+{
+  "id": "unbound_case_2026",
+  "name": "UNBOUND — Indian Criminal Network 2026",
+  "description": "Synthetic syndicate case with phones, persons, organizations, locations, and bank accounts",
+  "numNodes": 39,
+  "numEdges": 79,
+  "nodes": [
+    {
+      "id": "Imran_Sheikh",
+      "label": "Imran Sheikh",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Imran Sheikh",
+        "location": "Karol Bagh",
+        "employer": "Apex Infotech",
+        "cases": [
+          "FIR-2026/0142"
+        ]
+      }
+    },
+    {
+      "id": "Rohit_Malhotra",
+      "label": "Rohit Malhotra",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Rohit Malhotra",
+        "location": "Karol Bagh",
+        "cases": [
+          "FIR-2026/0142",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "Deepak_Yadav",
+      "label": "Deepak Yadav",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Deepak Yadav",
+        "cases": [
+          "FIR-2026/0147",
+          "FIR-2026/0151",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "Sana_Qureshi",
+      "label": "Sana Qureshi",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Sana Qureshi",
+        "role": "Accountant",
+        "location": "Sector 62 Noida",
+        "cases": [
+          "FIR-2026/0147"
+        ]
+      }
+    },
+    {
+      "id": "Vikas_Chauhan",
+      "label": "Vikas Chauhan",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Vikas Chauhan",
+        "location": "Karol Bagh",
+        "cases": [
+          "FIR-2026/0147",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "Naveen_Kumar",
+      "label": "Naveen Kumar",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Naveen Kumar",
+        "location": "Karol Bagh",
+        "cases": [
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "Manoj_Pawar",
+      "label": "Manoj Pawar",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Manoj Pawar",
+        "cases": [
+          "FIR-2026/0151"
+        ]
+      }
+    },
+    {
+      "id": "Salim_Ansari",
+      "label": "Salim Ansari",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Salim Ansari",
+        "cases": [
+          "FIR-2026/0151",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "Farhan_Ali",
+      "label": "Farhan Ali",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Farhan Ali",
+        "location": "Andheri East",
+        "role": "Recruiter",
+        "cases": [
+          "FIR-2026/0158"
+        ]
+      }
+    },
+    {
+      "id": "Ritesh_Gupta",
+      "label": "Ritesh Gupta",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "Ritesh Gupta",
+        "location": "Kurla West",
+        "cases": [
+          "FIR-2026/0158"
+        ]
+      }
+    },
+    {
+      "id": "phone_9876543210",
+      "label": "9876543210",
+      "type": "phone",
+      "properties": {
+        "type": "phone",
+        "number": "9876543210",
+        "subscriber": "Imran Sheikh",
+        "cases": [
+          "FIR-2026/0142"
+        ]
+      }
+    },
+    {
+      "id": "phone_9812345678",
+      "label": "9812345678",
+      "type": "phone",
+      "properties": {
+        "type": "phone",
+        "number": "9812345678",
+        "subscriber": "Rohit Malhotra / Vikas Chauhan",
+        "cases": [
+          "FIR-2026/0142",
+          "FIR-2026/0147",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "phone_9701122334",
+      "label": "9701122334",
+      "type": "phone",
+      "properties": {
+        "type": "phone",
+        "number": "9701122334",
+        "subscriber": "Deepak Yadav",
+        "cases": [
+          "FIR-2026/0147",
+          "FIR-2026/0151",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "phone_9822334455",
+      "label": "9822334455",
+      "type": "phone",
+      "properties": {
+        "type": "phone",
+        "number": "9822334455",
+        "subscriber": "Manoj Pawar",
+        "cases": [
+          "FIR-2026/0151",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "phone_9833445566",
+      "label": "9833445566",
+      "type": "phone",
+      "properties": {
+        "type": "phone",
+        "number": "9833445566",
+        "subscriber": "Salim Ansari",
+        "cases": [
+          "FIR-2026/0151",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "phone_9967788991",
+      "label": "9967788991",
+      "type": "phone",
+      "properties": {
+        "type": "phone",
+        "number": "9967788991",
+        "subscriber": "Farhan Ali",
+        "cases": [
+          "FIR-2026/0158"
+        ]
+      }
+    },
+    {
+      "id": "phone_9701998877",
+      "label": "9701998877",
+      "type": "phone",
+      "properties": {
+        "type": "phone",
+        "number": "9701998877",
+        "subscriber": "Naveen Kumar",
+        "cases": [
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "org_Sunrise_Traders",
+      "label": "Sunrise Traders",
+      "type": "organization",
+      "properties": {
+        "type": "organization",
+        "name": "Sunrise Traders",
+        "cases": [
+          "FIR-2026/0147",
+          "FIR-2026/0151",
+          "FIR-2026/0158",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "org_Global_Overseas_Exports",
+      "label": "Global Overseas Exports",
+      "type": "organization",
+      "properties": {
+        "type": "organization",
+        "name": "Global Overseas Exports",
+        "cases": [
+          "FIR-2026/0147",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "org_Apex_Infotech",
+      "label": "Apex Infotech",
+      "type": "organization",
+      "properties": {
+        "type": "organization",
+        "name": "Apex Infotech",
+        "cases": [
+          "FIR-2026/0142"
+        ]
+      }
+    },
+    {
+      "id": "org_Zenith_Logistics",
+      "label": "Zenith Logistics",
+      "type": "organization",
+      "properties": {
+        "type": "organization",
+        "name": "Zenith Logistics",
+        "cases": [
+          "FIR-2026/0158",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "org_Silverline_Motors",
+      "label": "Silverline Motors",
+      "type": "organization",
+      "properties": {
+        "type": "organization",
+        "name": "Silverline Motors",
+        "cases": [
+          "FIR-2026/0151",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "loc_Karol_Bagh",
+      "label": "Karol Bagh",
+      "type": "location",
+      "properties": {
+        "type": "location",
+        "name": "Karol Bagh",
+        "city": "Delhi",
+        "cases": [
+          "FIR-2026/0142",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "loc_Nehru_Place",
+      "label": "Nehru Place",
+      "type": "location",
+      "properties": {
+        "type": "location",
+        "name": "Nehru Place",
+        "city": "Delhi",
+        "cases": [
+          "FIR-2026/0147",
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "loc_Bhiwandi",
+      "label": "Bhiwandi",
+      "type": "location",
+      "properties": {
+        "type": "location",
+        "name": "Bhiwandi",
+        "city": "Thane",
+        "cases": [
+          "FIR-2026/0147",
+          "FIR-2026/0151",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "loc_Wagle_Estate",
+      "label": "Wagle Estate",
+      "type": "location",
+      "properties": {
+        "type": "location",
+        "name": "Wagle Estate",
+        "city": "Thane",
+        "cases": [
+          "FIR-2026/0151"
+        ]
+      }
+    },
+    {
+      "id": "loc_Andheri_East",
+      "label": "Andheri East",
+      "type": "location",
+      "properties": {
+        "type": "location",
+        "name": "Andheri East",
+        "city": "Mumbai",
+        "cases": [
+          "FIR-2026/0158"
+        ]
+      }
+    },
+    {
+      "id": "loc_Sector_62_Noida",
+      "label": "Sector 62 Noida",
+      "type": "location",
+      "properties": {
+        "type": "location",
+        "name": "Sector 62 Noida",
+        "city": "Noida",
+        "cases": [
+          "FIR-2026/0147"
+        ]
+      }
+    },
+    {
+      "id": "veh_DL8CAF5031",
+      "label": "veh_DL8CAF5031",
+      "type": "vehicle",
+      "properties": {
+        "type": "vehicle",
+        "registration": "DL8CAF5031",
+        "description": "White sedan",
+        "cases": [
+          "FIR-2026/0142",
+          "FIR-2026/0170"
+        ]
+      }
+    },
+    {
+      "id": "veh_UP16BX7742",
+      "label": "veh_UP16BX7742",
+      "type": "vehicle",
+      "properties": {
+        "type": "vehicle",
+        "registration": "UP16BX7742",
+        "description": "Tempo",
+        "cases": [
+          "FIR-2026/0147"
+        ]
+      }
+    },
+    {
+      "id": "veh_MH12AB4521",
+      "label": "veh_MH12AB4521",
+      "type": "vehicle",
+      "properties": {
+        "type": "vehicle",
+        "registration": "MH12AB4521",
+        "description": "Hatchback (stolen)",
+        "cases": [
+          "FIR-2026/0151"
+        ]
+      }
+    },
+    {
+      "id": "veh_MH04CD8890",
+      "label": "veh_MH04CD8890",
+      "type": "vehicle",
+      "properties": {
+        "type": "vehicle",
+        "registration": "MH04CD8890",
+        "description": "Scooter",
+        "cases": [
+          "FIR-2026/0158"
+        ]
+      }
+    },
+    {
+      "id": "veh_DL3CAT1188",
+      "label": "veh_DL3CAT1188",
+      "type": "vehicle",
+      "properties": {
+        "type": "vehicle",
+        "registration": "DL3CAT1188",
+        "description": "Car used during ATM withdrawals",
+        "cases": [
+          "FIR-2026/0163"
+        ]
+      }
+    },
+    {
+      "id": "FIR-2026/0142",
+      "label": "FIR-2026/0142",
+      "type": "case",
+      "properties": {
+        "type": "case",
+        "fir_number": "FIR-2026/0142",
+        "title": "Cyber-enabled extortion",
+        "station": "Cyber PS, Sector 21",
+        "date": "2026-02-11",
+        "name": "FIR-2026/0142"
+      }
+    },
+    {
+      "id": "FIR-2026/0147",
+      "label": "FIR-2026/0147",
+      "type": "case",
+      "properties": {
+        "type": "case",
+        "fir_number": "FIR-2026/0147",
+        "title": "Hawala routing and cash recovery",
+        "station": "EOW PS, Nehru Place",
+        "date": "2026-02-16",
+        "name": "FIR-2026/0147"
+      }
+    },
+    {
+      "id": "FIR-2026/0151",
+      "label": "FIR-2026/0151",
+      "type": "case",
+      "properties": {
+        "type": "case",
+        "fir_number": "FIR-2026/0151",
+        "title": "Organised vehicle theft",
+        "station": "Wagle Estate PS, Thane",
+        "date": "2026-03-02",
+        "name": "FIR-2026/0151"
+      }
+    },
+    {
+      "id": "FIR-2026/0158",
+      "label": "FIR-2026/0158",
+      "type": "case",
+      "properties": {
+        "type": "case",
+        "fir_number": "FIR-2026/0158",
+        "title": "Fake recruitment and cheating",
+        "station": "Andheri East PS",
+        "date": "2026-03-09",
+        "name": "FIR-2026/0158"
+      }
+    },
+    {
+      "id": "FIR-2026/0163",
+      "label": "FIR-2026/0163",
+      "type": "case",
+      "properties": {
+        "type": "case",
+        "fir_number": "FIR-2026/0163",
+        "title": "Mule account network",
+        "station": "Cyber PS, Sector 21",
+        "date": "2026-03-18",
+        "name": "FIR-2026/0163"
+      }
+    },
+    {
+      "id": "FIR-2026/0170",
+      "label": "FIR-2026/0170",
+      "type": "case",
+      "properties": {
+        "type": "case",
+        "fir_number": "FIR-2026/0170",
+        "title": "Interception of contraband courier",
+        "station": "Bhiwandi PS, Thane",
+        "date": "2026-03-25",
+        "name": "FIR-2026/0170"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_Imran_Sheikh_phone_9876543210_0",
+      "source": "Imran_Sheikh",
+      "target": "phone_9876543210",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0142"
+      }
+    },
+    {
+      "id": "e_Rohit_Malhotra_phone_9812345678_1",
+      "source": "Rohit_Malhotra",
+      "target": "phone_9812345678",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0142"
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_phone_9701122334_2",
+      "source": "Deepak_Yadav",
+      "target": "phone_9701122334",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0147"
+      }
+    },
+    {
+      "id": "e_Manoj_Pawar_phone_9822334455_3",
+      "source": "Manoj_Pawar",
+      "target": "phone_9822334455",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0151"
+      }
+    },
+    {
+      "id": "e_Salim_Ansari_phone_9833445566_4",
+      "source": "Salim_Ansari",
+      "target": "phone_9833445566",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0151"
+      }
+    },
+    {
+      "id": "e_Farhan_Ali_phone_9967788991_5",
+      "source": "Farhan_Ali",
+      "target": "phone_9967788991",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0158"
+      }
+    },
+    {
+      "id": "e_Naveen_Kumar_phone_9701998877_6",
+      "source": "Naveen_Kumar",
+      "target": "phone_9701998877",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0163"
+      }
+    },
+    {
+      "id": "e_Vikas_Chauhan_phone_9812345678_7",
+      "source": "Vikas_Chauhan",
+      "target": "phone_9812345678",
+      "label": "uses_phone",
+      "type": "uses_phone",
+      "weight": 1,
+      "properties": {
+        "type": "uses_phone",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0163"
+      }
+    },
+    {
+      "id": "e_phone_9876543210_phone_9812345678_8",
+      "source": "phone_9876543210",
+      "target": "phone_9812345678",
+      "label": "called",
+      "type": "called",
+      "weight": 3,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 3,
+        "call_count": 3,
+        "odd_hour": true,
+        "case": "FIR-2026/0142",
+        "details": "3 calls: 2026-02-12T02:14 (412s), 2026-02-12T21:05 (96s), 2026-02-13T03:05 (240s)"
+      }
+    },
+    {
+      "id": "e_phone_9812345678_phone_9701122334_9",
+      "source": "phone_9812345678",
+      "target": "phone_9701122334",
+      "label": "called",
+      "type": "called",
+      "weight": 3,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 3,
+        "call_count": 3,
+        "odd_hour": false,
+        "case": "FIR-2026/0147",
+        "details": "3 calls: 2026-02-14T11:20 (88s), 2026-02-15T01:40 (305s), 2026-02-16T19:12 (141s)"
+      }
+    },
+    {
+      "id": "e_phone_9812345678_phone_9701122334_10",
+      "source": "phone_9812345678",
+      "target": "phone_9701122334",
+      "label": "called",
+      "type": "called",
+      "weight": 1,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 1,
+        "call_count": 1,
+        "odd_hour": true,
+        "case": "FIR-2026/0151",
+        "details": "1 call: 2026-03-01T23:48 (262s)"
+      }
+    },
+    {
+      "id": "e_phone_9701122334_phone_9822334455_11",
+      "source": "phone_9701122334",
+      "target": "phone_9822334455",
+      "label": "called",
+      "type": "called",
+      "weight": 2,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 2,
+        "call_count": 2,
+        "odd_hour": true,
+        "case": "FIR-2026/0151",
+        "details": "2 calls: 2026-03-01T22:31 (187s), 2026-03-02T02:05 (401s)"
+      }
+    },
+    {
+      "id": "e_phone_9822334455_phone_9833445566_12",
+      "source": "phone_9822334455",
+      "target": "phone_9833445566",
+      "label": "called",
+      "type": "called",
+      "weight": 3,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 3,
+        "call_count": 3,
+        "odd_hour": true,
+        "case": "FIR-2026/0151 FIR-2026/0170",
+        "details": "3 calls: 2026-03-02T02:52 (73s), 2026-03-24T01:18 (512s), 2026-03-25T04:33 (118s)"
+      }
+    },
+    {
+      "id": "e_phone_9967788991_phone_9812345678_13",
+      "source": "phone_9967788991",
+      "target": "phone_9812345678",
+      "label": "called",
+      "type": "called",
+      "weight": 2,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 2,
+        "call_count": 2,
+        "odd_hour": false,
+        "case": "FIR-2026/0158",
+        "details": "2 calls: 2026-03-08T15:44 (65s), 2026-03-10T20:02 (132s)"
+      }
+    },
+    {
+      "id": "e_phone_9967788991_phone_9701998877_14",
+      "source": "phone_9967788991",
+      "target": "phone_9701998877",
+      "label": "called",
+      "type": "called",
+      "weight": 1,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 1,
+        "call_count": 1,
+        "odd_hour": false,
+        "case": "FIR-2026/0163",
+        "details": "1 call: 2026-03-11T13:27 (219s)"
+      }
+    },
+    {
+      "id": "e_phone_9701998877_phone_9812345678_15",
+      "source": "phone_9701998877",
+      "target": "phone_9812345678",
+      "label": "called",
+      "type": "called",
+      "weight": 2,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 2,
+        "call_count": 2,
+        "odd_hour": true,
+        "case": "FIR-2026/0163",
+        "details": "2 calls: 2026-03-16T02:49 (358s), 2026-03-17T03:22 (274s)"
+      }
+    },
+    {
+      "id": "e_phone_9701998877_phone_9701122334_16",
+      "source": "phone_9701998877",
+      "target": "phone_9701122334",
+      "label": "called",
+      "type": "called",
+      "weight": 1,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 1,
+        "call_count": 1,
+        "odd_hour": false,
+        "case": "FIR-2026/0163",
+        "details": "1 call: 2026-03-18T09:15 (47s)"
+      }
+    },
+    {
+      "id": "e_phone_9876543210_phone_9967788991_17",
+      "source": "phone_9876543210",
+      "target": "phone_9967788991",
+      "label": "called",
+      "type": "called",
+      "weight": 1,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 1,
+        "call_count": 1,
+        "odd_hour": false,
+        "case": "FIR-2026/0158",
+        "details": "1 call: 2026-03-19T18:36 (91s)"
+      }
+    },
+    {
+      "id": "e_phone_9833445566_phone_9701122334_18",
+      "source": "phone_9833445566",
+      "target": "phone_9701122334",
+      "label": "called",
+      "type": "called",
+      "weight": 1,
+      "properties": {
+        "type": "called",
+        "observed": true,
+        "weight": 1,
+        "call_count": 1,
+        "odd_hour": true,
+        "case": "FIR-2026/0170",
+        "details": "1 call: 2026-03-23T00:57 (168s)"
+      }
+    },
+    {
+      "id": "e_Vikas_Chauhan_org_Sunrise_Traders_19",
+      "source": "Vikas_Chauhan",
+      "target": "org_Sunrise_Traders",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 3,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 3,
+        "amount": 1455000,
+        "transaction_mode": "RTGS",
+        "case": "FIR-2026/0147",
+        "details": "3x RTGS: ₹485000 (2026-02-13), ₹492000 (2026-02-14), ₹478000 (2026-02-15)"
+      }
+    },
+    {
+      "id": "e_Naveen_Kumar_org_Sunrise_Traders_20",
+      "source": "Naveen_Kumar",
+      "target": "org_Sunrise_Traders",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 1,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 1,
+        "amount": 390000,
+        "transaction_mode": "IMPS",
+        "case": "FIR-2026/0163",
+        "details": "IMPS ₹390000 on 2026-03-17"
+      }
+    },
+    {
+      "id": "e_Ritesh_Gupta_org_Sunrise_Traders_21",
+      "source": "Ritesh_Gupta",
+      "target": "org_Sunrise_Traders",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 1,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 1,
+        "amount": 240000,
+        "transaction_mode": "UPI",
+        "case": "FIR-2026/0158",
+        "details": "UPI ₹240000 on 2026-03-09"
+      }
+    },
+    {
+      "id": "e_org_Sunrise_Traders_org_Global_Overseas_Exports_22",
+      "source": "org_Sunrise_Traders",
+      "target": "org_Global_Overseas_Exports",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 2,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 2,
+        "amount": 2950000,
+        "transaction_mode": "RTGS",
+        "case": "FIR-2026/0163",
+        "details": "RTGS ₹2950000 on 2026-03-18 — bulk layering transfer"
+      }
+    },
+    {
+      "id": "e_org_Global_Overseas_Exports_org_Apex_Infotech_23",
+      "source": "org_Global_Overseas_Exports",
+      "target": "org_Apex_Infotech",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 1,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 1,
+        "amount": 95000,
+        "transaction_mode": "NEFT",
+        "case": "FIR-2026/0142",
+        "details": "NEFT ₹95000 on 2026-02-20"
+      }
+    },
+    {
+      "id": "e_org_Zenith_Logistics_org_Silverline_Motors_24",
+      "source": "org_Zenith_Logistics",
+      "target": "org_Silverline_Motors",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 1,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 1,
+        "amount": 180000,
+        "transaction_mode": "NEFT",
+        "case": "FIR-2026/0170",
+        "details": "NEFT ₹180000 on 2026-03-21"
+      }
+    },
+    {
+      "id": "e_Rohit_Malhotra_Vikas_Chauhan_25",
+      "source": "Rohit_Malhotra",
+      "target": "Vikas_Chauhan",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 1,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 1,
+        "amount": 60000,
+        "transaction_mode": "UPI",
+        "case": "FIR-2026/0163",
+        "details": "UPI ₹60000 on 2026-03-15"
+      }
+    },
+    {
+      "id": "e_Rohit_Malhotra_Naveen_Kumar_26",
+      "source": "Rohit_Malhotra",
+      "target": "Naveen_Kumar",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 1,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 1,
+        "amount": 58000,
+        "transaction_mode": "UPI",
+        "case": "FIR-2026/0163",
+        "details": "UPI ₹58000 on 2026-03-16"
+      }
+    },
+    {
+      "id": "e_org_Zenith_Logistics_Farhan_Ali_27",
+      "source": "org_Zenith_Logistics",
+      "target": "Farhan_Ali",
+      "label": "transferred_to",
+      "type": "transferred_to",
+      "weight": 1,
+      "properties": {
+        "type": "transferred_to",
+        "observed": true,
+        "weight": 1,
+        "amount": 75000,
+        "transaction_mode": "NEFT",
+        "case": "FIR-2026/0158",
+        "details": "NEFT ₹75000 on 2026-03-12"
+      }
+    },
+    {
+      "id": "e_phone_9812345678_loc_Karol_Bagh_28",
+      "source": "phone_9812345678",
+      "target": "loc_Karol_Bagh",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-02-12T02:31",
+        "case": "FIR-2026/0142",
+        "details": "Cell-site ping at 2026-02-12T02:31"
+      }
+    },
+    {
+      "id": "e_phone_9876543210_loc_Karol_Bagh_29",
+      "source": "phone_9876543210",
+      "target": "loc_Karol_Bagh",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-02-12T02:19",
+        "case": "FIR-2026/0142",
+        "details": "Cell-site ping at 2026-02-12T02:19"
+      }
+    },
+    {
+      "id": "e_phone_9701122334_loc_Nehru_Place_30",
+      "source": "phone_9701122334",
+      "target": "loc_Nehru_Place",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-02-16T15:02",
+        "case": "FIR-2026/0147",
+        "details": "Cell-site ping at 2026-02-16T15:02"
+      }
+    },
+    {
+      "id": "e_phone_9701122334_loc_Bhiwandi_31",
+      "source": "phone_9701122334",
+      "target": "loc_Bhiwandi",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-03-02T08:40",
+        "case": "FIR-2026/0151",
+        "details": "Cell-site ping at 2026-03-02T08:40"
+      }
+    },
+    {
+      "id": "e_phone_9822334455_loc_Wagle_Estate_32",
+      "source": "phone_9822334455",
+      "target": "loc_Wagle_Estate",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-03-02T02:44",
+        "case": "FIR-2026/0151",
+        "details": "Cell-site ping at 2026-03-02T02:44"
+      }
+    },
+    {
+      "id": "e_phone_9833445566_loc_Bhiwandi_33",
+      "source": "phone_9833445566",
+      "target": "loc_Bhiwandi",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-03-25T05:10",
+        "case": "FIR-2026/0170",
+        "details": "Cell-site ping at 2026-03-25T05:10"
+      }
+    },
+    {
+      "id": "e_phone_9967788991_loc_Andheri_East_34",
+      "source": "phone_9967788991",
+      "target": "loc_Andheri_East",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-03-09T12:55",
+        "case": "FIR-2026/0158",
+        "details": "Cell-site ping at 2026-03-09T12:55"
+      }
+    },
+    {
+      "id": "e_phone_9701998877_loc_Nehru_Place_35",
+      "source": "phone_9701998877",
+      "target": "loc_Nehru_Place",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-03-18T16:20",
+        "case": "FIR-2026/0163",
+        "details": "Cell-site ping at 2026-03-18T16:20"
+      }
+    },
+    {
+      "id": "e_phone_9701998877_loc_Karol_Bagh_36",
+      "source": "phone_9701998877",
+      "target": "loc_Karol_Bagh",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-03-16T21:08",
+        "case": "FIR-2026/0163",
+        "details": "Cell-site ping at 2026-03-16T21:08"
+      }
+    },
+    {
+      "id": "e_phone_9812345678_loc_Sector_62_Noida_37",
+      "source": "phone_9812345678",
+      "target": "loc_Sector_62_Noida",
+      "label": "pinged_at",
+      "type": "pinged_at",
+      "weight": 1,
+      "properties": {
+        "type": "pinged_at",
+        "observed": true,
+        "weight": 1,
+        "timestamp": "2026-02-15T13:35",
+        "case": "FIR-2026/0147",
+        "details": "Cell-site ping at 2026-02-15T13:35"
+      }
+    },
+    {
+      "id": "e_Imran_Sheikh_org_Apex_Infotech_38",
+      "source": "Imran_Sheikh",
+      "target": "org_Apex_Infotech",
+      "label": "affiliated_with",
+      "type": "affiliated_with",
+      "weight": 1,
+      "properties": {
+        "type": "affiliated_with",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0142"
+      }
+    },
+    {
+      "id": "e_Sana_Qureshi_org_Sunrise_Traders_39",
+      "source": "Sana_Qureshi",
+      "target": "org_Sunrise_Traders",
+      "label": "affiliated_with",
+      "type": "affiliated_with",
+      "weight": 1,
+      "properties": {
+        "type": "affiliated_with",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0147",
+        "role": "Accountant / ledger keeper"
+      }
+    },
+    {
+      "id": "e_Vikas_Chauhan_org_Global_Overseas_Exports_40",
+      "source": "Vikas_Chauhan",
+      "target": "org_Global_Overseas_Exports",
+      "label": "affiliated_with",
+      "type": "affiliated_with",
+      "weight": 1,
+      "properties": {
+        "type": "affiliated_with",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0147",
+        "role": "Mule account holder"
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_org_Zenith_Logistics_41",
+      "source": "Deepak_Yadav",
+      "target": "org_Zenith_Logistics",
+      "label": "affiliated_with",
+      "type": "affiliated_with",
+      "weight": 1,
+      "properties": {
+        "type": "affiliated_with",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0170",
+        "role": "Transport handler"
+      }
+    },
+    {
+      "id": "e_Farhan_Ali_org_Zenith_Logistics_42",
+      "source": "Farhan_Ali",
+      "target": "org_Zenith_Logistics",
+      "label": "affiliated_with",
+      "type": "affiliated_with",
+      "weight": 1,
+      "properties": {
+        "type": "affiliated_with",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0158",
+        "role": "Recruiter"
+      }
+    },
+    {
+      "id": "e_Manoj_Pawar_org_Silverline_Motors_43",
+      "source": "Manoj_Pawar",
+      "target": "org_Silverline_Motors",
+      "label": "affiliated_with",
+      "type": "affiliated_with",
+      "weight": 1,
+      "properties": {
+        "type": "affiliated_with",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0151",
+        "role": "Handler"
+      }
+    },
+    {
+      "id": "e_Imran_Sheikh_veh_DL8CAF5031_44",
+      "source": "Imran_Sheikh",
+      "target": "veh_DL8CAF5031",
+      "label": "uses_vehicle",
+      "type": "uses_vehicle",
+      "weight": 1,
+      "properties": {
+        "type": "uses_vehicle",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0142"
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_veh_UP16BX7742_45",
+      "source": "Deepak_Yadav",
+      "target": "veh_UP16BX7742",
+      "label": "uses_vehicle",
+      "type": "uses_vehicle",
+      "weight": 1,
+      "properties": {
+        "type": "uses_vehicle",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0147"
+      }
+    },
+    {
+      "id": "e_Manoj_Pawar_veh_MH12AB4521_46",
+      "source": "Manoj_Pawar",
+      "target": "veh_MH12AB4521",
+      "label": "uses_vehicle",
+      "type": "uses_vehicle",
+      "weight": 1,
+      "properties": {
+        "type": "uses_vehicle",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0151"
+      }
+    },
+    {
+      "id": "e_Ritesh_Gupta_veh_MH04CD8890_47",
+      "source": "Ritesh_Gupta",
+      "target": "veh_MH04CD8890",
+      "label": "uses_vehicle",
+      "type": "uses_vehicle",
+      "weight": 1,
+      "properties": {
+        "type": "uses_vehicle",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0158"
+      }
+    },
+    {
+      "id": "e_Vikas_Chauhan_veh_DL3CAT1188_48",
+      "source": "Vikas_Chauhan",
+      "target": "veh_DL3CAT1188",
+      "label": "uses_vehicle",
+      "type": "uses_vehicle",
+      "weight": 1,
+      "properties": {
+        "type": "uses_vehicle",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0163"
+      }
+    },
+    {
+      "id": "e_Salim_Ansari_veh_DL8CAF5031_49",
+      "source": "Salim_Ansari",
+      "target": "veh_DL8CAF5031",
+      "label": "uses_vehicle",
+      "type": "uses_vehicle",
+      "weight": 1,
+      "properties": {
+        "type": "uses_vehicle",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0170"
+      }
+    },
+    {
+      "id": "e_Imran_Sheikh_loc_Karol_Bagh_50",
+      "source": "Imran_Sheikh",
+      "target": "loc_Karol_Bagh",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0142"
+      }
+    },
+    {
+      "id": "e_Rohit_Malhotra_loc_Karol_Bagh_51",
+      "source": "Rohit_Malhotra",
+      "target": "loc_Karol_Bagh",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0142"
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_loc_Nehru_Place_52",
+      "source": "Deepak_Yadav",
+      "target": "loc_Nehru_Place",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0147"
+      }
+    },
+    {
+      "id": "e_Sana_Qureshi_loc_Sector_62_Noida_53",
+      "source": "Sana_Qureshi",
+      "target": "loc_Sector_62_Noida",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0147"
+      }
+    },
+    {
+      "id": "e_Manoj_Pawar_loc_Wagle_Estate_54",
+      "source": "Manoj_Pawar",
+      "target": "loc_Wagle_Estate",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0151"
+      }
+    },
+    {
+      "id": "e_Salim_Ansari_loc_Wagle_Estate_55",
+      "source": "Salim_Ansari",
+      "target": "loc_Wagle_Estate",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0151"
+      }
+    },
+    {
+      "id": "e_Salim_Ansari_loc_Bhiwandi_56",
+      "source": "Salim_Ansari",
+      "target": "loc_Bhiwandi",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0170"
+      }
+    },
+    {
+      "id": "e_Farhan_Ali_loc_Andheri_East_57",
+      "source": "Farhan_Ali",
+      "target": "loc_Andheri_East",
+      "label": "seen_at",
+      "type": "seen_at",
+      "weight": 1,
+      "properties": {
+        "type": "seen_at",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0158"
+      }
+    },
+    {
+      "id": "e_Imran_Sheikh_FIR-2026/0142_58",
+      "source": "Imran_Sheikh",
+      "target": "FIR-2026/0142",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rohit_Malhotra_FIR-2026/0142_59",
+      "source": "Rohit_Malhotra",
+      "target": "FIR-2026/0142",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_FIR-2026/0147_60",
+      "source": "Deepak_Yadav",
+      "target": "FIR-2026/0147",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sana_Qureshi_FIR-2026/0147_61",
+      "source": "Sana_Qureshi",
+      "target": "FIR-2026/0147",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Vikas_Chauhan_FIR-2026/0147_62",
+      "source": "Vikas_Chauhan",
+      "target": "FIR-2026/0147",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Manoj_Pawar_FIR-2026/0151_63",
+      "source": "Manoj_Pawar",
+      "target": "FIR-2026/0151",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Salim_Ansari_FIR-2026/0151_64",
+      "source": "Salim_Ansari",
+      "target": "FIR-2026/0151",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_FIR-2026/0151_65",
+      "source": "Deepak_Yadav",
+      "target": "FIR-2026/0151",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Farhan_Ali_FIR-2026/0158_66",
+      "source": "Farhan_Ali",
+      "target": "FIR-2026/0158",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ritesh_Gupta_FIR-2026/0158_67",
+      "source": "Ritesh_Gupta",
+      "target": "FIR-2026/0158",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Vikas_Chauhan_FIR-2026/0163_68",
+      "source": "Vikas_Chauhan",
+      "target": "FIR-2026/0163",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Naveen_Kumar_FIR-2026/0163_69",
+      "source": "Naveen_Kumar",
+      "target": "FIR-2026/0163",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rohit_Malhotra_FIR-2026/0163_70",
+      "source": "Rohit_Malhotra",
+      "target": "FIR-2026/0163",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Salim_Ansari_FIR-2026/0170_71",
+      "source": "Salim_Ansari",
+      "target": "FIR-2026/0170",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_FIR-2026/0170_72",
+      "source": "Deepak_Yadav",
+      "target": "FIR-2026/0170",
+      "label": "named_in",
+      "type": "named_in",
+      "weight": 1,
+      "properties": {
+        "type": "named_in",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Imran_Sheikh_Rohit_Malhotra_73",
+      "source": "Imran_Sheikh",
+      "target": "Rohit_Malhotra",
+      "label": "associate_of",
+      "type": "associate_of",
+      "weight": 2,
+      "properties": {
+        "type": "associate_of",
+        "observed": true,
+        "weight": 2,
+        "case": "FIR-2026/0142",
+        "details": "Repeated calls, co-accused in extortion"
+      }
+    },
+    {
+      "id": "e_Deepak_Yadav_Vikas_Chauhan_74",
+      "source": "Deepak_Yadav",
+      "target": "Vikas_Chauhan",
+      "label": "associate_of",
+      "type": "associate_of",
+      "weight": 1,
+      "properties": {
+        "type": "associate_of",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0147",
+        "details": "Hawala handler links"
+      }
+    },
+    {
+      "id": "e_Manoj_Pawar_Salim_Ansari_75",
+      "source": "Manoj_Pawar",
+      "target": "Salim_Ansari",
+      "label": "associate_of",
+      "type": "associate_of",
+      "weight": 2,
+      "properties": {
+        "type": "associate_of",
+        "observed": true,
+        "weight": 2,
+        "case": "FIR-2026/0151",
+        "details": "Co-accused at Wagle Estate CCTV, 02:40 hrs"
+      }
+    },
+    {
+      "id": "e_Vikas_Chauhan_Naveen_Kumar_76",
+      "source": "Vikas_Chauhan",
+      "target": "Naveen_Kumar",
+      "label": "associate_of",
+      "type": "associate_of",
+      "weight": 1,
+      "properties": {
+        "type": "associate_of",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0163",
+        "details": "Both mule account holders"
+      }
+    },
+    {
+      "id": "e_Farhan_Ali_Ritesh_Gupta_77",
+      "source": "Farhan_Ali",
+      "target": "Ritesh_Gupta",
+      "label": "associate_of",
+      "type": "associate_of",
+      "weight": 1,
+      "properties": {
+        "type": "associate_of",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0158",
+        "details": "Recruiter-associate relationship"
+      }
+    },
+    {
+      "id": "e_Rohit_Malhotra_Vikas_Chauhan_78",
+      "source": "Rohit_Malhotra",
+      "target": "Vikas_Chauhan",
+      "label": "associate_of",
+      "type": "associate_of",
+      "weight": 1,
+      "properties": {
+        "type": "associate_of",
+        "observed": true,
+        "weight": 1,
+        "case": "FIR-2026/0163",
+        "details": "UPI transfer, Rohit → Vikas"
+      }
+    }
+  ]
+}

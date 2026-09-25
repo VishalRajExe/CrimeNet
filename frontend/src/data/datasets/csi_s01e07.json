@@ -1,0 +1,1722 @@
+{
+  "id": "csi_s01e07",
+  "name": "CSI (s01e07)",
+  "description": "CSI investigation episode 7 forensic evidence network",
+  "numNodes": 32,
+  "numEdges": 107,
+  "nodes": [
+    {
+      "id": "node_0",
+      "label": "both_(nick/warrick)",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "both_(nick/warrick)",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_1",
+      "label": "brass",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "brass",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_2",
+      "label": "brendacollins",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "brendacollins",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_3",
+      "label": "catherine",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "catherine",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_4",
+      "label": "conniebellvue",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "conniebellvue",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_5",
+      "label": "conradecklie",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "conradecklie",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_6",
+      "label": "davidphillips",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "davidphillips",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_7",
+      "label": "det._o'riely",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "det._o'riely",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_8",
+      "label": "det._o'riley",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "det._o'riley",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_9",
+      "label": "dr._albertrobbins",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "dr._albertrobbins",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_10",
+      "label": "dr._leever",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "dr._leever",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_11",
+      "label": "eddiewillows",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "eddiewillows",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_12",
+      "label": "ems_#1",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "ems_#1",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_13",
+      "label": "grissom",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "grissom",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_14",
+      "label": "jesseoverton",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "jesseoverton",
+        "role": "killer"
+      }
+    },
+    {
+      "id": "node_15",
+      "label": "lie_detector_operator",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "lie_detector_operator",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_16",
+      "label": "lindsey",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "lindsey",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_17",
+      "label": "lindseywillows",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "lindseywillows",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_18",
+      "label": "nick",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "nick",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_19",
+      "label": "officer",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "officer",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_20",
+      "label": "oliver",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "oliver",
+        "role": "suspect"
+      }
+    },
+    {
+      "id": "node_21",
+      "label": "reporter_1_(woman)",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "reporter_1_(woman)",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_22",
+      "label": "reporter_2_(woman)",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "reporter_2_(woman)",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_23",
+      "label": "reporter_3_(man)",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "reporter_3_(man)",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_24",
+      "label": "sara",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "sara",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_25",
+      "label": "sheriff_brianmobley",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "sheriff_brianmobley",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_26",
+      "label": "shibley",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "shibley",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_27",
+      "label": "suburban_teen_guy_#1",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "suburban_teen_guy_#1",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_28",
+      "label": "suburban_teen_guy_#2",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "suburban_teen_guy_#2",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_29",
+      "label": "tedgoggle",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "tedgoggle",
+        "role": "other"
+      }
+    },
+    {
+      "id": "node_30",
+      "label": "tinacollins",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "tinacollins",
+        "role": "killer"
+      }
+    },
+    {
+      "id": "node_31",
+      "label": "warrick",
+      "type": "person",
+      "properties": {
+        "type": "person",
+        "name": "warrick",
+        "role": "other"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_node_0_node_18_0",
+      "source": "node_0",
+      "target": "node_18",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_0_node_31_1",
+      "source": "node_0",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_0_node_1_2",
+      "source": "node_0",
+      "target": "node_1",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_0_node_13_3",
+      "source": "node_0",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_3_4",
+      "source": "node_1",
+      "target": "node_3",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_13_5",
+      "source": "node_1",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_24_6",
+      "source": "node_1",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_30_7",
+      "source": "node_1",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_5_8",
+      "source": "node_1",
+      "target": "node_5",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_31_9",
+      "source": "node_1",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_20_10",
+      "source": "node_1",
+      "target": "node_20",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_18_11",
+      "source": "node_1",
+      "target": "node_18",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_27_12",
+      "source": "node_1",
+      "target": "node_27",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_28_13",
+      "source": "node_1",
+      "target": "node_28",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_14_14",
+      "source": "node_1",
+      "target": "node_14",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_1_node_15_15",
+      "source": "node_1",
+      "target": "node_15",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_2_node_13_16",
+      "source": "node_2",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_13_17",
+      "source": "node_3",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_31_18",
+      "source": "node_3",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_18_19",
+      "source": "node_3",
+      "target": "node_18",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_24_20",
+      "source": "node_3",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_17_21",
+      "source": "node_3",
+      "target": "node_17",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_16_22",
+      "source": "node_3",
+      "target": "node_16",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_11_23",
+      "source": "node_3",
+      "target": "node_11",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_30_24",
+      "source": "node_3",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_27_25",
+      "source": "node_3",
+      "target": "node_27",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_28_26",
+      "source": "node_3",
+      "target": "node_28",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_14_27",
+      "source": "node_3",
+      "target": "node_14",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_15_28",
+      "source": "node_3",
+      "target": "node_15",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_3_node_29_29",
+      "source": "node_3",
+      "target": "node_29",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_4_node_24_30",
+      "source": "node_4",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_4_node_10_31",
+      "source": "node_4",
+      "target": "node_10",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_5_node_13_32",
+      "source": "node_5",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_5_node_31_33",
+      "source": "node_5",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_5_node_20_34",
+      "source": "node_5",
+      "target": "node_20",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_5_node_9_35",
+      "source": "node_5",
+      "target": "node_9",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_6_node_13_36",
+      "source": "node_6",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_6_node_18_37",
+      "source": "node_6",
+      "target": "node_18",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_7_node_8_38",
+      "source": "node_7",
+      "target": "node_8",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_7_node_13_39",
+      "source": "node_7",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_7_node_24_40",
+      "source": "node_7",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_7_node_21_41",
+      "source": "node_7",
+      "target": "node_21",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_7_node_22_42",
+      "source": "node_7",
+      "target": "node_22",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_7_node_23_43",
+      "source": "node_7",
+      "target": "node_23",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_7_node_30_44",
+      "source": "node_7",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_13_45",
+      "source": "node_8",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_24_46",
+      "source": "node_8",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_21_47",
+      "source": "node_8",
+      "target": "node_21",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_22_48",
+      "source": "node_8",
+      "target": "node_22",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_23_49",
+      "source": "node_8",
+      "target": "node_23",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_30_50",
+      "source": "node_8",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_19_51",
+      "source": "node_8",
+      "target": "node_19",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_12_52",
+      "source": "node_8",
+      "target": "node_12",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_8_node_25_53",
+      "source": "node_8",
+      "target": "node_25",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_9_node_13_54",
+      "source": "node_9",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_10_node_24_55",
+      "source": "node_10",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_11_node_17_56",
+      "source": "node_11",
+      "target": "node_17",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_11_node_16_57",
+      "source": "node_11",
+      "target": "node_16",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_11_node_13_58",
+      "source": "node_11",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_12_node_13_59",
+      "source": "node_12",
+      "target": "node_13",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_12_node_21_60",
+      "source": "node_12",
+      "target": "node_21",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_12_node_25_61",
+      "source": "node_12",
+      "target": "node_25",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_12_node_24_62",
+      "source": "node_12",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_26_63",
+      "source": "node_13",
+      "target": "node_26",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_24_64",
+      "source": "node_13",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_21_65",
+      "source": "node_13",
+      "target": "node_21",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_22_66",
+      "source": "node_13",
+      "target": "node_22",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_23_67",
+      "source": "node_13",
+      "target": "node_23",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_30_68",
+      "source": "node_13",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_31_69",
+      "source": "node_13",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_18_70",
+      "source": "node_13",
+      "target": "node_18",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_19_71",
+      "source": "node_13",
+      "target": "node_19",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_25_72",
+      "source": "node_13",
+      "target": "node_25",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_20_73",
+      "source": "node_13",
+      "target": "node_20",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_27_74",
+      "source": "node_13",
+      "target": "node_27",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_28_75",
+      "source": "node_13",
+      "target": "node_28",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_14_76",
+      "source": "node_13",
+      "target": "node_14",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_13_node_15_77",
+      "source": "node_13",
+      "target": "node_15",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_14_node_30_78",
+      "source": "node_14",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_14_node_27_79",
+      "source": "node_14",
+      "target": "node_27",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_14_node_28_80",
+      "source": "node_14",
+      "target": "node_28",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_14_node_18_81",
+      "source": "node_14",
+      "target": "node_18",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_14_node_15_82",
+      "source": "node_14",
+      "target": "node_15",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_14_node_31_83",
+      "source": "node_14",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_15_node_18_84",
+      "source": "node_15",
+      "target": "node_18",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_15_node_31_85",
+      "source": "node_15",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_16_node_17_86",
+      "source": "node_16",
+      "target": "node_17",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_18_node_31_87",
+      "source": "node_18",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_18_node_24_88",
+      "source": "node_18",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_20_node_31_89",
+      "source": "node_20",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_21_node_24_90",
+      "source": "node_21",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_21_node_22_91",
+      "source": "node_21",
+      "target": "node_22",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_21_node_23_92",
+      "source": "node_21",
+      "target": "node_23",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_21_node_30_93",
+      "source": "node_21",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_21_node_25_94",
+      "source": "node_21",
+      "target": "node_25",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_22_node_24_95",
+      "source": "node_22",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_22_node_23_96",
+      "source": "node_22",
+      "target": "node_23",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_22_node_30_97",
+      "source": "node_22",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_23_node_24_98",
+      "source": "node_23",
+      "target": "node_24",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_23_node_30_99",
+      "source": "node_23",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_24_node_26_100",
+      "source": "node_24",
+      "target": "node_26",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_24_node_30_101",
+      "source": "node_24",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_24_node_25_102",
+      "source": "node_24",
+      "target": "node_25",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_24_node_31_103",
+      "source": "node_24",
+      "target": "node_31",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_27_node_30_104",
+      "source": "node_27",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_27_node_28_105",
+      "source": "node_27",
+      "target": "node_28",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_node_28_node_30_106",
+      "source": "node_28",
+      "target": "node_30",
+      "label": "talk_to",
+      "type": "talk_to",
+      "weight": 1,
+      "properties": {
+        "type": "talk_to",
+        "observed": true,
+        "weight": 1
+      }
+    }
+  ]
+}

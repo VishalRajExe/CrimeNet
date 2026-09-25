@@ -1,0 +1,961 @@
+{
+  "id": "israel_lea_case1",
+  "name": "Israel LEA Case 1",
+  "description": "Law enforcement intercepted communication case 1",
+  "numNodes": 33,
+  "numEdges": 38,
+  "nodes": [
+    {
+      "id": "A",
+      "label": "A",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "47",
+          "11",
+          "42",
+          "44",
+          "48",
+          "43",
+          "46",
+          "50",
+          "51",
+          "49",
+          "41",
+          "40"
+        ],
+        "target_numbers": [
+          "51",
+          "46",
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "NA_spk_use_number_29",
+      "label": "NA_spk_use_number_29",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "29"
+        ],
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "B",
+      "label": "B",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "24",
+          "20",
+          "17",
+          "1",
+          "10",
+          "25",
+          "27",
+          "33",
+          "12",
+          "21",
+          "32",
+          "31",
+          "NA_source_number_#0",
+          "28",
+          "23",
+          "30",
+          "18",
+          "26",
+          "34",
+          "19",
+          "22",
+          "29"
+        ],
+        "target_numbers": [
+          "57",
+          "24",
+          "17",
+          "1",
+          "52",
+          "10",
+          "39",
+          "NA_target_number_#4",
+          "NA_target_number_#5",
+          "55",
+          "11",
+          "12",
+          "35",
+          "NA_target_number_#2",
+          "60",
+          "53",
+          "15",
+          "13",
+          "56",
+          "36",
+          "28",
+          "26",
+          "29",
+          "38"
+        ]
+      }
+    },
+    {
+      "id": "K",
+      "label": "K",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "J",
+      "label": "J",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "Q",
+      "label": "Q",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "G",
+      "label": "G",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "H",
+      "label": "H",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "R",
+      "label": "R",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "F",
+      "label": "F",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "45"
+        ]
+      }
+    },
+    {
+      "id": "S",
+      "label": "S",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "29"
+        ]
+      }
+    },
+    {
+      "id": "NA_spk_use_number_11",
+      "label": "NA_spk_use_number_11",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ],
+        "target_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "T",
+      "label": "T",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11",
+          "59",
+          "58"
+        ],
+        "target_numbers": [
+          "16",
+          "54",
+          "11",
+          "37",
+          "NA_target_number_#1",
+          "NA_target_number_#0"
+        ]
+      }
+    },
+    {
+      "id": "NA_spk_use_number_1",
+      "label": "NA_spk_use_number_1",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "1"
+        ],
+        "target_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "D",
+      "label": "D",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "1"
+        ]
+      }
+    },
+    {
+      "id": "SMS",
+      "label": "SMS",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "1",
+          "30"
+        ],
+        "target_numbers": [
+          "14",
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "N",
+      "label": "N",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "C",
+      "label": "C",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "I",
+      "label": "I",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "U",
+      "label": "U",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "35"
+        ]
+      }
+    },
+    {
+      "id": "M",
+      "label": "M",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "P",
+      "label": "P",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "O",
+      "label": "O",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "V",
+      "label": "V",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ],
+        "target_numbers": [
+          "NA_target_number_#3"
+        ]
+      }
+    },
+    {
+      "id": "E",
+      "label": "E",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ],
+        "target_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "W",
+      "label": "W",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "Y",
+      "label": "Y",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "10"
+        ]
+      }
+    },
+    {
+      "id": "2_NA_spks_use_number_11",
+      "label": "2_NA_spks_use_number_11",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "target_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "Z",
+      "label": "Z",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "L",
+      "label": "L",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "ZZ",
+      "label": "ZZ",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "11"
+        ]
+      }
+    },
+    {
+      "id": "X",
+      "label": "X",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "NA_source_number_#1"
+        ]
+      }
+    },
+    {
+      "id": "NA_spk_use_number_NA_source_number_#2",
+      "label": "NA_spk_use_number_NA_source_number_#2",
+      "type": "speaker",
+      "properties": {
+        "type": "speaker",
+        "source_numbers": [
+          "NA_source_number_#2"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_NA_spk_use_number_29_A_0",
+      "source": "NA_spk_use_number_29",
+      "target": "A",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 3,
+      "properties": {
+        "observed": true,
+        "weight": 3,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_NA_spk_use_number_29_1",
+      "source": "A",
+      "target": "NA_spk_use_number_29",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 10,
+      "properties": {
+        "observed": true,
+        "weight": 10,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_A_2",
+      "source": "B",
+      "target": "A",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_K_3",
+      "source": "A",
+      "target": "K",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_J_4",
+      "source": "A",
+      "target": "J",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_A_5",
+      "source": "A",
+      "target": "A",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_B_6",
+      "source": "A",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_Q_7",
+      "source": "A",
+      "target": "Q",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_G_8",
+      "source": "A",
+      "target": "G",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_H_9",
+      "source": "A",
+      "target": "H",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_F_R_10",
+      "source": "F",
+      "target": "R",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_A_S_11",
+      "source": "A",
+      "target": "S",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_NA_spk_use_number_11_12",
+      "source": "B",
+      "target": "NA_spk_use_number_11",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 29,
+      "properties": {
+        "observed": true,
+        "weight": 29,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_NA_spk_use_number_1_T_13",
+      "source": "NA_spk_use_number_1",
+      "target": "T",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 7,
+      "properties": {
+        "observed": true,
+        "weight": 7,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_D_B_14",
+      "source": "D",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_T_NA_spk_use_number_1_15",
+      "source": "T",
+      "target": "NA_spk_use_number_1",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_SMS_SMS_16",
+      "source": "SMS",
+      "target": "SMS",
+      "label": "SMS",
+      "type": "SMS",
+      "weight": 4,
+      "properties": {
+        "observed": true,
+        "weight": 4,
+        "type": "SMS"
+      }
+    },
+    {
+      "id": "e_NA_spk_use_number_11_B_17",
+      "source": "NA_spk_use_number_11",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 21,
+      "properties": {
+        "observed": true,
+        "weight": 21,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_N_18",
+      "source": "B",
+      "target": "N",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_C_19",
+      "source": "B",
+      "target": "C",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_T_20",
+      "source": "B",
+      "target": "T",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_I_B_21",
+      "source": "I",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_U_NA_spk_use_number_11_22",
+      "source": "U",
+      "target": "NA_spk_use_number_11",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_M_23",
+      "source": "B",
+      "target": "M",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_P_B_24",
+      "source": "P",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 2,
+      "properties": {
+        "observed": true,
+        "weight": 2,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_O_25",
+      "source": "B",
+      "target": "O",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_V_26",
+      "source": "B",
+      "target": "V",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_E_B_27",
+      "source": "E",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_V_B_28",
+      "source": "V",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_T_B_29",
+      "source": "T",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_W_B_30",
+      "source": "W",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_Y_E_31",
+      "source": "Y",
+      "target": "E",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_B_2_NA_spks_use_number_11_32",
+      "source": "B",
+      "target": "2_NA_spks_use_number_11",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_Z_B_33",
+      "source": "Z",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_L_B_34",
+      "source": "L",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_ZZ_B_35",
+      "source": "ZZ",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_X_B_36",
+      "source": "X",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    },
+    {
+      "id": "e_NA_spk_use_number_NA_source_number_#2_B_37",
+      "source": "NA_spk_use_number_NA_source_number_#2",
+      "target": "B",
+      "label": "phone_call",
+      "type": "phone_call",
+      "weight": 1,
+      "properties": {
+        "observed": true,
+        "weight": 1,
+        "type": "phone_call"
+      }
+    }
+  ]
+}

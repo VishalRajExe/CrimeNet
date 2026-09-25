@@ -1,0 +1,2406 @@
+{
+  "id": "montreal_gangs",
+  "name": "Montreal Street Gangs",
+  "description": "Street gangs in Montreal with co-offending ties",
+  "numNodes": 35,
+  "numEdges": 153,
+  "nodes": [
+    {
+      "id": "Bo-Gars",
+      "label": "Bo-Gars",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Bo-Gars",
+        "affiliation": "Bloods",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "BMF",
+      "label": "BMF",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "BMF",
+        "affiliation": "Bloods",
+        "ethnicity": "Hispanic",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "Green_Land",
+      "label": "Green_Land",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Green_Land",
+        "affiliation": "Bloods",
+        "ethnicity": "mixed",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "Lg_Side",
+      "label": "Lg Side",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Lg Side",
+        "affiliation": "Bloods",
+        "ethnicity": "Caucasian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "Plan_riel",
+      "label": "Plan riel",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Plan riel",
+        "affiliation": "Bloods",
+        "ethnicity": "mixed",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "18th",
+      "label": "18th",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "18th",
+        "affiliation": "Bloods",
+        "ethnicity": "Hispanic",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "187",
+      "label": "187",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "187",
+        "affiliation": "Bloods",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "AYB.2",
+      "label": "AYB.2",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "AYB.2",
+        "affiliation": "Bloods",
+        "ethnicity": "Asian"
+      }
+    },
+    {
+      "id": "AYB",
+      "label": "AYB",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "AYB",
+        "affiliation": "Bloods",
+        "ethnicity": "Asian",
+        "teriory": "West"
+      }
+    },
+    {
+      "id": "Uptown_Posse",
+      "label": "Uptown_Posse",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Uptown_Posse",
+        "affiliation": "Bloods",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "West"
+      }
+    },
+    {
+      "id": "Dangerous_Street",
+      "label": "Dangerous_Street",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Dangerous_Street",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "DPC",
+      "label": "DPC",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "DPC",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "J.O.K.E.R.S",
+      "label": "J.O.K.E.R.S",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "J.O.K.E.R.S",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "Pie-IX",
+      "label": "Pie-IX",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Pie-IX",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "Px-80",
+      "label": "Px-80",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Px-80",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "50_Niggaz",
+      "label": "50 Niggaz",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "50 Niggaz",
+        "affiliation": "Bloods",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "13th",
+      "label": "13th",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "13th",
+        "affiliation": "Crips",
+        "ethnicity": "Hispanic",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "67",
+      "label": "67",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "67",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "99",
+      "label": "99",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "99",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "146",
+      "label": "146",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "146",
+        "affiliation": "Crips",
+        "ethnicity": "mixed",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "Black_Dragons",
+      "label": "Black_Dragons",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Black_Dragons",
+        "affiliation": "Other",
+        "ethnicity": "Asian",
+        "teriory": "Downtown"
+      }
+    },
+    {
+      "id": "Outlaws",
+      "label": "Outlaws",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Outlaws",
+        "affiliation": "Other",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "Downtown"
+      }
+    },
+    {
+      "id": "South_Side",
+      "label": "South_Side",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "South_Side",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "Downtown"
+      }
+    },
+    {
+      "id": "White_Tigers",
+      "label": "White_Tigers",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "White_Tigers",
+        "affiliation": "Other",
+        "ethnicity": "Asian",
+        "teriory": "Downtown"
+      }
+    },
+    {
+      "id": "Motard",
+      "label": "Motard",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Motard",
+        "affiliation": "Other",
+        "ethnicity": "mixed",
+        "teriory": "Downtown"
+      }
+    },
+    {
+      "id": "Bronx",
+      "label": "Bronx",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Bronx",
+        "teriory": "West"
+      }
+    },
+    {
+      "id": "LPE",
+      "label": "LPE",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "LPE",
+        "teriory": "West"
+      }
+    },
+    {
+      "id": "PSC",
+      "label": "PSC",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "PSC",
+        "teriory": "West"
+      }
+    },
+    {
+      "id": "St.Henri",
+      "label": "St.Henri",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "St.Henri",
+        "teriory": "West"
+      }
+    },
+    {
+      "id": "V_Block",
+      "label": "V_Block",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "V_Block",
+        "teriory": "West"
+      }
+    },
+    {
+      "id": "47",
+      "label": "47",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "47",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian"
+      }
+    },
+    {
+      "id": "Blue_Devil.1",
+      "label": "Blue_Devil.1",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Blue_Devil.1",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian"
+      }
+    },
+    {
+      "id": "Blue_Devil.2",
+      "label": "Blue_Devil.2",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Blue_Devil.2",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian"
+      }
+    },
+    {
+      "id": "RTC",
+      "label": "RTC",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "RTC",
+        "affiliation": "Crips",
+        "ethnicity": "Afro-Canadian",
+        "teriory": "East"
+      }
+    },
+    {
+      "id": "Ve_Crew",
+      "label": "Ve_Crew",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Ve_Crew",
+        "affiliation": "Other",
+        "ethnicity": "Caucasian",
+        "teriory": "West"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_Bo-Gars_BMF_0",
+      "source": "Bo-Gars",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bo-Gars_18th_1",
+      "source": "Bo-Gars",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bo-Gars_J.O.K.E.R.S_2",
+      "source": "Bo-Gars",
+      "target": "J.O.K.E.R.S",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bo-Gars_13th_3",
+      "source": "Bo-Gars",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bo-Gars_47_4",
+      "source": "Bo-Gars",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bo-Gars_Blue_Devil.2_5",
+      "source": "Bo-Gars",
+      "target": "Blue_Devil.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_Bo-Gars_6",
+      "source": "BMF",
+      "target": "Bo-Gars",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_Green_Land_7",
+      "source": "BMF",
+      "target": "Green_Land",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_18th_8",
+      "source": "BMF",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_187_9",
+      "source": "BMF",
+      "target": "187",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_AYB.2_10",
+      "source": "BMF",
+      "target": "AYB.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_AYB_11",
+      "source": "BMF",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_Uptown_Posse_12",
+      "source": "BMF",
+      "target": "Uptown_Posse",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_DPC_13",
+      "source": "BMF",
+      "target": "DPC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_Pie-IX_14",
+      "source": "BMF",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_Px-80_15",
+      "source": "BMF",
+      "target": "Px-80",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_50_Niggaz_16",
+      "source": "BMF",
+      "target": "50_Niggaz",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_13th_17",
+      "source": "BMF",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_67_18",
+      "source": "BMF",
+      "target": "67",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_99_19",
+      "source": "BMF",
+      "target": "99",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_47_20",
+      "source": "BMF",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_Blue_Devil.1_21",
+      "source": "BMF",
+      "target": "Blue_Devil.1",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_Blue_Devil.2_22",
+      "source": "BMF",
+      "target": "Blue_Devil.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BMF_RTC_23",
+      "source": "BMF",
+      "target": "RTC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Green_Land_BMF_24",
+      "source": "Green_Land",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Green_Land_47_25",
+      "source": "Green_Land",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lg_Side_18th_26",
+      "source": "Lg_Side",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Lg_Side_13th_27",
+      "source": "Lg_Side",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Plan_riel_47_28",
+      "source": "Plan_riel",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_Bo-Gars_29",
+      "source": "18th",
+      "target": "Bo-Gars",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_BMF_30",
+      "source": "18th",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_Lg_Side_31",
+      "source": "18th",
+      "target": "Lg_Side",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_187_32",
+      "source": "18th",
+      "target": "187",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_AYB.2_33",
+      "source": "18th",
+      "target": "AYB.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_AYB_34",
+      "source": "18th",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_Uptown_Posse_35",
+      "source": "18th",
+      "target": "Uptown_Posse",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_DPC_36",
+      "source": "18th",
+      "target": "DPC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_J.O.K.E.R.S_37",
+      "source": "18th",
+      "target": "J.O.K.E.R.S",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_Pie-IX_38",
+      "source": "18th",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_Px-80_39",
+      "source": "18th",
+      "target": "Px-80",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_13th_40",
+      "source": "18th",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_67_41",
+      "source": "18th",
+      "target": "67",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_18th_99_42",
+      "source": "18th",
+      "target": "99",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_187_BMF_43",
+      "source": "187",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_187_18th_44",
+      "source": "187",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_187_RTC_45",
+      "source": "187",
+      "target": "RTC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB.2_BMF_46",
+      "source": "AYB.2",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB.2_18th_47",
+      "source": "AYB.2",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB.2_AYB_48",
+      "source": "AYB.2",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_BMF_49",
+      "source": "AYB",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_18th_50",
+      "source": "AYB",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_AYB.2_51",
+      "source": "AYB",
+      "target": "AYB.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_Uptown_Posse_52",
+      "source": "AYB",
+      "target": "Uptown_Posse",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_Pie-IX_53",
+      "source": "AYB",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_13th_54",
+      "source": "AYB",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_Black_Dragons_55",
+      "source": "AYB",
+      "target": "Black_Dragons",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_AYB_White_Tigers_56",
+      "source": "AYB",
+      "target": "White_Tigers",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Uptown_Posse_BMF_57",
+      "source": "Uptown_Posse",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Uptown_Posse_18th_58",
+      "source": "Uptown_Posse",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Uptown_Posse_AYB_59",
+      "source": "Uptown_Posse",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dangerous_Street_Pie-IX_60",
+      "source": "Dangerous_Street",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dangerous_Street_13th_61",
+      "source": "Dangerous_Street",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Dangerous_Street_South_Side_62",
+      "source": "Dangerous_Street",
+      "target": "South_Side",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_DPC_BMF_63",
+      "source": "DPC",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_DPC_18th_64",
+      "source": "DPC",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_DPC_J.O.K.E.R.S_65",
+      "source": "DPC",
+      "target": "J.O.K.E.R.S",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_J.O.K.E.R.S_Bo-Gars_66",
+      "source": "J.O.K.E.R.S",
+      "target": "Bo-Gars",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_J.O.K.E.R.S_18th_67",
+      "source": "J.O.K.E.R.S",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_J.O.K.E.R.S_DPC_68",
+      "source": "J.O.K.E.R.S",
+      "target": "DPC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_J.O.K.E.R.S_Pie-IX_69",
+      "source": "J.O.K.E.R.S",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_J.O.K.E.R.S_50_Niggaz_70",
+      "source": "J.O.K.E.R.S",
+      "target": "50_Niggaz",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_J.O.K.E.R.S_13th_71",
+      "source": "J.O.K.E.R.S",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_J.O.K.E.R.S_Motard_72",
+      "source": "J.O.K.E.R.S",
+      "target": "Motard",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_BMF_73",
+      "source": "Pie-IX",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_18th_74",
+      "source": "Pie-IX",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_AYB_75",
+      "source": "Pie-IX",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_Dangerous_Street_76",
+      "source": "Pie-IX",
+      "target": "Dangerous_Street",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_J.O.K.E.R.S_77",
+      "source": "Pie-IX",
+      "target": "J.O.K.E.R.S",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_Px-80_78",
+      "source": "Pie-IX",
+      "target": "Px-80",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_50_Niggaz_79",
+      "source": "Pie-IX",
+      "target": "50_Niggaz",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pie-IX_South_Side_80",
+      "source": "Pie-IX",
+      "target": "South_Side",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Px-80_BMF_81",
+      "source": "Px-80",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Px-80_18th_82",
+      "source": "Px-80",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Px-80_Pie-IX_83",
+      "source": "Px-80",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Px-80_50_Niggaz_84",
+      "source": "Px-80",
+      "target": "50_Niggaz",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Px-80_13th_85",
+      "source": "Px-80",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_50_Niggaz_BMF_86",
+      "source": "50_Niggaz",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_50_Niggaz_J.O.K.E.R.S_87",
+      "source": "50_Niggaz",
+      "target": "J.O.K.E.R.S",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_50_Niggaz_Pie-IX_88",
+      "source": "50_Niggaz",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_50_Niggaz_Px-80_89",
+      "source": "50_Niggaz",
+      "target": "Px-80",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_50_Niggaz_13th_90",
+      "source": "50_Niggaz",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_50_Niggaz_South_Side_91",
+      "source": "50_Niggaz",
+      "target": "South_Side",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_50_Niggaz_47_92",
+      "source": "50_Niggaz",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_Bo-Gars_93",
+      "source": "13th",
+      "target": "Bo-Gars",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_BMF_94",
+      "source": "13th",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_Lg_Side_95",
+      "source": "13th",
+      "target": "Lg_Side",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_18th_96",
+      "source": "13th",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_AYB_97",
+      "source": "13th",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_Dangerous_Street_98",
+      "source": "13th",
+      "target": "Dangerous_Street",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_J.O.K.E.R.S_99",
+      "source": "13th",
+      "target": "J.O.K.E.R.S",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_Px-80_100",
+      "source": "13th",
+      "target": "Px-80",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_50_Niggaz_101",
+      "source": "13th",
+      "target": "50_Niggaz",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_67_102",
+      "source": "13th",
+      "target": "67",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_99_103",
+      "source": "13th",
+      "target": "99",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_South_Side_104",
+      "source": "13th",
+      "target": "South_Side",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_47_105",
+      "source": "13th",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_Blue_Devil.2_106",
+      "source": "13th",
+      "target": "Blue_Devil.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_13th_RTC_107",
+      "source": "13th",
+      "target": "RTC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_67_BMF_108",
+      "source": "67",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_67_18th_109",
+      "source": "67",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_67_13th_110",
+      "source": "67",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_99_BMF_111",
+      "source": "99",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_99_18th_112",
+      "source": "99",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_99_47_113",
+      "source": "99",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_99_RTC_114",
+      "source": "99",
+      "target": "RTC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_146_47_115",
+      "source": "146",
+      "target": "47",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Black_Dragons_AYB_116",
+      "source": "Black_Dragons",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Outlaws_Blue_Devil.2_117",
+      "source": "Outlaws",
+      "target": "Blue_Devil.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_South_Side_18th_118",
+      "source": "South_Side",
+      "target": "18th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_South_Side_Dangerous_Street_119",
+      "source": "South_Side",
+      "target": "Dangerous_Street",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_South_Side_Pie-IX_120",
+      "source": "South_Side",
+      "target": "Pie-IX",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_South_Side_50_Niggaz_121",
+      "source": "South_Side",
+      "target": "50_Niggaz",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_South_Side_13th_122",
+      "source": "South_Side",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_South_Side_RTC_123",
+      "source": "South_Side",
+      "target": "RTC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_White_Tigers_AYB_124",
+      "source": "White_Tigers",
+      "target": "AYB",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Motard_J.O.K.E.R.S_125",
+      "source": "Motard",
+      "target": "J.O.K.E.R.S",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_LPE_Ve_Crew_126",
+      "source": "LPE",
+      "target": "Ve_Crew",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_PSC_Ve_Crew_127",
+      "source": "PSC",
+      "target": "Ve_Crew",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_St.Henri_Ve_Crew_128",
+      "source": "St.Henri",
+      "target": "Ve_Crew",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_Bo-Gars_129",
+      "source": "47",
+      "target": "Bo-Gars",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_BMF_130",
+      "source": "47",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_Green_Land_131",
+      "source": "47",
+      "target": "Green_Land",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_Plan_riel_132",
+      "source": "47",
+      "target": "Plan_riel",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_50_Niggaz_133",
+      "source": "47",
+      "target": "50_Niggaz",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_13th_134",
+      "source": "47",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_99_135",
+      "source": "47",
+      "target": "99",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_47_146_136",
+      "source": "47",
+      "target": "146",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.1_BMF_137",
+      "source": "Blue_Devil.1",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.1_Blue_Devil.2_138",
+      "source": "Blue_Devil.1",
+      "target": "Blue_Devil.2",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.1_RTC_139",
+      "source": "Blue_Devil.1",
+      "target": "RTC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.2_Bo-Gars_140",
+      "source": "Blue_Devil.2",
+      "target": "Bo-Gars",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.2_BMF_141",
+      "source": "Blue_Devil.2",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.2_13th_142",
+      "source": "Blue_Devil.2",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.2_Outlaws_143",
+      "source": "Blue_Devil.2",
+      "target": "Outlaws",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Blue_Devil.2_Blue_Devil.1_144",
+      "source": "Blue_Devil.2",
+      "target": "Blue_Devil.1",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_RTC_BMF_145",
+      "source": "RTC",
+      "target": "BMF",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_RTC_187_146",
+      "source": "RTC",
+      "target": "187",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_RTC_13th_147",
+      "source": "RTC",
+      "target": "13th",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_RTC_South_Side_148",
+      "source": "RTC",
+      "target": "South_Side",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_RTC_Blue_Devil.1_149",
+      "source": "RTC",
+      "target": "Blue_Devil.1",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ve_Crew_LPE_150",
+      "source": "Ve_Crew",
+      "target": "LPE",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ve_Crew_PSC_151",
+      "source": "Ve_Crew",
+      "target": "PSC",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ve_Crew_St.Henri_152",
+      "source": "Ve_Crew",
+      "target": "St.Henri",
+      "label": "prior_contact",
+      "type": "prior_contact",
+      "weight": 1,
+      "properties": {
+        "type": "prior_contact",
+        "observed": true,
+        "weight": 1
+      }
+    }
+  ]
+}

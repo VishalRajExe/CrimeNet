@@ -1,5 +1,24 @@
 # CrimeNet — Criminal Network Analysis & Intelligence Platform
 
+> **Current deployable prototype:** FastAPI + React/Vite investigator command center.
+> The legacy Dash visualizer and its older dependency instructions remain in the
+> repository for historical/reference use, but they are not the Render deployment
+> described in [`DEPLOYMENT.md`](./DEPLOYMENT.md).
+>
+> **Quick start for the current prototype:**
+>
+> ```powershell
+> python -m pip install -r backend/requirements.txt
+> npm --prefix frontend install
+> python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
+> ```
+>
+> In a second terminal:
+>
+> ```powershell
+> npm --prefix frontend run dev -- --host 127.0.0.1 --port 5173
+> ```
+
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![Dash](https://img.shields.io/badge/Dash-2.18.1-blue.svg)](https://dash.plotly.com/)
 [![NetworkX](https://img.shields.io/badge/networkx-3.3-orange.svg)](https://networkx.org/)

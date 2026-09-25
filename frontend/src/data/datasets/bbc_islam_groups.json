@@ -1,0 +1,1373 @@
+{
+  "id": "bbc_islam_groups",
+  "name": "BBC Islam Groups",
+  "description": "Religious and political covert network",
+  "numNodes": 56,
+  "numEdges": 66,
+  "nodes": [
+    {
+      "id": "Yayha_al_Azari",
+      "label": "Yayha al Azari",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Yayha al Azari"
+      }
+    },
+    {
+      "id": "Abu_Ubayda_al_Masri",
+      "label": "Abu Ubayda al Masri",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Ubayda al Masri"
+      }
+    },
+    {
+      "id": "Abu_Mohammad_al_Anzari",
+      "label": "Abu Mohammad al Anzari",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Mohammad al Anzari"
+      }
+    },
+    {
+      "id": "Omar_al_Shishani",
+      "label": "Omar al Shishani",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Omar al Shishani"
+      }
+    },
+    {
+      "id": "Abu_Bakr_al_Baghdadi",
+      "label": "Abu Bakr al Baghdadi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Bakr al Baghdadi"
+      }
+    },
+    {
+      "id": "Amr_al_Absi",
+      "label": "Amr al Absi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Amr al Absi"
+      }
+    },
+    {
+      "id": "Ahmad_al_Dhabet",
+      "label": "Ahmad al Dhabet",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Ahmad al Dhabet"
+      }
+    },
+    {
+      "id": "Ahmad_al_Absi",
+      "label": "Ahmad al Absi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Ahmad al Absi"
+      }
+    },
+    {
+      "id": "Abu_Samer_al_Shami",
+      "label": "Abu Samer al Shami",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Samer al Shami"
+      }
+    },
+    {
+      "id": "Abu_Mohammed_al_Absi",
+      "label": "Abu Mohammed al Absi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Mohammed al Absi"
+      }
+    },
+    {
+      "id": "Abu_Ahmad_al_Alwani",
+      "label": "Abu Ahmad al Alwani",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Ahmad al Alwani"
+      }
+    },
+    {
+      "id": "Abu_Ali_al_Anbari",
+      "label": "Abu Ali al Anbari",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Ali al Anbari"
+      }
+    },
+    {
+      "id": "al_Sheikn_al_Adnani",
+      "label": "al Sheikn al Adnani",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "al Sheikn al Adnani"
+      }
+    },
+    {
+      "id": "Haji_Bakr",
+      "label": "Haji Bakr",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Haji Bakr"
+      }
+    },
+    {
+      "id": "Abu_Osama_al_Tunisi",
+      "label": "Abu Osama al Tunisi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Osama al Tunisi"
+      }
+    },
+    {
+      "id": "Sameer_Abd",
+      "label": "Sameer Abd",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Sameer Abd"
+      }
+    },
+    {
+      "id": "Abu_Mohammad_al_Adnani",
+      "label": "Abu Mohammad al Adnani",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Mohammad al Adnani"
+      }
+    },
+    {
+      "id": "Abu_Sami_al_Walli",
+      "label": "Abu Sami al Walli",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Sami al Walli"
+      }
+    },
+    {
+      "id": "Abu_Ishak_al_Halabi",
+      "label": "Abu Ishak al Halabi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Ishak al Halabi"
+      }
+    },
+    {
+      "id": "Abu_Imad",
+      "label": "Abu Imad",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Imad"
+      }
+    },
+    {
+      "id": "Abu_Abdurrahman",
+      "label": "Abu Abdurrahman",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Abdurrahman"
+      }
+    },
+    {
+      "id": "Ahmad_Sameer_Abd",
+      "label": "Ahmad Sameer Abd",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Ahmad Sameer Abd"
+      }
+    },
+    {
+      "id": "Abu_Hassan_al_Jazrawi",
+      "label": "Abu Hassan al Jazrawi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Hassan al Jazrawi"
+      }
+    },
+    {
+      "id": "Mustafa_Debo_Abu_Islam",
+      "label": "Mustafa Debo Abu Islam",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Mustafa Debo Abu Islam"
+      }
+    },
+    {
+      "id": "Al_Sheikn_Hamoud_Kene",
+      "label": "Al Sheikn Hamoud Kene",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Al Sheikn Hamoud Kene"
+      }
+    },
+    {
+      "id": "Salim_Amer_Alweh",
+      "label": "Salim Amer Alweh",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Salim Amer Alweh"
+      }
+    },
+    {
+      "id": "Abdul_Razzaq_Tlas",
+      "label": "Abdul Razzaq Tlas",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abdul Razzaq Tlas"
+      }
+    },
+    {
+      "id": "Abduljawad",
+      "label": "Abduljawad",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abduljawad"
+      }
+    },
+    {
+      "id": "Abu_Fayez",
+      "label": "Abu Fayez",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Fayez"
+      }
+    },
+    {
+      "id": "Abu_Sayah_Tayara",
+      "label": "Abu Sayah Tayara",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Sayah Tayara"
+      }
+    },
+    {
+      "id": "Abu_Said_Lulua",
+      "label": "Abu Said Lulua",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Said Lulua"
+      }
+    },
+    {
+      "id": "Hasan_al_Halabi",
+      "label": "Hasan al Halabi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Hasan al Halabi"
+      }
+    },
+    {
+      "id": "Eyad_Awad",
+      "label": "Eyad Awad",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Eyad Awad"
+      }
+    },
+    {
+      "id": "Khaled_Amer_Alweh",
+      "label": "Khaled Amer Alweh",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Khaled Amer Alweh"
+      }
+    },
+    {
+      "id": "Ahmad_Saleh",
+      "label": "Ahmad Saleh",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Ahmad Saleh"
+      }
+    },
+    {
+      "id": "Abdul_Majeed_al_Uteibi",
+      "label": "Abdul Majeed al Uteibi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abdul Majeed al Uteibi"
+      }
+    },
+    {
+      "id": "Ayman_al_Tal",
+      "label": "Ayman al Tal",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Ayman al Tal"
+      }
+    },
+    {
+      "id": "Abu_Ahmad_al_Suri",
+      "label": "Abu Ahmad al Suri",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Ahmad al Suri"
+      }
+    },
+    {
+      "id": "Kamal_Karim",
+      "label": "Kamal Karim",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Kamal Karim"
+      }
+    },
+    {
+      "id": "Abu_al_QaQa_al_Tunisi",
+      "label": "Abu al QaQa al Tunisi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu al QaQa al Tunisi"
+      }
+    },
+    {
+      "id": "Mohamoud_Sadkli",
+      "label": "Mohamoud Sadkli",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Mohamoud Sadkli"
+      }
+    },
+    {
+      "id": "Abu_Bakr_Misraba",
+      "label": "Abu Bakr Misraba",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Bakr Misraba"
+      }
+    },
+    {
+      "id": "Abu_Basheer",
+      "label": "Abu Basheer",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Basheer"
+      }
+    },
+    {
+      "id": "Shahoud_Shahoud",
+      "label": "Shahoud Shahoud",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Shahoud Shahoud"
+      }
+    },
+    {
+      "id": "Abu_Dujana",
+      "label": "Abu Dujana",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Dujana"
+      }
+    },
+    {
+      "id": "Yasser_Abdulrazzaq",
+      "label": "Yasser Abdulrazzaq",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Yasser Abdulrazzaq"
+      }
+    },
+    {
+      "id": "Abu_Dujana_al_Iraqi",
+      "label": "Abu Dujana al Iraqi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Dujana al Iraqi"
+      }
+    },
+    {
+      "id": "Abu_Islam",
+      "label": "Abu Islam",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Islam"
+      }
+    },
+    {
+      "id": "Abu_Khalil",
+      "label": "Abu Khalil",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Khalil"
+      }
+    },
+    {
+      "id": "Abu_Mujahid",
+      "label": "Abu Mujahid",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Mujahid"
+      }
+    },
+    {
+      "id": "Abu_Said_(Batata)",
+      "label": "Abu Said (Batata)",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Said (Batata)"
+      }
+    },
+    {
+      "id": "Abu_Steif_al_Iraqi",
+      "label": "Abu Steif al Iraqi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Steif al Iraqi"
+      }
+    },
+    {
+      "id": "Abu_Thabet_al_Iraqi",
+      "label": "Abu Thabet al Iraqi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Thabet al Iraqi"
+      }
+    },
+    {
+      "id": "Ali_Aswad_Jabouri",
+      "label": "Ali Aswad Jabouri",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Ali Aswad Jabouri"
+      }
+    },
+    {
+      "id": "Mohamoud_al_Khalidi_Yazan",
+      "label": "Mohamoud al Khalidi Yazan",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Mohamoud al Khalidi Yazan"
+      }
+    },
+    {
+      "id": "Abu_Yahya_al_Tunisi",
+      "label": "Abu Yahya al Tunisi",
+      "type": "group",
+      "properties": {
+        "type": "group",
+        "name": "Abu Yahya al Tunisi"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_Yayha_al_Azari_Omar_al_Shishani_0",
+      "source": "Yayha_al_Azari",
+      "target": "Omar_al_Shishani",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Omar_al_Shishani_Yayha_al_Azari_1",
+      "source": "Omar_al_Shishani",
+      "target": "Yayha_al_Azari",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Sameer_Abd_2",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Sameer_Abd",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Amr_al_Absi_Ahmad_al_Dhabet_3",
+      "source": "Amr_al_Absi",
+      "target": "Ahmad_al_Dhabet",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Amr_al_Absi_Abu_Samer_al_Shami_4",
+      "source": "Amr_al_Absi",
+      "target": "Abu_Samer_al_Shami",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmad_al_Dhabet_Amr_al_Absi_5",
+      "source": "Ahmad_al_Dhabet",
+      "target": "Amr_al_Absi",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Samer_al_Shami_Amr_al_Absi_6",
+      "source": "Abu_Samer_al_Shami",
+      "target": "Amr_al_Absi",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sameer_Abd_Abu_Bakr_al_Baghdadi_7",
+      "source": "Sameer_Abd",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammad_al_Adnani_Abu_Sami_al_Walli_8",
+      "source": "Abu_Mohammad_al_Adnani",
+      "target": "Abu_Sami_al_Walli",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammad_al_Adnani_Abu_Ishak_al_Halabi_9",
+      "source": "Abu_Mohammad_al_Adnani",
+      "target": "Abu_Ishak_al_Halabi",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammad_al_Adnani_Abu_Imad_10",
+      "source": "Abu_Mohammad_al_Adnani",
+      "target": "Abu_Imad",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Sami_al_Walli_Abu_Mohammad_al_Adnani_11",
+      "source": "Abu_Sami_al_Walli",
+      "target": "Abu_Mohammad_al_Adnani",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Ishak_al_Halabi_Abu_Mohammad_al_Adnani_12",
+      "source": "Abu_Ishak_al_Halabi",
+      "target": "Abu_Mohammad_al_Adnani",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Imad_Abu_Mohammad_al_Adnani_13",
+      "source": "Abu_Imad",
+      "target": "Abu_Mohammad_al_Adnani",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abdul_Razzaq_Tlas_Hasan_al_Halabi_14",
+      "source": "Abdul_Razzaq_Tlas",
+      "target": "Hasan_al_Halabi",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abduljawad_Abu_Said_Lulua_15",
+      "source": "Abduljawad",
+      "target": "Abu_Said_Lulua",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Fayez_Abu_Sayah_Tayara_16",
+      "source": "Abu_Fayez",
+      "target": "Abu_Sayah_Tayara",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Sayah_Tayara_Abu_Fayez_17",
+      "source": "Abu_Sayah_Tayara",
+      "target": "Abu_Fayez",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Said_Lulua_Abduljawad_18",
+      "source": "Abu_Said_Lulua",
+      "target": "Abduljawad",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Hasan_al_Halabi_Abdul_Razzaq_Tlas_19",
+      "source": "Hasan_al_Halabi",
+      "target": "Abdul_Razzaq_Tlas",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Hasan_al_Halabi_Eyad_Awad_20",
+      "source": "Hasan_al_Halabi",
+      "target": "Eyad_Awad",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Eyad_Awad_Hasan_al_Halabi_21",
+      "source": "Eyad_Awad",
+      "target": "Hasan_al_Halabi",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Khaled_Amer_Alweh_Ahmad_Saleh_22",
+      "source": "Khaled_Amer_Alweh",
+      "target": "Ahmad_Saleh",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmad_Saleh_Khaled_Amer_Alweh_23",
+      "source": "Ahmad_Saleh",
+      "target": "Khaled_Amer_Alweh",
+      "label": "frienship",
+      "type": "frienship",
+      "weight": 1,
+      "properties": {
+        "type": "frienship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Abu_Osama_al_Tunisi_24",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Abu_Osama_al_Tunisi",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Amr_al_Absi_Ahmad_al_Absi_25",
+      "source": "Amr_al_Absi",
+      "target": "Ahmad_al_Absi",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Amr_al_Absi_Abu_Mohammed_al_Absi_26",
+      "source": "Amr_al_Absi",
+      "target": "Abu_Mohammed_al_Absi",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmad_al_Absi_Amr_al_Absi_27",
+      "source": "Ahmad_al_Absi",
+      "target": "Amr_al_Absi",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammed_al_Absi_Amr_al_Absi_28",
+      "source": "Abu_Mohammed_al_Absi",
+      "target": "Amr_al_Absi",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Osama_al_Tunisi_Abu_Bakr_al_Baghdadi_29",
+      "source": "Abu_Osama_al_Tunisi",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sameer_Abd_Ahmad_Sameer_Abd_30",
+      "source": "Sameer_Abd",
+      "target": "Ahmad_Sameer_Abd",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammad_al_Adnani_Abu_Abdurrahman_31",
+      "source": "Abu_Mohammad_al_Adnani",
+      "target": "Abu_Abdurrahman",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Abdurrahman_Abu_Mohammad_al_Adnani_32",
+      "source": "Abu_Abdurrahman",
+      "target": "Abu_Mohammad_al_Adnani",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ahmad_Sameer_Abd_Sameer_Abd_33",
+      "source": "Ahmad_Sameer_Abd",
+      "target": "Sameer_Abd",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Salim_Amer_Alweh_Khaled_Amer_Alweh_34",
+      "source": "Salim_Amer_Alweh",
+      "target": "Khaled_Amer_Alweh",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Khaled_Amer_Alweh_Salim_Amer_Alweh_35",
+      "source": "Khaled_Amer_Alweh",
+      "target": "Salim_Amer_Alweh",
+      "label": "kinship",
+      "type": "kinship",
+      "weight": 1,
+      "properties": {
+        "type": "kinship",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Ubayda_al_Masri_Omar_al_Shishani_36",
+      "source": "Abu_Ubayda_al_Masri",
+      "target": "Omar_al_Shishani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammad_al_Anzari_Omar_al_Shishani_37",
+      "source": "Abu_Mohammad_al_Anzari",
+      "target": "Omar_al_Shishani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Omar_al_Shishani_Abu_Ubayda_al_Masri_38",
+      "source": "Omar_al_Shishani",
+      "target": "Abu_Ubayda_al_Masri",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Omar_al_Shishani_Abu_Mohammad_al_Anzari_39",
+      "source": "Omar_al_Shishani",
+      "target": "Abu_Mohammad_al_Anzari",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Omar_al_Shishani_Abu_Bakr_al_Baghdadi_40",
+      "source": "Omar_al_Shishani",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Omar_al_Shishani_Amr_al_Absi_41",
+      "source": "Omar_al_Shishani",
+      "target": "Amr_al_Absi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Omar_al_Shishani_42",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Omar_al_Shishani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Amr_al_Absi_43",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Amr_al_Absi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Abu_Ahmad_al_Alwani_44",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Abu_Ahmad_al_Alwani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Abu_Ali_al_Anbari_45",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Abu_Ali_al_Anbari",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_al_Sheikn_al_Adnani_46",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "al_Sheikn_al_Adnani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Haji_Bakr_47",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Haji_Bakr",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Bakr_al_Baghdadi_Abu_Mohammad_al_Adnani_48",
+      "source": "Abu_Bakr_al_Baghdadi",
+      "target": "Abu_Mohammad_al_Adnani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Amr_al_Absi_Omar_al_Shishani_49",
+      "source": "Amr_al_Absi",
+      "target": "Omar_al_Shishani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Amr_al_Absi_Abu_Bakr_al_Baghdadi_50",
+      "source": "Amr_al_Absi",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Amr_al_Absi_Abu_Mohammad_al_Adnani_51",
+      "source": "Amr_al_Absi",
+      "target": "Abu_Mohammad_al_Adnani",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Ahmad_al_Alwani_Abu_Bakr_al_Baghdadi_52",
+      "source": "Abu_Ahmad_al_Alwani",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Ali_al_Anbari_Abu_Bakr_al_Baghdadi_53",
+      "source": "Abu_Ali_al_Anbari",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_al_Sheikn_al_Adnani_Abu_Bakr_al_Baghdadi_54",
+      "source": "al_Sheikn_al_Adnani",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Haji_Bakr_Abu_Bakr_al_Baghdadi_55",
+      "source": "Haji_Bakr",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Osama_al_Tunisi_Mustafa_Debo_Abu_Islam_56",
+      "source": "Abu_Osama_al_Tunisi",
+      "target": "Mustafa_Debo_Abu_Islam",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Osama_al_Tunisi_Al_Sheikn_Hamoud_Kene_57",
+      "source": "Abu_Osama_al_Tunisi",
+      "target": "Al_Sheikn_Hamoud_Kene",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sameer_Abd_Abu_Hassan_al_Jazrawi_58",
+      "source": "Sameer_Abd",
+      "target": "Abu_Hassan_al_Jazrawi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammad_al_Adnani_Abu_Bakr_al_Baghdadi_59",
+      "source": "Abu_Mohammad_al_Adnani",
+      "target": "Abu_Bakr_al_Baghdadi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Mohammad_al_Adnani_Amr_al_Absi_60",
+      "source": "Abu_Mohammad_al_Adnani",
+      "target": "Amr_al_Absi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Abu_Hassan_al_Jazrawi_Sameer_Abd_61",
+      "source": "Abu_Hassan_al_Jazrawi",
+      "target": "Sameer_Abd",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mustafa_Debo_Abu_Islam_Abu_Osama_al_Tunisi_62",
+      "source": "Mustafa_Debo_Abu_Islam",
+      "target": "Abu_Osama_al_Tunisi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mustafa_Debo_Abu_Islam_Al_Sheikn_Hamoud_Kene_63",
+      "source": "Mustafa_Debo_Abu_Islam",
+      "target": "Al_Sheikn_Hamoud_Kene",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Al_Sheikn_Hamoud_Kene_Abu_Osama_al_Tunisi_64",
+      "source": "Al_Sheikn_Hamoud_Kene",
+      "target": "Abu_Osama_al_Tunisi",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Al_Sheikn_Hamoud_Kene_Mustafa_Debo_Abu_Islam_65",
+      "source": "Al_Sheikn_Hamoud_Kene",
+      "target": "Mustafa_Debo_Abu_Islam",
+      "label": "link",
+      "type": "link",
+      "weight": 1,
+      "properties": {
+        "type": "link",
+        "observed": true,
+        "weight": 1
+      }
+    }
+  ]
+}

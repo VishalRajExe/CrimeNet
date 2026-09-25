@@ -1,0 +1,1353 @@
+{
+  "id": "madoff",
+  "name": "Madoff Frauds",
+  "description": "Bernard Madoff Ponzi scheme financial and familial network",
+  "numNodes": 61,
+  "numEdges": 61,
+  "nodes": [
+    {
+      "id": "HSBC_Holdings",
+      "label": "HSBC_Holdings",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "HSBC_Holdings"
+      }
+    },
+    {
+      "id": "Genevalor_Benbassat",
+      "label": "Genevalor_Benbassat",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Genevalor_Benbassat"
+      }
+    },
+    {
+      "id": "Phoenix_Holdings",
+      "label": "Phoenix_Holdings",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Phoenix_Holdings"
+      }
+    },
+    {
+      "id": "Thema_Fund",
+      "label": "Thema_Fund",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Thema_Fund"
+      }
+    },
+    {
+      "id": "Herald_Lux_Fund",
+      "label": "Herald_Lux_Fund",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Herald_Lux_Fund"
+      }
+    },
+    {
+      "id": "Capital_Bank_Austria",
+      "label": "Capital_Bank_Austria",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Capital_Bank_Austria"
+      }
+    },
+    {
+      "id": "Cohmad_securities",
+      "label": "Cohmad_securities",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Cohmad_securities"
+      }
+    },
+    {
+      "id": "Bank_Medici",
+      "label": "Bank_Medici",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Bank_Medici"
+      }
+    },
+    {
+      "id": "UniCredit_SpA",
+      "label": "UniCredit_SpA",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "UniCredit_SpA"
+      }
+    },
+    {
+      "id": "Pioneer_Alt_Investments",
+      "label": "Pioneer_Alt_Investments",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Pioneer_Alt_Investments"
+      }
+    },
+    {
+      "id": "Rothschild_Cie",
+      "label": "Rothschild_Cie",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Rothschild_Cie"
+      }
+    },
+    {
+      "id": "Access_Int_Advisors",
+      "label": "Access_Int_Advisors",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Access_Int_Advisors"
+      }
+    },
+    {
+      "id": "BNP_Paribas",
+      "label": "BNP_Paribas",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "BNP_Paribas"
+      }
+    },
+    {
+      "id": "EIM_Group",
+      "label": "EIM_Group",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "EIM_Group"
+      }
+    },
+    {
+      "id": "Nipponkoa_Insurance",
+      "label": "Nipponkoa_Insurance",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Nipponkoa_Insurance"
+      }
+    },
+    {
+      "id": "Mirabaud_Cie",
+      "label": "Mirabaud_Cie",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Mirabaud_Cie"
+      }
+    },
+    {
+      "id": "Zeus_Partners_Ltd",
+      "label": "Zeus_Partners_Ltd",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Zeus_Partners_Ltd"
+      }
+    },
+    {
+      "id": "Banco_Safra",
+      "label": "Banco_Safra",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Banco_Safra"
+      }
+    },
+    {
+      "id": "CMG",
+      "label": "CMG",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "CMG"
+      }
+    },
+    {
+      "id": "Brighton_Co",
+      "label": "Brighton_Co",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Brighton_Co"
+      }
+    },
+    {
+      "id": "Avellino_Bienes",
+      "label": "Avellino_Bienes",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Avellino_Bienes"
+      }
+    },
+    {
+      "id": "Neu_Privat_Bank",
+      "label": "Neu_Privat_Bank",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Neu_Privat_Bank"
+      }
+    },
+    {
+      "id": "Banco_Santander",
+      "label": "Banco_Santander",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Banco_Santander"
+      }
+    },
+    {
+      "id": "Optimal_Strategic_US",
+      "label": "Optimal_Strategic_US",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Optimal_Strategic_US"
+      }
+    },
+    {
+      "id": "Sumitomo_Life_Ins",
+      "label": "Sumitomo_Life_Ins",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Sumitomo_Life_Ins"
+      }
+    },
+    {
+      "id": "Fukoku_Mutual_Life",
+      "label": "Fukoku_Mutual_Life",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Fukoku_Mutual_Life"
+      }
+    },
+    {
+      "id": "Fix_Asset_Mgt",
+      "label": "Fix_Asset_Mgt",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Fix_Asset_Mgt"
+      }
+    },
+    {
+      "id": "Fairfield_Greenwich",
+      "label": "Fairfield_Greenwich",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Fairfield_Greenwich"
+      }
+    },
+    {
+      "id": "Nordea_Bank_AB",
+      "label": "Nordea_Bank_AB",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Nordea_Bank_AB"
+      }
+    },
+    {
+      "id": "Banque_Benedict_HentchCie",
+      "label": "Banque_Benedict_HentchCie",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Banque_Benedict_HentchCie"
+      }
+    },
+    {
+      "id": "Genium_Advisors",
+      "label": "Genium_Advisors",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Genium_Advisors"
+      }
+    },
+    {
+      "id": "Great_Eastern_Holdings",
+      "label": "Great_Eastern_Holdings",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Great_Eastern_Holdings"
+      }
+    },
+    {
+      "id": "Prospect_Capital",
+      "label": "Prospect_Capital",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Prospect_Capital"
+      }
+    },
+    {
+      "id": "Union_Bancaire_Privee",
+      "label": "Union_Bancaire_Privee",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Union_Bancaire_Privee"
+      }
+    },
+    {
+      "id": "Sterling_Equities",
+      "label": "Sterling_Equities",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Sterling_Equities"
+      }
+    },
+    {
+      "id": "Nomura_Holdings",
+      "label": "Nomura_Holdings",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Nomura_Holdings"
+      }
+    },
+    {
+      "id": "Stanford_Capital_Mgt",
+      "label": "Stanford_Capital_Mgt",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Stanford_Capital_Mgt"
+      }
+    },
+    {
+      "id": "FIM_Advisers",
+      "label": "FIM_Advisers",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "FIM_Advisers"
+      }
+    },
+    {
+      "id": "M&B_Capital_Advisors",
+      "label": "M&B_Capital_Advisors",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "M&B_Capital_Advisors"
+      }
+    },
+    {
+      "id": "Man_Group_PLC",
+      "label": "Man_Group_PLC",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Man_Group_PLC"
+      }
+    },
+    {
+      "id": "Notz_Stucki_Cie",
+      "label": "Notz_Stucki_Cie",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Notz_Stucki_Cie"
+      }
+    },
+    {
+      "id": "Credicorp_Ltd",
+      "label": "Credicorp_Ltd",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Credicorp_Ltd"
+      }
+    },
+    {
+      "id": "S&P_Investment",
+      "label": "S&P_Investment",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "S&P_Investment"
+      }
+    },
+    {
+      "id": "EFG_International_AG",
+      "label": "EFG_International_AG",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "EFG_International_AG"
+      }
+    },
+    {
+      "id": "Maxam_Absolute_Return_Fund",
+      "label": "Maxam_Absolute_Return_Fund",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Maxam_Absolute_Return_Fund"
+      }
+    },
+    {
+      "id": "Tremont_Group_Holdings",
+      "label": "Tremont_Group_Holdings",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Tremont_Group_Holdings"
+      }
+    },
+    {
+      "id": "Opperheimer_Funds",
+      "label": "Opperheimer_Funds",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Opperheimer_Funds"
+      }
+    },
+    {
+      "id": "Bradean_Alternatives_Lts",
+      "label": "Bradean_Alternatives_Lts",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Bradean_Alternatives_Lts"
+      }
+    },
+    {
+      "id": "Rye_Investment_Funds",
+      "label": "Rye_Investment_Funds",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Rye_Investment_Funds"
+      }
+    },
+    {
+      "id": "Austin_Capital",
+      "label": "Austin_Capital",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Austin_Capital"
+      }
+    },
+    {
+      "id": "Meridian_Capital_Partners",
+      "label": "Meridian_Capital_Partners",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Meridian_Capital_Partners"
+      }
+    },
+    {
+      "id": "Banco_Bilbao_Vizcaya_Argentaria",
+      "label": "Banco_Bilbao_Vizcaya_Argentaria",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Banco_Bilbao_Vizcaya_Argentaria"
+      }
+    },
+    {
+      "id": "Kingate_Global_Fund",
+      "label": "Kingate_Global_Fund",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Kingate_Global_Fund"
+      }
+    },
+    {
+      "id": "Kingate_Euro_Fund",
+      "label": "Kingate_Euro_Fund",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Kingate_Euro_Fund"
+      }
+    },
+    {
+      "id": "Ascot_Partners",
+      "label": "Ascot_Partners",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Ascot_Partners"
+      }
+    },
+    {
+      "id": "Gabriel_Capital",
+      "label": "Gabriel_Capital",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Gabriel_Capital"
+      }
+    },
+    {
+      "id": "Sterling_Stamos_Capital_Mgt",
+      "label": "Sterling_Stamos_Capital_Mgt",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Sterling_Stamos_Capital_Mgt"
+      }
+    },
+    {
+      "id": "Spring_Mountain_Capital",
+      "label": "Spring_Mountain_Capital",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Spring_Mountain_Capital"
+      }
+    },
+    {
+      "id": "Ariel_Capital",
+      "label": "Ariel_Capital",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Ariel_Capital"
+      }
+    },
+    {
+      "id": "Fortis_Bank_Nederland",
+      "label": "Fortis_Bank_Nederland",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Fortis_Bank_Nederland"
+      }
+    },
+    {
+      "id": "Bernard_Madoff_Investment",
+      "label": "Bernard_Madoff_Investment",
+      "type": "player",
+      "properties": {
+        "type": "player",
+        "name": "Bernard_Madoff_Investment"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_HSBC_Holdings_Herald_Lux_Fund_0",
+      "source": "HSBC_Holdings",
+      "target": "Herald_Lux_Fund",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Genevalor_Benbassat_Thema_Fund_1",
+      "source": "Genevalor_Benbassat",
+      "target": "Thema_Fund",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Phoenix_Holdings_Thema_Fund_2",
+      "source": "Phoenix_Holdings",
+      "target": "Thema_Fund",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Thema_Fund_Bank_Medici_3",
+      "source": "Thema_Fund",
+      "target": "Bank_Medici",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Herald_Lux_Fund_Bank_Medici_4",
+      "source": "Herald_Lux_Fund",
+      "target": "Bank_Medici",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Capital_Bank_Austria_Bank_Medici_5",
+      "source": "Capital_Bank_Austria",
+      "target": "Bank_Medici",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Cohmad_securities_Bank_Medici_6",
+      "source": "Cohmad_securities",
+      "target": "Bank_Medici",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Cohmad_securities_Bernard_Madoff_Investment_7",
+      "source": "Cohmad_securities",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bank_Medici_Bank_Medici_8",
+      "source": "Bank_Medici",
+      "target": "Bank_Medici",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_UniCredit_SpA_Pioneer_Alt_Investments_9",
+      "source": "UniCredit_SpA",
+      "target": "Pioneer_Alt_Investments",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Pioneer_Alt_Investments_Bank_Medici_10",
+      "source": "Pioneer_Alt_Investments",
+      "target": "Bank_Medici",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rothschild_Cie_Access_Int_Advisors_11",
+      "source": "Rothschild_Cie",
+      "target": "Access_Int_Advisors",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Access_Int_Advisors_Bernard_Madoff_Investment_12",
+      "source": "Access_Int_Advisors",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_BNP_Paribas_Bernard_Madoff_Investment_13",
+      "source": "BNP_Paribas",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_EIM_Group_Bernard_Madoff_Investment_14",
+      "source": "EIM_Group",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nipponkoa_Insurance_Bernard_Madoff_Investment_15",
+      "source": "Nipponkoa_Insurance",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Mirabaud_Cie_Bernard_Madoff_Investment_16",
+      "source": "Mirabaud_Cie",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Zeus_Partners_Ltd_Bernard_Madoff_Investment_17",
+      "source": "Zeus_Partners_Ltd",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Banco_Safra_Zeus_Partners_Ltd_18",
+      "source": "Banco_Safra",
+      "target": "Zeus_Partners_Ltd",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_CMG_Brighton_Co_19",
+      "source": "CMG",
+      "target": "Brighton_Co",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Brighton_Co_Bernard_Madoff_Investment_20",
+      "source": "Brighton_Co",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Avellino_Bienes_Bernard_Madoff_Investment_21",
+      "source": "Avellino_Bienes",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Neu_Privat_Bank_Bernard_Madoff_Investment_22",
+      "source": "Neu_Privat_Bank",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Banco_Santander_Bernard_Madoff_Investment_23",
+      "source": "Banco_Santander",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Optimal_Strategic_US_Banco_Santander_24",
+      "source": "Optimal_Strategic_US",
+      "target": "Banco_Santander",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sumitomo_Life_Ins_Bernard_Madoff_Investment_25",
+      "source": "Sumitomo_Life_Ins",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fukoku_Mutual_Life_Bernard_Madoff_Investment_26",
+      "source": "Fukoku_Mutual_Life",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fix_Asset_Mgt_Bernard_Madoff_Investment_27",
+      "source": "Fix_Asset_Mgt",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fairfield_Greenwich_Bernard_Madoff_Investment_28",
+      "source": "Fairfield_Greenwich",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nordea_Bank_AB_Fairfield_Greenwich_29",
+      "source": "Nordea_Bank_AB",
+      "target": "Fairfield_Greenwich",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Banque_Benedict_HentchCie_Fairfield_Greenwich_30",
+      "source": "Banque_Benedict_HentchCie",
+      "target": "Fairfield_Greenwich",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Genium_Advisors_Fairfield_Greenwich_31",
+      "source": "Genium_Advisors",
+      "target": "Fairfield_Greenwich",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Great_Eastern_Holdings_Fairfield_Greenwich_32",
+      "source": "Great_Eastern_Holdings",
+      "target": "Fairfield_Greenwich",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Prospect_Capital_Fairfield_Greenwich_33",
+      "source": "Prospect_Capital",
+      "target": "Fairfield_Greenwich",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Union_Bancaire_Privee_Fairfield_Greenwich_34",
+      "source": "Union_Bancaire_Privee",
+      "target": "Fairfield_Greenwich",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sterling_Equities_Bernard_Madoff_Investment_35",
+      "source": "Sterling_Equities",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Nomura_Holdings_Bernard_Madoff_Investment_36",
+      "source": "Nomura_Holdings",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Stanford_Capital_Mgt_Bernard_Madoff_Investment_37",
+      "source": "Stanford_Capital_Mgt",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_FIM_Advisers_Bernard_Madoff_Investment_38",
+      "source": "FIM_Advisers",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_M&B_Capital_Advisors_Bernard_Madoff_Investment_39",
+      "source": "M&B_Capital_Advisors",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Man_Group_PLC_Bernard_Madoff_Investment_40",
+      "source": "Man_Group_PLC",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Notz_Stucki_Cie_Bernard_Madoff_Investment_41",
+      "source": "Notz_Stucki_Cie",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Credicorp_Ltd_Bernard_Madoff_Investment_42",
+      "source": "Credicorp_Ltd",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_S&P_Investment_Bernard_Madoff_Investment_43",
+      "source": "S&P_Investment",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_EFG_International_AG_Bernard_Madoff_Investment_44",
+      "source": "EFG_International_AG",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Maxam_Absolute_Return_Fund_Tremont_Group_Holdings_45",
+      "source": "Maxam_Absolute_Return_Fund",
+      "target": "Tremont_Group_Holdings",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Tremont_Group_Holdings_Bernard_Madoff_Investment_46",
+      "source": "Tremont_Group_Holdings",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Opperheimer_Funds_Tremont_Group_Holdings_47",
+      "source": "Opperheimer_Funds",
+      "target": "Tremont_Group_Holdings",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Bradean_Alternatives_Lts_Rye_Investment_Funds_48",
+      "source": "Bradean_Alternatives_Lts",
+      "target": "Rye_Investment_Funds",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Rye_Investment_Funds_Tremont_Group_Holdings_49",
+      "source": "Rye_Investment_Funds",
+      "target": "Tremont_Group_Holdings",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Austin_Capital_Rye_Investment_Funds_50",
+      "source": "Austin_Capital",
+      "target": "Rye_Investment_Funds",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Meridian_Capital_Partners_Rye_Investment_Funds_51",
+      "source": "Meridian_Capital_Partners",
+      "target": "Rye_Investment_Funds",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Banco_Bilbao_Vizcaya_Argentaria_Kingate_Global_Fund_52",
+      "source": "Banco_Bilbao_Vizcaya_Argentaria",
+      "target": "Kingate_Global_Fund",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Kingate_Global_Fund_FIM_Advisers_53",
+      "source": "Kingate_Global_Fund",
+      "target": "FIM_Advisers",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Kingate_Euro_Fund_FIM_Advisers_54",
+      "source": "Kingate_Euro_Fund",
+      "target": "FIM_Advisers",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ascot_Partners_Gabriel_Capital_55",
+      "source": "Ascot_Partners",
+      "target": "Gabriel_Capital",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Gabriel_Capital_Bernard_Madoff_Investment_56",
+      "source": "Gabriel_Capital",
+      "target": "Bernard_Madoff_Investment",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Sterling_Stamos_Capital_Mgt_Gabriel_Capital_57",
+      "source": "Sterling_Stamos_Capital_Mgt",
+      "target": "Gabriel_Capital",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Spring_Mountain_Capital_Gabriel_Capital_58",
+      "source": "Spring_Mountain_Capital",
+      "target": "Gabriel_Capital",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Ariel_Capital_Gabriel_Capital_59",
+      "source": "Ariel_Capital",
+      "target": "Gabriel_Capital",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    },
+    {
+      "id": "e_Fortis_Bank_Nederland_Ariel_Capital_60",
+      "source": "Fortis_Bank_Nederland",
+      "target": "Ariel_Capital",
+      "label": "money_flow",
+      "type": "money_flow",
+      "weight": 1,
+      "properties": {
+        "type": "money_flow",
+        "observed": true,
+        "weight": 1
+      }
+    }
+  ]
+}

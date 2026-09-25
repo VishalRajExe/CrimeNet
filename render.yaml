@@ -1,9 +1,27 @@
 services:
   - type: web
-    name: crimenet
+    name: crimenet-ai
     runtime: python
-    buildCommand: pip install -r requirements-deploy.txt
-    startCommand: gunicorn --chdir . visualizer.wsgi:server --bind 0.0.0.0:$PORT --timeout 120 --workers 2
+    plan: free
+    buildCommand: |
+      pip install -r backend/requirements.txt
+      npm --prefix frontend ci
+      VITE_API_URL=/api VITE_CRIMENET_API_KEY="$CRIMENET_API_KEY" npm --prefix frontend run build
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT --workers 1
     envVars:
       - key: PYTHON_VERSION
-        value: "3.11"
+        value: "3.12.8"
+      - key: CRIMENET_API_KEY
+        sync: false
+      - key: CRIMENET_OFFICER_BADGES
+        value: INSP-4409
+      - key: CORS_ORIGINS
+        value: https://crimenet-ai.onrender.com
+      - key: LLM_PROVIDER
+        value: offline
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: VITE_API_URL
+        value: /api
+      - key: VITE_OFFICER_BADGE
+        value: INSP-4409
