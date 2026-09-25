@@ -156,17 +156,73 @@ Preserve exact evidentiary context and cite all intermediate nodes and source ex
 
 
 # ---------------------------------------------------------------------------
+# Local FastEmbed Embedding Integration for GraphRAG
+# ---------------------------------------------------------------------------
+try:
+    from graphrag_llm.embedding.embedding import LLMEmbedding
+    from graphrag_llm.types import LLMEmbeddingResponse
+    from graphrag_llm.embedding.embedding_factory import register_embedding
+    from fastembed import TextEmbedding
+
+    class LocalFastEmbedEmbedding(LLMEmbedding):
+        """Local embedding engine powered by FastEmbed using sentence-transformers/all-MiniLM-L6-v2."""
+        _instance = None
+
+        def __init__(self, *, model_config=None, **kwargs):
+            if LocalFastEmbedEmbedding._instance is None:
+                LocalFastEmbedEmbedding._instance = TextEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+            self._model = LocalFastEmbedEmbedding._instance
+            self._tokenizer = kwargs.get("tokenizer")
+            self._metrics_store = kwargs.get("metrics_store")
+
+        def embedding(self, /, **kwargs) -> LLMEmbeddingResponse:
+            inputs = kwargs.get("input", [])
+            if isinstance(inputs, str):
+                inputs = [inputs]
+            vectors = list(self._model.embed(inputs))
+            items = [{"embedding": list(v), "index": i, "object": "embedding"} for i, v in enumerate(vectors)]
+            return LLMEmbeddingResponse(
+                data=items,
+                model="all-MiniLM-L6-v2",
+                object="list",
+                usage={"prompt_tokens": sum(len(x.split()) for x in inputs), "total_tokens": sum(len(x.split()) for x in inputs)}
+            )
+
+        async def embedding_async(self, /, **kwargs) -> LLMEmbeddingResponse:
+            return self.embedding(**kwargs)
+
+        @property
+        def metrics_store(self):
+            return self._metrics_store
+
+        @property
+        def tokenizer(self):
+            return self._tokenizer
+
+    register_embedding("local_fastembed", LocalFastEmbedEmbedding)
+except Exception as _fe_err:
+    logging.getLogger("CrimeNet.GraphRAG").debug("FastEmbed registration note: %s", _fe_err)
+
+
+# ---------------------------------------------------------------------------
 # Configuration Builder
 # ---------------------------------------------------------------------------
 def create_crimenet_graphrag_config(
     case_id: str,
     root_dir: Path | str,
     api_key: Optional[str] = None,
-    completion_model: str = "gpt-4o-mini",
-    embedding_model: str = "text-embedding-3-small",
+    completion_model: Optional[str] = None,
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2",
     offline_mode: bool = False,
 ) -> GraphRagConfig:
-    """Create a GraphRagConfig tuned for CrimeNet investigation cases."""
+    """Create a GraphRagConfig tuned for CrimeNet investigation cases with Grok/Groq support."""
+    try:
+        from dotenv import load_dotenv
+        load_dotenv(_WORKSPACE_ROOT / ".env")
+        load_dotenv()
+    except ImportError:
+        pass
+
     root_path = Path(root_dir)
     input_dir = root_path / "input"
     output_dir = root_path / "output"
@@ -188,28 +244,37 @@ def create_crimenet_graphrag_config(
     config.cache.storage.base_dir = str(cache_dir.resolve())
     config.vector_store.db_uri = str((output_dir / "lancedb").resolve())
 
-    # Configure models if API key provided or use mock for offline testing
-    key = api_key or os.getenv("GRAPHRAG_API_KEY") or os.getenv("OPENAI_API_KEY")
+    # Detect Grok / Groq API Key securely from environment or parameter (never exposed/printed)
+    key = (
+        api_key
+        or os.getenv("GROK_API_KEY")
+        or os.getenv("GROQ_API_KEY")
+        or os.getenv("GRAPHRAG_API_KEY")
+        or os.getenv("OPENAI_API_KEY")
+    )
+    
+    # Provider detection: Groq (for keys starting with gsk_ or explicitly configured) vs xAI Grok
+    model_name = completion_model or os.getenv("GROK_MODEL") or os.getenv("GROQ_MODEL") or "openai/gpt-oss-120b"
+    provider = "groq" if (key and key.startswith("gsk_")) or "groq" in model_name.lower() or os.getenv("GROQ_API_KEY") else "xai"
+
+    from graphrag_llm.config import ModelConfig
     if key and not offline_mode:
-        from graphrag_llm.config import ModelConfig
         config.completion_models = {
             "default_chat_model": ModelConfig(
                 type="litellm",
-                model_provider="openai",
-                model=completion_model,
+                model_provider=provider,
+                model=model_name,
                 api_key=key,
             )
         }
         config.embedding_models = {
             "default_embedding_model": ModelConfig(
-                type="litellm",
-                model_provider="openai",
+                type="local_fastembed",
+                model_provider="local",
                 model=embedding_model,
-                api_key=key,
             )
         }
     else:
-        from graphrag_llm.config import ModelConfig
         config.completion_models = {
             "default_chat_model": ModelConfig(
                 type="mock",
@@ -220,9 +285,9 @@ def create_crimenet_graphrag_config(
         }
         config.embedding_models = {
             "default_embedding_model": ModelConfig(
-                type="mock",
-                model_provider="mock",
-                model="mock-embed",
+                type="local_fastembed",
+                model_provider="local",
+                model=embedding_model,
             )
         }
 
@@ -242,6 +307,13 @@ class CrimeNetGraphRAG:
         api_key: Optional[str] = None,
         offline_mode: bool = False,
     ):
+        try:
+            from dotenv import load_dotenv
+            load_dotenv(_WORKSPACE_ROOT / ".env")
+            load_dotenv()
+        except ImportError:
+            pass
+
         self.case_id = case_id
         if base_dir:
             self.root_dir = Path(base_dir) / case_id / "graphrag"
@@ -256,15 +328,28 @@ class CrimeNetGraphRAG:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
 
-        self.api_key = api_key or os.getenv("GRAPHRAG_API_KEY") or os.getenv("OPENAI_API_KEY")
+        self.api_key = (
+            api_key
+            or os.getenv("GROK_API_KEY")
+            or os.getenv("GROQ_API_KEY")
+            or os.getenv("GRAPHRAG_API_KEY")
+            or os.getenv("OPENAI_API_KEY")
+        )
+        self.grok_model = (
+            os.getenv("GROK_MODEL")
+            or os.getenv("GROQ_MODEL")
+            or "openai/gpt-oss-120b"
+        )
         self.offline_mode = offline_mode or (not bool(self.api_key))
 
         self.config = create_crimenet_graphrag_config(
             case_id=self.case_id,
             root_dir=self.root_dir,
             api_key=self.api_key,
+            completion_model=self.grok_model,
             offline_mode=self.offline_mode,
         )
+
 
     # -----------------------------------------------------------------------
     # Document Staging
@@ -318,11 +403,19 @@ class CrimeNetGraphRAG:
                 import asyncio
                 from graphrag.api.index import build_index as run_build_index
                 outputs = asyncio.run(run_build_index(self.config))
+                tables = self.load_parquet_tables()
                 return {
                     "success": True,
                     "case_id": self.case_id,
                     "mode": "live_llm",
                     "workflows": [o.workflow for o in outputs],
+                    "document_count": len(tables["documents"]) if not tables["documents"].empty else len(list(self.input_dir.glob("*.txt"))),
+                    "text_unit_count": len(tables["text_units"]),
+                    "entity_count": len(tables["entities"]),
+                    "relationship_count": len(tables["relationships"]),
+                    "community_count": len(tables["communities"]),
+                    "report_count": len(tables["community_reports"]),
+                    "claim_count": len(tables["covariates"]),
                     "output_dir": str(self.output_dir),
                 }
             except Exception as e:
@@ -761,15 +854,31 @@ class CrimeNetGraphRAG:
             for r in second_hop_rels[:3]:
                 lines.append(f"- *Extended Node*: **{r['source']}** connected to **{r['target']}** via {r['description']} [Data: Relationships ({r['id']})]")
 
-        sources = []
+        sources: list[str] = []
         for r in traversed_hops:
             sources.extend(r.get("text_unit_ids", []))
+
+        drift_text = "\n".join(lines)
+        if not self.offline_mode and self.api_key:
+            try:
+                from graphrag_llm.completion.completion_factory import create_completion
+                chat_model = create_completion(self.config.completion_models["default_chat_model"])
+                table_context = "\n".join(lines[3:])
+                prompt = CRIMENET_DRIFT_SEARCH_SYSTEM_PROMPT.format(context_data=table_context)
+                resp = chat_model.completion(messages=[
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": query}
+                ])
+                if resp and resp.content:
+                    drift_text = resp.content.strip()
+            except Exception as e:
+                logger.debug("Live Groq DRIFT synthesis fallback to deterministic: %s", e)
 
         return {
             "query": query,
             "mode": "drift",
             "case_id": self.case_id,
-            "response": "\n".join(lines),
+            "response": drift_text,
             "sources": list(set(sources))[:5],
             "entities": list(expanded_entities),
             "relationships": [f"{r['source']} -> {r['target']}" for r in (traversed_hops + second_hop_rels)[:6]],
@@ -1111,4 +1220,23 @@ class CrimeNetGraphRAG:
             f"Operational investigators should cross-examine these findings against live Neo4j transactional records."
         )
 
-        return "\n".join(lines)
+        deterministic_text = "\n".join(lines)
+        if not self.offline_mode and self.api_key:
+            try:
+                from graphrag_llm.completion.completion_factory import create_completion
+                chat_model = create_completion(self.config.completion_models["default_chat_model"])
+                table_context = "\n".join(lines[3:])
+                prompt = CRIMENET_LOCAL_SEARCH_SYSTEM_PROMPT.format(
+                    response_type=response_type,
+                    context_data=table_context,
+                )
+                resp = chat_model.completion(messages=[
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": query}
+                ])
+                if resp and resp.content:
+                    return resp.content.strip()
+            except Exception as e:
+                logger.debug("Live Groq local synthesis fallback to deterministic: %s", e)
+
+        return deterministic_text
