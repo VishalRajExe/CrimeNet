@@ -705,3 +705,34 @@ class CaseDataService:
         net.edge_types = {e["properties"]["type"]: {} for e in net.edges}
         net.initialize(params={"network_name": case_title})
         return net
+
+    # ----------------------------------------------------------------------- #
+    # 9. MICROSOFT GRAPHRAG INVESTIGATION RETRIEVAL & Q&A
+    # ----------------------------------------------------------------------- #
+    def query_case_graphrag(
+        self,
+        case_id: str,
+        query: str,
+        mode: str = "local",
+        community_level: int = 0,
+        response_type: str = "Forensic Investigation Briefing",
+    ) -> Dict[str, Any]:
+        """Query Microsoft GraphRAG for unstructured evidence understanding and Q&A."""
+        from storage.crimenet_graphrag import CrimeNetGraphRAG
+        rag = CrimeNetGraphRAG(case_id=case_id)
+        return rag.query(query, mode=mode, community_level=community_level, response_type=response_type)
+
+    def get_case_graphrag_stats(self, case_id: str) -> Dict[str, int]:
+        """Return counts of indexed GraphRAG artifacts for a case."""
+        from storage.crimenet_graphrag import CrimeNetGraphRAG
+        rag = CrimeNetGraphRAG(case_id=case_id)
+        return rag.get_indexed_stats()
+
+    def correlate_case_graphrag_with_neo4j(self, case_id: str) -> Dict[str, Any]:
+        """Correlate unstructured evidence entities with Neo4j operational graph."""
+        from storage.crimenet_graphrag import CrimeNetGraphRAG
+        from public.tools import get_driver_or_none
+        rag = CrimeNetGraphRAG(case_id=case_id)
+        driver = get_driver_or_none()
+        return rag.correlate_with_neo4j(neo4j_driver=driver)
+

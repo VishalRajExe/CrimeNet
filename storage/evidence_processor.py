@@ -853,6 +853,28 @@ class EvidenceProcessor:
                 "sha256": sha256
             }
 
+        # Stage 7b: Index into Microsoft GraphRAG (for unstructured evidence understanding & Q&A)
+        graphrag_meta = {}
+        raw_text_content = extracted.get("raw_text", "")
+        if raw_text_content and len(raw_text_content.strip()) > 20:
+            try:
+                from storage.crimenet_graphrag import CrimeNetGraphRAG
+                rag = CrimeNetGraphRAG(case_id=case_id)
+                rag.add_evidence_document(
+                    doc_id=ev_id,
+                    filename=filename,
+                    content=raw_text_content,
+                    metadata={"evidence_id": ev_id, "title": evidence_title, "file_type": file_type}
+                )
+                graphrag_stats = rag.build_index(extractor=self.extractor)
+                graphrag_meta = {
+                    "indexed": True,
+                    "entities": graphrag_stats.get("entity_count", 0),
+                    "reports": graphrag_stats.get("report_count", 0),
+                }
+            except Exception as gr_err:
+                graphrag_meta = {"indexed": False, "error": str(gr_err)}
+
         # Stage 8: Transition to Processed
         extraction_status = "Extracted" if ents_count > 0 or rels_count > 0 else "No Entities Found"
         full_metadata = {
@@ -860,6 +882,7 @@ class EvidenceProcessor:
             "sha256": sha256,
             "analysis": analysis_meta,
             "stats": extracted.get("stats", {}),
+            "graphrag": graphrag_meta,
             "processed_at": datetime.now().isoformat()
         }
 
@@ -888,6 +911,7 @@ class EvidenceProcessor:
             "extraction_status": extraction_status,
             "filename": filename,
             "file_type": file_type,
+            "graphrag": graphrag_meta,
             "sha256": sha256,
             "entities_count": ents_count,
             "relations_count": rels_count,
