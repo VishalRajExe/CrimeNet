@@ -225,8 +225,6 @@ def main_callback(*args):
     elif context.triggered[0]['prop_id'].split('.')[1] == 'tapEdgeData':
         try:
             clicked_edge = callback_kwargs['clicked_edge']
-            if clicked_edge['type'] == 'predicted':
-                return output()
             if not clicked_edge:
                 raise PreventUpdate
             status = active_network.toggle_edge_selection(clicked_edge['id'])
@@ -481,118 +479,351 @@ def main_callback(*args):
             fn = callback_kwargs['analysis_function']
             algo = callback_kwargs['analysis_algorithm']
             param1 = callback_kwargs.get('parameter_1')
+            scope = callback_kwargs.get('analysis_scope') or 'FULL_NETWORK'
+            save_to_case_val = callback_kwargs.get('save_analysis_to_case')
+            should_save = bool(save_to_case_val and 'SAVE' in save_to_case_val)
+            active_case = callback_kwargs.get('active_case_data') or {}
+            case_id = active_case.get('case_id') if isinstance(active_case, dict) else None
+            if not case_id and hasattr(active_network, 'params') and active_network.params:
+                case_id = active_network.params.get('case_id')
 
             analysis_summary_component = None
             hierarchical_tree_json = ""
+            save_badge = None
+            summary_metrics = {}
 
+            params = {'scope': scope}
+            if param1:
+                try:
+                    params["K"] = int(param1)
+                except (ValueError, TypeError):
+                    params["param1"] = param1
+
+            # Check and validate execution scopes against current graph selection
+            if scope == 'SELECTED_ENTITY':
+                if active_network.selected_nodes:
+                    params['entity'] = str(list(active_network.selected_nodes)[0])
+                else:
+                    text = "Please select an entity node on the graph to run analysis against Selected Entity."
+                    message = dash_formatter.dash_message(text, False)
+                    return output(message=message)
+            elif scope == 'SELECTED_PAIR':
+                if len(active_network.selected_nodes) >= 2:
+                    sel = list(active_network.selected_nodes)
+                    params['source'] = str(sel[0])
+                    params['target'] = str(sel[1])
+                else:
+                    text = "Please select exactly 2 nodes on the graph to run analysis against Selected Pair."
+                    message = dash_formatter.dash_message(text, False)
+                    return output(message=message)
+            elif scope == 'SELECTED_SUBGRAPH':
+                if len(active_network.selected_nodes) < 2:
+                    text = "Please select at least 2 nodes on the graph to define a Selected Subgraph."
+                    message = dash_formatter.dash_message(text, False)
+                    return output(message=message)
+
+            # ----------------------------------------------------
+            # 1. LINK PREDICTION
+            # ----------------------------------------------------
             if fn == 'link_prediction':
                 if not active_network.selected_nodes:
-                    text = "Could not apply link prediction. Please select atleast one node to predict links for."
+                    text = "Could not apply link prediction. Please select at least one node to predict links for."
                     message = dash_formatter.dash_message(text, False)
                     visualizer_app.logger.warning(text)
                     return output(message=message)
-                active_network.apply_analysis(fn, algo, params={
-                    "sources": [], 'community_detection_method': param1})
-                text = "Applied link prediction using {}. " \
-                       "The 3 most probable links from the selected node(s) are displayed".format(algo)
+                params["sources"] = list(active_network.selected_nodes)
+                params['community_detection_method'] = param1
+                result = active_network.apply_analysis(fn, algo, params=params, scope=scope)
+                text = f"Applied link prediction using {algo} ({scope}). Predicted candidate links surfaced on graph."
                 analysis_summary_component = ""
                 hierarchical_tree_json = ""
 
+            # ----------------------------------------------------
+            # 2. COMMUNITY DETECTION
+            # ----------------------------------------------------
             elif fn == 'community_detection':
-                params = {}
-                if param1:
-                    try:
-                        params["K"] = int(param1)
-                    except (ValueError, TypeError):
-                        pass
-
-                active_network.apply_analysis(fn, algo, params=params)
-                if getattr(active_network, 'last_analysis_message', None):
-                    err_msg = active_network.last_analysis_message
+                result = active_network.apply_analysis(fn, algo, params=params, scope=scope)
+                if getattr(active_network, 'last_analysis_message', None) or (isinstance(result, dict) and result.get('success') == 0):
+                    err_msg = active_network.last_analysis_message or (result.get('message') if isinstance(result, dict) else "Community detection could not be performed.")
                     message = dash_formatter.dash_message(err_msg, success=False)
                     return output(message=message, analysis_summary="", hierarchical_tree_data="")
 
-                res = getattr(active_network, 'last_community_result', None)
-                if not res or res.get('success') == 0:
-                    err_msg = "Community detection requires at least 2 connected nodes."
-                    message = dash_formatter.dash_message(err_msg, success=False)
-                    return output(message=message, analysis_summary="", hierarchical_tree_data="")
+                res = getattr(active_network, 'last_community_result', None) or result
+                num_comms = res.get('num_communities', len(res.get('communities', []))) if res else len(set(e.get('data', {}).get('community') for e in active_network.elements if e.get('group') == 'nodes' and e.get('data', {}).get('community') is not None))
+                num_nodes = res.get('nodes_analyzed', len(active_network.active_nodes)) if res else len(active_network.active_nodes)
+                summary_metrics = {"num_communities": num_comms, "num_nodes": num_nodes, "scope": scope}
+                text = f"Communities Detected: {num_comms} | Nodes Analyzed: {num_nodes} ({scope})"
 
-                if algo == 'louvain':
-                    num_comms = res.get('num_communities', len(res.get('communities', []))) if res else len(set(e.get('data', {}).get('community') for e in active_network.elements if e.get('group') == 'nodes' and e.get('data', {}).get('community') is not None))
-                    num_nodes = res.get('nodes_analyzed', len(active_network.active_nodes)) if res else len(active_network.active_nodes)
-                    text = f"Communities Detected: {num_comms} | Nodes Analyzed: {num_nodes}"
-                    analysis_summary_component = html.Div(className='community-summary-card', children=[
-                        html.Div(className='summary-title', children="Community Detection — Louvain"),
-                        html.Div(className='summary-grid', children=[
-                            html.Div(className='summary-item', children=[
-                                html.Span('Communities Detected:', className='summary-label'),
-                                html.Span(str(num_comms), className='summary-value')
-                            ]),
-                            html.Div(className='summary-item', children=[
-                                html.Span('Nodes Analyzed:', className='summary-label'),
-                                html.Span(str(num_nodes), className='summary-value')
-                            ])
-                        ])
+                scope_label = scope.replace('_', ' ').title()
+                algo_label = algo.replace('_', ' ').title()
+
+                items = [
+                    html.Div(className='summary-item', children=[
+                        html.Span('Scope:', className='summary-label'),
+                        html.Span(scope_label, className='summary-value')
+                    ]),
+                    html.Div(className='summary-item', children=[
+                        html.Span('Communities:', className='summary-label'),
+                        html.Span(str(num_comms), className='summary-value')
+                    ]),
+                    html.Div(className='summary-item', children=[
+                        html.Span('Nodes Analyzed:', className='summary-label'),
+                        html.Span(str(num_nodes), className='summary-value')
                     ])
-                    hierarchical_tree_json = ""
+                ]
 
-                elif algo == 'hierarchical':
+                if scope == 'SELECTED_ENTITY' and active_network.selected_nodes:
+                    ent = str(list(active_network.selected_nodes)[0])
+                    ent_comm = res.get('membership', {}).get(ent)
+                    if ent_comm:
+                        c_id = list(ent_comm.keys())[0]
+                        c_size = sum(1 for m in res.get('membership', {}).values() if list(m.keys())[0] == c_id)
+                        items.append(
+                            html.Div(className='summary-item', children=[
+                                html.Span('Suspect Group:', className='summary-label'),
+                                html.Span(f"Cluster #{c_id} ({c_size} suspects)", className='summary-value', style={'color': '#2b6cb0'})
+                            ])
+                        )
+
+                if algo == 'hierarchical':
                     tree = res.get('tree') if res else None
                     stats = res.get('stats', {}) if res else {}
-                    total_entities = stats.get('total_entities', len(active_network.active_nodes))
-                    total_clusters = stats.get('total_clusters', len(res.get('communities', [])) if res else 0)
                     hierarchy_depth = stats.get('hierarchy_depth', 0)
-                    text = f"Hierarchical Clustering Applied — Total Entities: {total_entities} | Total Clusters: {total_clusters} | Hierarchy Depth: {hierarchy_depth}"
-                    analysis_summary_component = html.Div(className='community-summary-card', children=[
-                        html.Div(className='summary-title', children="Hierarchical Clustering Structure"),
-                        html.Div(className='summary-grid', children=[
-                            html.Div(className='summary-item', children=[
-                                html.Span('Total Entities:', className='summary-label'),
-                                html.Span(str(total_entities), className='summary-value')
-                            ]),
-                            html.Div(className='summary-item', children=[
-                                html.Span('Total Clusters:', className='summary-label'),
-                                html.Span(str(total_clusters), className='summary-value')
-                            ]),
-                            html.Div(className='summary-item', children=[
-                                html.Span('Hierarchy Depth:', className='summary-label'),
-                                html.Span(str(hierarchy_depth), className='summary-value')
-                            ])
+                    items.append(
+                        html.Div(className='summary-item', children=[
+                            html.Span('Tree Depth:', className='summary-label'),
+                            html.Span(str(hierarchy_depth), className='summary-value')
                         ])
-                    ])
+                    )
                     hierarchical_tree_json = json.dumps(tree) if tree else ""
-
                 else:
-                    # Modularity, Label Propagation, etc.
-                    num_comms = res.get('num_communities', len(res.get('communities', []))) if res else len(set(e.get('data', {}).get('community') for e in active_network.elements if e.get('group') == 'nodes' and e.get('data', {}).get('community') is not None))
-                    num_nodes = res.get('nodes_analyzed', len(active_network.active_nodes)) if res else len(active_network.active_nodes)
-                    text = f"Communities Detected: {num_comms} | Nodes Analyzed: {num_nodes}"
-                    analysis_summary_component = html.Div(className='community-summary-card', children=[
-                        html.Div(className='summary-title', children=f"Community Detection — {algo.replace('_', ' ').title()}"),
-                        html.Div(className='summary-grid', children=[
-                            html.Div(className='summary-item', children=[
-                                html.Span('Communities Detected:', className='summary-label'),
-                                html.Span(str(num_comms), className='summary-value')
-                            ]),
-                            html.Div(className='summary-item', children=[
-                                html.Span('Nodes Analyzed:', className='summary-label'),
-                                html.Span(str(num_nodes), className='summary-value')
-                            ])
-                        ])
-                    ])
                     hierarchical_tree_json = ""
 
-            else:
-                # social_influence_analysis, etc.
-                if param1:
-                    active_network.apply_analysis(fn, algo, params={"K": int(param1)})
-                    text = "Applied {} using {} with the following parameter: K: {}".format(fn, algo, param1)
+                analysis_summary_component = html.Div(className='community-summary-card', children=[
+                    html.Div(className='summary-title', children=f"Community Detection — {algo_label}"),
+                    html.Div(className='summary-grid', children=items)
+                ])
+
+            # ----------------------------------------------------
+            # 3. SOCIAL INFLUENCE ANALYSIS
+            # ----------------------------------------------------
+            elif fn == 'social_influence_analysis':
+                result = active_network.apply_analysis(fn, algo, params=params, scope=scope)
+                if getattr(active_network, 'last_analysis_message', None) or (isinstance(result, dict) and result.get('success') == 0):
+                    err_msg = active_network.last_analysis_message or (result.get('message') if isinstance(result, dict) else "Social influence analysis could not be performed.")
+                    message = dash_formatter.dash_message(err_msg, success=False)
+                    return output(message=message, analysis_summary="", hierarchical_tree_data="")
+
+                res = getattr(active_network, 'last_influence_result', None) or result
+                scores = res.get('scores', {}) if res else {}
+                sorted_scores = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
+                top_scores = sorted_scores[:5]
+                score_vals = list(scores.values()) if scores else [0]
+                min_s = round(min(score_vals), 4) if score_vals else 0.0
+                max_s = round(max(score_vals), 4) if score_vals else 0.0
+                avg_s = round(sum(score_vals) / max(1, len(score_vals)), 4) if score_vals else 0.0
+                summary_metrics = {"top_entities": top_scores, "min": min_s, "max": max_s, "avg": avg_s, "scope": scope}
+
+                algo_titles = {
+                    'pagerank': 'PageRank (Systemic Influence)',
+                    'degree_centrality': 'Degree Centrality (Operational Hubs)',
+                    'betweenness': 'Betweenness Centrality (Conspiracy Bridges)',
+                    'betweenness_centrality': 'Betweenness Centrality (Conspiracy Bridges)',
+                    'closeness_centrality': 'Closeness Centrality (Rapid Access)'
+                }
+                algo_title = algo_titles.get(algo, f"Social Influence — {algo.replace('_', ' ').title()}")
+                text = f"Analyzed {algo_title} on {len(scores)} entities ({scope}). Top score: {max_s}"
+
+                grid_items = [
+                    html.Div(className='summary-item', children=[
+                        html.Span('Scope:', className='summary-label'),
+                        html.Span(scope.replace('_', ' ').title(), className='summary-value')
+                    ]),
+                    html.Div(className='summary-item', children=[
+                        html.Span('Entities Scored:', className='summary-label'),
+                        html.Span(str(len(scores)), className='summary-value')
+                    ]),
+                    html.Div(className='summary-item', children=[
+                        html.Span('Max Score:', className='summary-label'),
+                        html.Span(str(max_s), className='summary-value')
+                    ]),
+                    html.Div(className='summary-item', children=[
+                        html.Span('Avg Score:', className='summary-label'),
+                        html.Span(str(avg_s), className='summary-value')
+                    ]),
+                ]
+
+                # Top suspects table
+                top_rows = []
+                for rank, (nid, sc) in enumerate(top_scores, start=1):
+                    lbl = nid
+                    for el in active_network.elements:
+                        if el.get('group') == 'nodes' and str(el.get('data', {}).get('id')) == str(nid):
+                            lbl = el.get('data', {}).get('label') or el.get('data', {}).get('name') or nid
+                            break
+                    top_rows.append(
+                        html.Tr(style={'borderBottom': '1px solid #edf2f7'}, children=[
+                            html.Td(f"#{rank}", style={'padding': '3px 6px', 'color': '#718096', 'fontSize': '11px', 'fontWeight': 'bold'}),
+                            html.Td(str(lbl), style={'padding': '3px 6px', 'color': '#2d3748', 'fontSize': '11px', 'fontWeight': '600'}),
+                            html.Td(f"{sc:.4f}", style={'padding': '3px 6px', 'color': '#2b6cb0', 'fontSize': '11px', 'fontFamily': 'monospace', 'fontWeight': 'bold', 'textAlign': 'right'})
+                        ])
+                    )
+
+                analysis_summary_component = html.Div(className='community-summary-card', children=[
+                    html.Div(className='summary-title', children=algo_title),
+                    html.Div(className='summary-grid', children=grid_items),
+                    html.Div(style={'marginTop': '8px', 'marginBottom': '4px', 'fontWeight': 'bold', 'fontSize': '11px', 'color': '#4a5568'}, children="TOP KEY SUSPECTS:"),
+                    html.Table(style={'width': '100%', 'backgroundColor': '#fff', 'borderRadius': '4px', 'border': '1px solid #e2e8f0'}, children=[
+                        html.Tbody(children=top_rows)
+                    ])
+                ])
+                hierarchical_tree_json = ""
+
+            # ----------------------------------------------------
+            # 4. PATH ANALYSIS
+            # ----------------------------------------------------
+            elif fn == 'path_analysis':
+                result = active_network.apply_analysis(fn, algo, params=params, scope=scope)
+                if getattr(active_network, 'last_analysis_message', None) or (isinstance(result, dict) and result.get('success') == 0):
+                    err_msg = active_network.last_analysis_message or (result.get('message') if isinstance(result, dict) else "Path analysis could not be performed.")
+                    message = dash_formatter.dash_message(err_msg, success=False)
+                    return output(message=message, analysis_summary="", hierarchical_tree_data="")
+
+                res = getattr(active_network, 'last_path_result', None) or result
+                hierarchical_tree_json = ""
+
+                if algo in ('shortest_path', 'path'):
+                    path = res.get('path', [])
+                    hops = res.get('hops', max(0, len(path) - 1))
+                    engine = res.get('engine', 'NetworkX')
+                    text = f"Shortest Path: {hops} hop(s) connecting {path[0] if path else ''} to {path[-1] if path else ''} via {engine}."
+                    summary_metrics = {"path": path, "hops": hops, "engine": engine, "scope": scope}
+
+                    chain_items = []
+                    for idx_p, nid in enumerate(path):
+                        lbl = nid
+                        for el in active_network.elements:
+                            if el.get('group') == 'nodes' and str(el.get('data', {}).get('id')) == str(nid):
+                                lbl = el.get('data', {}).get('label') or el.get('data', {}).get('name') or nid
+                                break
+                        is_end = idx_p in (0, len(path) - 1)
+                        b_color = '#e53e3e' if is_end else '#d69e2e'
+                        chain_items.append(
+                            html.Span(str(lbl), style={'backgroundColor': b_color, 'color': '#fff', 'padding': '2px 8px', 'borderRadius': '4px', 'fontSize': '11px', 'fontWeight': 'bold'})
+                        )
+                        if idx_p < len(path) - 1:
+                            chain_items.append(html.Span(" ➔ ", style={'color': '#4a5568', 'fontWeight': 'bold', 'margin': '0 4px'}))
+
+                    analysis_summary_component = html.Div(className='community-summary-card', children=[
+                        html.Div(className='summary-title', children=f"Shortest Evidentiary Path ({engine})"),
+                        html.Div(className='summary-grid', children=[
+                            html.Div(className='summary-item', children=[
+                                html.Span('Hops:', className='summary-label'),
+                                html.Span(str(hops), className='summary-value')
+                            ]),
+                            html.Div(className='summary-item', children=[
+                                html.Span('Intermediaries:', className='summary-label'),
+                                html.Span(str(max(0, len(path) - 2)), className='summary-value')
+                            ]),
+                            html.Div(className='summary-item', children=[
+                                html.Span('Engine:', className='summary-label'),
+                                html.Span(engine, className='summary-value')
+                            ]),
+                        ]),
+                        html.Div(style={'marginTop': '10px', 'marginBottom': '4px', 'fontWeight': 'bold', 'fontSize': '11px', 'color': '#4a5568'}, children="EVIDENTIARY TRAIL:"),
+                        html.Div(style={'display': 'flex', 'alignItems': 'center', 'flexWrap': 'wrap', 'gap': '4px', 'backgroundColor': '#fff', 'padding': '8px', 'borderRadius': '4px', 'border': '1px solid #e2e8f0'}, children=chain_items)
+                    ])
+
+                elif algo in ('n_hop', 'nhop'):
+                    root = res.get('root', '')
+                    cutoff = res.get('cutoff', 1)
+                    tot = res.get('total_entities', 0)
+                    nodes_by_hop = res.get('nodes_by_hop', {})
+                    text = f"N-Hop Neighborhood: Surfaced {tot} entities within {cutoff}-hop radius of '{root}'."
+                    summary_metrics = {"root": root, "cutoff": cutoff, "total_entities": tot, "scope": scope}
+
+                    hop_stats = []
+                    for h in range(1, cutoff + 1):
+                        cnt = len(nodes_by_hop.get(h, []))
+                        hop_stats.append(
+                            html.Div(className='summary-item', children=[
+                                html.Span(f"{h}-Hop Contacts:", className='summary-label'),
+                                html.Span(f"{cnt} entities", className='summary-value')
+                            ])
+                        )
+
+                    analysis_summary_component = html.Div(className='community-summary-card', children=[
+                        html.Div(className='summary-title', children=f"N-Hop Neighborhood ({cutoff} Hops)"),
+                        html.Div(className='summary-grid', children=[
+                            html.Div(className='summary-item', children=[
+                                html.Span('Root Entity:', className='summary-label'),
+                                html.Span(str(root), className='summary-value')
+                            ]),
+                            html.Div(className='summary-item', children=[
+                                html.Span('Total Reached:', className='summary-label'),
+                                html.Span(str(tot), className='summary-value')
+                            ]),
+                            *hop_stats
+                        ])
+                    ])
+
                 else:
-                    active_network.apply_analysis(fn, algo, params={})
-                    text = "Applied {} using {}.".format(fn, algo)
+                    paths = res.get('paths', [])
+                    text = f"Found {len(paths)} simple path(s) within cutoff."
+                    analysis_summary_component = html.Div(className='community-summary-card', children=[
+                        html.Div(className='summary-title', children="All Connecting Paths"),
+                        html.Div(className='summary-grid', children=[
+                            html.Div(className='summary-item', children=[
+                                html.Span('Paths Found:', className='summary-label'),
+                                html.Span(str(len(paths)), className='summary-value')
+                            ])
+                        ])
+                    ])
+
+            else:
+                result = active_network.apply_analysis(fn, algo, params=params, scope=scope)
+                text = f"Applied {fn} using {algo} ({scope})."
                 analysis_summary_component = ""
                 hierarchical_tree_json = ""
+
+            # ----------------------------------------------------
+            # PERSISTENCE TO CASE DOSSIER (IF REQUESTED)
+            # ----------------------------------------------------
+            if should_save:
+                if case_id:
+                    try:
+                        from storage.case_data_service import CaseDataService
+                        svc = CaseDataService()
+                        res_id = svc.save_analysis_result(
+                            case_id=case_id,
+                            task_id=fn,
+                            algorithm=algo,
+                            parameters={"scope": scope, **params},
+                            summary={"text": text, "scope": scope, "algorithm": algo, "metrics": summary_metrics},
+                            node_metrics=result.get("scores") or result.get("membership") or result.get("hop_distances"),
+                            edge_metrics=result.get("path") or result.get("predictions") or result.get("paths"),
+                            executed_by="Lead Investigator"
+                        )
+                        svc.log_audit(
+                            case_id=case_id,
+                            action="GRAPH_ANALYSIS_EXECUTED",
+                            username="Lead Investigator",
+                            details=f"Executed {algo} ({fn}) on scope {scope}. Run recorded as ID {res_id[:8]}."
+                        )
+                        save_badge = html.Div(
+                            f"💾 Saved to Case Record #{res_id[:8]}",
+                            style={'marginTop': '8px', 'color': '#22543d', 'backgroundColor': '#c6f6d5', 'padding': '4px 8px', 'borderRadius': '4px', 'fontSize': '11px', 'fontWeight': '700', 'textAlign': 'center'}
+                        )
+                    except Exception as e:
+                        visualizer_app.logger.warning(f"Could not persist analysis to case: {e}")
+                        save_badge = html.Div(f"⚠️ Could not archive run to database: {str(e)[:40]}", style={'marginTop': '6px', 'color': '#c53030', 'fontSize': '10px'})
+                else:
+                    save_badge = html.Div("ℹ️ Run not saved: No active case is open in workspace.", style={'marginTop': '6px', 'color': '#718096', 'fontSize': '10px', 'fontStyle': 'italic'})
+
+            if save_badge and analysis_summary_component and hasattr(analysis_summary_component, 'children'):
+                analysis_summary_component.children.append(save_badge)
+            elif save_badge and not analysis_summary_component:
+                analysis_summary_component = html.Div(children=[save_badge])
 
             message = dash_formatter.dash_message(text, True)
             visualizer_app.logger.info(text)
@@ -1832,4 +2063,45 @@ visualizer_app.clientside_callback(
 # REGISTER CASE DASHBOARD CALLBACKS (CASE MANAGEMENT, FILTERING, CREATION, DOSSIER, WORKSPACE CONTEXT)
 # ------------------------------------------------------------------------------------------------- #
 from visualizer.case_dashboard import register_dashboard_callbacks
-register_dashboard_callbacks(visualizer_app)
+register_dashboard_callbacks(visualizer_app)
+
+from visualizer.case_workspace_callbacks import register_case_workspace_callbacks
+register_case_workspace_callbacks(visualizer_app)
+
+# ------------------------------------------------------------------------------------------------- #
+# REGISTER FORENSIC ALERTS PANEL CALLBACKS (ANOMALY DETECTION, FILTERING, STATUS TRANSITIONS)
+# ------------------------------------------------------------------------------------------------- #
+from visualizer.alerts_panel import register_alerts_callbacks
+register_alerts_callbacks(visualizer_app)
+
+# ------------------------------------------------------------------------------------------------- #
+# REGISTER ASK CRIMENET INVESTIGATION AGENT CALLBACKS (MODAL, LangGraph AGENT, TOOL TRACE)
+# ------------------------------------------------------------------------------------------------- #
+from visualizer.ask_crimenet_panel import register_ask_crimenet_callbacks
+register_ask_crimenet_callbacks(visualizer_app)
+
+# ------------------------------------------------------------------------------------------------- #
+# REGISTER CASE TIMELINE PANEL CALLBACKS (EVENT CLICK, FILTER DROPDOWNS)
+# ------------------------------------------------------------------------------------------------- #
+from visualizer.case_timeline_panel import register_timeline_callbacks
+register_timeline_callbacks(visualizer_app)
+
+# ------------------------------------------------------------------------------------------------- #
+# REGISTER INVESTIGATION AUDIT TRAIL, HITL ACTIONS & REPORTS CALLBACKS
+# ------------------------------------------------------------------------------------------------- #
+from visualizer.audit_panel import register_audit_panel_callbacks
+register_audit_panel_callbacks(visualizer_app)
+
+from visualizer.actions_workflow_modal import register_actions_workflow_callbacks
+register_actions_workflow_callbacks(visualizer_app)
+
+from visualizer.reports_panel import register_reports_callbacks
+register_reports_callbacks(visualizer_app)
+
+from visualizer.relationship_panel import register_relationship_panel_callbacks
+register_relationship_panel_callbacks(visualizer_app)
+
+from visualizer.financial_workflow_panel import register_financial_workflow_callbacks
+register_financial_workflow_callbacks(visualizer_app)
+
+

@@ -11,42 +11,24 @@ from analyzer.community_detection import CommunityDetector
 from analyzer.social_influence_analysis import SocialInfluenceAnalyzer
 from analyzer.link_prediction import LinkPredictor
 from analyzer.node_embedding import NodeEmbedder
+from analyzer.path_analysis import PathAnalyzer
 
 from analyzer import community_detection
 from analyzer import link_prediction
 from analyzer import social_influence_analysis
 from analyzer import node_embedding
+from analyzer import path_analysis
 
 
 def get_info():
     """
     get information about available methods for each analysis task
     :return: dictionary: keys are tasks' id, values are dictionaries that describe the methods available for the task
-                each in the following format:
-                {
-                    'name': Full analysis task name as string
-                    'methods': {
-                        key: Internal method name (eg. 'asyn_lpa')
-                        value: {
-                            'name': Full method name as string
-                            'parameter': {
-                                key: Parameter name
-                                value: {
-                                    'description': Description of the parameter
-                                    'options': {
-                                        key: Accepted parameter value
-                                        value: Full parameter value name as string
-                                        !! If accepted values are integers key and value is 'Integer'. !!
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
     """
     info = {'community_detection': community_detection.get_info(),
             'link_prediction': link_prediction.get_info(),
             'social_influence_analysis': social_influence_analysis.get_info(),
+            'path_analysis': path_analysis.get_info(),
             'node_embedding': node_embedding.get_info()
             }
     return info
@@ -61,6 +43,7 @@ class InMemoryAnalyzer(AnalysisRequester):
         self.social_influence_analyzer = None
         self.link_predictor = None
         self.node_embedder = None
+        self.path_analyzer = None
 
     def perform_analysis(self, task, params):
         """
@@ -135,7 +118,9 @@ class InMemoryAnalyzer(AnalysisRequester):
         elif task['task_id'] == 'node_embedding':
             self.node_embedder = NodeEmbedder(algorithm)
             return self.node_embedder.perform(network, algorithm_params)
+        elif task['task_id'] == 'path_analysis':
+            self.path_analyzer = PathAnalyzer(algorithm)
+            return self.path_analyzer.perform(network, algorithm_params)
         else:
-            # TODO: what should be return?
             print('task %s is not defined' % task['task_id'])
             return None

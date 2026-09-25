@@ -46,7 +46,7 @@ def dash_analysis_options():
     """
     info = request_taker.get_info()
     analysis_options = [{'label': info[function]['name'], 'value': function} for function in info]
-    enabled = ['community_detection', 'social_influence_analysis', 'link_prediction']
+    enabled = ['community_detection', 'social_influence_analysis', 'path_analysis', 'link_prediction']
     for option in analysis_options:
         if option['value'] not in enabled:
             option['disabled'] = True
@@ -93,21 +93,22 @@ def dash_analysis_parameter(analysis_function, analysis_method):
     :param analysis_method: A known analysis method of the analysis function.
     :return: A list of html.Divs.
     """
-    parameter = request_taker.get_info()[analysis_function]['methods'][analysis_method]['parameter']
+    parameter = request_taker.get_info().get(analysis_function, {}).get('methods', {}).get(analysis_method, {}).get('parameter', {})
     if parameter:
         dropdowns = []
         for i, p in enumerate(parameter):
             options = []
-            parameter_name = next(iter(parameter))
-            if 'Integer' in parameter[parameter_name]['options']:
-                for o in parameter[parameter_name]['options']['Integer']:
+            p_dict = parameter.get(p, {})
+            p_opts = p_dict.get('options', {})
+            if 'Integer' in p_opts:
+                for o in p_opts['Integer']:
                     options.append({'label': str(o), 'value': str(o)})
-            else:
-                for o in parameter[parameter_name]['options']:
-                    options.append({'label': str(parameter[0]['options'][o]), 'value': str(o)})
+            elif isinstance(p_opts, dict):
+                for o, val in p_opts.items():
+                    options.append({'label': str(val), 'value': str(o)})
             d = dcc.Dropdown(className='parameter',
                              id='parameter-' + str(i+1),
-                             placeholder=parameter[p]['description'],
+                             placeholder=p_dict.get('description', f'Parameter {p}'),
                              options=options,
                              multi=False)
             dropdowns.append(d)

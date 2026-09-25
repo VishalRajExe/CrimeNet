@@ -144,3 +144,4 @@ analysis_results/*.json
 # GraphRAG transient index data and third party repo
 storage/graphrag_data/
 graphrag-main/
+generated_reports/

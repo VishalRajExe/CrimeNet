@@ -183,7 +183,75 @@ def run_migration():
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         """)
 
-        # 8. Verify all 10 tables
+        # Ensure extended feedback columns exist for human-in-the-loop corrections
+        cur.execute("SHOW COLUMNS FROM feedback;")
+        fb_cols = {row["Field"] for row in cur.fetchall()}
+        fb_new_cols = {
+            "original_ai_result": "TEXT DEFAULT NULL",
+            "corrected_value": "TEXT DEFAULT NULL",
+            "reason": "TEXT DEFAULT NULL",
+            "source_ref": "VARCHAR(255) DEFAULT NULL",
+            "correction_status": "VARCHAR(50) NOT NULL DEFAULT 'PENDING'",
+            "audit_id": "VARCHAR(36) DEFAULT NULL"
+        }
+        for col_name, col_type in fb_new_cols.items():
+            if col_name not in fb_cols:
+                print(f"Adding `{col_name}` column to `feedback`...")
+                cur.execute(f"ALTER TABLE feedback ADD COLUMN `{col_name}` {col_type};")
+
+        # 8. Create `investigation_actions` table (Workflow Actions: Lookout, Freeze, Review, Escalate)
+        print("Ensuring `investigation_actions` table exists...")
+        cur.execute("""
+        CREATE TABLE IF NOT EXISTS investigation_actions (
+            id VARCHAR(36) NOT NULL PRIMARY KEY,
+            case_id VARCHAR(36) NOT NULL,
+            action_type VARCHAR(60) NOT NULL,
+            target_entity VARCHAR(255) NOT NULL,
+            target_entity_type VARCHAR(50) DEFAULT NULL,
+            reason TEXT NOT NULL,
+            status VARCHAR(50) NOT NULL DEFAULT 'PENDING_APPROVAL',
+            related_evidence VARCHAR(255) DEFAULT NULL,
+            investigator_id VARCHAR(36) DEFAULT 'investigator',
+            audit_id VARCHAR(36) DEFAULT NULL,
+            notes TEXT DEFAULT NULL,
+            created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            KEY idx_actions_case (case_id),
+            KEY idx_actions_type (action_type),
+            KEY idx_actions_status (status),
+            CONSTRAINT fk_actions_case FOREIGN KEY (case_id) REFERENCES cases (id) ON DELETE CASCADE
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+        """)
+
+        # 9. Extended columns for `audit_logs` (Court-admissible, append-oriented investigation trail)
+        cur.execute("SHOW COLUMNS FROM audit_logs;")
+        audit_cols = {row["Field"] for row in cur.fetchall()}
+        audit_new_cols = {
+            "target": "VARCHAR(255) DEFAULT NULL",
+            "old_value": "TEXT DEFAULT NULL",
+            "new_value": "TEXT DEFAULT NULL",
+            "source_ref": "VARCHAR(255) DEFAULT NULL",
+            "result_id": "VARCHAR(64) DEFAULT NULL"
+        }
+        for col_name, col_type in audit_new_cols.items():
+            if col_name not in audit_cols:
+                print(f"Adding `{col_name}` column to `audit_logs`...")
+                cur.execute(f"ALTER TABLE audit_logs ADD COLUMN `{col_name}` {col_type};")
+
+        # 10. Extended columns for `reports`
+        cur.execute("SHOW COLUMNS FROM reports;")
+        rep_cols = {row["Field"] for row in cur.fetchall()}
+        rep_new_cols = {
+            "file_path": "VARCHAR(255) DEFAULT NULL",
+            "format": "VARCHAR(20) NOT NULL DEFAULT 'TEXT'",
+            "metadata": "TEXT DEFAULT NULL"
+        }
+        for col_name, col_type in rep_new_cols.items():
+            if col_name not in rep_cols:
+                print(f"Adding `{col_name}` column to `reports`...")
+                cur.execute(f"ALTER TABLE reports ADD COLUMN `{col_name}` {col_type};")
+
+        # 11. Verify all tables
         cur.execute("SHOW TABLES;")
         all_tables = [list(r.values())[0] for r in cur.fetchall()]
         print("\nMigration completed successfully! All tables in `crimenet`:")

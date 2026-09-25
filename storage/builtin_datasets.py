@@ -860,7 +860,7 @@ class ActiveNetwork(BuiltinDataset):
     class for managing and manipulating network being processed by the visualizer
     """
 
-    def __init__(self, path_2_data, uploaded=False, from_file=True, selected_nodes=None, initialize=False,
+    def __init__(self, path_2_data=None, uploaded=False, from_file=None, selected_nodes=None, initialize=False,
                  params=dict()):
         """
 
@@ -871,6 +871,8 @@ class ActiveNetwork(BuiltinDataset):
         :param initialize: True if to initialize the active network
         :param params: ditionary
         """
+        if from_file is None:
+            from_file = True if path_2_data else False
         BuiltinDataset.__init__(self, path_2_data, uploaded, from_file)
         self.active_nodes = {}  # dictionary of active nodes:{node_id: {'expandable':True/False,
         # 'element_index': index of
@@ -1032,6 +1034,21 @@ class ActiveNetwork(BuiltinDataset):
                     edge_data['label'] = edge_info[self.edge_label_field]
             else:
                 edge_data['label'] = ''  # blank label
+
+            # Forensic Modality, Acceptance Status, & Provenance
+            e_props = edge_info.get('properties', {})
+            edge_data['modality'] = str(e_props.get('modality') or ('PREDICTED' if edge_data.get('predicted') else 'OBSERVED')).upper()
+            edge_data['acceptance'] = str(e_props.get('acceptance') or e_props.get('acceptance_status') or ('PROPOSED' if edge_data.get('predicted') else 'CONFIRMED')).upper()
+            if 'confidence' in e_props:
+                edge_data['confidence'] = e_props['confidence']
+            if 'provenance' in e_props:
+                edge_data['provenance'] = e_props['provenance']
+            if 'source_file' in e_props:
+                edge_data['source_file'] = e_props['source_file']
+            if 'quote' in e_props:
+                edge_data['quote'] = e_props['quote']
+            if 'db_id' in e_props:
+                edge_data['db_id'] = e_props['db_id']
 
             element = {'group': 'edges', 'data': edge_data}
             self.elements.append(element)
@@ -1591,6 +1608,22 @@ class ActiveNetwork(BuiltinDataset):
 
                 else:
                     edge_data['label'] = ''  # blank label
+
+                # Forensic Modality, Acceptance Status, & Provenance
+                e_props = edge_info.get('properties', {})
+                edge_data['modality'] = str(e_props.get('modality') or ('PREDICTED' if edge_data.get('predicted') else 'OBSERVED')).upper()
+                edge_data['acceptance'] = str(e_props.get('acceptance') or e_props.get('acceptance_status') or ('PROPOSED' if edge_data.get('predicted') else 'CONFIRMED')).upper()
+                if 'confidence' in e_props:
+                    edge_data['confidence'] = e_props['confidence']
+                if 'provenance' in e_props:
+                    edge_data['provenance'] = e_props['provenance']
+                if 'source_file' in e_props:
+                    edge_data['source_file'] = e_props['source_file']
+                if 'quote' in e_props:
+                    edge_data['quote'] = e_props['quote']
+                if 'db_id' in e_props:
+                    edge_data['db_id'] = e_props['db_id']
+
                 element = {'group': 'edges', 'data': edge_data}
 
                 # add source selected
@@ -1912,6 +1945,18 @@ class ActiveNetwork(BuiltinDataset):
                 return 'unselected'
             # print('after: ', self.selected_edges)
 
+    @staticmethod
+    def _merge_class(existing_classes, new_class=""):
+        exclude = {
+            'crimenet-focus-pair', 'crimenet-intermediary', 'crimenet-focus-edge',
+            'crimenet-nhop-node', 'crimenet-nhop-edge', 'crimenet-dimmed',
+            'crimenet-cluster-node', 'crimenet-cluster-edge'
+        }
+        tokens = [t for t in (existing_classes or '').split() if t not in exclude]
+        if new_class and new_class not in tokens:
+            tokens.append(new_class)
+        return " ".join(tokens)
+
     def erase_previous_analysis_result(self, task_id, node_ids=None):
         """
         :param task_id:
@@ -1919,21 +1964,38 @@ class ActiveNetwork(BuiltinDataset):
         :return:
         """
         if task_id == 'social_influence_analysis':
+            self.last_influence_result = None
             for element in self.elements:
-                if element['data']['element_type'] == 'node':
+                if element.get('data', {}).get('element_type') == 'node':
                     element['data']['social_influence_score'] = active_element_default_values['social_influence_score']
                     element['data']['visualisation_social_influence_score'] = \
                         active_element_default_values['visualisation_social_influence_score']
+                    if 'classes' in element:
+                        element['classes'] = self._merge_class(element['classes'], '')
+                elif element.get('data', {}).get('element_type') == 'edge':
+                    if 'classes' in element:
+                        element['classes'] = self._merge_class(element['classes'], '')
         ##############
         elif task_id == 'community_detection':
             self.last_community_result = None
             for element in self.elements:
-                if element['data']['element_type'] == 'node':
+                if element.get('data', {}).get('element_type') == 'node':
                     element['data']['community'] = active_element_default_values['community']
                     element['data']['community_confidence'] = active_element_default_values['community_confidence']
                     if 'info' in element['data'] and isinstance(element['data']['info'], dict):
                         element['data']['info'].pop('community', None)
                         element['data']['info'].pop('community_confidence', None)
+                    if 'classes' in element:
+                        element['classes'] = self._merge_class(element['classes'], '')
+                elif element.get('data', {}).get('element_type') == 'edge':
+                    if 'classes' in element:
+                        element['classes'] = self._merge_class(element['classes'], '')
+        ##############
+        elif task_id == 'path_analysis':
+            self.last_path_result = None
+            for element in self.elements:
+                if 'classes' in element:
+                    element['classes'] = self._merge_class(element['classes'], '')
         ##############
         elif task_id == 'link_prediction':
             if node_ids is None:
@@ -1983,17 +2045,14 @@ class ActiveNetwork(BuiltinDataset):
                         return False
         return True
 
-    def apply_analysis(self, task_id, method, params, get_result=False, add_default_params=True):
+    def apply_analysis(self, task_id, method, params, get_result=False, add_default_params=True, scope='FULL_NETWORK'):
         """
         perform analysis on the active network and update the according properties of elements
-
-        :param task_id:
-        :param method:
-        :param params:
-        :param get_result:
-        :param add_default_params:
-        :return:
+        supporting scopes: 'FULL_NETWORK', 'SELECTED_ENTITY', 'SELECTED_SUBGRAPH', 'SELECTED_PAIR'
         """
+        if params is None:
+            params = {}
+        scope = str(params.get('scope') or scope or 'FULL_NETWORK').upper()
 
         node_meta = {}
         for n in self.active_nodes:
@@ -2003,63 +2062,159 @@ class ActiveNetwork(BuiltinDataset):
                 ntype = el_data.get('type') or (el_data.get('info', {}).get('type') if isinstance(el_data.get('info'), dict) else 'person') or 'person'
                 node_meta[n] = {'label': str(lbl), 'name': str(lbl), 'type': str(ntype)}
 
-        network = {
-            'edges': self.get_active_edges(),
-            'nodes': list(self.active_nodes.keys()),
-            'node_metadata': node_meta
-        }
+        # Determine target nodes and edges based on requested execution scope
+        all_active_edges = self.get_active_edges()
+        all_active_nodes = list(self.active_nodes.keys())
+
+        if scope == 'SELECTED_SUBGRAPH':
+            subgraph_nodes = [n for n in self.selected_nodes if n in self.active_nodes]
+            if len(subgraph_nodes) < 2:
+                res = {'success': 0, 'message': 'Selected Subgraph scope requires selecting at least 2 connected nodes on the graph.'}
+                self.last_analysis_message = res['message']
+                return res
+            subgraph_edges = [
+                e for e in all_active_edges
+                if str(e.get('source')) in subgraph_nodes and str(e.get('target')) in subgraph_nodes
+            ]
+            network = {
+                'edges': subgraph_edges,
+                'nodes': subgraph_nodes,
+                'node_metadata': {n: node_meta[n] for n in subgraph_nodes if n in node_meta}
+            }
+        elif scope == 'SELECTED_ENTITY':
+            entity = None
+            if params and params.get('entity'):
+                entity = str(params['entity'])
+            elif self.selected_nodes:
+                entity = str(list(self.selected_nodes)[0])
+            if not entity or entity not in self.active_nodes:
+                res = {'success': 0, 'message': 'Selected Entity scope requires clicking an entity node on the graph to focus.'}
+                self.last_analysis_message = res['message']
+                return res
+
+            if task_id == 'social_influence_analysis' and method in ('pagerank', 'pagerank_centrality'):
+                params['personalization'] = {entity: 1.0}
+            elif task_id == 'path_analysis' and method in ('n_hop', 'nhop'):
+                params['root'] = entity
+
+            network = {
+                'edges': all_active_edges,
+                'nodes': all_active_nodes,
+                'node_metadata': node_meta
+            }
+        elif scope == 'SELECTED_PAIR':
+            source = params.get('source')
+            target = params.get('target')
+            if (not source or not target) and len(self.selected_nodes) >= 2:
+                sel_list = list(self.selected_nodes)
+                source = str(sel_list[0])
+                target = str(sel_list[1])
+                params['source'] = source
+                params['target'] = target
+            if not source or not target:
+                res = {'success': 0, 'message': 'Selected Pair scope requires selecting exactly 2 entities (source and target) on the graph.'}
+                self.last_analysis_message = res['message']
+                return res
+
+            network = {
+                'edges': all_active_edges,
+                'nodes': all_active_nodes,
+                'node_metadata': node_meta
+            }
+        else:
+            # FULL_NETWORK
+            if task_id == 'path_analysis' and method in ('shortest_path', 'path', 'all_paths'):
+                if not params.get('source') or not params.get('target'):
+                    if len(self.selected_nodes) >= 2:
+                        sel_list = list(self.selected_nodes)
+                        params['source'] = str(sel_list[0])
+                        params['target'] = str(sel_list[1])
+                    else:
+                        res = {'success': 0, 'message': 'Shortest path analysis requires selecting 2 entities on the graph, or specifying source & target.'}
+                        self.last_analysis_message = res['message']
+                        return res
+            elif task_id == 'path_analysis' and method in ('n_hop', 'nhop'):
+                if not params.get('root') and not params.get('source'):
+                    if self.selected_nodes:
+                        params['root'] = str(list(self.selected_nodes)[0])
+                    else:
+                        res = {'success': 0, 'message': 'N-Hop neighborhood analysis requires selecting a root entity on the graph.'}
+                        self.last_analysis_message = res['message']
+                        return res
+
+            network = {
+                'edges': all_active_edges,
+                'nodes': all_active_nodes,
+                'node_metadata': node_meta
+            }
+
         if add_default_params:
-            if task_id == 'link_prediction':
+            if task_id == 'link_prediction' and not params.get('sources'):
                 params['sources'] = list(self.selected_nodes)
 
         options = {'method': method, 'parameters': params}
+        task = {
+            'task_id': task_id,
+            'network': network,
+            'options': options
+        }
 
-        task = {'task_id': task_id,
-                'network': network,
-                'options': options}
-
-        # print(task)
         if get_result:
             result = self.analyzer.perform_analysis(task=task, params=None)
             return result
 
-        if self.compare_tasks(task):
-            pass
         result = self.analyzer.perform_analysis(task=task, params=None)
-        if result['success'] == 0:
-            self.last_analysis_message = result.get('message', 'Analysis could not be performed.')
-            return result
+        if not result or result.get('success') == 0:
+            self.last_analysis_message = result.get('message', 'Analysis could not be performed.') if result else 'Analysis failed.'
+            return result or {'success': 0, 'message': 'Analysis failed.'}
+
         self.last_analysis_message = None
         self.last_analysis = {'task_id': task['task_id'], 'options': task['options']}
-        #################################
-        if task_id == 'social_influence_analysis':
-            # erase previous result
-            self.erase_previous_analysis_result(task_id='social_influence_analysis')
-            self.erase_previous_analysis_result(task_id='community_detection')
-            scores = result['scores']
-            score_values = [score for _, score in scores.items()]
-            min_score = min(score_values)
-            max_score = max(score_values)
-            # update the new result
-            for node in scores:
-                if node in self.active_nodes:
-                    element_index = self.active_nodes[node]['element_index']
-                    element = self.elements[element_index]
-                    score = scores[node]
-                    element['data']['social_influence_score'] = score
-                    element['data']['visualisation_social_influence_score'] = helpers.min_max_scaling(score,
-                                                                                                      min_score,
-                                                                                                      max_score,
-                                                                                                      (0.2, 0.99))
+        self.last_analysis_result = result
 
         #################################
-        elif task_id == 'community_detection':
-            # erase previous result
+        # 1. SOCIAL INFLUENCE ANALYSIS
+        #################################
+        if task_id == 'social_influence_analysis':
             self.erase_previous_analysis_result(task_id='social_influence_analysis')
             self.erase_previous_analysis_result(task_id='community_detection')
+            self.erase_previous_analysis_result(task_id='path_analysis')
+            self.last_influence_result = result
+            scores = result.get('scores', {})
+            if scores:
+                score_values = [v for v in scores.values() if v is not None]
+                min_score = min(score_values) if score_values else 0.0
+                max_score = max(score_values) if score_values else 1.0
+                sorted_scores = sorted(scores.items(), key=lambda kv: kv[1], reverse=True)
+                top_nodes = set(str(k) for k, v in sorted_scores[:5] if v > 0)
+
+                for node in scores:
+                    if node in self.active_nodes:
+                        element_index = self.active_nodes[node]['element_index']
+                        element = self.elements[element_index]
+                        score = scores[node]
+                        element['data']['social_influence_score'] = score
+                        element['data']['visualisation_social_influence_score'] = helpers.min_max_scaling(
+                            score, min_score, max_score, (0.2, 0.99)
+                        )
+                        if str(node) in top_nodes:
+                            element['classes'] = self._merge_class(element.get('classes', ''), 'crimenet-cluster-node')
+
+        #################################
+        # 2. COMMUNITY DETECTION
+        #################################
+        elif task_id == 'community_detection':
+            self.erase_previous_analysis_result(task_id='social_influence_analysis')
+            self.erase_previous_analysis_result(task_id='community_detection')
+            self.erase_previous_analysis_result(task_id='path_analysis')
             self.last_community_result = result
-            # update the new result
             membership = result.get('membership', {})
+            entity_target_comm = None
+            if scope == 'SELECTED_ENTITY' and self.selected_nodes:
+                entity = str(list(self.selected_nodes)[0])
+                if entity in membership:
+                    entity_target_comm = list(membership[entity].keys())[0]
+
             for node in membership:
                 if node in self.active_nodes:
                     element_index = self.active_nodes[node]['element_index']
@@ -2074,17 +2229,122 @@ class ActiveNetwork(BuiltinDataset):
                     if node in self.nodes and isinstance(self.nodes[node], dict):
                         self.nodes[node]['community'] = c
 
+                    if entity_target_comm is not None:
+                        if c == entity_target_comm:
+                            element['classes'] = self._merge_class(element.get('classes', ''), 'crimenet-cluster-node')
+                        else:
+                            element['classes'] = self._merge_class(element.get('classes', ''), 'crimenet-dimmed')
+
+            if entity_target_comm is not None:
+                for el in self.elements:
+                    if el.get('group') == 'edges':
+                        esrc = str(el.get('data', {}).get('source', ''))
+                        etgt = str(el.get('data', {}).get('target', ''))
+                        src_c = list(membership.get(esrc, {}).keys())[0] if esrc in membership else None
+                        tgt_c = list(membership.get(etgt, {}).keys())[0] if etgt in membership else None
+                        if src_c == entity_target_comm and tgt_c == entity_target_comm:
+                            el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-cluster-edge')
+                        else:
+                            el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-dimmed')
+
+        #################################
+        # 3. PATH ANALYSIS
+        #################################
+        elif task_id == 'path_analysis':
+            self.erase_previous_analysis_result(task_id='social_influence_analysis')
+            self.erase_previous_analysis_result(task_id='community_detection')
+            self.erase_previous_analysis_result(task_id='path_analysis')
+            self.last_path_result = result
+
+            if method in ('shortest_path', 'path', 'all_paths'):
+                path = result.get('path') or []
+                if not path and result.get('paths'):
+                    all_p = result.get('paths', [])
+                    path_nodes = set()
+                    path_edges = set()
+                    for p in all_p:
+                        for idx_p in range(len(p)):
+                            path_nodes.add(str(p[idx_p]))
+                            if idx_p < len(p) - 1:
+                                path_edges.add((str(p[idx_p]), str(p[idx_p+1])))
+                                path_edges.add((str(p[idx_p+1]), str(p[idx_p])))
+                    src = str(params.get('source', ''))
+                    tgt = str(params.get('target', ''))
+                    for el in self.elements:
+                        if el.get('group') == 'nodes':
+                            nid = str(el.get('data', {}).get('id', ''))
+                            if nid in (src, tgt):
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-focus-pair')
+                            elif nid in path_nodes:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-intermediary')
+                            else:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-dimmed')
+                        elif el.get('group') == 'edges':
+                            esrc = str(el.get('data', {}).get('source', ''))
+                            etgt = str(el.get('data', {}).get('target', ''))
+                            if (esrc, etgt) in path_edges or (etgt, esrc) in path_edges:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-focus-edge')
+                            else:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-dimmed')
+                elif path:
+                    src = str(path[0])
+                    tgt = str(path[-1])
+                    inter = set(str(n) for n in path[1:-1])
+                    path_edges = set()
+                    for idx_p in range(len(path) - 1):
+                        path_edges.add((str(path[idx_p]), str(path[idx_p+1])))
+                        path_edges.add((str(path[idx_p+1]), str(path[idx_p])))
+
+                    for el in self.elements:
+                        if el.get('group') == 'nodes':
+                            nid = str(el.get('data', {}).get('id', ''))
+                            if nid in (src, tgt):
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-focus-pair')
+                            elif nid in inter:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-intermediary')
+                            else:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-dimmed')
+                        elif el.get('group') == 'edges':
+                            esrc = str(el.get('data', {}).get('source', ''))
+                            etgt = str(el.get('data', {}).get('target', ''))
+                            if (esrc, etgt) in path_edges or (etgt, esrc) in path_edges:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-focus-edge')
+                            else:
+                                el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-dimmed')
+
+            elif method in ('n_hop', 'nhop'):
+                root = str(result.get('root') or '')
+                neighborhood = set(str(n) for n in result.get('neighborhood') or [])
+                hop_distances = result.get('hop_distances') or {}
+                for el in self.elements:
+                    if el.get('group') == 'nodes':
+                        nid = str(el.get('data', {}).get('id', ''))
+                        if nid == root:
+                            el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-focus-pair')
+                            el.get('data', {})['nhop_distance'] = 0
+                        elif nid in neighborhood:
+                            el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-nhop-node')
+                            el.get('data', {})['nhop_distance'] = hop_distances.get(nid, 1)
+                        else:
+                            el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-dimmed')
+                    elif el.get('group') == 'edges':
+                        esrc = str(el.get('data', {}).get('source', ''))
+                        etgt = str(el.get('data', {}).get('target', ''))
+                        if esrc in neighborhood and etgt in neighborhood:
+                            el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-nhop-edge')
+                        else:
+                            el['classes'] = self._merge_class(el.get('classes', ''), 'crimenet-dimmed')
+
+        #################################
+        # 4. LINK PREDICTION
         #################################
         elif task_id == 'link_prediction':
-            # self.erase_previous_analysis_result('link_prediction', params['sources'])
             self.erase_previous_analysis_result('link_prediction')
             predictions = result['predictions']
             for source in predictions:
-                # erase previous result
                 self.remove_predicted_edges([source])
                 if len(predictions[source]) > 0:
                     self.predicted_edges[source] = []
-                # update the new result
                 for target in predictions[source]:
                     predicted_edge_data = {'element_type': 'edge',
                                            'id': '{}_{}'.format(source, target),
@@ -2101,12 +2361,12 @@ class ActiveNetwork(BuiltinDataset):
                     predicted_element = {'group': 'edges', 'data': predicted_edge_data}
                     self.elements.append(predicted_element)
                     self.predicted_edges[source].append(len(self.elements) - 1)
-        #################################
         elif task_id == 'node_embedding':
             pass
-        #################################
         else:
             pass
+
+        return result
 
     def dump_network(self, filename, output_dir):
         """
@@ -3171,6 +3431,9 @@ class BuiltinDatasetsManager(DataManager):
 
             self.add_dataset('rhodes_bombing', 'Rhodes Bombing',
                              '%s/datasets/preprocessed/rhodes_bombing.json' % path2root)
+
+            self.add_dataset('synthetic_black_falcon', '[TEST / SYNTHETIC DATA] Operation Black Falcon',
+                             '%s/datasets/preprocessed/synthetic_investigation_test_data.json' % path2root)
 
     def add_dataset(self, datset_id, name, path_2_data, settings=None, uploaded=False, from_file=True):
         """

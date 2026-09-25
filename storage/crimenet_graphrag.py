@@ -609,6 +609,7 @@ class CrimeNetGraphRAG:
                 "case_id": self.case_id,
                 "response": "No evidence has been indexed for this case yet. Please index evidence documents first.",
                 "sources": [],
+                "source_context": [],
                 "entities": [],
                 "relationships": [],
                 "reports": [],
@@ -671,12 +672,27 @@ class CrimeNetGraphRAG:
             response_type=response_type,
         )
 
+        doc_sources = []
+        source_context = []
+        for tu in matched_tus:
+            doc_id = tu.get("document_id") or tu.get("id")
+            if doc_id and doc_id not in doc_sources:
+                doc_sources.append(doc_id)
+                source_context.append({
+                    "id": doc_id,
+                    "source_ref": doc_id,
+                    "text_unit_id": tu.get("id"),
+                    "snippet": str(tu.get("text", ""))[:300],
+                    "entity_ids": tu.get("entity_ids", []),
+                })
+
         return {
             "query": query,
             "mode": "local",
             "case_id": self.case_id,
             "response": response_text,
-            "sources": [tu["document_id"] for tu in matched_tus[:5]],
+            "sources": doc_sources[:5],
+            "source_context": source_context[:5],
             "entities": [e["title"] for e in matched_entities],
             "relationships": [f"{r['source']} -> {r['target']} ({r['description']})" for r in matched_rels[:5]],
             "reports": [r["title"] for r in matched_reps[:3]],
@@ -726,10 +742,17 @@ class CrimeNetGraphRAG:
             reports_used.append(title)
             lines.append(f"- **{title}** [Data: Reports ({rep_id})]: {summary}")
 
+        if reports_used:
+            lines.append("")
+            lines.append("Sources:")
+            for r_title in reports_used[:5]:
+                lines.append(f"- {r_title}")
+
         lines.append("")
         lines.append(
-            f"**Conclusion**: The criminal network exhibits modular operational structure across "
-            f"{len(filtered_reps)} identified community clusters [Data: Communities ({', '.join(str(c) for c in filtered_reps['community'].tolist()[:5])})]."
+            "⚠️ **Evidentiary Notice**: AI-generated statements represent analytical synthesis and hypotheses, "
+            "not verified legal facts. Statements produced by language models must not be treated as confirmed "
+            "facts without cross-referencing primary evidentiary records."
         )
 
         return {
@@ -737,7 +760,11 @@ class CrimeNetGraphRAG:
             "mode": "global",
             "case_id": self.case_id,
             "response": "\n".join(lines),
-            "sources": [],
+            "sources": reports_used[:5],
+            "source_context": [
+                {"id": str(rep.get("id")), "source_ref": rep.get("title"), "snippet": str(rep.get("summary", ""))[:300]}
+                for _, rep in filtered_reps.iterrows()
+            ][:5],
             "entities": [],
             "relationships": [],
             "reports": reports_used,
@@ -756,6 +783,7 @@ class CrimeNetGraphRAG:
                 "case_id": self.case_id,
                 "response": "No evidentiary text units found in indexed case files.",
                 "sources": [],
+                "source_context": [],
                 "entities": [],
                 "relationships": [],
                 "reports": [],
@@ -786,18 +814,40 @@ class CrimeNetGraphRAG:
         ]
 
         doc_sources = []
+        source_context = []
         for idx, tu in enumerate(top_tus, start=1):
             doc_id = tu.get("document_id", "doc_unknown")
-            doc_sources.append(doc_id)
+            if doc_id not in doc_sources:
+                doc_sources.append(doc_id)
+                source_context.append({
+                    "id": doc_id,
+                    "source_ref": doc_id,
+                    "text_unit_id": tu.get("id"),
+                    "snippet": str(tu.get("text", ""))[:300],
+                })
             snippet = tu["text"].strip().replace("\n", " ")[:300]
             lines.append(f"{idx}. \"{snippet}...\" [Data: Sources ({doc_id})]")
+
+        if doc_sources:
+            lines.append("")
+            lines.append("Sources:")
+            for s in doc_sources[:5]:
+                lines.append(f"- {s}")
+
+        lines.append("")
+        lines.append(
+            "⚠️ **Evidentiary Notice**: AI-generated statements represent analytical synthesis and hypotheses, "
+            "not verified legal facts. Statements produced by language models must not be treated as confirmed "
+            "facts without cross-referencing primary evidentiary records."
+        )
 
         return {
             "query": query,
             "mode": "basic",
             "case_id": self.case_id,
             "response": "\n".join(lines),
-            "sources": list(set(doc_sources)),
+            "sources": doc_sources[:5],
+            "source_context": source_context[:5],
             "entities": [],
             "relationships": [],
             "reports": [],
@@ -855,8 +905,31 @@ class CrimeNetGraphRAG:
                 lines.append(f"- *Extended Node*: **{r['source']}** connected to **{r['target']}** via {r['description']} [Data: Relationships ({r['id']})]")
 
         sources: list[str] = []
+        source_context: list[dict] = []
         for r in traversed_hops:
-            sources.extend(r.get("text_unit_ids", []))
+            for tu_id in r.get("text_unit_ids", []):
+                if tu_id not in sources:
+                    sources.append(tu_id)
+                    source_context.append({
+                        "id": tu_id,
+                        "source_ref": tu_id,
+                        "relationship_id": r.get("id"),
+                        "snippet": f"Traversed corridor: {r.get('source')} -> {r.get('target')} ({r.get('description', '')})",
+                    })
+
+        unique_sources = list(dict.fromkeys(sources))
+        if unique_sources:
+            lines.append("")
+            lines.append("Sources:")
+            for s in unique_sources[:5]:
+                lines.append(f"- {s}")
+
+        lines.append("")
+        lines.append(
+            "⚠️ **Evidentiary Notice**: AI-generated statements represent analytical synthesis and hypotheses, "
+            "not verified legal facts. Statements produced by language models must not be treated as confirmed "
+            "facts without cross-referencing primary evidentiary records."
+        )
 
         drift_text = "\n".join(lines)
         if not self.offline_mode and self.api_key:
@@ -870,7 +943,16 @@ class CrimeNetGraphRAG:
                     {"role": "user", "content": query}
                 ])
                 if resp and resp.content:
-                    drift_text = resp.content.strip()
+                    ans = resp.content.strip()
+                    if unique_sources and "Sources:" not in ans:
+                        ans += "\n\nSources:\n" + "\n".join(f"- {s}" for s in unique_sources[:5])
+                    if "Evidentiary Notice" not in ans:
+                        ans += (
+                            "\n\n⚠️ **Evidentiary Notice**: AI-generated statements represent analytical synthesis and hypotheses, "
+                            "not verified legal facts. Statements produced by language models must not be treated as confirmed "
+                            "facts without cross-referencing primary evidentiary records."
+                        )
+                    drift_text = ans
             except Exception as e:
                 logger.debug("Live Groq DRIFT synthesis fallback to deterministic: %s", e)
 
@@ -879,7 +961,8 @@ class CrimeNetGraphRAG:
             "mode": "drift",
             "case_id": self.case_id,
             "response": drift_text,
-            "sources": list(set(sources))[:5],
+            "sources": unique_sources[:5],
+            "source_context": source_context[:5],
             "entities": list(expanded_entities),
             "relationships": [f"{r['source']} -> {r['target']}" for r in (traversed_hops + second_hop_rels)[:6]],
             "reports": [],
@@ -1214,10 +1297,24 @@ class CrimeNetGraphRAG:
                 rep_id = rep["id"]
                 lines.append(f"- {rep['summary']} [Data: Reports ({rep_id})]")
 
+        # Append explicit supporting sources block
+        doc_sources = []
+        for tu in text_units:
+            doc_id = tu.get("document_id")
+            if doc_id and doc_id not in doc_sources:
+                doc_sources.append(doc_id)
+
+        if doc_sources:
+            lines.append("")
+            lines.append("Sources:")
+            for s in doc_sources[:5]:
+                lines.append(f"- {s}")
+
         lines.append("")
         lines.append(
-            f"**Forensic Note**: All statements above are strictly grounded in exhibit documents for Case {self.case_id}. "
-            f"Operational investigators should cross-examine these findings against live Neo4j transactional records."
+            "⚠️ **Evidentiary Notice**: AI-generated statements represent analytical synthesis and hypotheses, "
+            "not verified legal facts. Statements produced by language models must not be treated as confirmed "
+            "facts without cross-referencing primary evidentiary records."
         )
 
         deterministic_text = "\n".join(lines)
@@ -1235,7 +1332,16 @@ class CrimeNetGraphRAG:
                     {"role": "user", "content": query}
                 ])
                 if resp and resp.content:
-                    return resp.content.strip()
+                    ans = resp.content.strip()
+                    if doc_sources and "Sources:" not in ans:
+                        ans += "\n\nSources:\n" + "\n".join(f"- {s}" for s in doc_sources[:5])
+                    if "Evidentiary Notice" not in ans:
+                        ans += (
+                            "\n\n⚠️ **Evidentiary Notice**: AI-generated statements represent analytical synthesis and hypotheses, "
+                            "not verified legal facts. Statements produced by language models must not be treated as confirmed "
+                            "facts without cross-referencing primary evidentiary records."
+                        )
+                    return ans
             except Exception as e:
                 logger.debug("Live Groq local synthesis fallback to deterministic: %s", e)
 

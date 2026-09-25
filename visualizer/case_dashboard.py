@@ -19,6 +19,8 @@ from dash import dcc, html, Input, Output, State, ALL, ctx, no_update
 import dash_bootstrap_components as dbc
 from storage.case_data_service import CaseDataService
 from storage.evidence_processor import EvidenceProcessor
+from visualizer.case_timeline_panel import build_case_timeline, register_timeline_callbacks
+from visualizer.actions_workflow_modal import build_actions_workflow_panel
 
 
 def get_priority_badge(priority: str) -> html.Span:
@@ -955,24 +957,71 @@ def build_dossier_content(case_id: str) -> html.Div:
                         selected_style={"backgroundColor": "#2b6cb0", "color": "#ffffff", "padding": "8px", "fontSize": "12px", "fontWeight": "700"},
                         children=[
                             html.Div(style={"padding": "14px 0"}, children=[
+                                # Summary ribbon
+                                html.Div(
+                                    style={"backgroundColor": "#2d3748", "borderRadius": "6px", "padding": "10px 14px", "marginBottom": "14px",
+                                           "display": "flex", "justifyContent": "space-between", "alignItems": "center"},
+                                    children=[
+                                        html.Div([
+                                            html.Span(f"🚨 {len(alerts)} alert{'s' if len(alerts) != 1 else ''} detected",
+                                                      style={"color": "#f7fafc", "fontWeight": "700", "fontSize": "13px"}),
+                                            html.Div(
+                                                " · ".join([
+                                                    f"🔴 {sum(1 for a in alerts if (a.get('severity') or '').upper() == 'CRITICAL')} Critical",
+                                                    f"🟠 {sum(1 for a in alerts if (a.get('severity') or '').upper() == 'HIGH')} High",
+                                                    f"🟡 {sum(1 for a in alerts if (a.get('severity') or '').upper() == 'MEDIUM')} Medium",
+                                                ]),
+                                                style={"color": "#a0aec0", "fontSize": "11px", "marginTop": "3px"}
+                                            ),
+                                        ]),
+                                        dbc.Button("Open Full Alerts Panel →",
+                                                   id="btn-dossier-open-alerts-panel",
+                                                   size="sm", color="warning", outline=True,
+                                                   style={"fontSize": "11px"}),
+                                    ]
+                                ),
+                                # Quick preview: top 5 most critical alerts
                                 html.Div(
                                     children=[
                                         html.Div(
-                                            style={"backgroundColor": "#2d3748", "borderLeft": "4px solid #e53e3e" if al.get("severity") == "CRITICAL" else "4px solid #dd6b20", "padding": "10px 14px", "borderRadius": "4px", "marginBottom": "8px"},
+                                            style={
+                                                "backgroundColor": "#2d3748",
+                                                "borderLeft": "4px solid " + (
+                                                    "#e53e3e" if (al.get("severity") or "").upper() == "CRITICAL" else
+                                                    "#dd6b20" if (al.get("severity") or "").upper() == "HIGH" else
+                                                    "#d69e2e" if (al.get("severity") or "").upper() == "MEDIUM" else "#718096"
+                                                ),
+                                                "padding": "8px 12px",
+                                                "borderRadius": "4px",
+                                                "marginBottom": "6px"
+                                            },
                                             children=[
-                                                html.Div(style={"display": "flex", "justifyContent": "space-between"}, children=[
-                                                    html.B(al.get("title", "Anomaly Alert"), style={"color": "#f7fafc"}),
+                                                html.Div(style={"display": "flex", "justifyContent": "space-between", "alignItems": "center"}, children=[
+                                                    html.B(al.get("title", "Anomaly Alert"), style={"color": "#f7fafc", "fontSize": "12px"}),
                                                     get_priority_badge(al.get("severity", "MEDIUM"))
                                                 ]),
-                                                html.P(al.get("explanation", ""), style={"color": "#e2e8f0", "fontSize": "12px", "margin": "4px 0"}),
-                                                html.Div(f"Subject: {al.get('subject', 'N/A')} | Status: {al.get('status', 'OPEN')}", style={"fontSize": "11px", "color": "#a0aec0"})
+                                                html.P((al.get("explanation") or "")[:120] + ("…" if len(al.get("explanation") or "") > 120 else ""),
+                                                       style={"color": "#e2e8f0", "fontSize": "11px", "margin": "3px 0"}),
+                                                html.Div(f"Subject: {al.get('subject', 'N/A')} · Status: {al.get('status', 'OPEN')}",
+                                                         style={"fontSize": "10px", "color": "#a0aec0"})
                                             ]
-                                        ) for al in alerts
+                                        ) for al in sorted(alerts, key=lambda x: {"CRITICAL":0,"HIGH":1,"MEDIUM":2,"LOW":3}.get((x.get("severity") or "").upper(), 4))[:5]
                                     ] if alerts else [html.P("No forensic anomalies currently flagged for this case.", style={"color": "#718096", "fontSize": "12px"})]
+                                ),
+                                html.Div(
+                                    style={"marginTop": "10px", "backgroundColor": "#2d1b00", "border": "1px solid #744210",
+                                           "borderRadius": "4px", "padding": "8px 12px"},
+                                    children=[
+                                        html.Span("⚠️ FORENSIC DISCLAIMER: ", style={"color": "#f6ad55", "fontWeight": "700", "fontSize": "10px"}),
+                                        html.Span("An anomaly is a statistical signal only — NOT evidence of criminal activity. "
+                                                  "Every flagged entity must be independently verified by a qualified investigator.",
+                                                  style={"color": "#fbd38d", "fontSize": "10px"})
+                                    ]
                                 )
                             ])
                         ]
                     ),
+
 
                     # 4. Timeline
                     dcc.Tab(
@@ -1072,10 +1121,39 @@ def build_dossier_content(case_id: str) -> html.Div:
                             ])
                         ]
                     ),
+
+                     # 8. Case Timeline
+                     dcc.Tab(
+                         label="📅 Timeline",
+                         value="tab-timeline",
+                         style={"backgroundColor": "#1a202c", "color": "#a0aec0", "padding": "8px", "fontSize": "12px"},
+                         selected_style={"backgroundColor": "#2b6cb0", "color": "#ffffff", "padding": "8px", "fontSize": "12px", "fontWeight": "700"},
+                         children=[
+                             html.Div(
+                                 style={"padding": "14px 0"},
+                                 children=[build_case_timeline(case_id)]
+                             )
+                         ]
+                     ),
+
+                     # 9. Investigation Actions & HITL
+                     dcc.Tab(
+                         label="⚡ Actions (HITL)",
+                         value="tab-actions",
+                         style={"backgroundColor": "#1a202c", "color": "#a0aec0", "padding": "8px", "fontSize": "12px"},
+                         selected_style={"backgroundColor": "#b7791f", "color": "#ffffff", "padding": "8px", "fontSize": "12px", "fontWeight": "700"},
+                         children=[
+                             html.Div(
+                                 style={"padding": "14px 0"},
+                                 children=[build_actions_workflow_panel(case_id)]
+                             )
+                         ]
+                     ),
                 ]
             )
         ]
     )
+
 
 
 def build_global_nav_bar() -> html.Div:
@@ -1648,4 +1726,29 @@ def register_dashboard_callbacks(dash_app) -> None:
         )
 
 
+    # ── Open Full Alerts Panel from dossier shortcut button ─────────────────
+    @dash_app.callback(
+        Output("alerts-panel-outer", "style"),
+        Input("btn-dossier-open-alerts-panel", "n_clicks"),
+        State("alerts-panel-outer", "style"),
+        prevent_initial_call=True,
+    )
+    def toggle_alerts_panel_from_dossier(n_clicks, current_style):
+        """Show the dedicated Forensic Alerts Panel when triggered from dossier."""
+        from dash.exceptions import PreventUpdate
+        if not n_clicks:
+            raise PreventUpdate
+        is_hidden = (current_style or {}).get("display") == "none"
+        return {
+            "display": "block" if is_hidden else "none",
+            "position": "fixed",
+            "top": "60px",
+            "left": "0",
+            "right": "0",
+            "bottom": "0",
+            "zIndex": "8000",
+            "backgroundColor": "#0f1117",
+            "overflowY": "auto",
+            "boxShadow": "0 -4px 20px rgba(0,0,0,0.5)",
+        }
 

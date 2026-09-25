@@ -238,6 +238,9 @@ states = [
 
     ## ANALYSIS TAB ##
     State('parameter-1', 'value'),
+    State('analysis-scope', 'value'),
+    State('save-analysis-to-case', 'value'),
+    State('active-case-store', 'data'),
 
     ###################
     ## DIALOG INPUTS ##
@@ -371,6 +374,9 @@ input_names = [
 
     ## 'ANALYSIS' 'TAB' ##
     'parameter_1',
+    'analysis_scope',
+    'save_analysis_to_case',
+    'active_case_data',
 
     ################ 'DIALOG' 'INPUTS' ################
 

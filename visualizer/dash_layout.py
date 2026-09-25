@@ -11,6 +11,239 @@ if path2root not in sys.path:
 
 from visualizer import dash_formatter
 from visualizer.case_dashboard import build_global_nav_bar, build_dashboard_view
+from visualizer.alerts_panel import build_alerts_panel
+from visualizer.ask_crimenet_panel import build_ask_crimenet_modal
+from visualizer.audit_panel import build_audit_modal
+from visualizer.reports_panel import build_reports_modal
+from visualizer.actions_workflow_modal import build_actions_workflow_modal
+from visualizer.relationship_panel import build_edge_source_modal
+from visualizer.financial_workflow_panel import build_financial_workflow_modal
+from visualizer.case_timeline_panel import build_case_timeline_modal
+
+
+def build_workspace_secondary_nav():
+    """Bottom secondary navigation for Reports, Audit, and Actions."""
+    return html.Div(
+        id='workspace-secondary-nav',
+        style={
+            'display': 'flex',
+            'alignItems': 'center',
+            'justifyContent': 'space-between',
+            'backgroundColor': '#1a202c',
+            'border': '1px solid #2d3748',
+            'borderRadius': '6px',
+            'padding': '8px 14px',
+            'marginTop': '8px',
+            'marginBottom': '10px',
+            'boxShadow': '0 2px 4px rgba(0,0,0,0.25)',
+            'flexWrap': 'wrap',
+            'gap': '8px'
+        },
+        children=[
+            html.Div(
+                style={'display': 'flex', 'alignItems': 'center', 'gap': '8px', 'flexWrap': 'wrap'},
+                children=[
+                    html.Span("WORKSPACE MODULES:", style={'color': '#a0aec0', 'fontSize': '10px', 'fontWeight': '800', 'letterSpacing': '0.5px'}),
+                    dbc.Button("💸 Money Flow Workflow", id="ws-sec-nav-financial", size="sm", color="success", style={'fontSize': '11px', 'padding': '3px 11px', 'fontWeight': '700', 'boxShadow': '0 0 8px rgba(16,185,129,0.3)'}),
+                    dbc.Button("📅 Case Timeline", id="ws-sec-nav-timeline", size="sm", color="primary", outline=True, style={'fontSize': '11px', 'padding': '3px 10px', 'fontWeight': '600'}),
+                    dbc.Button("📋 Case Reports (PDF)", id="ws-sec-nav-reports", size="sm", color="info", style={'fontSize': '11px', 'padding': '3px 10px', 'fontWeight': '600'}),
+                    dbc.Button("🛡️ Audit Trail", id="ws-sec-nav-audit", size="sm", color="secondary", outline=True, style={'fontSize': '11px', 'padding': '3px 10px'}),
+                    dbc.Button("⚡ Action Workflows (HITL)", id="ws-sec-nav-actions", size="sm", color="warning", outline=True, style={'fontSize': '11px', 'padding': '3px 10px'}),
+                ]
+            ),
+            html.Div(
+                style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
+                children=[
+                    html.Span("CrimeNet Decision Support System", style={'color': '#718096', 'fontSize': '10px', 'fontStyle': 'italic'}),
+                ]
+            )
+        ]
+    )
+
+
+def build_case_workspace_toolbar():
+    """Case-Specific Investigation Workspace interactive toolbar."""
+    return html.Div(
+        id='case-workspace-toolbar',
+        style={
+            'backgroundColor': '#1a202c',
+            'border': '1px solid #2d3748',
+            'borderRadius': '6px',
+            'padding': '10px 14px',
+            'marginBottom': '10px',
+            'display': 'flex',
+            'flexDirection': 'column',
+            'gap': '8px',
+            'boxShadow': '0 2px 4px rgba(0,0,0,0.25)'
+        },
+        children=[
+            # Top row: Quick Entity Search & Filters
+            html.Div(
+                style={'display': 'flex', 'alignItems': 'center', 'gap': '10px', 'flexWrap': 'wrap'},
+                children=[
+                    html.Div(
+                        style={'flex': '1.3', 'minWidth': '220px'},
+                        children=[
+                            dcc.Dropdown(
+                                id='ws-search-entity-dropdown',
+                                placeholder='🔍 Search & select entity in case...',
+                                options=[],
+                                clearable=True,
+                                style={'color': '#1a202c', 'fontSize': '12px'}
+                            )
+                        ]
+                    ),
+                    html.Div(
+                        style={'flex': '1', 'minWidth': '180px'},
+                        children=[
+                            dcc.Dropdown(
+                                id='ws-filter-entity-type',
+                                placeholder='Filter Entity Types...',
+                                options=[
+                                    {'label': '👤 Person', 'value': 'person'},
+                                    {'label': '📱 Phone', 'value': 'phone'},
+                                    {'label': '🚗 Vehicle', 'value': 'vehicle'},
+                                    {'label': '📍 Location', 'value': 'location'},
+                                    {'label': '🏢 Organization', 'value': 'organization'},
+                                    {'label': '💳 Account', 'value': 'account'},
+                                    {'label': '💼 Case', 'value': 'case'},
+                                    {'label': '📅 Event', 'value': 'event'},
+                                ],
+                                multi=True,
+                                style={'color': '#1a202c', 'fontSize': '12px'}
+                            )
+                        ]
+                    ),
+                    html.Div(
+                        style={'flex': '1.1', 'minWidth': '190px'},
+                        children=[
+                            dcc.Dropdown(
+                                id='ws-filter-modality',
+                                placeholder='Filter Modality...',
+                                options=[
+                                    {'label': 'All Modalities', 'value': 'ALL'},
+                                    {'label': '🟢 Observed Fact (CDR/Direct)', 'value': 'OBSERVED'},
+                                    {'label': '🟣 Extracted (Document NLP)', 'value': 'EXTRACTED'},
+                                    {'label': '🟡 Predicted (AI Link)', 'value': 'PREDICTED'},
+                                    {'label': '🔵 Inferred (Reasoning/Rules)', 'value': 'INFERRED'},
+                                ],
+                                value='ALL',
+                                clearable=False,
+                                style={'color': '#1a202c', 'fontSize': '12px'}
+                            )
+                        ]
+                    ),
+                    html.Div(
+                        style={'flex': '0.9', 'minWidth': '160px'},
+                        children=[
+                            dcc.Dropdown(
+                                id='ws-filter-acceptance',
+                                placeholder='Acceptance Status...',
+                                options=[
+                                    {'label': 'All Relationships', 'value': 'ALL'},
+                                    {'label': '✅ Confirmed Only', 'value': 'CONFIRMED'},
+                                    {'label': '⏳ Proposed (Review)', 'value': 'PROPOSED'},
+                                ],
+                                value='ALL',
+                                clearable=False,
+                                style={'color': '#1a202c', 'fontSize': '12px'}
+                            )
+                        ]
+                    ),
+                ]
+            ),
+            # Middle row: Graph Exploration Tools: N-Hop, Shortest Path, Neighbors, Labels, Highlights
+            html.Div(
+                style={'display': 'flex', 'alignItems': 'center', 'gap': '10px', 'flexWrap': 'wrap', 'justifyContent': 'space-between'},
+                children=[
+                    # N-Hop exploration
+                    html.Div(
+                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
+                        children=[
+                            html.Span("N-Hop:", style={'color': '#a0aec0', 'fontSize': '11px', 'fontWeight': '700'}),
+                            dbc.ButtonGroup(size='sm', children=[
+                                dbc.Button("1-Hop", id="ws-btn-nhop-1", outline=True, color="primary", style={'fontSize': '11px', 'padding': '2px 8px'}),
+                                dbc.Button("2-Hop", id="ws-btn-nhop-2", outline=True, color="primary", style={'fontSize': '11px', 'padding': '2px 8px'}),
+                                dbc.Button("3-Hop", id="ws-btn-nhop-3", outline=True, color="primary", style={'fontSize': '11px', 'padding': '2px 8px'}),
+                            ]),
+                            dbc.Button("Expand Neighbors", id="ws-btn-expand-neighbors", size="sm", color="secondary", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
+                            dbc.Button("Restore View", id="ws-btn-reset-view", size="sm", color="secondary", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
+                        ]
+                    ),
+                    # Shortest Path controls
+                    html.Div(
+                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
+                        children=[
+                            html.Span("Shortest Path:", style={'color': '#a0aec0', 'fontSize': '11px', 'fontWeight': '700'}),
+                            dcc.Dropdown(
+                                id='ws-path-source',
+                                placeholder='Source...',
+                                options=[],
+                                style={'minWidth': '130px', 'color': '#1a202c', 'fontSize': '11px'}
+                            ),
+                            html.Span("➔", style={'color': '#718096', 'fontSize': '12px'}),
+                            dcc.Dropdown(
+                                id='ws-path-target',
+                                placeholder='Target...',
+                                options=[],
+                                style={'minWidth': '130px', 'color': '#1a202c', 'fontSize': '11px'}
+                            ),
+                            dbc.Button("Trace Path", id="ws-btn-find-path", size="sm", color="info", style={'fontSize': '11px', 'padding': '2px 8px', 'fontWeight': '600'}),
+                        ]
+                    ),
+                    # Label controls
+                    html.Div(
+                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
+                        children=[
+                            html.Span("Labels:", style={'color': '#a0aec0', 'fontSize': '11px', 'fontWeight': '700'}),
+                            dcc.RadioItems(
+                                id='ws-label-mode',
+                                options=[
+                                    {'label': ' Name', 'value': 'name'},
+                                    {'label': ' Name+Type', 'value': 'name_type'},
+                                    {'label': ' None', 'value': 'none'}
+                                ],
+                                value='name',
+                                inline=True,
+                                style={'color': '#cbd5e0', 'fontSize': '11px', 'display': 'flex', 'gap': '6px'}
+                            )
+                        ]
+                    ),
+                    # Analysis highlights
+                    html.Div(
+                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
+                        children=[
+                            dbc.Button("💸 Money Flow", id="ws-btn-money-flow-toolbar", size="sm", color="success", outline=True, style={'fontSize': '11px', 'padding': '2px 8px', 'fontWeight': '700'}),
+                            dbc.Button("Highlight Bridges", id="ws-btn-highlight-bridges", size="sm", color="warning", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
+                            dbc.Button("Highlight Predicted", id="ws-btn-highlight-predicted", size="sm", color="warning", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
+                            dbc.Button("Clear Highlight", id="ws-btn-clear-highlights", size="sm", color="light", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
+                        ]
+                    ),
+                ]
+            ),
+            # Bottom row: Modality Legend Bar
+            html.Div(
+                style={
+                    'display': 'flex',
+                    'alignItems': 'center',
+                    'gap': '14px',
+                    'fontSize': '11px',
+                    'color': '#cbd5e0',
+                    'borderTop': '1px solid #2d3748',
+                    'paddingTop': '6px',
+                    'flexWrap': 'wrap'
+                },
+                children=[
+                    html.B("EVIDENTIARY MODALITY:", style={'fontSize': '10px', 'color': '#a0aec0', 'letterSpacing': '0.5px'}),
+                    html.Span([html.Span("―", style={'color': '#10b981', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Observed Fact (CDR/Direct)"], style={'display': 'flex', 'alignItems': 'center'}),
+                    html.Span([html.Span("―", style={'color': '#8b5cf6', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Extracted (FIR / Document NLP)"], style={'display': 'flex', 'alignItems': 'center'}),
+                    html.Span([html.Span("- -", style={'color': '#f59e0b', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Predicted (AI Link Prediction)"], style={'display': 'flex', 'alignItems': 'center'}),
+                    html.Span([html.Span("·····", style={'color': '#06b6d4', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Inferred (Reasoning / Rules)"], style={'display': 'flex', 'alignItems': 'center'}),
+                    html.Span("🔒 Unaccepted AI edges are PROPOSED and never sent to Neo4j until investigator validates.", style={'marginLeft': 'auto', 'color': '#718096', 'fontSize': '10px', 'fontStyle': 'italic'}),
+                ]
+            )
+        ]
+    )
 
 
 def init_layout(style, dataset_list, external_dataset_list= []):
@@ -19,6 +252,7 @@ def init_layout(style, dataset_list, external_dataset_list= []):
     :return:  Layout for a Dash app.
     """
     workspace_content = html.Div(children=[
+        dcc.Store(id='inspected-edge-store', data=None),
         html.Div(children=[
             html.Div(className='nine columns', id='main', children=[
                 html.Div(id="original_network_button_div", hidden=True, children=[
@@ -27,6 +261,7 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                                className="interaction-button"
                                )
                 ]),
+                build_case_workspace_toolbar(),
                 cyto.Cytoscape(
                     className='four coloums cytoscape-unaltered-hidden',
                     id='cytoscape-unaltered',
@@ -49,6 +284,7 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                     maxZoom=2.2,
                     # autoRefreshLayout=False
                 ),
+                build_workspace_secondary_nav(),
                 html.Div(id='element-interaction-container', hidden=True, children=[
                     html.Div(id='node-interaction-div', className='element-interaction-div', children=[
                         html.Div('NODES', className='element-interaction-title'),
@@ -181,6 +417,31 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                                              multi=False,
                                              disabled=True)
                             ]),
+                            html.Div(className='inputs', id='analysis-scope-div', children=[
+                                html.Div('EXECUTION SCOPE', id='analysis-scope-title', style={'fontSize': '10px', 'fontWeight': 'bold', 'color': '#a0aec0', 'letterSpacing': '0.5px', 'marginBottom': '4px'}),
+                                dcc.Dropdown(
+                                    id='analysis-scope',
+                                    className='parameter',
+                                    placeholder='Select scope...',
+                                    options=[
+                                        {'label': '🌐 Full Network', 'value': 'FULL_NETWORK'},
+                                        {'label': '🎯 Selected Entity', 'value': 'SELECTED_ENTITY'},
+                                        {'label': '🕸️ Selected Subgraph', 'value': 'SELECTED_SUBGRAPH'},
+                                        {'label': '🔗 Selected Pair', 'value': 'SELECTED_PAIR'},
+                                    ],
+                                    value='FULL_NETWORK',
+                                    clearable=False,
+                                    multi=False
+                                ),
+                            ]),
+                            html.Div(style={'marginTop': '8px', 'marginBottom': '8px', 'padding': '6px 10px', 'backgroundColor': '#1e293b', 'borderRadius': '4px', 'border': '1px solid #334155'}, children=[
+                                dcc.Checklist(
+                                    id='save-analysis-to-case',
+                                    options=[{'label': ' 💾 Save Run to Case Record', 'value': 'SAVE'}],
+                                    value=['SAVE'],
+                                    style={'fontSize': '11px', 'color': '#cbd5e0', 'fontWeight': '500', 'cursor': 'pointer'}
+                                )
+                            ]),
                             html.Button('Analyze', className='inputs', id='analysis-button', n_clicks=0),
                             html.Div(id='analysis-summary', className='analysis-summary-box'),
                             html.Div(id='hierarchical-tree-data', style={'display': 'none'}),
@@ -211,6 +472,7 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                                     ])
                             ])
                         ]),
+                    html.Div(id='evidence-inspector-card', style={'marginTop': '10px'}),
                     html.Div(id='network-info'),
                 ]),
                 html.A(html.Button('User Documentation', className='inputs', id='documentation-button'),
@@ -239,6 +501,23 @@ def init_layout(style, dataset_list, external_dataset_list= []):
             style={'display': 'none'},
             children=[workspace_content]
         ),
+        # ── Forensic Alerts Panel (rendered inside workspace tabs) ──────────
+        # The panel container is kept at root level so it can be
+        # conditionally shown when the workspace Alerts tab is active.
+        html.Div(
+            id='alerts-panel-outer',
+            style={'display': 'none'},
+            children=[build_alerts_panel()]
+        ),
+        # ── Ask CrimeNet floating button + full-screen modal ─────────────
+        build_ask_crimenet_modal(),
+        # ── Investigation Workflows & Forensics Modals ───────────────────
+        build_audit_modal(),
+        build_reports_modal(),
+        build_actions_workflow_modal(),
+        build_edge_source_modal(),
+        build_financial_workflow_modal(),
+        build_case_timeline_modal(),
     ])
 
 
