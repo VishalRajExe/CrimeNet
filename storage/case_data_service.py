@@ -245,6 +245,14 @@ class CaseDataService:
                 "BIKE": "VEHICLE",
                 "LOC": "LOCATION",
                 "GPE": "LOCATION",
+                "FAC": "LOCATION",
+                "CASE_ID": "CASE_REF",
+                "DATE": "EVENT",
+                "PAN": "CASE_REF",
+                "PASSPORT": "CASE_REF",
+                "UPI": "BANK_ACCOUNT",
+                "IMEI": "PHONE",
+                "AMOUNT": "EVENT",
             }
             e_type = mapping.get(e_type, "PERSON")
 
@@ -254,6 +262,18 @@ class CaseDataService:
                 cur.execute(check_query, (case_id, name.strip(), e_type))
                 existing = cur.fetchone()
                 if existing:
+                    if properties:
+                        existing_props = {}
+                        if existing.get("properties"):
+                            try:
+                                existing_props = json.loads(existing["properties"]) if isinstance(existing["properties"], str) else existing["properties"]
+                            except Exception:
+                                existing_props = {}
+                        merged_props = {**existing_props, **properties}
+                        cur.execute(
+                            "UPDATE investigation_entities SET properties = %s WHERE id = %s;",
+                            (json.dumps(merged_props), existing["id"])
+                        )
                     return existing["id"]
 
                 ent_id = str(uuid.uuid4())
@@ -278,7 +298,7 @@ class CaseDataService:
     ) -> str:
         """Insert a relationship between two entities in a case."""
         check_query = """
-        SELECT id FROM entity_relationships 
+        SELECT id, properties FROM entity_relationships 
         WHERE case_id = %s AND source_entity_id = %s AND target_entity_id = %s AND relationship_type = %s;
         """
         with self._get_connection() as conn:
@@ -286,6 +306,18 @@ class CaseDataService:
                 cur.execute(check_query, (case_id, source_entity_id, target_entity_id, relationship_type))
                 existing = cur.fetchone()
                 if existing:
+                    if properties:
+                        existing_props = {}
+                        if existing.get("properties"):
+                            try:
+                                existing_props = json.loads(existing["properties"]) if isinstance(existing["properties"], str) else existing["properties"]
+                            except Exception:
+                                existing_props = {}
+                        merged_props = {**existing_props, **properties}
+                        cur.execute(
+                            "UPDATE entity_relationships SET properties = %s, confidence = %s WHERE id = %s;",
+                            (json.dumps(merged_props), confidence, existing["id"])
+                        )
                     return existing["id"]
 
                 rel_id = str(uuid.uuid4())
@@ -334,6 +366,7 @@ class CaseDataService:
                     "type": (n["entity_type"] or "PERSON").lower(),
                     "verified": bool(n.get("verified", 0)),
                     "info": props,
+                    "properties": props,
                     "case_id": case_id,
                 }
             })
@@ -356,6 +389,7 @@ class CaseDataService:
                     "confidence": float(e.get("confidence", 1.0)),
                     "predicted": bool(e.get("predicted", 0)),
                     "info": edge_props,
+                    "properties": edge_props,
                     "case_id": case_id,
                 }
             })
@@ -364,7 +398,9 @@ class CaseDataService:
             "case_id": case_id,
             "nodes_count": len(raw_nodes),
             "edges_count": len(raw_edges),
-            "elements": elements
+            "elements": elements,
+            "nodes": [el["data"] for el in elements if el.get("group") == "nodes"],
+            "edges": [el["data"] for el in elements if el.get("group") == "edges"],
         }
 
     # ----------------------------------------------------------------------- #

@@ -33,13 +33,16 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import pypdf
 
-# Ensure repo/ai-service is in sys.path for NLP extractor
+# Ensure repo/ai-service and tracked ai-service are in sys.path for NLP extractor
 ROOT_DIR = Path(__file__).resolve().parents[1]
 AI_SERVICE_DIR = ROOT_DIR / "repo" / "ai-service"
+TRACKED_AI_DIR = ROOT_DIR / "ai-service"
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 if str(AI_SERVICE_DIR) not in sys.path:
     sys.path.insert(0, str(AI_SERVICE_DIR))
+if str(TRACKED_AI_DIR) not in sys.path:
+    sys.path.insert(0, str(TRACKED_AI_DIR))
 
 try:
     from app.nlp.extractor import Extractor
@@ -157,7 +160,7 @@ class EvidenceProcessor:
     # ----------------------------------------------------------------------- #
     # EXTRACTORS FOR EACH FORMAT
     # ----------------------------------------------------------------------- #
-    def _extract_pdf(self, file_bytes: bytes, filename: str) -> Dict[str, Any]:
+    def _extract_pdf(self, file_bytes: bytes, filename: str, evidence_id: str = "") -> Dict[str, Any]:
         """Extract text from PDF pages and execute NLP information extraction."""
         try:
             reader = pypdf.PdfReader(io.BytesIO(file_bytes))
@@ -179,9 +182,9 @@ class EvidenceProcessor:
                     f"Scanned / image-only PDF '{filename}': No extractable text stream found across {len(reader.pages)} page(s)."
                 )
 
-            extracted = self.extractor.process(full_text)
+            extracted = self.extractor.process(full_text, evidence_id=evidence_id, filename=filename)
             return {
-                "raw_text": full_text[:10000],  # Preview
+                "raw_text": extracted.get("raw_text", full_text)[:10000],  # Preview
                 "entities": extracted.get("entities", []),
                 "relations": extracted.get("relations", []),
                 "stats": {
@@ -196,7 +199,7 @@ class EvidenceProcessor:
         except Exception as e:
             raise EvidenceProcessingError(f"PDF parsing error in '{filename}': {str(e)}")
 
-    def _extract_txt(self, file_bytes: bytes, filename: str) -> Dict[str, Any]:
+    def _extract_txt(self, file_bytes: bytes, filename: str, evidence_id: str = "") -> Dict[str, Any]:
         """Extract text from TXT and execute NLP information extraction."""
         try:
             try:
@@ -207,9 +210,9 @@ class EvidenceProcessor:
             if not text.strip():
                 raise EvidenceProcessingError(f"Text file '{filename}' contains only whitespace.")
 
-            extracted = self.extractor.process(text)
+            extracted = self.extractor.process(text, evidence_id=evidence_id, filename=filename)
             return {
-                "raw_text": text[:10000],
+                "raw_text": extracted.get("raw_text", text)[:10000],
                 "entities": extracted.get("entities", []),
                 "relations": extracted.get("relations", []),
                 "stats": {
@@ -224,7 +227,7 @@ class EvidenceProcessor:
         except Exception as e:
             raise EvidenceProcessingError(f"Text extraction error in '{filename}': {str(e)}")
 
-    def _extract_csv(self, file_bytes: bytes, filename: str) -> Dict[str, Any]:
+    def _extract_csv(self, file_bytes: bytes, filename: str, evidence_id: str = "") -> Dict[str, Any]:
         """Extract entities and relationships from CSV feeds (CDR, TXN, Pings, or tabular)."""
         try:
             text = file_bytes.decode("utf-8", errors="replace")
@@ -238,7 +241,7 @@ class EvidenceProcessor:
             relations: List[Dict[str, Any]] = []
             seen_entities: set = set()
 
-            def add_ent(name: str, etype: str, conf: float = 1.0, evid: str = "CSV Record"):
+            def add_ent(name: str, etype: str, conf: float = 1.0, evid: str = "CSV Record", tier: str = "STRUCTURED_CSV"):
                 name = str(name).strip()
                 if not name or (name.lower(), etype.upper()) in seen_entities:
                     return
@@ -247,7 +250,15 @@ class EvidenceProcessor:
                     "text": name,
                     "type": etype.lower(),
                     "confidence": conf,
-                    "evidence": evid
+                    "evidence": evid,
+                    "provenance": {
+                        "source_evidence_id": evidence_id,
+                        "source_file": filename,
+                        "extraction_tier": tier,
+                        "context_quote": evid,
+                        "confidence": conf,
+                        "extracted_at": datetime.now().isoformat(),
+                    }
                 })
 
             # Schema 1: CDR (Call Detail Records)
@@ -262,8 +273,8 @@ class EvidenceProcessor:
                     c1 = r.get(caller_key, "").strip()
                     c2 = r.get(callee_key, "").strip()
                     if c1 and c2:
-                        add_ent(c1, "PHONE", 0.98, f"CDR Caller in {filename}")
-                        add_ent(c2, "PHONE", 0.98, f"CDR Callee in {filename}")
+                        add_ent(c1, "PHONE", 0.98, f"CDR Caller in {filename}", "STRUCTURED_CSV:CDR")
+                        add_ent(c2, "PHONE", 0.98, f"CDR Callee in {filename}", "STRUCTURED_CSV:CDR")
                         dur = r.get(dur_key, "") if dur_key else ""
                         ts = r.get(ts_key, "") if ts_key else ""
                         detail = f"{dur}s call at {ts}".strip() if dur else (f"Call at {ts}" if ts else "Call Record")
@@ -272,7 +283,16 @@ class EvidenceProcessor:
                             "target": c2, "target_type": "phone",
                             "type": "CALLED",
                             "confidence": 0.95,
-                            "evidence": f"CDR: {detail}"
+                            "evidence": f"CDR: {detail}",
+                            "provenance": {
+                                "source_evidence_id": evidence_id,
+                                "source_file": filename,
+                                "extraction_tier": "STRUCTURED_CSV:CDR",
+                                "rule_name": "TELECOM_CDR_CALLED",
+                                "context_quote": f"CDR: {detail}",
+                                "confidence": 0.95,
+                                "extracted_at": datetime.now().isoformat(),
+                            }
                         })
 
             # Schema 2: Financial Transactions
@@ -287,8 +307,8 @@ class EvidenceProcessor:
                     f_val = r.get(from_key, "").strip()
                     t_val = r.get(to_key, "").strip()
                     if f_val and t_val:
-                        add_ent(f_val, "BANK_ACCOUNT" if f_val.isdigit() and len(f_val) > 8 else "PERSON", 0.95, f"Transaction Origin in {filename}")
-                        add_ent(t_val, "BANK_ACCOUNT" if t_val.isdigit() and len(t_val) > 8 else "PERSON", 0.95, f"Transaction Beneficiary in {filename}")
+                        add_ent(f_val, "BANK_ACCOUNT" if f_val.isdigit() and len(f_val) > 8 else "PERSON", 0.95, f"Transaction Origin in {filename}", "STRUCTURED_CSV:FINANCIAL")
+                        add_ent(t_val, "BANK_ACCOUNT" if t_val.isdigit() and len(t_val) > 8 else "PERSON", 0.95, f"Transaction Beneficiary in {filename}", "STRUCTURED_CSV:FINANCIAL")
                         amt = r.get(amt_key, "") if amt_key else ""
                         mode = r.get(mode_key, "") if mode_key else ""
                         relations.append({
@@ -296,7 +316,16 @@ class EvidenceProcessor:
                             "target": t_val, "target_type": "account" if t_val.isdigit() else "person",
                             "type": "TRANSFERRED_TO",
                             "confidence": 0.97,
-                            "evidence": f"Banking transfer {amt} via {mode}".strip()
+                            "evidence": f"Banking transfer {amt} via {mode}".strip(),
+                            "provenance": {
+                                "source_evidence_id": evidence_id,
+                                "source_file": filename,
+                                "extraction_tier": "STRUCTURED_CSV:FINANCIAL",
+                                "rule_name": "BANKING_TRANSFER",
+                                "context_quote": f"Banking transfer {amt} via {mode}".strip(),
+                                "confidence": 0.97,
+                                "extracted_at": datetime.now().isoformat(),
+                            }
                         })
 
             # Schema 3: Cell Tower Pings
@@ -309,14 +338,23 @@ class EvidenceProcessor:
                     pval = r.get(p_key, "").strip()
                     lval = r.get(loc_key, "").strip()
                     if pval and lval:
-                        add_ent(pval, "PHONE", 0.95, f"Cell Ping Phone in {filename}")
-                        add_ent(lval, "LOCATION", 0.90, f"Cell Site Location in {filename}")
+                        add_ent(pval, "PHONE", 0.95, f"Cell Ping Phone in {filename}", "STRUCTURED_CSV:CELL_TOWER")
+                        add_ent(lval, "LOCATION", 0.90, f"Cell Site Location in {filename}", "STRUCTURED_CSV:CELL_TOWER")
                         relations.append({
                             "source": pval, "source_type": "phone",
                             "target": lval, "target_type": "location",
                             "type": "PINGED_AT",
                             "confidence": 0.92,
-                            "evidence": f"Cell Tower Ping at {lval}"
+                            "evidence": f"Cell Tower Ping at {lval}",
+                            "provenance": {
+                                "source_evidence_id": evidence_id,
+                                "source_file": filename,
+                                "extraction_tier": "STRUCTURED_CSV:CELL_TOWER",
+                                "rule_name": "CELL_TOWER_PING",
+                                "context_quote": f"Cell Tower Ping at {lval}",
+                                "confidence": 0.92,
+                                "extracted_at": datetime.now().isoformat(),
+                            }
                         })
 
             # Schema 4: Generic / Unstructured Free Text Column in CSV
@@ -324,7 +362,7 @@ class EvidenceProcessor:
                 text_col = next((k for k in reader.fieldnames if any(w in k.strip().lower() for w in ("text", "description", "statement", "notes", "narrative", "details", "fir"))), None)
                 if text_col:
                     combined_text = "\n".join(r.get(text_col, "") for r in rows[:100] if r.get(text_col, "").strip())
-                    nlp_res = self.extractor.process(combined_text)
+                    nlp_res = self.extractor.process(combined_text, evidence_id=evidence_id, filename=filename)
                     entities = nlp_res.get("entities", [])
                     relations = nlp_res.get("relations", [])
                 else:
@@ -338,14 +376,23 @@ class EvidenceProcessor:
                             t = r.get(t_key, "").strip()
                             rel = r.get(r_key, "ASSOCIATE_OF").strip() if r_key else "ASSOCIATE_OF"
                             if s and t:
-                                add_ent(s, "PERSON", 0.9, f"CSV Source in {filename}")
-                                add_ent(t, "PERSON", 0.9, f"CSV Target in {filename}")
+                                add_ent(s, "PERSON", 0.9, f"CSV Source in {filename}", "STRUCTURED_CSV:PAIR")
+                                add_ent(t, "PERSON", 0.9, f"CSV Target in {filename}", "STRUCTURED_CSV:PAIR")
                                 relations.append({
                                     "source": s, "source_type": "person",
                                     "target": t, "target_type": "person",
                                     "type": rel,
                                     "confidence": 0.9,
-                                    "evidence": f"CSV Link: {rel}"
+                                    "evidence": f"CSV Link: {rel}",
+                                    "provenance": {
+                                        "source_evidence_id": evidence_id,
+                                        "source_file": filename,
+                                        "extraction_tier": "STRUCTURED_CSV:PAIR",
+                                        "rule_name": "CSV_EXPLICIT_LINK",
+                                        "context_quote": f"CSV Link: {rel}",
+                                        "confidence": 0.9,
+                                        "extracted_at": datetime.now().isoformat(),
+                                    }
                                 })
 
             return {
@@ -364,7 +411,7 @@ class EvidenceProcessor:
         except Exception as e:
             raise EvidenceProcessingError(f"CSV extraction failed for '{filename}': {str(e)}")
 
-    def _extract_json(self, file_bytes: bytes, filename: str) -> Dict[str, Any]:
+    def _extract_json(self, file_bytes: bytes, filename: str, evidence_id: str = "") -> Dict[str, Any]:
         """Extract entities and relations from structured JSON feeds or graph dumps."""
         try:
             data = json.loads(file_bytes.decode("utf-8"))
@@ -380,7 +427,15 @@ class EvidenceProcessor:
                             "text": str(name),
                             "type": str(e.get("type", "PERSON")).lower(),
                             "confidence": float(e.get("confidence", 1.0)),
-                            "evidence": str(e.get("evidence", f"JSON entity in {filename}"))
+                            "evidence": str(e.get("evidence", f"JSON entity in {filename}")),
+                            "provenance": {
+                                "source_evidence_id": evidence_id,
+                                "source_file": filename,
+                                "extraction_tier": "STRUCTURED_JSON:ENTITIES",
+                                "context_quote": str(e.get("evidence", f"JSON entity in {filename}")),
+                                "confidence": float(e.get("confidence", 1.0)),
+                                "extracted_at": datetime.now().isoformat(),
+                            }
                         })
                 for r in data.get("relations", []):
                     src = r.get("source") or r.get("from")
@@ -394,7 +449,16 @@ class EvidenceProcessor:
                             "target_type": str(r.get("target_type", "person")).lower(),
                             "type": str(rtype),
                             "confidence": float(r.get("confidence", 1.0)),
-                            "evidence": str(r.get("evidence", f"JSON relation in {filename}"))
+                            "evidence": str(r.get("evidence", f"JSON relation in {filename}")),
+                            "provenance": {
+                                "source_evidence_id": evidence_id,
+                                "source_file": filename,
+                                "extraction_tier": "STRUCTURED_JSON:RELATIONS",
+                                "rule_name": "JSON_EXPLICIT_RELATION",
+                                "context_quote": str(r.get("evidence", f"JSON relation in {filename}")),
+                                "confidence": float(r.get("confidence", 1.0)),
+                                "extracted_at": datetime.now().isoformat(),
+                            }
                         })
 
             # Format 2: Cytoscape elements format {"nodes": [...], "edges": [...]} or elements list
@@ -414,7 +478,15 @@ class EvidenceProcessor:
                             "text": str(name),
                             "type": str(ntype).lower(),
                             "confidence": 1.0,
-                            "evidence": f"Cytoscape Node #{nd.get('id', '')}"
+                            "evidence": f"Cytoscape Node #{nd.get('id', '')}",
+                            "provenance": {
+                                "source_evidence_id": evidence_id,
+                                "source_file": filename,
+                                "extraction_tier": "STRUCTURED_JSON:CYTOSCAPE",
+                                "context_quote": f"Cytoscape Node #{nd.get('id', '')}",
+                                "confidence": 1.0,
+                                "extracted_at": datetime.now().isoformat(),
+                            }
                         })
 
                 for ed in edges:
@@ -430,7 +502,16 @@ class EvidenceProcessor:
                             "target_type": "person",
                             "type": str(rtype),
                             "confidence": float(edd.get("confidence", 1.0)),
-                            "evidence": f"Cytoscape Edge #{edd.get('id', '')}"
+                            "evidence": f"Cytoscape Edge #{edd.get('id', '')}",
+                            "provenance": {
+                                "source_evidence_id": evidence_id,
+                                "source_file": filename,
+                                "extraction_tier": "STRUCTURED_JSON:CYTOSCAPE",
+                                "rule_name": "CYTOSCAPE_GRAPH_EDGE",
+                                "context_quote": f"Cytoscape Edge #{edd.get('id', '')}",
+                                "confidence": float(edd.get("confidence", 1.0)),
+                                "extracted_at": datetime.now().isoformat(),
+                            }
                         })
 
             # Format 3: Array of records or narrative text
@@ -438,7 +519,7 @@ class EvidenceProcessor:
                 # Text check
                 texts = [item for item in data if isinstance(item, str)]
                 if texts:
-                    nlp_res = self.extractor.process("\n".join(texts[:50]))
+                    nlp_res = self.extractor.process("\n".join(texts[:50]), evidence_id=evidence_id, filename=filename)
                     entities = nlp_res.get("entities", [])
                     relations = nlp_res.get("relations", [])
                 else:
@@ -447,15 +528,36 @@ class EvidenceProcessor:
                         if isinstance(item, dict):
                             for k, v in item.items():
                                 if any(sub in k.lower() for sub in ("phone", "mobile", "tel")):
-                                    entities.append({"text": str(v), "type": "phone", "confidence": 0.95, "evidence": f"JSON field {k}"})
+                                    entities.append({
+                                        "text": str(v), "type": "phone", "confidence": 0.95, "evidence": f"JSON field {k}",
+                                        "provenance": {
+                                            "source_evidence_id": evidence_id, "source_file": filename,
+                                            "extraction_tier": "STRUCTURED_JSON:FIELD", "context_quote": f"JSON field {k}: {v}",
+                                            "confidence": 0.95, "extracted_at": datetime.now().isoformat()
+                                        }
+                                    })
                                 elif any(sub in k.lower() for sub in ("name", "suspect", "accused", "person")):
-                                    entities.append({"text": str(v), "type": "person", "confidence": 0.9, "evidence": f"JSON field {k}"})
+                                    entities.append({
+                                        "text": str(v), "type": "person", "confidence": 0.9, "evidence": f"JSON field {k}",
+                                        "provenance": {
+                                            "source_evidence_id": evidence_id, "source_file": filename,
+                                            "extraction_tier": "STRUCTURED_JSON:FIELD", "context_quote": f"JSON field {k}: {v}",
+                                            "confidence": 0.9, "extracted_at": datetime.now().isoformat()
+                                        }
+                                    })
                                 elif any(sub in k.lower() for sub in ("vehicle", "plate", "car")):
-                                    entities.append({"text": str(v), "type": "vehicle", "confidence": 0.9, "evidence": f"JSON field {k}"})
+                                    entities.append({
+                                        "text": str(v), "type": "vehicle", "confidence": 0.9, "evidence": f"JSON field {k}",
+                                        "provenance": {
+                                            "source_evidence_id": evidence_id, "source_file": filename,
+                                            "extraction_tier": "STRUCTURED_JSON:FIELD", "context_quote": f"JSON field {k}: {v}",
+                                            "confidence": 0.9, "extracted_at": datetime.now().isoformat()
+                                        }
+                                    })
             else:
                 # Top level dict with text or attributes
                 text_dump = json.dumps(data, indent=2)
-                nlp_res = self.extractor.process(text_dump[:10000])
+                nlp_res = self.extractor.process(text_dump[:10000], evidence_id=evidence_id, filename=filename)
                 entities = nlp_res.get("entities", [])
                 relations = nlp_res.get("relations", [])
 
@@ -522,10 +624,14 @@ class EvidenceProcessor:
             if not name:
                 continue
 
+            provenance = ent.get("provenance", {})
             props = {
                 "confidence": ent.get("confidence", 1.0),
                 "evidence_id": evidence_id,
                 "evidence_quote": ent.get("evidence", ""),
+                "normalized_text": ent.get("normalized_text", name),
+                "extraction_tier": provenance.get("extraction_tier", "UNKNOWN"),
+                "provenance": provenance,
                 "linked_at": datetime.now().isoformat()
             }
             ent_id = self.svc.link_entity_to_case(
@@ -570,11 +676,16 @@ class EvidenceProcessor:
                 )
                 name_to_id[tgt_name.lower()] = tgt_id
 
+            rel_prov = rel.get("provenance", {})
             rel_props = {
                 "evidence_id": evidence_id,
                 "evidence_quote": rel.get("evidence", ""),
-                "confidence": conf
+                "confidence": conf,
+                "rule_name": rel_prov.get("rule_name", "UNKNOWN"),
+                "extraction_tier": rel_prov.get("extraction_tier", "UNKNOWN"),
+                "provenance": rel_prov,
             }
+            is_predicted = (rtype == "POTENTIAL_ALIAS" or conf < 0.70)
             self.svc.link_relationship_to_case(
                 case_id=case_id,
                 source_entity_id=src_id,
@@ -582,7 +693,7 @@ class EvidenceProcessor:
                 relationship_type=rtype,
                 confidence=conf,
                 properties=rel_props,
-                predicted=False
+                predicted=is_predicted
             )
             relationships_created += 1
 
@@ -677,13 +788,13 @@ class EvidenceProcessor:
         # Stage 4 & 5: Process file & Extract entities + relations
         try:
             if file_type == "PDF":
-                extracted = self._extract_pdf(file_bytes, filename)
+                extracted = self._extract_pdf(file_bytes, filename, evidence_id=ev_id)
             elif file_type == "TXT":
-                extracted = self._extract_txt(file_bytes, filename)
+                extracted = self._extract_txt(file_bytes, filename, evidence_id=ev_id)
             elif file_type == "CSV":
-                extracted = self._extract_csv(file_bytes, filename)
+                extracted = self._extract_csv(file_bytes, filename, evidence_id=ev_id)
             elif file_type == "JSON":
-                extracted = self._extract_json(file_bytes, filename)
+                extracted = self._extract_json(file_bytes, filename, evidence_id=ev_id)
             else:
                 raise EvidenceProcessingError(f"Unsupported processor for type {file_type}")
         except Exception as proc_err:
