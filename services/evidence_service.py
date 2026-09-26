@@ -37,7 +37,7 @@ class EvidenceService:
     ) -> str:
         """Ingest a new piece of evidence, calculating its non-repudiation SHA-256 hash."""
         sha_hash = compute_evidence_hash(content)
-        ev_id = self.repo.create_evidence(
+        ev_id = self.repo.add_evidence(
             case_id=case_id,
             title=title,
             evidence_type=evidence_type,
@@ -48,6 +48,9 @@ class EvidenceService:
             filename=filename or f"{title.lower().replace(' ', '_')}.txt",
         )
         return ev_id
+
+    # Canonical alias
+    add_evidence = ingest_evidence
 
 
 default_evidence_service = EvidenceService()

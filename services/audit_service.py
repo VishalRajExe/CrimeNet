@@ -35,6 +35,10 @@ class AuditService:
         """Retrieve audit log entries for a case."""
         return self.repo.get_audit_trail(case_id)
 
+    def list_audit_logs(self, case_id: Optional[str] = None, limit: int = 100) -> List[Dict[str, Any]]:
+        """List audit logs from the repository."""
+        return self.repo.list_audit_logs(case_id=case_id, limit=limit)
+
     def record_feedback(
         self,
         case_id: str,

@@ -26,8 +26,43 @@ def get_neo4j_driver():
         return None
 
 
-def sync_confirmed_to_neo4j(case_id: str, relationships: List[Dict[str, Any]]) -> Dict[str, Any]:
+def sync_confirmed_to_neo4j(case_id: str, relationships: List[Any]) -> Dict[str, Any]:
     """Synchronize confirmed relationships into Neo4j with audit provenance."""
-    from storage.graphrag_crimenet_boundary import GraphRAGCrimeNetBoundary
+    from storage.graphrag_crimenet_boundary import (
+        GraphRAGCrimeNetBoundary,
+        NormalizedRelationship,
+        RelationshipModality,
+        AcceptanceStatus,
+    )
     boundary = GraphRAGCrimeNetBoundary(case_id=case_id)
-    return boundary.sync_to_neo4j(case_id=case_id, entities=[], relationships=relationships)
+    norm_rels = []
+    for r in relationships:
+        if isinstance(r, NormalizedRelationship):
+            norm_rels.append(r)
+        elif isinstance(r, dict):
+            acc = r.get("acceptance_status") or r.get("acceptance") or AcceptanceStatus.CONFIRMED
+            if isinstance(acc, str):
+                acc = AcceptanceStatus(acc.upper())
+            mod = r.get("modality") or RelationshipModality.OBSERVED
+            if isinstance(mod, str):
+                mod = RelationshipModality(mod.upper())
+            norm_rels.append(
+                NormalizedRelationship(
+                    id=str(r.get("id") or "rel-01"),
+                    source_id=str(r.get("source_id") or r.get("source")),
+                    source_name=str(r.get("source_name") or r.get("source")),
+                    target_id=str(r.get("target_id") or r.get("target")),
+                    target_name=str(r.get("target_name") or r.get("target")),
+                    relationship_type=str(r.get("relationship_type") or r.get("type") or "ASSOCIATED_WITH"),
+                    case_id=case_id,
+                    source_evidence_id=str(r.get("source_evidence_id") or r.get("evidence_source") or "EVID_01"),
+                    source_file=str(r.get("source_file") or "evidence.txt"),
+                    modality=mod,
+                    acceptance_status=acc,
+                    confidence=float(r.get("confidence", 1.0)),
+                    properties=r.get("properties") or {},
+                )
+            )
+        else:
+            norm_rels.append(r)
+    return boundary.sync_to_neo4j(case_id=case_id, entities=[], relationships=norm_rels)

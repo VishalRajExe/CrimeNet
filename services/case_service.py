@@ -54,6 +54,8 @@ class CaseService:
         description: str = "",
         location: str = "Multi-Jurisdiction",
         lead_officer: str = "Lead Investigator",
+        case_id: Optional[str] = None,
+        **kwargs,
     ) -> str:
         """Create a new case and persist in database."""
         return self.repo.create_case(
@@ -64,7 +66,9 @@ class CaseService:
             status=status,
             description=description,
             location=location,
-            lead_officer=lead_officer,
+            lead_investigator_id=lead_officer,
+            case_id=case_id,
+            **kwargs,
         )
 
     def get_case_graph(self, case_id: str) -> Dict[str, Any]:
@@ -78,6 +82,46 @@ class CaseService:
     def list_alerts(self, case_id: str) -> List[Dict[str, Any]]:
         """List forensic anomaly alerts for a case."""
         return self.repo.list_alerts(case_id)
+
+    def create_alert(
+        self,
+        case_id: str,
+        alert_type: str,
+        title: str,
+        explanation: str,
+        severity: str = "MEDIUM",
+        subject: Optional[str] = None,
+        related_entities: Optional[List[str]] = None,
+    ) -> str:
+        """Create and persist a forensic anomaly alert for an investigation case."""
+        return self.repo.create_alert(
+            case_id=case_id,
+            alert_type=alert_type,
+            title=title,
+            explanation=explanation,
+            severity=severity,
+            subject=subject,
+            related_entities=related_entities,
+        )
+
+    def list_alerts_filtered(
+        self,
+        case_id: str,
+        entity_types: Optional[List[str]] = None,
+        statuses: Optional[List[str]] = None,
+        severity: Optional[str] = None,
+        alert_type: Optional[str] = None,
+        limit: int = 100,
+    ) -> List[Dict[str, Any]]:
+        """List alerts for a case with filtering."""
+        return self.repo.list_alerts_filtered(
+            case_id=case_id,
+            entity_types=entity_types,
+            statuses=statuses,
+            severity=severity,
+            alert_type=alert_type,
+            limit=limit,
+        )
 
     def get_case_timeline_aggregate(self, case_id: str) -> List[Dict[str, Any]]:
         """Retrieve aggregated chronological timeline events for a case."""

@@ -159,6 +159,31 @@ class CrimeNetClient:
             return [a for a in data if a.get("case_id") == case_id]
         return default_case_service.list_alerts(case_id)
 
+    def create_alert(
+        self,
+        case_id: str,
+        alert_type: str,
+        title: str,
+        explanation: str,
+        severity: str = "MEDIUM",
+        subject: Optional[str] = None,
+        related_entities: Optional[List[str]] = None,
+    ) -> str:
+        """Create a forensic anomaly alert."""
+        return default_case_service.create_alert(
+            case_id=case_id,
+            alert_type=alert_type,
+            title=title,
+            explanation=explanation,
+            severity=severity,
+            subject=subject,
+            related_entities=related_entities,
+        )
+
+    def list_alerts_filtered(self, case_id: str, **kwargs) -> List[Dict[str, Any]]:
+        """List alerts with filtering."""
+        return default_case_service.list_alerts_filtered(case_id, **kwargs)
+
     def get_case_timeline_aggregate(self, case_id: str) -> List[Dict[str, Any]]:
         """Retrieve timeline events for a case."""
         data = self._http_get(f"/api/cases/{case_id}/timeline")
