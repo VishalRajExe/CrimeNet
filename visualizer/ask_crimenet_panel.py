@@ -461,8 +461,10 @@ def _render_answer(answer: str, sources: Optional[List[Dict[str, Any]]] = None) 
             html.Hr(style={"borderColor": BORDER_COL, "margin": "16px 0 10px 0"}),
             html.Span(
                 "⚠️ CrimeNet is an investigation decision-support system. "
-                "AI responses and predicted links are analytical signals that require primary evidence verification by human investigators.",
-                style={"color": "#d69e2e", "fontSize": "10px", "fontStyle": "italic"}
+                "Do not present predicted relationships, anomalies, model scores, AI-generated summaries, or inferred connections as proof of criminal activity. "
+                "Clearly distinguish: Observed, Extracted, Predicted, Inferred, Anomalous. "
+                "Human investigators remain responsible for verification and decisions.",
+                style={"color": "#d69e2e", "fontSize": "10.5px", "fontStyle": "italic", "display": "block", "lineHeight": "1.4"}
             )
         ]
     )

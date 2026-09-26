@@ -1019,10 +1019,10 @@ class InvestigationReportCompiler:
 
         # ── 20. Statutory Legal Disclaimer ────────────────────────────────────
         disclaimer_text = (
-            "CrimeNet is a decision-support forensic intelligence platform. All relational links, network centralities, "
-            "and anomaly alerts are computed for investigative guidance. Predicted links represent computational hypotheses "
-            "and do not constitute definitive proof of culpability. Formal judicial proceedings require verified primary evidence "
-            "and mandatory supervisory review."
+            "CrimeNet is an investigation decision-support system. Do not present predicted relationships, anomalies, "
+            "model scores, AI-generated summaries, or inferred connections as proof of criminal activity. All intelligence findings "
+            "are classified across five distinct evidentiary categories: Observed, Extracted, Predicted, Inferred, and Anomalous. "
+            "Human investigators remain strictly responsible for independent verification, physical corroboration, and all final judicial decisions."
         )
         elements.append(HRFlowable(width="100%", thickness=0.5, color=colors.HexColor("#cbd5e0"), spaceAfter=5))
         elements.append(Paragraph(f"<b>STATUTORY NOTICE:</b> {disclaimer_text}", style_disclaimer))

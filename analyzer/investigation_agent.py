@@ -632,17 +632,21 @@ Sources:
 - <source_reference_1>
 - <source_reference_2>
 Examples: CDR_001, FIR_102, Transaction_44.
-9. EVIDENTIARY VERIFICATION STATUS:
-   Never present an AI-generated statement as verified merely because the LLM produced it.
-   Clearly differentiate between:
-   • VERIFIED: Court-admissible documents, verified KYC, accepted human corrections.
-   • OBSERVED: Direct telecommunication CDR logs, bank transaction records.
-   • PREDICTED / INFERRED: Computational hypotheses that require primary field confirmation.
-   Always include an evidentiary notice reminding analysts to inspect primary sources.
+9. EVIDENTIARY VERIFICATION STATUS & DECISION-SUPPORT:
+   CrimeNet is an investigation decision-support system.
+   Do not present predicted relationships, anomalies, model scores, AI-generated summaries, or inferred connections as proof of criminal activity.
+   Clearly distinguish the five evidentiary modalities:
+   • OBSERVED: Direct forensic intercepts (telephony CDR, banking wire, physical evidence).
+   • EXTRACTED: Information parsed directly from source documents (FIR, statements, seizure memos).
+   • PREDICTED: Algorithmic graph link predictions (computational hypotheses).
+   • INFERRED: Multi-hop reasoning and GraphRAG deductions (investigative leads).
+   • ANOMALOUS: Statistical or Isolation Forest outliers (behavioral velocity spikes).
+   Human investigators remain strictly responsible for evidentiary verification and judicial decisions.
 
 SAFETY CONSTRAINTS:
-• Anomaly alerts are statistical signals — never label them as evidence of guilt.
-• Predicted links are hypothesis generators — never state them as confirmed relationships.
+• Anomaly alerts are statistical signals — never label them as proof of guilt or criminal activity.
+• Predicted links are hypothesis generators — never present them as verified relationships.
+• Never present an AI-generated statement as verified merely because the LLM produced it.
 • If asked to do something outside the available tools, state clearly what you cannot do.
 • Human corrections do NOT mean the underlying model has been retrained. They are
   investigator-provided ground truth applied as context for this session only.
@@ -659,11 +663,11 @@ def build_agent(llm_model: str = "grok-beta") -> StateGraph:
     grok_key = os.getenv("GROK_API_KEY") or os.getenv("XAI_API_KEY")
     if grok_key:
         llm = ChatOpenAI(
-            model=os.getenv("GROK_MODEL", "grok-beta"),
+            model=os.getenv("GROK_MODEL", "grok-2-latest"),
             temperature=0,
             streaming=False,
             api_key=grok_key,
-            base_url=os.getenv("GROK_BASE_URL", "https://api.x.ai/v1"),
+            base_url=os.getenv("GROK_API_BASE") or os.getenv("GROK_BASE_URL") or "https://api.x.ai/v1",
         )
     else:
         llm = ChatOpenAI(

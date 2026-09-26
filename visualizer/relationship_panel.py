@@ -73,6 +73,13 @@ MODALITY_STYLE: Dict[str, Dict[str, str]] = {
         "badge": "🔵 INFERRED",
         "desc": "🔵 INFERRED — Multi-hop graph deduction / GraphRAG DRIFT reasoning (AI HYPOTHESIS)"
     },
+    "ANOMALOUS": {
+        "bg": "rgba(239,68,68,0.15)",
+        "text": "#f87171",
+        "border": "#ef4444",
+        "badge": "🔴 ANOMALOUS",
+        "desc": "🔴 ANOMALOUS — Statistical/Isolation Forest outlier (AI HYPOTHESIS - NOT PROOF)"
+    },
 }
 
 ACCEPTANCE_STYLE: Dict[str, Dict[str, str]] = {

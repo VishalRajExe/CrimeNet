@@ -43,7 +43,10 @@ NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "crimenet123")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-LLM_PROVIDER = os.getenv("LLM_PROVIDER", "gemini")
+GROK_API_KEY = os.getenv("GROK_API_KEY", os.getenv("XAI_API_KEY", ""))
+GROK_API_BASE = os.getenv("GROK_API_BASE", os.getenv("GROK_BASE_URL", "https://api.x.ai/v1"))
+GROK_MODEL = os.getenv("GROK_MODEL", "grok-2-latest")
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "grok" if GROK_API_KEY else "gemini")
 
 # Security & Access Control
 CRIMENET_API_KEY = os.getenv("CRIMENET_API_KEY", "").strip()
