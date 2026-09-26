@@ -76,6 +76,16 @@ try:
     GRAPHRAG_AVAILABLE = True
 except ImportError as err:
     GRAPHRAG_AVAILABLE = False
+    class GraphRagConfig:  # type: ignore
+        def __init__(self, *args, **kwargs):
+            self.root_dir = kwargs.get("root_dir", "")
+    class IndexingMethod:  # type: ignore
+        Standard = "standard"
+    read_indexer_entities = None  # type: ignore
+    read_indexer_relationships = None  # type: ignore
+    read_indexer_reports = None  # type: ignore
+    read_indexer_communities = None  # type: ignore
+    read_indexer_text_units = None  # type: ignore
     logging.getLogger(__name__).warning("GraphRAG 3.2.0 import warning: %s", err)
 
 logger = logging.getLogger("CrimeNet.GraphRAG")

@@ -1912,10 +1912,598 @@ input[type="radio"] {
     flex-shrink: 0;
 }
 
-.hclust-leaf-label {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+
+/* ==========================================================================
+   CRIMENET MODERN DESIGN SYSTEM REFINEMENTS
+   Cohesive typography, card systems, empty states, modals, tooltips, responsive
+   ========================================================================== */
+
+/* Typography & Base Rendering */
+body, input, button, select, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+.tabular-nums {
+    font-variant-numeric: tabular-nums;
+}
 
+/* Tooltip Polish for Dark Investigation Theme */
+.tooltip {
+    z-index: 10050 !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+}
+
+.tooltip-inner {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid #475569 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+    padding: 6px 10px !important;
+    border-radius: 5px !important;
+    max-width: 280px !important;
+    line-height: 1.4 !important;
+}
+
+.bs-tooltip-top .tooltip-arrow::before { border-top-color: #475569 !important; }
+.bs-tooltip-bottom .tooltip-arrow::before { border-bottom-color: #475569 !important; }
+.bs-tooltip-start .tooltip-arrow::before { border-left-color: #475569 !important; }
+.bs-tooltip-end .tooltip-arrow::before { border-right-color: #475569 !important; }
+
+/* Empty States Component */
+.crimenet-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 36px 20px;
+    border-radius: 8px;
+    background-color: #141822;
+    border: 1px dashed #2d3748;
+    margin: 10px 0;
+    transition: border-color 0.2s ease;
+}
+
+.crimenet-empty-state:hover {
+    border-color: #4a5568;
+}
+
+.crimenet-empty-state .empty-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.crimenet-empty-state .empty-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 4px;
+}
+
+.crimenet-empty-state .empty-desc {
+    font-size: 11px;
+    color: #94a3b8;
+    max-width: 340px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+/* Card System Refinements */
+.case-card {
+    background-color: #1a202c;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.case-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transform: translateY(-1px);
+}
+
+.dashboard-kpi-card {
+    background-color: #1a202c;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 14px 18px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dashboard-kpi-card:hover {
+    border-color: #4a5568;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Confirmation & Alert Modals */
+.modal-content {
+    background-color: #1a202c !important;
+    color: #f7fafc !important;
+    border: 1px solid #3b4252 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #2d3748 !important;
+    padding: 14px 20px !important;
+}
+
+.modal-body {
+    padding: 20px !important;
+    color: #cbd5e1 !important;
+    font-size: 13px !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #2d3748 !important;
+    padding: 12px 20px !important;
+    gap: 8px !important;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Notification & Alert Banners */
+.crimenet-alert-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.crimenet-alert-error {
+    background-color: rgba(239, 68, 68, 0.12);
+    border: 1px solid #ef4444;
+    color: #fca5a5;
+}
+
+.crimenet-alert-warning {
+    background-color: rgba(245, 158, 11, 0.12);
+    border: 1px solid #f59e0b;
+    color: #fde68a;
+}
+
+.crimenet-alert-success {
+    background-color: rgba(16, 185, 129, 0.12);
+    border: 1px solid #10b981;
+    color: #a7f3d0;
+}
+
+/* Dropdown Styling Polish - Dark Cyber Theme (Zero white flashes) */
+.Select-control {
+    background-color: #161b26 !important;
+    border-radius: 6px !important;
+    border: 1px solid #2d3748 !important;
+    color: #f1f5f9 !important;
+    box-shadow: none !important;
+    min-height: 32px !important;
+    height: auto !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.Select-control:hover {
+    border-color: #4a5568 !important;
+}
+
+.Select.is-focused > .Select-control {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 1px #38bdf8 !important;
+}
+
+.Select-placeholder {
+    color: #64748b !important;
+    font-size: 11.5px !important;
+    line-height: 30px !important;
+}
+
+.Select-value {
+    line-height: 30px !important;
+}
+
+.Select-value-label {
+    color: #e2e8f0 !important;
+    font-size: 11.5px !important;
+    font-weight: 500 !important;
+}
+
+.Select-input > input {
+    color: #f1f5f9 !important;
+    font-size: 11.5px !important;
+    padding: 0 !important;
+}
+
+.Select-menu-outer {
+    background-color: #161b26 !important;
+    z-index: 9999 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7) !important;
+    border: 1px solid #334155 !important;
+    margin-top: 4px !important;
+    overflow: hidden !important;
+}
+
+.Select-menu {
+    background-color: #161b26 !important;
+    max-height: 220px !important;
+}
+
+.Select-option {
+    background-color: #161b26 !important;
+    color: #cbd5e1 !important;
+    font-size: 11.5px !important;
+    padding: 7px 12px !important;
+    cursor: pointer !important;
+    transition: background-color 0.12s ease !important;
+}
+
+.Select-option:hover,
+.Select-option.is-focused {
+    background-color: #222a3a !important;
+    color: #38bdf8 !important;
+}
+
+.Select-option.is-selected {
+    background-color: #1e3a5f !important;
+    color: #38bdf8 !important;
+    font-weight: 600 !important;
+}
+
+.Select-noresults {
+    background-color: #161b26 !important;
+    color: #64748b !important;
+    font-size: 11px !important;
+    padding: 10px !important;
+    text-align: center !important;
+}
+
+.Select-arrow {
+    border-color: #94a3b8 transparent transparent !important;
+    border-width: 5px 5px 2.5px !important;
+}
+
+.is-open > .Select-control > .Select-arrow {
+    border-color: transparent transparent #38bdf8 !important;
+}
+
+.Select-clear-zone {
+    color: #94a3b8 !important;
+    font-size: 14px !important;
+}
+
+.Select-clear-zone:hover {
+    color: #ef4444 !important;
+}
+
+/* Multi-select Pills */
+.Select--multi .Select-value {
+    background-color: #1e2638 !important;
+    border: 1px solid #334155 !important;
+    color: #38bdf8 !important;
+    border-radius: 4px !important;
+    margin-top: 3px !important;
+    margin-bottom: 3px !important;
+    line-height: 1.4 !important;
+    font-size: 11px !important;
+}
+
+.Select--multi .Select-value-icon {
+    border-right: 1px solid #334155 !important;
+    color: #94a3b8 !important;
+    padding: 1px 5px !important;
+    cursor: pointer !important;
+}
+
+.Select--multi .Select-value-icon:hover {
+    background-color: rgba(239, 68, 68, 0.25) !important;
+    color: #ef4444 !important;
+}
+
+.Select--multi .Select-value-label {
+    color: #e2e8f0 !important;
+    padding: 2px 6px !important;
+}
+
+/* ── Tab Navigation Cohesion ─────────────────────────────────────────── */
+.crimenet-tabs-parent {
+    background: transparent !important;
+}
+
+.crimenet-tabs-bar {
+    display: flex !important;
+    background-color: #10141d !important;
+    border-bottom: 1px solid #2a3447 !important;
+}
+
+.crimenet-tabs-bar .tab {
+    background-color: transparent !important;
+    color: #94a3b8 !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    padding: 8px 12px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.crimenet-tabs-bar .tab:hover {
+    color: #f1f5f9 !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.crimenet-tabs-bar .tab--selected {
+    color: #38bdf8 !important;
+    border-bottom: 2px solid #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.08) !important;
+}
+
+/* ── Typography & Data Badges ─────────────────────────────────────────── */
+.crimenet-mono,
+.crimenet-hash,
+.crimenet-timestamp,
+.crimenet-amount {
+    font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace !important;
+    font-variant-numeric: tabular-nums !important;
+}
+
+.crimenet-hash {
+    font-size: 10.5px !important;
+    color: #94a3b8 !important;
+    letter-spacing: 0.2px !important;
+}
+
+.crimenet-timestamp {
+    font-size: 10px !important;
+    color: #64748b !important;
+}
+
+.crimenet-amount {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #10b981 !important;
+}
+
+/* ── Card Architecture ────────────────────────────────────────────────── */
+.crimenet-card {
+    background-color: #161b26 !important;
+    border: 1px solid #252e40 !important;
+    border-radius: 6px !important;
+    padding: 12px 14px !important;
+    margin-bottom: 10px !important;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.crimenet-card:hover {
+    border-color: #334155 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.crimenet-card-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
+    border-bottom: 1px solid rgba(42, 52, 71, 0.6) !important;
+}
+
+.crimenet-card-title {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #f1f5f9 !important;
+    margin: 0 !important;
+}
+
+/* ── Floating Graph Viewport Controls ─────────────────────────────────── */
+.graph-viewport-controls {
+    position: absolute !important;
+    top: 10px !important;
+    right: 12px !important;
+    z-index: 50 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+    background: rgba(16, 20, 29, 0.88) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid #2a3447 !important;
+    border-radius: 6px !important;
+    padding: 3px 5px !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+}
+
+.graph-viewport-btn {
+    background: transparent !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    transition: all 0.15s ease !important;
+    line-height: 1 !important;
+    font-weight: 600 !important;
+}
+
+.graph-viewport-btn:hover {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.12) !important;
+}
+
+.graph-viewport-btn:active {
+    transform: scale(0.96) !important;
+}
+
+/* ── Custom Sleek Scrollbars ──────────────────────────────────────────── */
+#sidebar::-webkit-scrollbar,
+#right-panel-tab-content::-webkit-scrollbar,
+#case-dashboard-container::-webkit-scrollbar,
+.hierarchical-tree-wrapper::-webkit-scrollbar,
+.hclust-tree-scroll::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+#sidebar::-webkit-scrollbar-track,
+#right-panel-tab-content::-webkit-scrollbar-track,
+#case-dashboard-container::-webkit-scrollbar-track {
+    background: #0c0f17 !important;
+}
+
+#sidebar::-webkit-scrollbar-thumb,
+#right-panel-tab-content::-webkit-scrollbar-thumb,
+#case-dashboard-container::-webkit-scrollbar-thumb {
+    background: #252e40 !important;
+    border-radius: 3px !important;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover,
+#right-panel-tab-content::-webkit-scrollbar-thumb:hover,
+#case-dashboard-container::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8 !important;
+}
+
+/* ── Unified Investigation Workspace 3-Column Cockpit ─────────────────── */
+#crimenet-workspace-cockpit {
+    display: flex !important;
+    flex-direction: row !important;
+    height: calc(100vh - 105px) !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+    background-color: #0c0f17 !important;
+    box-sizing: border-box !important;
+}
+
+#workspace-left-rail, #sidebar.workspace-left-rail {
+    width: 290px !important;
+    min-width: 270px !important;
+    max-width: 320px !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    background-color: #121620 !important;
+    border-right: 1px solid #2a3447 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 10 !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 8px 10px !important;
+    box-sizing: border-box !important;
+}
+
+#workspace-center-stage, #main.workspace-center-stage {
+    flex: 1 1 0% !important;
+    min-width: 420px !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: #090c13 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    float: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#cytoscape-stage-wrapper {
+    flex: 1 1 0% !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#workspace-center-stage .cytoscape {
+    height: 100% !important;
+    width: 100% !important;
+    background-color: #090c13 !important;
+    flex: 1 1 0% !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+#workspace-right-rail {
+    width: 380px !important;
+    min-width: 330px !important;
+    max-width: 430px !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    background-color: #121620 !important;
+    border-left: 1px solid #2a3447 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 10 !important;
+    box-sizing: border-box !important;
+}
+
+/* ── Secondary Navigation Dock ────────────────────────────────────────── */
+#workspace-secondary-nav {
+    background-color: #0e121a !important;
+    border-top: 1px solid #252e40 !important;
+    padding: 6px 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+}
+
+/* ── Responsive Adaptations ──────────────────────────────────────────── */
+@media (max-width: 1360px) {
+    #workspace-right-rail {
+        width: 340px !important;
+        min-width: 310px !important;
+    }
+    #sidebar.workspace-left-rail {
+        width: 270px !important;
+        min-width: 250px !important;
+    }
+}
+
+@media (max-width: 1180px) {
+    #crimenet-workspace-cockpit {
+        overflow-x: auto !important;
+    }
+    #workspace-center-stage, #main.workspace-center-stage {
+        min-width: 380px !important;
+    }
+    #case-workspace-toolbar > div {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+    #crimenet-global-nav {
+        height: auto !important;
+        padding: 6px 12px !important;
+        flex-wrap: wrap !important;
+    }
+}
+
+@media (max-width: 900px) {
+    #workspace-right-rail {
+        width: 300px !important;
+    }
+    #case-dashboard-container {
+        padding: 10px !important;
+    }
+    .case-card {
+        padding: 12px !important;
+    }
+}

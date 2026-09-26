@@ -482,9 +482,9 @@ def register_relationship_panel_callbacks(dash_app):
 
     @dash_app.callback(
         [
-            Output("modal-edge-source-viewer", "is_open"),
-            Output("modal-edge-source-title", "children"),
-            Output("modal-edge-source-body", "children"),
+            Output("modal-edge-source-viewer", "is_open", allow_duplicate=True),
+            Output("modal-edge-source-title", "children", allow_duplicate=True),
+            Output("modal-edge-source-body", "children", allow_duplicate=True),
         ],
         [
             Input("btn-open-edge-source", "n_clicks"),

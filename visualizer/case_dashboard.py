@@ -1157,13 +1157,24 @@ def build_dossier_content(case_id: str) -> html.Div:
 
 
 def build_global_nav_bar() -> html.Div:
-    """Build persistent top navigation bar with brand, active case status pill, and mode switchers."""
+    """Build persistent top navigation bar featuring the CASE selector, badges, and quick actions."""
+    svc = CaseDataService()
+    cases = svc.list_cases()
+    case_options = [
+        {
+            "label": f"{c.get('case_number') or c.get('id')} — {c.get('title') or c.get('id')} ({(c.get('priority') or 'MED').upper()})",
+            "value": c.get("id")
+        }
+        for c in cases
+    ]
+    default_case = "case-synthetic-black-falcon-001" if any(c.get("id") == "case-synthetic-black-falcon-001" for c in cases) else (cases[0].get("id") if cases else "")
+
     return html.Div(
         id="crimenet-global-nav",
         style={
             "backgroundColor": "#10141d",
-            "borderBottom": "1px solid #2d3748",
-            "padding": "0 24px",
+            "borderBottom": "1px solid #2a3447",
+            "padding": "0 20px",
             "height": "56px",
             "display": "flex",
             "alignItems": "center",
@@ -1174,44 +1185,36 @@ def build_global_nav_bar() -> html.Div:
             "boxShadow": "0 2px 8px rgba(0,0,0,0.4)"
         },
         children=[
-            # Left: Brand & Navigation buttons
+            # Left: Brand & Case Selector
             html.Div(
-                style={"display": "flex", "alignItems": "center", "gap": "16px"},
+                style={"display": "flex", "alignItems": "center", "gap": "14px"},
                 children=[
                     html.Div(
-                        style={"display": "flex", "alignItems": "center", "gap": "8px", "cursor": "pointer"},
+                        style={"display": "flex", "alignItems": "center", "gap": "6px", "cursor": "pointer"},
                         children=[
                             html.Span("🛡️", style={"fontSize": "20px"}),
                             html.Span("CrimeNet", style={"fontWeight": "900", "fontSize": "17px", "color": "#f7fafc", "letterSpacing": "1px"}),
                             html.Span("CASE OS", style={"fontSize": "9px", "fontWeight": "800", "backgroundColor": "rgba(99, 179, 237, 0.2)", "color": "#63b3ed", "padding": "2px 6px", "borderRadius": "3px", "letterSpacing": "1px"})
                         ]
                     ),
+                    html.Span("|", style={"color": "#2d3748"}),
+                    # Prominent CASE Selector
                     html.Div(
-                        style={"display": "flex", "alignItems": "center", "gap": "8px", "marginLeft": "16px"},
+                        style={"display": "flex", "alignItems": "center", "gap": "8px"},
                         children=[
-                            dbc.Button(
-                                "📋 Case Dashboard",
-                                id="nav-btn-dashboard",
-                                color="secondary",
-                                size="sm",
-                                outline=False,
-                                style={"fontSize": "12px", "fontWeight": "600", "padding": "5px 12px", "backgroundColor": "#2b6cb0", "borderColor": "#2b6cb0", "color": "#ffffff"}
-                            ),
-                            dbc.Button(
-                                "🕸️ Investigation Workspace",
-                                id="nav-btn-workspace",
-                                color="secondary",
-                                size="sm",
-                                outline=True,
-                                style={"fontSize": "12px", "fontWeight": "600", "padding": "5px 12px", "borderColor": "#4a5568", "color": "#cbd5e0", "backgroundColor": "transparent"}
-                            ),
-                            dbc.Button(
-                                "+ New Case",
-                                id="nav-btn-new-case",
-                                color="success",
-                                size="sm",
-                                outline=True,
-                                style={"fontSize": "12px", "fontWeight": "600", "padding": "5px 12px"}
+                            html.Span("CASE:", style={"fontWeight": "900", "fontSize": "12px", "color": "#38bdf8", "letterSpacing": "1px"}),
+                            dcc.Dropdown(
+                                id="global-case-selector",
+                                options=case_options,
+                                value=default_case,
+                                clearable=False,
+                                searchable=True,
+                                style={
+                                    "width": "350px",
+                                    "fontSize": "12px",
+                                    "fontWeight": "600",
+                                    "color": "#1a202c",
+                                }
                             )
                         ]
                     )
@@ -1221,26 +1224,148 @@ def build_global_nav_bar() -> html.Div:
             # Center: Active Case Context Banner Pill
             html.Div(
                 id="active-case-header-display",
-                style={"display": "flex", "alignItems": "center", "gap": "10px"},
+                style={"display": "flex", "alignItems": "center", "gap": "8px"},
                 children=[
-                    html.Div(
-                        "No Case Selected — Open a Case from the Dashboard",
-                        style={"color": "#718096", "fontSize": "12px", "fontStyle": "italic"}
-                    )
+                    html.Span("CASE-BF-2026-001", style={"fontSize": "11px", "fontFamily": "monospace", "fontWeight": "700", "color": "#cbd5e0", "backgroundColor": "#1e293b", "padding": "3px 8px", "borderRadius": "4px"}),
+                    html.Span("CRITICAL", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "rgba(239, 68, 68, 0.2)", "color": "#fca5a5", "padding": "2px 7px", "borderRadius": "4px"}),
+                    html.Span("ACTIVE", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "rgba(16, 185, 129, 0.2)", "color": "#86efac", "padding": "2px 7px", "borderRadius": "4px"}),
+                    html.Span("25 Entities • 26 Links • 4 Alerts", style={"fontSize": "11px", "color": "#94a3b8", "marginLeft": "4px"})
                 ]
             ),
 
-            # Right: Operator / Officer Info
+            # Right: Operator / Officer Info & Actions
             html.Div(
-                style={"display": "flex", "alignItems": "center", "gap": "12px", "fontSize": "12px", "color": "#a0aec0"},
+                style={"display": "flex", "alignItems": "center", "gap": "10px"},
                 children=[
+                    dbc.Button(
+                        "📁 Case Directory",
+                        id="nav-btn-case-directory",
+                        color="secondary",
+                        size="sm",
+                        outline=True,
+                        style={"fontSize": "11px", "fontWeight": "600", "padding": "4px 10px"}
+                    ),
+                    dbc.Button(
+                        "+ New Case",
+                        id="nav-btn-new-case",
+                        color="success",
+                        size="sm",
+                        outline=True,
+                        style={"fontSize": "11px", "fontWeight": "600", "padding": "4px 10px"}
+                    ),
+                    html.Span("|", style={"color": "#2d3748"}),
                     html.Span("🟢 MySQL Connected", style={"fontSize": "11px", "color": "#68d391", "fontWeight": "600"}),
-                    html.Span("|", style={"color": "#4a5568"}),
-                    html.Span([html.B("Officer: "), "Lead Investigator"], style={"color": "#cbd5e0"}),
+                    html.Div(
+                        style={"display": "none"},
+                        children=[
+                            dbc.Button("Dashboard", id="nav-btn-dashboard"),
+                            dbc.Button("Workspace", id="nav-btn-workspace"),
+                        ]
+                    )
                 ]
             )
         ]
     )
+
+
+def build_top_ask_crimenet_bar() -> html.Div:
+    """Build the prominent top Ask CrimeNet query bar spanning the workspace."""
+    return html.Div(
+        id="top-ask-crimenet-container",
+        style={
+            "backgroundColor": "#121620",
+            "borderBottom": "1px solid #2a3447",
+            "padding": "7px 20px",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "space-between",
+            "gap": "14px",
+            "flexWrap": "wrap",
+        },
+        children=[
+            # Query bar input
+            html.Div(
+                style={"display": "flex", "alignItems": "center", "gap": "8px", "flex": "1", "minWidth": "340px"},
+                children=[
+                    html.Span("🤖", style={"fontSize": "18px"}),
+                    dbc.Input(
+                        id="top-ask-crimenet-input",
+                        type="text",
+                        placeholder="Ask CrimeNet... (e.g. 'Why is Rahul connected to Amit?', 'Trace Hawala money flow', 'Show unverified AI links')",
+                        style={
+                            "backgroundColor": "#0c0f17",
+                            "color": "#f7fafc",
+                            "border": "1px solid #2d3748",
+                            "borderRadius": "6px",
+                            "padding": "5px 12px",
+                            "fontSize": "12px",
+                        }
+                    ),
+                    dbc.Button(
+                        [html.Span("⚡ "), "Ask Agent"],
+                        id="top-ask-crimenet-submit-btn",
+                        color="primary",
+                        size="sm",
+                        style={"fontWeight": "700", "fontSize": "11.5px", "padding": "5px 14px", "whiteSpace": "nowrap"}
+                    )
+                ]
+            ),
+            # Suggestion Chips
+            html.Div(
+                style={"display": "flex", "alignItems": "center", "gap": "6px", "flexWrap": "wrap"},
+                children=[
+                    html.Span("Quick Prompts:", style={"color": "#718096", "fontSize": "10.5px", "fontWeight": "700"}),
+                    dbc.Button("Why is Rahul connected to Amit?", id="top-ask-chip-1", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#3182ce", "color": "#90cdf4"}),
+                    dbc.Button("Hawala Money Flow", id="top-ask-chip-2", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#2f855a", "color": "#9ae6b4"}),
+                    dbc.Button("Uncorroborated Claims", id="top-ask-chip-3", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#dd6b20", "color": "#fbd38d"}),
+                    dbc.Button("High Risk Suspects", id="top-ask-chip-4", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#e53e3e", "color": "#feb2b2"}),
+                ]
+            )
+        ]
+    )
+
+
+def build_case_directory_modal() -> html.Div:
+    """Build modal displaying the case directory cards so investigators can browse cases without leaving the workspace."""
+    svc = CaseDataService()
+    cases = svc.list_cases()
+    return html.Div([
+        dbc.Modal(
+            id="modal-case-directory",
+            is_open=False,
+            size="xl",
+            scrollable=True,
+            children=[
+                dbc.ModalHeader(
+                    html.Div(
+                        style={"display": "flex", "alignItems": "center", "gap": "10px"},
+                        children=[
+                            html.Span("📁", style={"fontSize": "22px"}),
+                            html.Div([
+                                html.H5("Investigation Cases Directory", style={"margin": "0", "fontWeight": "800", "color": "#f7fafc"}),
+                                html.Span("Select an investigation case to focus the central graph and intelligence workspace.", style={"fontSize": "11px", "color": "#a0aec0"}),
+                            ])
+                        ]
+                    ),
+                    style={"backgroundColor": "#1a202c", "borderBottom": "1px solid #2d3748"}
+                ),
+                dbc.ModalBody(
+                    style={"backgroundColor": "#0f1117", "color": "#cbd5e0", "padding": "18px"},
+                    children=[
+                        html.Div(
+                            id="case-directory-grid",
+                            style={"display": "grid", "gridTemplateColumns": "repeat(auto-fill, minmax(320px, 1fr))", "gap": "14px"},
+                            children=[build_case_card(c) for c in cases]
+                        )
+                    ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button("Close", id="btn-close-case-directory", color="secondary", size="sm"),
+                    style={"backgroundColor": "#1a202c", "borderTop": "1px solid #2d3748"}
+                )
+            ]
+        )
+    ])
 
 
 def register_dashboard_callbacks(dash_app) -> None:
@@ -1406,15 +1531,17 @@ def register_dashboard_callbacks(dash_app) -> None:
             Input("nav-btn-dashboard", "n_clicks"),
             Input("nav-btn-workspace", "n_clicks"),
             Input("btn-switch-to-workspace-direct", "n_clicks"),
+            Input("global-case-selector", "value"),
         ],
         [
             State("dossier-active-case-id-store", "data"),
             State("active-case-store", "data"),
         ],
-        prevent_initial_call=True
+        prevent_initial_call=False
     )
     def handle_workspace_navigation(open_case_clicks, dossier_launch_clicks,
                                     nav_dash_clicks, nav_ws_clicks, switch_direct_clicks,
+                                    global_case_val,
                                     dossier_case_id, active_case_data):
         from visualizer import app as vapp
         from visualizer import dash_formatter
@@ -1445,12 +1572,17 @@ def register_dashboard_callbacks(dash_app) -> None:
 
         # A specific case was chosen to enter workspace
         target_case_id = None
-        if triggered == "btn-dossier-launch-workspace" and dossier_case_id:
+        if triggered == "global-case-selector" and global_case_val:
+            target_case_id = global_case_val
+        elif triggered == "btn-dossier-launch-workspace" and dossier_case_id:
             target_case_id = dossier_case_id
         elif isinstance(triggered, dict) and triggered.get("type") == "btn-open-case":
             has_clicks = any(open_case_clicks) if isinstance(open_case_clicks, (list, tuple)) else bool(open_case_clicks)
             if has_clicks:
                 target_case_id = triggered.get("index")
+        elif not triggered and global_case_val:
+            # Initial page load: seed workspace with default case
+            target_case_id = global_case_val
 
         if not target_case_id:
             return (
@@ -1519,6 +1651,28 @@ def register_dashboard_callbacks(dash_app) -> None:
             net.elements, net_info, node_table, edge_table, label_table,
             dash_inactive_style, ws_active_style
         )
+
+    # 4b. Case Directory modal toggle
+    @dash_app.callback(
+        Output("modal-case-directory", "is_open"),
+        [
+            Input("nav-btn-case-directory", "n_clicks"),
+            Input("btn-close-case-directory", "n_clicks"),
+            Input({"type": "btn-open-case", "index": ALL}, "n_clicks"),
+        ],
+        [State("modal-case-directory", "is_open")],
+        prevent_initial_call=True
+    )
+    def toggle_case_directory_modal(open_clicks, close_clicks, select_clicks, is_open):
+        triggered = ctx.triggered_id
+        if triggered == "nav-btn-case-directory":
+            return not is_open
+        elif triggered == "btn-close-case-directory":
+            return False
+        elif isinstance(triggered, dict) and triggered.get("type") == "btn-open-case":
+            if any(select_clicks) if isinstance(select_clicks, (list, tuple)) else bool(select_clicks):
+                return False
+        return is_open
 
     # 5. Selected Evidence File Banner indicator
     @dash_app.callback(

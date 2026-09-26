@@ -24,7 +24,7 @@ import json
 import logging
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Annotated, Any, Dict, List, Optional, Sequence, TypedDict
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, ToolMessage
@@ -941,8 +941,8 @@ def _grounded_local_investigation_answer(question: str, case_id: str) -> Dict[st
         "tool": "search_entities",
         "args": {"case_id": case_id, "query": question[:40]},
         "result": f"Matched {len(matched_nodes)} entities: {[n.get('name') for n in matched_nodes]}",
-        "started_at": datetime.utcnow().isoformat(),
-        "ended_at": datetime.utcnow().isoformat()
+        "started_at": datetime.now(timezone.utc).isoformat(),
+        "ended_at": datetime.now(timezone.utc).isoformat()
     })
 
     answer_parts = []
@@ -1039,8 +1039,8 @@ def _grounded_local_investigation_answer(question: str, case_id: str) -> Dict[st
             "tool": "find_shortest_path",
             "args": {"source": s_name, "target": t_name},
             "result": f"Path length: {len(path_found)-1 if path_found else 'None'}",
-            "started_at": datetime.utcnow().isoformat(),
-            "ended_at": datetime.utcnow().isoformat()
+            "started_at": datetime.now(timezone.utc).isoformat(),
+            "ended_at": datetime.now(timezone.utc).isoformat()
         })
 
     elif matched_nodes:

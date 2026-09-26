@@ -22,6 +22,7 @@ from typing import Any, Dict, List, Optional
 import networkx as nx
 
 from dash import dcc, html, Input, Output, State, ctx, no_update
+from dash.exceptions import PreventUpdate
 import dash_bootstrap_components as dbc
 
 from storage.graphrag_crimenet_boundary import (
@@ -766,3 +767,60 @@ def register_case_workspace_callbacks(dash_app):
             return dismiss_card, new_elements
 
         return no_update, no_update
+
+    # -------------------------------------------------------------------------
+    # 8. Viewport Controls (Fit, Zoom In, Zoom Out, Center Selected, Re-layout)
+    # -------------------------------------------------------------------------
+    @dash_app.callback(
+        [
+            Output("cytoscape", "zoom", allow_duplicate=True),
+            Output("cytoscape", "pan", allow_duplicate=True),
+            Output("cytoscape", "layout", allow_duplicate=True),
+        ],
+        [
+            Input("btn-cyto-fit", "n_clicks"),
+            Input("btn-cyto-zoom-in", "n_clicks"),
+            Input("btn-cyto-zoom-out", "n_clicks"),
+            Input("btn-cyto-center-selected", "n_clicks"),
+            Input("btn-cyto-relayout", "n_clicks"),
+        ],
+        [
+            State("cytoscape", "zoom"),
+            State("cytoscape", "pan"),
+            State("ws-search-entity-dropdown", "value"),
+            State("cytoscape", "elements"),
+        ],
+        prevent_initial_call=True
+    )
+    def handle_viewport_hud_controls(fit_c, zin_c, zout_c, center_c, relayout_c, cur_zoom, cur_pan, search_id, elements):
+        tid = ctx.triggered_id
+        if not tid:
+            raise PreventUpdate
+
+        current_zoom = float(cur_zoom or 1.0)
+        current_pan = cur_pan or {"x": 0, "y": 0}
+
+        if tid == "btn-cyto-fit":
+            return 1.0, {"x": 0, "y": 0}, {"name": "cose-bilkent", "animate": False, "fit": True, "padding": 40}
+
+        if tid == "btn-cyto-zoom-in":
+            new_zoom = min(current_zoom * 1.25, 2.2)
+            return new_zoom, no_update, no_update
+
+        if tid == "btn-cyto-zoom-out":
+            new_zoom = max(current_zoom * 0.8, 0.25)
+            return new_zoom, no_update, no_update
+
+        if tid == "btn-cyto-relayout":
+            return no_update, no_update, {"name": "cose-bilkent", "animate": True, "fit": True, "padding": 30, "randomize": False}
+
+        if tid == "btn-cyto-center-selected":
+            if search_id and elements:
+                for el in elements:
+                    if el.get("data", {}).get("id") == search_id and "position" in el:
+                        pos = el["position"]
+                        return 1.4, {"x": -pos.get("x", 0) + 300, "y": -pos.get("y", 0) + 250}, no_update
+            return min(current_zoom * 1.15, 2.0), no_update, no_update
+
+        return no_update, no_update, no_update
+

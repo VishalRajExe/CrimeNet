@@ -58,6 +58,114 @@ GROUND_TRUTH_HIDDEN_LINKS = [
     }
 ]
 
+# ── Ground Truth Negative Edge Pairs (for Link Prediction specificity / ROC evaluation) ──
+GROUND_TRUTH_NEGATIVE_LINKS = [
+    {
+        "source": "person_priya_patel",
+        "target": "loc_dubai_deira",
+        "relationship_type": "NO_RELATION",
+        "ground_truth": False,
+        "description": "Priya Patel is a domestic mule account holder with no direct offshore presence or travel."
+    },
+    {
+        "source": "vehicle_hr26cd5678",
+        "target": "loc_connaught_place",
+        "relationship_type": "NO_RELATION",
+        "ground_truth": False,
+        "description": "Secondary transport vehicle operated strictly on interstate highway routes, never entered CP perimeter."
+    },
+    {
+        "source": "person_neha_singh",
+        "target": "phone_9899887766",
+        "relationship_type": "NO_RELATION",
+        "ground_truth": False,
+        "description": "Neha Singh had zero telephony contact with the Dubai roaming burner device."
+    },
+    {
+        "source": "account_sbi_8812",
+        "target": "org_falcon_logistics",
+        "relationship_type": "NO_RELATION",
+        "ground_truth": False,
+        "description": "No ledger entries or fund routing between mule account SBI-8812 and Falcon Logistics."
+    }
+]
+
+
+def evaluate_synthetic_link_prediction(
+    predicted_edges: List[Dict[str, Any]] | Dict[Tuple[str, str], float],
+    threshold: float = 0.5
+) -> Dict[str, Any]:
+    """
+    Evaluates a candidate link prediction model or algorithm against known ground truth.
+    Computes True Positives (recovered hidden links), False Positives, and overall benchmark recall.
+    """
+    if isinstance(predicted_edges, list):
+        score_map = {}
+        for edge in predicted_edges:
+            s = edge.get("source") or edge.get("source_id")
+            t = edge.get("target") or edge.get("target_id")
+            score = float(edge.get("confidence") or edge.get("score") or 1.0)
+            score_map[(s, t)] = score
+            score_map[(t, s)] = score
+    else:
+        score_map = dict(predicted_edges)
+        for (s, t), val in list(score_map.items()):
+            score_map[(t, s)] = val
+
+    true_positives = 0
+    false_negatives = 0
+    detailed_results = []
+
+    for hidden in GROUND_TRUTH_HIDDEN_LINKS:
+        s, t = hidden["source"], hidden["target"]
+        score = score_map.get((s, t), 0.0)
+        detected = score >= threshold
+        if detected:
+            true_positives += 1
+        else:
+            false_negatives += 1
+        detailed_results.append({
+            "pair": (s, t),
+            "expected_ground_truth": True,
+            "predicted_score": score,
+            "detected": detected,
+            "lead": hidden["evidence_lead"]
+        })
+
+    false_positives = 0
+    true_negatives = 0
+    for neg in GROUND_TRUTH_NEGATIVE_LINKS:
+        s, t = neg["source"], neg["target"]
+        score = score_map.get((s, t), 0.0)
+        flagged = score >= threshold
+        if flagged:
+            false_positives += 1
+        else:
+            true_negatives += 1
+        detailed_results.append({
+            "pair": (s, t),
+            "expected_ground_truth": False,
+            "predicted_score": score,
+            "detected": flagged,
+            "lead": neg["description"]
+        })
+
+    total_positives = len(GROUND_TRUTH_HIDDEN_LINKS)
+    recall = true_positives / total_positives if total_positives > 0 else 0.0
+    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0.0
+
+    return {
+        "dataset_label": DATASET_LABEL,
+        "is_synthetic": True,
+        "true_positives": true_positives,
+        "false_negatives": false_negatives,
+        "true_negatives": true_negatives,
+        "false_positives": false_positives,
+        "recall": round(recall, 4),
+        "precision": round(precision, 4),
+        "detailed_evaluations": detailed_results
+    }
+
 # ── Ground Truth Anomalies (for evaluating Isolation Forest & Anomaly Detection) ─
 GROUND_TRUTH_ANOMALIES = [
     {

@@ -476,13 +476,23 @@ def register_ask_crimenet_callbacks(dash_app):
     # ── Open/close modal ─────────────────────────────────────────────────
     @dash_app.callback(
         Output("modal-ask-crimenet", "is_open"),
-        Input("btn-open-ask-crimenet", "n_clicks"),
+        [
+            Input("btn-open-ask-crimenet", "n_clicks"),
+            Input("top-ask-crimenet-submit-btn", "n_clicks"),
+            Input("top-ask-chip-1", "n_clicks"),
+            Input("top-ask-chip-2", "n_clicks"),
+            Input("top-ask-chip-3", "n_clicks"),
+            Input("top-ask-chip-4", "n_clicks"),
+        ],
         State("modal-ask-crimenet", "is_open"),
         prevent_initial_call=True,
     )
-    def toggle_ask_modal(n, is_open):
-        if n:
+    def toggle_ask_modal(btn_open, top_submit, chip1, chip2, chip3, chip4, is_open):
+        triggered = ctx.triggered_id
+        if triggered == "btn-open-ask-crimenet":
             return not is_open
+        elif triggered in ("top-ask-crimenet-submit-btn", "top-ask-chip-1", "top-ask-chip-2", "top-ask-chip-3", "top-ask-chip-4"):
+            return True
         return is_open
 
     # ── Populate case context pill ────────────────────────────────────────
@@ -510,29 +520,76 @@ def register_ask_crimenet_callbacks(dash_app):
     # ── Fill example question into input ──────────────────────────────────
     @dash_app.callback(
         Output("ask-crimenet-input", "value"),
-        Input({"type": "ask-example-question", "index": ALL}, "n_clicks"),
+        [
+            Input({"type": "ask-example-question", "index": ALL}, "n_clicks"),
+            Input("top-ask-crimenet-submit-btn", "n_clicks"),
+            Input("top-ask-chip-1", "n_clicks"),
+            Input("top-ask-chip-2", "n_clicks"),
+            Input("top-ask-chip-3", "n_clicks"),
+            Input("top-ask-chip-4", "n_clicks"),
+        ],
+        State("top-ask-crimenet-input", "value"),
         prevent_initial_call=True,
     )
-    def fill_example_question(all_clicks):
+    def fill_example_question(all_clicks, top_submit, chip1, chip2, chip3, chip4, top_input_val):
         triggered = ctx.triggered_id
-        if not triggered or not isinstance(triggered, dict):
+        if not triggered:
             raise PreventUpdate
-        idx = triggered.get("index", 0)
-        if idx < len(EXAMPLE_QUESTIONS):
-            return EXAMPLE_QUESTIONS[idx]
+        if triggered == "top-ask-chip-1":
+            return "Why is Rahul connected to Amit?"
+        elif triggered == "top-ask-chip-2":
+            return "Trace Hawala money flow and cross-border laundering channels."
+        elif triggered == "top-ask-chip-3":
+            return "Identify uncorroborated AI links and suspect connections that require investigator verification."
+        elif triggered == "top-ask-chip-4":
+            return "Which suspects hold the highest operational and flight risk across active syndicates?"
+        elif triggered == "top-ask-crimenet-submit-btn":
+            q = (top_input_val or "").strip()
+            return q or "Provide a comprehensive intelligence summary of the active syndicate network."
+        elif isinstance(triggered, dict) and triggered.get("type") == "ask-example-question":
+            idx = triggered.get("index", 0)
+            if idx < len(EXAMPLE_QUESTIONS):
+                return EXAMPLE_QUESTIONS[idx]
         raise PreventUpdate
 
     # ── Submit question to agent ──────────────────────────────────────────
     @dash_app.callback(
         Output("ask-crimenet-result-store", "data"),
-        Input("btn-ask-crimenet-submit", "n_clicks"),
-        State("ask-crimenet-input",    "value"),
-        State("dossier-active-case-id-store",  "data"),
+        [
+            Input("btn-ask-crimenet-submit", "n_clicks"),
+            Input("top-ask-crimenet-submit-btn", "n_clicks"),
+            Input("top-ask-chip-1", "n_clicks"),
+            Input("top-ask-chip-2", "n_clicks"),
+            Input("top-ask-chip-3", "n_clicks"),
+            Input("top-ask-chip-4", "n_clicks"),
+        ],
+        [
+            State("ask-crimenet-input",    "value"),
+            State("top-ask-crimenet-input", "value"),
+            State("dossier-active-case-id-store",  "data"),
+        ],
         prevent_initial_call=True,
     )
-    def submit_question(n_clicks, question, case_id):
-        if not n_clicks or not question or not question.strip():
+    def submit_question(n_clicks, top_submit, chip1, chip2, chip3, chip4, question, top_input, case_id):
+        triggered = ctx.triggered_id
+        if not triggered:
             raise PreventUpdate
+        effective_q = question
+        if triggered == "top-ask-chip-1":
+            effective_q = "Why is Rahul connected to Amit?"
+        elif triggered == "top-ask-chip-2":
+            effective_q = "Trace Hawala money flow and cross-border laundering channels."
+        elif triggered == "top-ask-chip-3":
+            effective_q = "Identify uncorroborated AI links and suspect connections that require investigator verification."
+        elif triggered == "top-ask-chip-4":
+            effective_q = "Which suspects hold the highest operational and flight risk across active syndicates?"
+        elif triggered == "top-ask-crimenet-submit-btn":
+            effective_q = (top_input or "").strip() or question or "Provide a comprehensive intelligence summary of the active syndicate network."
+
+        if not effective_q or not effective_q.strip():
+            raise PreventUpdate
+
+        question = effective_q
 
         case_id = case_id or "case-synthetic-black-falcon-001"
 

@@ -2104,4 +2104,10 @@ register_relationship_panel_callbacks(visualizer_app)
 from visualizer.financial_workflow_panel import register_financial_workflow_callbacks
 register_financial_workflow_callbacks(visualizer_app)
 
+# ------------------------------------------------------------------------------------------------- #
+# REGISTER RIGHT-SIDE INTELLIGENCE PANEL CALLBACKS (AI INTEL, DOSSIER, HIDDEN LINKS, ALERTS, EVIDENCE, TIMELINE)
+# ------------------------------------------------------------------------------------------------- #
+from visualizer.right_intelligence_panel import register_right_panel_callbacks
+register_right_panel_callbacks(visualizer_app)
+
 

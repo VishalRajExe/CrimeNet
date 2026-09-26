@@ -1067,3 +1067,6 @@ class InvestigationReportCompiler:
                 "Sources", "Human Corrections", "Investigator Notes", "Audit Summary"
             ]
         }
+
+    # Alias for architectural consistency
+    generate_report = generate_pdf_report
