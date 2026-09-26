@@ -1537,7 +1537,7 @@ def register_dashboard_callbacks(dash_app) -> None:
             State("dossier-active-case-id-store", "data"),
             State("active-case-store", "data"),
         ],
-        prevent_initial_call=False
+        prevent_initial_call="initial_duplicate"
     )
     def handle_workspace_navigation(open_case_clicks, dossier_launch_clicks,
                                     nav_dash_clicks, nav_ws_clicks, switch_direct_clicks,
