@@ -1,69 +1,219 @@
-#main {
-    display: flex;
-    flex-direction: column;
-    width: 76%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff;
-}
+/* ==========================================================================
+   CrimeNet Cockpit Layout Architecture (Modern Flexbox / Grid)
+   ========================================================================== */
 
-#sidebar {
-    border-left: 1px solid #d0d7de;
-    border-top: none;
-    border-bottom: none;
-    border-right: none;
+#crimenet-root-app {
+    width: 100vw;
     height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: fixed;
+    min-height: 100vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    right: 0;
-    top: 0;
-    width: 24%;
-    background-color: #fafbfc;
-    z-index: 8;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.cytoscape {
-    height: 85vh !important;
-    z-index: 5;
-    margin-left: 0 !important;
+#crimenet-global-nav {
+    height: 48px;
+    min-height: 48px;
+    max-height: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1000;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+#workspace-view {
+    height: calc(100vh - 48px);
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#crimenet-workspace-cockpit {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* 1. Left Icon Rail (54px compact) */
+#sidebar, .workspace-left-rail {
+    width: 54px !important;
+    min-width: 54px !important;
+    max-width: 54px !important;
+    height: 100% !important;
+    position: static !important;
+    flex-shrink: 0 !important;
+    background-color: #f8fafc !important;
+    border-right: 1px solid #e2e8f0 !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 12px 0 !important;
+    gap: 12px !important;
+    box-sizing: border-box !important;
+    z-index: 20 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    top: auto !important;
+    right: auto !important;
+}
+
+/* 2. Center Stage: Dominant Cytoscape Canvas (65-75% width) */
+#main, .workspace-center-stage {
+    flex: 1 1 0% !important;
+    min-width: 0 !important;
+    width: auto !important;
+    height: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    z-index: 1 !important;
+}
+
+/* 3. Right Rail: Dedicated 6-Tab Intelligence Drawer (380px) */
+#workspace-right-rail {
+    width: 380px !important;
+    min-width: 380px !important;
+    max-width: 380px !important;
+    height: 100% !important;
+    position: static !important;
+    flex-shrink: 0 !important;
+    background-color: #ffffff !important;
+    border-left: 1px solid #e2e8f0 !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    z-index: 20 !important;
+    overflow: hidden !important;
+}
+
+/* Cytoscape Canvas Styling */
+#cytoscape, .cytoscape {
     width: 100% !important;
-    background-color: white;
+    height: 100% !important;
+    min-height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    background-color: #ffffff !important;
+    z-index: 5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 
-.cytoscape-small {
-    height: 93vh !important;
-    z-index: 0;
-    width: 44% !important;
-    position: absolute;
-    left: 30%;
-    margin-left: 0 !important;
+#cytoscape-unaltered, .cytoscape-unaltered-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    border: none !important;
 }
 
-.cytoscape-unaltered-hidden {
-    position: absolute;
-    left: 0;
-    height: 85vh !important;
-    z-index: 0;
-    width: 30% !important;
-    display: inline-block;
-    border-right: 1px solid black;
-    margin-left: 0 !important;
+#loading-cytoscape {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
 }
 
-.cytoscape-unaltered {
+/* Dropdown Menu & Popover rules */
+.dropdown-menu {
+    display: none;
     position: absolute;
-    left: 0;
-    height: 85vh;
-    z-index: 0;
-    width: 30% !important;
-    display: inline-block;
-    border-right: 1px solid black;
-    margin-left: 0 !important;
+    z-index: 1050;
+    min-width: 12rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 0.8125rem;
+    color: #1e293b;
+    text-align: left;
+    list-style: none;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu.show {
+    display: block !important;
+}
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.4rem 1rem;
+    clear: both;
+    font-weight: 500;
+    color: #334155;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 12px;
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    color: #0f172a;
+    background-color: #f1f5f9;
+}
+.dropdown-divider {
+    height: 0;
+    margin: 0.35rem 0;
+    overflow: hidden;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Right Panel Tabs Uniform Sizing */
+.crimenet-tabs-bar {
+    display: flex !important;
+    width: 100% !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    background-color: #f8fafc !important;
+}
+.crimenet-tabs-bar .tab {
+    flex: 1 !important;
+    text-align: center !important;
+    padding: 8px 4px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #64748b !important;
+    border: none !important;
+    border-bottom: 2px solid transparent !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+}
+.crimenet-tabs-bar .tab--selected {
+    color: #2563eb !important;
+    border-bottom: 2px solid #2563eb !important;
+    background-color: #ffffff !important;
+    font-weight: 700 !important;
 }
 
 

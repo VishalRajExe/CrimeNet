@@ -1225,9 +1225,9 @@ def build_global_nav_bar() -> html.Div:
                         id="active-case-header-display",
                         style={"display": "flex", "alignItems": "center", "gap": "6px"},
                         children=[
-                            html.Span("CASE-BF-2026-001", style={"fontSize": "11px", "fontFamily": "monospace", "fontWeight": "700", "color": "#1e293b", "backgroundColor": "#f1f5f9", "padding": "2px 6px", "borderRadius": "4px", "border": "1px solid #e2e8f0"}),
+                            html.Span("FIR-2024-DL-00412", style={"fontSize": "11px", "fontFamily": "monospace", "fontWeight": "700", "color": "#1e293b", "backgroundColor": "#f1f5f9", "padding": "2px 6px", "borderRadius": "4px", "border": "1px solid #e2e8f0"}),
                             html.Span("CRITICAL", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "#fef2f2", "color": "#991b1b", "border": "1px solid #fecaca", "padding": "1px 6px", "borderRadius": "4px"}),
-                            html.Span("ACTIVE", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "#f0fdf4", "color": "#166534", "border": "1px solid #bbf7d0", "padding": "1px 6px", "borderRadius": "4px"}),
+                            html.Span("25n / 26e", style={"fontSize": "10px", "fontWeight": "700", "color": "#64748b", "backgroundColor": "#f8fafc", "border": "1px solid #e2e8f0", "padding": "1px 5px", "borderRadius": "4px"}),
                         ]
                     )
                 ]
@@ -1236,11 +1236,11 @@ def build_global_nav_bar() -> html.Div:
             # Center: Global Search Bar
             html.Div(
                 id="global-search-container",
-                style={"flex": "1", "maxWidth": "360px", "margin": "0 14px"},
+                style={"flex": "1", "maxWidth": "320px", "margin": "0 12px"},
                 children=[
                     dcc.Dropdown(
                         id="ws-search-entity-dropdown",
-                        placeholder="Search person, phone, vehicle, account, case...",
+                        placeholder="Search person, phone, vehicle, account...",
                         options=[],
                         clearable=True,
                         style={"fontSize": "12px"}
@@ -1248,10 +1248,18 @@ def build_global_nav_bar() -> html.Div:
                 ]
             ),
 
-            # Right: Ask CrimeNet trigger & Three-Dot More Menu
+            # Right: Ask CrimeNet trigger, More Popover & Status Indicator
             html.Div(
-                style={"display": "flex", "alignItems": "center", "gap": "8px"},
+                style={"display": "flex", "alignItems": "center", "gap": "10px", "flexShrink": 0},
                 children=[
+                    # Status Indicator
+                    html.Div(
+                        style={"display": "flex", "alignItems": "center", "gap": "5px", "marginRight": "4px"},
+                        children=[
+                            html.Span(style={"width": "7px", "height": "7px", "borderRadius": "50%", "backgroundColor": "#10b981", "display": "inline-block"}),
+                            html.Span("Active", style={"fontSize": "11px", "color": "#64748b", "fontWeight": "600"}),
+                        ]
+                    ),
                     # Ask CrimeNet compact trigger
                     dbc.Button(
                         children=[
@@ -1264,54 +1272,77 @@ def build_global_nav_bar() -> html.Div:
                         style={
                             "backgroundColor": "#eff6ff",
                             "border": "1px solid #bfdbfe",
-                            "borderRadius": "5px",
-                            "padding": "4px 9px",
+                            "borderRadius": "6px",
+                            "padding": "4px 10px",
                             "display": "flex",
                             "alignItems": "center"
                         }
                     ),
-                    # Three-Dot More Menu
-                    dbc.DropdownMenu(
-                        label=[icon_more_dots(color="#475569", size=16)],
-                        id="top-nav-more-menu",
+                    # Three-Dot More Menu Button
+                    dbc.Button(
+                        icon_more_dots(color="#475569", size=16),
+                        id="btn-global-more-menu",
                         color="light",
                         size="sm",
-                        align_end=True,
-                        toggle_style={
+                        style={
                             "backgroundColor": "#ffffff",
                             "border": "1px solid #cbd5e1",
-                            "borderRadius": "5px",
+                            "borderRadius": "6px",
                             "padding": "4px 8px",
                             "boxShadow": "none",
                             "display": "flex",
-                            "alignItems": "center"
+                            "alignItems": "center",
+                            "cursor": "pointer"
+                        }
+                    ),
+                    # Three-Dot Popover Menu (Opens cleanly on click)
+                    dbc.Popover(
+                        id="popover-global-more",
+                        target="btn-global-more-menu",
+                        trigger="legacy",
+                        placement="bottom-end",
+                        is_open=False,
+                        style={
+                            "width": "230px",
+                            "border": "1px solid #cbd5e1",
+                            "borderRadius": "8px",
+                            "boxShadow": "0 10px 25px rgba(0,0,0,0.12)",
+                            "backgroundColor": "#ffffff",
+                            "zIndex": 1060
                         },
                         children=[
-                            dbc.DropdownMenuItem([icon_folder(color="#475569", size=14), html.Span("Case Directory", style={"marginLeft": "8px", "fontSize": "12px"})], id="nav-btn-case-directory"),
-                            dbc.DropdownMenuItem([icon_plus(color="#475569", size=14), html.Span("New Case", style={"marginLeft": "8px", "fontSize": "12px"})], id="nav-btn-new-case"),
-                            dbc.DropdownMenuItem(divider=True),
-                            html.A(
-                                dbc.DropdownMenuItem([icon_download(color="#475569", size=14), html.Span("Save Network State", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-save-network-btn"),
-                                href="/downloadNetwork", download="network_state.json", style={"textDecoration": "none"}
-                            ),
-                            html.A(
-                                dbc.DropdownMenuItem([icon_download(color="#475569", size=14), html.Span("Export Network", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-export-network-btn"),
-                                href="/exportNetwork", download="network_export.json", style={"textDecoration": "none"}
-                            ),
-                            dbc.DropdownMenuItem([icon_file(color="#475569", size=14), html.Span("Export Image", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-export-image-btn"),
-                            dbc.DropdownMenuItem(divider=True),
-                            dbc.DropdownMenuItem([icon_audit(color="#475569", size=14), html.Span("Audit Trail", style={"marginLeft": "8px", "fontSize": "12px"})], id="ws-sec-nav-audit"),
-                            dbc.DropdownMenuItem([icon_report(color="#475569", size=14), html.Span("Generate Report", style={"marginLeft": "8px", "fontSize": "12px"})], id="ws-sec-nav-reports"),
-                            html.A(
-                                dbc.DropdownMenuItem([icon_link(color="#475569", size=14), html.Span("User Documentation", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-docs-item"),
-                                href="/userDocumentation", target="_blank", style={"textDecoration": "none"}
-                            ),
+                            dbc.PopoverHeader("Investigation Actions", style={"fontSize": "11px", "fontWeight": "700", "backgroundColor": "#f8fafc", "borderBottom": "1px solid #e2e8f0"}),
+                            dbc.PopoverBody(
+                                style={"padding": "6px 0"},
+                                children=[
+                                    dbc.Button([icon_folder(color="#475569", size=14), html.Span("Case Directory", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="nav-btn-case-directory", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                    dbc.Button([icon_plus(color="#475569", size=14), html.Span("New Case", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="nav-btn-new-case", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                    html.Hr(style={"margin": "4px 0", "borderColor": "#e2e8f0"}),
+                                    html.A(
+                                        dbc.Button([icon_download(color="#475569", size=14), html.Span("Save Network State", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="menu-save-network-btn", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                        href="/downloadNetwork", download="network_state.json", style={"textDecoration": "none", "display": "block"}
+                                    ),
+                                    html.A(
+                                        dbc.Button([icon_download(color="#475569", size=14), html.Span("Export Network", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="menu-export-network-btn", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                        href="/exportNetwork", download="network_export.json", style={"textDecoration": "none", "display": "block"}
+                                    ),
+                                    dbc.Button([icon_file(color="#475569", size=14), html.Span("Export Image", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="menu-export-image-btn", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                    html.Hr(style={"margin": "4px 0", "borderColor": "#e2e8f0"}),
+                                    dbc.Button([icon_audit(color="#475569", size=14), html.Span("Audit Trail", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="ws-sec-nav-audit", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                    dbc.Button([icon_report(color="#475569", size=14), html.Span("Generate Report", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="ws-sec-nav-reports", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                    html.A(
+                                        dbc.Button([icon_link(color="#475569", size=14), html.Span("User Documentation", style={"marginLeft": "8px", "fontSize": "12px", "color": "#1e293b"})], id="menu-docs-item", color="link", style={"width": "100%", "textAlign": "left", "padding": "6px 14px", "textDecoration": "none"}),
+                                        href="/userDocumentation", target="_blank", style={"textDecoration": "none", "display": "block"}
+                                    ),
+                                ]
+                            )
                         ]
                     ),
                     # Hidden bridge buttons so legacy navigation callbacks keep working without changes
                     html.Div(style={"display": "none"}, children=[
                         dbc.Button(id="nav-btn-dashboard"),
                         dbc.Button(id="nav-btn-workspace"),
+                        html.Div(id="top-nav-more-menu"),
                     ])
                 ]
             )
@@ -1688,13 +1719,11 @@ def register_dashboard_callbacks(dash_app) -> None:
         c_priority = c.get("priority") or "MEDIUM"
 
         header_banner = html.Div(
-            style={"display": "flex", "alignItems": "center", "gap": "10px", "backgroundColor": "#1a202c", "padding": "4px 12px", "borderRadius": "6px", "border": "1px solid #2d3748"},
+            style={"display": "flex", "alignItems": "center", "gap": "6px"},
             children=[
-                html.Span("ACTIVE CASE:", style={"color": "#a0aec0", "fontWeight": "700", "fontSize": "11px", "letterSpacing": "0.5px"}),
-                html.Span(c_num, style={"color": "#63b3ed", "fontFamily": "monospace", "fontWeight": "700", "fontSize": "12px"}),
+                html.Span(c_num, style={"fontSize": "11px", "fontFamily": "monospace", "fontWeight": "700", "color": "#1e293b", "backgroundColor": "#f1f5f9", "padding": "2px 6px", "borderRadius": "4px", "border": "1px solid #e2e8f0"}),
                 get_priority_badge(c_priority),
-                html.Span(f"• {c_title}", style={"color": "#f7fafc", "fontWeight": "600", "fontSize": "12px"}),
-                html.Span(f"({len(net.nodes)} entities, {len(net.edges)} links)", style={"color": "#9ae6b4", "fontSize": "11px", "fontWeight": "600"}),
+                html.Span(f"{len(net.nodes)}n / {len(net.edges)}e", style={"fontSize": "10px", "fontWeight": "700", "color": "#64748b", "backgroundColor": "#f8fafc", "border": "1px solid #e2e8f0", "padding": "1px 5px", "borderRadius": "4px"}),
             ]
         )
 

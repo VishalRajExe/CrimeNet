@@ -49,8 +49,19 @@ def init_layout(style, dataset_list, external_dataset_list= []):
     - Single 48px Top Navigation Bar with CASE selector, Status Pill, Global Search, Ask CrimeNet, and Three-Dot Menu
     - Compact 54px Left Icon Rail with Popovers for Nodes, Edges, Labels, and Filters
     - Dominant Central Graph Canvas (>70% width) with pure white background, floating 5-action toolbar + [⋯ More], and zoom HUD
-    - Right Intelligence Rail (360px) with 6 clean tabs (AI Intel, Dossier, Links, Alerts, Evidence, Timeline)
+    - Right Intelligence Rail (380px) with 6 clean tabs (AI Intel, Dossier, Links, Alerts, Evidence, Timeline)
     """
+    from storage.case_data_service import CaseDataService
+    svc = CaseDataService()
+    default_case = "case-synthetic-black-falcon-001"
+    initial_elements = []
+    try:
+        net = svc.build_active_network_for_case(default_case)
+        if net and net.elements:
+            initial_elements = net.elements
+    except Exception:
+        pass
+
     workspace_content = html.Div(
         id='crimenet-workspace-cockpit',
         style={
@@ -423,27 +434,52 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                                     ])
                                 ]
                             ),
-                            dbc.DropdownMenu(
-                                label="⋯ More",
+                            dbc.Button(
+                                [html.Span("⋯ More", style={"fontSize": "11px", "fontWeight": "600"})],
+                                id="ws-toolbar-more-menu-btn",
                                 size="sm",
                                 color="light",
-                                id="ws-toolbar-more-menu",
-                                toggle_style={"padding": "3px 8px", "fontSize": "11px", "fontWeight": "600", "border": "1px solid #e2e8f0"},
+                                style={"padding": "3px 8px", "border": "1px solid #e2e8f0"}
+                            ),
+                            dbc.Popover(
+                                id="popover-toolbar-more",
+                                target="ws-toolbar-more-menu-btn",
+                                trigger="legacy",
+                                placement="bottom-end",
+                                is_open=False,
+                                style={
+                                    "width": "230px",
+                                    "border": "1px solid #cbd5e1",
+                                    "borderRadius": "8px",
+                                    "boxShadow": "0 10px 25px rgba(0,0,0,0.12)",
+                                    "backgroundColor": "#ffffff",
+                                    "zIndex": 1050
+                                },
                                 children=[
-                                    dbc.DropdownMenuItem("2-Hop Radius", id="ws-btn-nhop-2"),
-                                    dbc.DropdownMenuItem("3-Hop Perimeter", id="ws-btn-nhop-3"),
-                                    dbc.DropdownMenuItem(divider=True),
-                                    dbc.DropdownMenuItem("Highlight Money Flow", id="ws-btn-money-flow-toolbar"),
-                                    dbc.DropdownMenuItem("Highlight Key Bridges", id="ws-btn-highlight-bridges"),
-                                    dbc.DropdownMenuItem("Highlight AI Predictions", id="ws-btn-highlight-predicted"),
-                                    dbc.DropdownMenuItem("Clear Highlights", id="ws-btn-clear-highlights"),
-                                    dbc.DropdownMenuItem(divider=True),
-                                    dbc.DropdownMenuItem("Analytical Workflows", id="ws-sec-nav-actions"),
-                                    dbc.DropdownMenuItem("Financial Workflow", id="ws-sec-nav-financial"),
-                                    dbc.DropdownMenuItem("Event Timeline", id="ws-sec-nav-timeline"),
-                                    dbc.DropdownMenuItem("Re-execute Force Layout", id="btn-cyto-relayout"),
+                                    dbc.PopoverHeader("Advanced Graph Actions", style={"fontSize": "11px", "fontWeight": "700", "backgroundColor": "#f8fafc", "borderBottom": "1px solid #e2e8f0"}),
+                                    dbc.PopoverBody(
+                                        style={"padding": "6px 8px"},
+                                        children=[
+                                            html.Div("N-HOP EXPLORATION", style={"fontSize": "9px", "fontWeight": "700", "color": "#94a3b8", "padding": "4px 8px"}),
+                                            dbc.Button("2-Hop Radius", id="ws-btn-nhop-2", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            dbc.Button("3-Hop Perimeter", id="ws-btn-nhop-3", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            html.Hr(style={"margin": "4px 0", "borderColor": "#e2e8f0"}),
+                                            html.Div("HIGHLIGHTS", style={"fontSize": "9px", "fontWeight": "700", "color": "#94a3b8", "padding": "4px 8px"}),
+                                            dbc.Button("Highlight Money Flow", id="ws-btn-money-flow-toolbar", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            dbc.Button("Highlight Key Bridges", id="ws-btn-highlight-bridges", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            dbc.Button("Highlight AI Predictions", id="ws-btn-highlight-predicted", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            dbc.Button("Clear Highlights", id="ws-btn-clear-highlights", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#dc2626", "textDecoration": "none"}),
+                                            html.Hr(style={"margin": "4px 0", "borderColor": "#e2e8f0"}),
+                                            html.Div("WORKFLOWS & LAYOUT", style={"fontSize": "9px", "fontWeight": "700", "color": "#94a3b8", "padding": "4px 8px"}),
+                                            dbc.Button("Analytical Workflows", id="ws-sec-nav-actions", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            dbc.Button("Financial Workflow", id="ws-sec-nav-financial", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            dbc.Button("Event Timeline", id="ws-sec-nav-timeline", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#1e293b", "textDecoration": "none"}),
+                                            dbc.Button("Re-execute Force Layout", id="btn-cyto-relayout", color="link", style={"width": "100%", "textAlign": "left", "padding": "4px 8px", "fontSize": "11px", "color": "#2563eb", "textDecoration": "none"}),
+                                        ]
+                                    )
                                 ]
                             ),
+                            html.Div(id="ws-toolbar-more-menu", style={"display": "none"})
                         ]
                     ),
                     dbc.Tooltip("Filter visible graph to 1-hop connections", target="ws-btn-nhop-1", placement="bottom"),
@@ -460,7 +496,7 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                             "position": "absolute",
                             "bottom": "16px",
                             "right": "16px",
-                            "zIndex": "100",
+                            "zIndex": "50",
                             "display": "flex",
                             "alignItems": "center",
                             "backgroundColor": "rgba(255, 255, 255, 0.96)",
@@ -471,9 +507,9 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                             "overflow": "hidden",
                         },
                         children=[
-                            dbc.Button("−", id="btn-cyto-zoom-out", size="sm", color="light", style={"border": "none", "borderRadius": "0", "fontWeight": "700", "padding": "4px 10px", "fontSize": "12px"}),
-                            html.Span("100%", style={"fontSize": "10px", "fontWeight": "700", "color": "#64748b", "padding": "0 6px"}),
-                            dbc.Button("+", id="btn-cyto-zoom-in", size="sm", color="light", style={"border": "none", "borderRadius": "0", "fontWeight": "700", "padding": "4px 10px", "fontSize": "12px"}),
+                            dbc.Button("−", id="btn-cyto-zoom-out", size="sm", color="light", style={"border": "none", "borderRadius": "0", "fontWeight": "700", "padding": "4px 10px", "fontSize": "13px"}),
+                            html.Span("100%", id="label-zoom-indicator", style={"fontSize": "11px", "fontWeight": "700", "color": "#64748b", "padding": "0 8px"}),
+                            dbc.Button("+", id="btn-cyto-zoom-in", size="sm", color="light", style={"border": "none", "borderRadius": "0", "fontWeight": "700", "padding": "4px 10px", "fontSize": "13px"}),
                         ]
                     ),
 
@@ -484,7 +520,7 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                             "position": "absolute",
                             "bottom": "16px",
                             "left": "16px",
-                            "zIndex": "100",
+                            "zIndex": "50",
                             "display": "flex",
                             "alignItems": "center",
                             "gap": "12px",
@@ -514,24 +550,22 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                         style={'width': '100%', 'height': '100%'},
                         children=[
                             cyto.Cytoscape(
-                                className='four coloums cytoscape-unaltered-hidden',
                                 id='cytoscape-unaltered',
                                 stylesheet=style.stylesheet,
                                 layout={'name': 'cose-bilkent'},
                                 elements=[],
-                                responsive=True,
-                                minZoom=0.2,
-                                maxZoom=2.2,
+                                responsive=False,
+                                style={'display': 'none'},
                             ),
                             cyto.Cytoscape(
                                 className='cytoscape',
                                 id='cytoscape',
                                 stylesheet=style.stylesheet,
                                 layout={'name': 'cose-bilkent'},
-                                elements=[],
+                                elements=initial_elements,
                                 responsive=True,
                                 minZoom=0.2,
-                                maxZoom=2.2,
+                                maxZoom=2.5,
                                 style={'width': '100%', 'height': '100%', 'backgroundColor': '#ffffff'}
                             ),
                         ]
