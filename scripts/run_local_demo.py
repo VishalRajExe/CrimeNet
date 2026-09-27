@@ -342,7 +342,8 @@ def run_demo():
     audit_logs = default_audit_service.list_audit_logs(case_id=SEED_CASE_ID, limit=5)
     print_success(f"Cryptographic Audit Trail Retrieved ({len(audit_logs)} log entries verified)")
     for entry in audit_logs[:3]:
-        print_info(str(entry.get("timestamp")), f"[{entry.get('action')}] User: {entry.get('user_id')} | Target: {entry.get('target', '')[:30]}")
+        target_str = str(entry.get("target") or "")[:30]
+        print_info(str(entry.get("timestamp")), f"[{entry.get('action')}] User: {entry.get('user_id')} | Target: {target_str}")
 
     # 21. INTELLIGENCE REPORT
     print_banner(21, "INTELLIGENCE REPORT")
