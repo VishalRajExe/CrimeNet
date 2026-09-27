@@ -72,35 +72,9 @@ def build_ask_crimenet_modal() -> html.Div:
     Build the full "Ask CrimeNet" modal layout.
 
     Returns a wrapper Div that contains:
-    - The floating trigger button (fixed bottom-right)
-    - The full-screen investigation modal
+    - The full-screen investigation modal (triggered via top navigation bar)
     """
     return html.Div([
-
-        # ── Floating Trigger Button ───────────────────────────────────────
-        dbc.Button(
-            children=[
-                html.Span("🤖", style={"fontSize": "18px", "marginRight": "6px"}),
-                html.Span("Ask CrimeNet", style={"fontWeight": "700", "fontSize": "13px"}),
-            ],
-            id="btn-open-ask-crimenet",
-            n_clicks=0,
-            style={
-                "position": "fixed",
-                "bottom": "24px",
-                "right": "24px",
-                "zIndex": "9999",
-                "background": "linear-gradient(135deg, #2b6cb0, #553c9a)",
-                "border": "none",
-                "borderRadius": "28px",
-                "padding": "12px 20px",
-                "boxShadow": "0 4px 20px rgba(0,0,0,0.4)",
-                "display": "flex",
-                "alignItems": "center",
-                "cursor": "pointer",
-                "transition": "transform 0.15s ease, box-shadow 0.15s ease",
-            }
-        ),
 
         # ── Full-Screen Modal ─────────────────────────────────────────────
         dbc.Modal(

@@ -36,37 +36,37 @@ import dash
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 
-# ── colour tokens ────────────────────────────────────────────────────────────
-BG_CARD      = "#1a202c"
-BG_DEEP      = "#0f1117"
-BG_PANEL     = "#2d3748"
-TEXT_PRIMARY = "#f7fafc"
-TEXT_MUTED   = "#a0aec0"
-TEXT_DIM     = "#718096"
-BORDER_DIM   = "#4a5568"
-ACCENT_BLUE  = "#3182ce"
+# ── Light Color tokens ────────────────────────────────────────────────────────
+BG_CARD      = "#ffffff"
+BG_DEEP      = "#f8fafc"
+BG_PANEL     = "#f1f5f9"
+TEXT_PRIMARY = "#0f172a"
+TEXT_MUTED   = "#64748b"
+TEXT_DIM     = "#475569"
+BORDER_DIM   = "#e2e8f0"
+ACCENT_BLUE  = "#2563eb"
 
 TYPE_COLORS: Dict[str, str] = {
-    "PERSON":        "#3182ce",
-    "PHONE":         "#38a169",
-    "VEHICLE":       "#dd6b20",
-    "LOCATION":      "#805ad5",
-    "ORGANIZATION":  "#d69e2e",
-    "BANK_ACCOUNT":  "#e53e3e",
-    "ACCOUNT":       "#e53e3e",
-    "WALLET":        "#d53f8c",
-    "CRYPTO_WALLET": "#d53f8c",
-    "EVENT":         "#9f7aea",
-    "CASE_REF":      "#2b6cb0",
-    "CASE":          "#2b6cb0",
-    "TRANSACTION":   "#e53e3e",
+    "PERSON":        "#2563eb",
+    "PHONE":         "#16a34a",
+    "VEHICLE":       "#ea580c",
+    "LOCATION":      "#7c3aed",
+    "ORGANIZATION":  "#ca8a04",
+    "BANK_ACCOUNT":  "#dc2626",
+    "ACCOUNT":       "#dc2626",
+    "WALLET":        "#db2777",
+    "CRYPTO_WALLET": "#db2777",
+    "EVENT":         "#9333ea",
+    "CASE_REF":      "#1d4ed8",
+    "CASE":          "#1d4ed8",
+    "TRANSACTION":   "#dc2626",
 }
 
 MODALITY_STYLE: Dict[str, Dict[str, str]] = {
-    "OBSERVED":  {"bg": "rgba(16,185,129,0.15)", "text": "#10b981", "border": "#10b981", "label": "🟢 OBSERVED"},
-    "EXTRACTED": {"bg": "rgba(139,92,246,0.15)",  "text": "#a78bfa", "border": "#8b5cf6", "label": "🟣 EXTRACTED"},
-    "PREDICTED": {"bg": "rgba(245,158,11,0.15)",  "text": "#fbbf24", "border": "#f59e0b", "label": "🟡 PREDICTED"},
-    "INFERRED":  {"bg": "rgba(6,182,212,0.15)",   "text": "#22d3ee", "border": "#06b6d4", "label": "🔵 INFERRED"},
+    "OBSERVED":  {"bg": "#f0fdf4", "text": "#166534", "border": "#bbf7d0", "label": "OBSERVED"},
+    "EXTRACTED": {"bg": "#faf5ff", "text": "#6b21a8", "border": "#e9d5ff", "label": "EXTRACTED"},
+    "PREDICTED": {"bg": "#fffbeb", "text": "#92400e", "border": "#fef3c7", "label": "PREDICTED"},
+    "INFERRED":  {"bg": "#eff6ff", "text": "#1e40af", "border": "#bfdbfe", "label": "INFERRED"},
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -852,36 +852,36 @@ def build_entity_dossier(entity_id: str, node_data: Optional[Dict[str, Any]] = N
     pred_links = intel.get("potential_links") or []
 
     tabs = [
-        ("🪪 Identity",        "tab-id", _build_identity_tab(intel)),
-        ("📱 Phones",          "tab-ph", _build_neighbours_tab(intel, ["PHONE"], "📱", "Phones")),
-        ("🚗 Vehicles",        "tab-ve", _build_neighbours_tab(intel, ["VEHICLE"], "🚗", "Vehicles")),
-        ("📍 Locations",       "tab-lo", _build_neighbours_tab(intel, ["LOCATION"], "📍", "Locations")),
-        ("💳 Accounts",        "tab-ac", _build_neighbours_tab(intel, ["BANK_ACCOUNT", "ACCOUNT", "WALLET", "CRYPTO_WALLET"], "💳", "Accounts")),
-        ("💼 Cases",           "tab-ca", _build_cases_tab(intel)),
-        ("🔗 Relationships",   "tab-re", _build_relationships_tab(intel)),
-        ("🕸️ Communities",     "tab-co", _build_communities_tab(intel)),
-        ("🚨 Alerts",          "tab-al", _build_alerts_tab(intel)),
-        ("📅 Timeline",        "tab-ti", _build_timeline_tab(intel)),
-        ("🔮 Potential Links", "tab-pl", _build_potential_links_tab(intel)),
-        ("🤖 AI Summary",      "tab-ai", _build_ai_summary_tab(intel)),
-        ("📂 Sources",         "tab-so", _build_sources_tab(intel)),
+        ("Identity",        "tab-id", _build_identity_tab(intel)),
+        ("Phones",          "tab-ph", _build_neighbours_tab(intel, ["PHONE"], "", "Phones")),
+        ("Vehicles",        "tab-ve", _build_neighbours_tab(intel, ["VEHICLE"], "", "Vehicles")),
+        ("Locations",       "tab-lo", _build_neighbours_tab(intel, ["LOCATION"], "", "Locations")),
+        ("Accounts",        "tab-ac", _build_neighbours_tab(intel, ["BANK_ACCOUNT", "ACCOUNT", "WALLET", "CRYPTO_WALLET"], "", "Accounts")),
+        ("Cases",           "tab-ca", _build_cases_tab(intel)),
+        ("Relationships",   "tab-re", _build_relationships_tab(intel)),
+        ("Communities",     "tab-co", _build_communities_tab(intel)),
+        ("Alerts",          "tab-al", _build_alerts_tab(intel)),
+        ("Timeline",        "tab-ti", _build_timeline_tab(intel)),
+        ("Potential Links", "tab-pl", _build_potential_links_tab(intel)),
+        ("AI Summary",      "tab-ai", _build_ai_summary_tab(intel)),
+        ("Sources",         "tab-so", _build_sources_tab(intel)),
     ]
 
-    tab_style = {"padding": "6px 10px", "fontSize": "10px", "backgroundColor": "#1a202c",
-                 "color": TEXT_MUTED, "borderBottom": "none", "cursor": "pointer",
+    tab_style = {"padding": "6px 10px", "fontSize": "11px", "backgroundColor": "#ffffff",
+                 "color": TEXT_MUTED, "borderBottom": "1px solid #e2e8f0", "cursor": "pointer",
                  "whiteSpace": "nowrap"}
-    tab_sel   = {**tab_style, "backgroundColor": "#2b4c7e", "color": "#f7fafc",
+    tab_sel   = {**tab_style, "backgroundColor": "#eff6ff", "color": "#1d4ed8",
                  "fontWeight": "700", "borderBottom": f"2px solid {ACCENT_BLUE}"}
 
     return html.Div(
         id="entity-dossier-root",
         style={"backgroundColor": BG_DEEP, "border": f"1px solid {t_col}",
                "borderRadius": "8px", "overflow": "hidden",
-               "boxShadow": "0 4px 20px rgba(0,0,0,0.5)"},
+               "boxShadow": "0 2px 10px rgba(0,0,0,0.08)"},
         children=[
             # Header
             html.Div(
-                style={"background": f"linear-gradient(135deg, {t_col}33 0%, {BG_CARD} 100%)",
+                style={"background": f"linear-gradient(135deg, {t_col}15 0%, {BG_CARD} 100%)",
                        "padding": "12px 16px", "borderBottom": f"2px solid {t_col}"},
                 children=[
                     html.Div(
@@ -890,14 +890,14 @@ def build_entity_dossier(entity_id: str, node_data: Optional[Dict[str, Any]] = N
                             html.Div([
                                 html.Div("ENTITY INTELLIGENCE DOSSIER",
                                          style={"fontSize": "9px", "fontWeight": "700",
-                                                "letterSpacing": "2px", "color": t_col, "marginBottom": "2px"}),
-                                html.Div(name, style={"fontSize": "18px", "fontWeight": "900", "color": TEXT_PRIMARY}),
+                                                "letterSpacing": "1.5px", "color": t_col, "marginBottom": "2px"}),
+                                html.Div(name, style={"fontSize": "17px", "fontWeight": "800", "color": TEXT_PRIMARY}),
                             ]),
                             html.Div(style={"textAlign": "right"}, children=[
                                 _type_badge(etype),
                                 html.Div(
                                     f"{len(rels)} links · {len(alerts)} alerts · {len(events)} events",
-                                    style={"fontSize": "9px", "color": TEXT_DIM, "marginTop": "4px"}
+                                    style={"fontSize": "10px", "color": TEXT_DIM, "marginTop": "4px"}
                                 )
                             ])
                         ]
@@ -906,11 +906,11 @@ def build_entity_dossier(entity_id: str, node_data: Optional[Dict[str, Any]] = N
                     html.Div(
                         style={"display": "flex", "gap": "8px", "marginTop": "10px", "alignItems": "center"},
                         children=[
-                            dbc.Button("⚡ Action Workflow", id="ws-sec-nav-actions", size="sm", color="primary",
+                            dbc.Button("Action Workflow", id="dossier-btn-actions", size="sm", color="primary",
+                                       style={"fontSize": "10px", "padding": "2px 8px", "fontWeight": "600"}),
+                            dbc.Button("Generate Report", id="dossier-btn-reports", size="sm", color="secondary", outline=True,
                                        style={"fontSize": "10px", "padding": "2px 8px"}),
-                            dbc.Button("📄 Generate Report", id="ws-sec-nav-reports", size="sm", color="secondary", outline=True,
-                                       style={"fontSize": "10px", "padding": "2px 8px"}),
-                            dbc.Button("📜 Audit History", id="ws-sec-nav-audit", size="sm", color="secondary", outline=True,
+                            dbc.Button("Audit History", id="dossier-btn-audit", size="sm", color="secondary", outline=True,
                                        style={"fontSize": "10px", "padding": "2px 8px"}),
                         ]
                     )

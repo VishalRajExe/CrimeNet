@@ -21,15 +21,20 @@ from storage.case_data_service import CaseDataService
 from storage.evidence_processor import EvidenceProcessor
 from visualizer.case_timeline_panel import build_case_timeline, register_timeline_callbacks
 from visualizer.actions_workflow_modal import build_actions_workflow_panel
+from visualizer.svg_icons import (
+    icon_shield, icon_search, icon_more_dots, icon_folder, icon_plus,
+    icon_download, icon_file, icon_audit, icon_report, icon_link,
+    icon_sparkles, icon_location, icon_refresh, icon_user
+)
 
 
 def get_priority_badge(priority: str) -> html.Span:
     p = (priority or "MEDIUM").upper()
     colors = {
-        "CRITICAL": {"bg": "rgba(229, 62, 62, 0.15)", "text": "#fc8181", "border": "#e53e3e"},
-        "HIGH": {"bg": "rgba(221, 107, 32, 0.15)", "text": "#fbd38d", "border": "#dd6b20"},
-        "MEDIUM": {"bg": "rgba(49, 130, 206, 0.15)", "text": "#90cdf4", "border": "#3182ce"},
-        "LOW": {"bg": "rgba(113, 128, 150, 0.15)", "text": "#cbd5e0", "border": "#718096"},
+        "CRITICAL": {"bg": "#fef2f2", "text": "#991b1b", "border": "#fecaca"},
+        "HIGH": {"bg": "#fffbeb", "text": "#92400e", "border": "#fef3c7"},
+        "MEDIUM": {"bg": "#eff6ff", "text": "#1e40af", "border": "#bfdbfe"},
+        "LOW": {"bg": "#f1f5f9", "text": "#475569", "border": "#cbd5e1"},
     }
     cfg = colors.get(p, colors["MEDIUM"])
     return html.Span(
@@ -39,7 +44,7 @@ def get_priority_badge(priority: str) -> html.Span:
             "backgroundColor": cfg["bg"],
             "color": cfg["text"],
             "border": f"1px solid {cfg['border']}",
-            "padding": "2px 8px",
+            "padding": "2px 7px",
             "borderRadius": "4px",
             "fontSize": "10px",
             "fontWeight": "700",
@@ -51,11 +56,11 @@ def get_priority_badge(priority: str) -> html.Span:
 def get_status_badge(status: str) -> html.Span:
     s = (status or "OPEN").upper()
     colors = {
-        "ACTIVE": {"bg": "rgba(56, 161, 105, 0.15)", "text": "#9ae6b4", "border": "#38a169"},
-        "UNDER_REVIEW": {"bg": "rgba(128, 90, 213, 0.15)", "text": "#d6bcfa", "border": "#805ad5"},
-        "OPEN": {"bg": "rgba(49, 151, 149, 0.15)", "text": "#81e6d9", "border": "#319795"},
-        "CLOSED": {"bg": "rgba(74, 85, 104, 0.15)", "text": "#a0aec0", "border": "#4a5568"},
-        "ARCHIVED": {"bg": "rgba(45, 55, 72, 0.2)", "text": "#718096", "border": "#2d3748"},
+        "ACTIVE": {"bg": "#f0fdf4", "text": "#166534", "border": "#bbf7d0"},
+        "UNDER_REVIEW": {"bg": "#faf5ff", "text": "#6b21a8", "border": "#e9d5ff"},
+        "OPEN": {"bg": "#f0fdfa", "text": "#115e59", "border": "#99f6e4"},
+        "CLOSED": {"bg": "#f8fafc", "text": "#475569", "border": "#cbd5e1"},
+        "ARCHIVED": {"bg": "#f1f5f9", "text": "#64748b", "border": "#cbd5e1"},
     }
     cfg = colors.get(s, colors["OPEN"])
     return html.Span(
@@ -65,7 +70,7 @@ def get_status_badge(status: str) -> html.Span:
             "backgroundColor": cfg["bg"],
             "color": cfg["text"],
             "border": f"1px solid {cfg['border']}",
-            "padding": "2px 8px",
+            "padding": "2px 7px",
             "borderRadius": "4px",
             "fontSize": "10px",
             "fontWeight": "600"
@@ -73,22 +78,22 @@ def get_status_badge(status: str) -> html.Span:
     )
 
 
-def build_kpi_card(title: str, value: str | int, subtitle: str, color_hex: str = "#3182ce") -> html.Div:
+def build_kpi_card(title: str, value: str | int, subtitle: str, color_hex: str = "#2563eb") -> html.Div:
     return html.Div(
         className="dashboard-kpi-card",
         style={
-            "backgroundColor": "#1a202c",
-            "border": "1px solid #2d3748",
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #e2e8f0",
             "borderRadius": "8px",
             "padding": "16px 20px",
             "flex": "1",
             "minWidth": "160px",
-            "boxShadow": "0 2px 4px rgba(0,0,0,0.2)"
+            "boxShadow": "0 1px 3px rgba(0,0,0,0.04)"
         },
         children=[
-            html.Div(title, style={"fontSize": "11px", "color": "#a0aec0", "textTransform": "uppercase", "letterSpacing": "0.5px"}),
+            html.Div(title, style={"fontSize": "11px", "color": "#64748b", "textTransform": "uppercase", "letterSpacing": "0.5px", "fontWeight": "600"}),
             html.Div(str(value), style={"fontSize": "26px", "fontWeight": "800", "color": color_hex, "margin": "4px 0"}),
-            html.Div(subtitle, style={"fontSize": "11px", "color": "#718096"})
+            html.Div(subtitle, style={"fontSize": "11px", "color": "#94a3b8"})
         ]
     )
 
@@ -112,13 +117,13 @@ def build_case_card(c: Dict[str, Any]) -> html.Div:
         className="case-card",
         id=f"case-card-container-{case_id}",
         style={
-            "backgroundColor": "#1a202c",
-            "border": "1px solid #2d3748",
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #e2e8f0",
             "borderRadius": "8px",
             "padding": "18px 20px",
             "marginBottom": "16px",
             "transition": "all 0.2s ease-in-out",
-            "boxShadow": "0 2px 6px rgba(0,0,0,0.15)"
+            "boxShadow": "0 1px 3px rgba(0,0,0,0.04)"
         },
         children=[
             # Top header line: Case Number, Priority, Status
@@ -128,43 +133,43 @@ def build_case_card(c: Dict[str, Any]) -> html.Div:
                     html.Div(
                         style={"display": "flex", "alignItems": "center", "gap": "8px"},
                         children=[
-                            html.Span(c_num, style={"color": "#63b3ed", "fontWeight": "700", "fontSize": "13px", "fontFamily": "monospace"}),
+                            html.Span(c_num, style={"color": "#2563eb", "fontWeight": "700", "fontSize": "13px", "fontFamily": "monospace"}),
                             get_priority_badge(c.get("priority", "MEDIUM")),
                             get_status_badge(c.get("status", "OPEN")),
                         ]
                     ),
-                    html.Span(f"Updated: {updated_date}", style={"color": "#718096", "fontSize": "11px"})
+                    html.Span(f"Updated: {updated_date}", style={"color": "#94a3b8", "fontSize": "11px"})
                 ]
             ),
             # Title
             html.H4(
                 title,
-                style={"color": "#f7fafc", "fontSize": "16px", "fontWeight": "700", "margin": "0 0 8px 0"}
+                style={"color": "#0f172a", "fontSize": "15px", "fontWeight": "700", "margin": "0 0 8px 0"}
             ),
             # Narrative Description
             html.P(
                 desc,
-                style={"color": "#a0aec0", "fontSize": "12px", "lineHeight": "1.5", "margin": "0 0 14px 0"}
+                style={"color": "#475569", "fontSize": "12px", "lineHeight": "1.5", "margin": "0 0 14px 0"}
             ),
             # Metadata Tags
             html.Div(
-                style={"display": "flex", "gap": "12px", "fontSize": "11px", "color": "#718096", "marginBottom": "14px"},
+                style={"display": "flex", "gap": "10px", "fontSize": "11px", "color": "#64748b", "marginBottom": "14px", "alignItems": "center"},
                 children=[
-                    html.Span(f"📁 {crime_type}", style={"backgroundColor": "#2d3748", "padding": "2px 8px", "borderRadius": "4px"}),
-                    html.Span(f"📍 {location}", style={"backgroundColor": "#2d3748", "padding": "2px 8px", "borderRadius": "4px"}),
+                    html.Span([icon_folder(color="#64748b", size=13), html.Span(crime_type, style={"marginLeft": "5px"})], style={"backgroundColor": "#f1f5f9", "padding": "3px 8px", "borderRadius": "4px", "display": "inline-flex", "alignItems": "center"}),
+                    html.Span([icon_location(color="#64748b", size=13), html.Span(location, style={"marginLeft": "5px"})], style={"backgroundColor": "#f1f5f9", "padding": "3px 8px", "borderRadius": "4px", "display": "inline-flex", "alignItems": "center"}),
                 ]
             ),
             # Bottom row: Metrics & Actions
             html.Div(
-                style={"display": "flex", "justifyContent": "space-between", "alignItems": "center", "borderTop": "1px solid #2d3748", "paddingTop": "12px"},
+                style={"display": "flex", "justifyContent": "space-between", "alignItems": "center", "borderTop": "1px solid #f1f5f9", "paddingTop": "12px"},
                 children=[
                     # Metrics
                     html.Div(
                         style={"display": "flex", "gap": "16px", "fontSize": "12px"},
                         children=[
-                            html.Span([html.B(str(ent_count), style={"color": "#e2e8f0"}), " Entities"], style={"color": "#a0aec0"}),
-                            html.Span([html.B(str(rel_count), style={"color": "#e2e8f0"}), " Connections"], style={"color": "#a0aec0"}),
-                            html.Span([html.B(str(alert_count), style={"color": "#fc8181" if alert_count > 0 else "#a0aec0"}), " Alerts"], style={"color": "#a0aec0"}),
+                            html.Span([html.B(str(ent_count), style={"color": "#0f172a"}), " Entities"], style={"color": "#64748b"}),
+                            html.Span([html.B(str(rel_count), style={"color": "#0f172a"}), " Connections"], style={"color": "#64748b"}),
+                            html.Span([html.B(str(alert_count), style={"color": "#dc2626" if alert_count > 0 else "#64748b"}), " Alerts"], style={"color": "#64748b"}),
                         ]
                     ),
                     # Action buttons
@@ -175,16 +180,15 @@ def build_case_card(c: Dict[str, Any]) -> html.Div:
                                 "Dossier",
                                 id={"type": "btn-dossier-case", "index": case_id},
                                 size="sm",
-                                color="secondary",
-                                outline=True,
-                                style={"fontSize": "11px", "padding": "4px 10px"}
+                                color="light",
+                                style={"fontSize": "11px", "padding": "4px 10px", "border": "1px solid #cbd5e1", "color": "#334155"}
                             ),
                             dbc.Button(
                                 "Open Workspace →",
                                 id={"type": "btn-open-case", "index": case_id},
                                 size="sm",
                                 color="primary",
-                                style={"fontSize": "11px", "padding": "4px 12px", "fontWeight": "600"}
+                                style={"fontSize": "11px", "padding": "4px 12px", "fontWeight": "600", "backgroundColor": "#2563eb", "borderColor": "#2563eb"}
                             ),
                         ]
                     )
@@ -1162,7 +1166,7 @@ def build_global_nav_bar() -> html.Div:
     cases = svc.list_cases()
     case_options = [
         {
-            "label": f"{c.get('case_number') or c.get('id')} — {c.get('title') or c.get('id')} ({(c.get('priority') or 'MED').upper()})",
+            "label": f"{c.get('case_number') or c.get('id')} — {c.get('title') or c.get('id')}",
             "value": c.get("id")
         }
         for c in cases
@@ -1172,37 +1176,36 @@ def build_global_nav_bar() -> html.Div:
     return html.Div(
         id="crimenet-global-nav",
         style={
-            "backgroundColor": "#10141d",
-            "borderBottom": "1px solid #2a3447",
-            "padding": "0 20px",
-            "height": "56px",
+            "backgroundColor": "#ffffff",
+            "borderBottom": "1px solid #e2e8f0",
+            "padding": "0 16px",
+            "height": "48px",
             "display": "flex",
             "alignItems": "center",
             "justifyContent": "space-between",
             "position": "sticky",
             "top": "0",
             "zIndex": "1000",
-            "boxShadow": "0 2px 8px rgba(0,0,0,0.4)"
+            "boxShadow": "0 1px 3px rgba(0,0,0,0.04)"
         },
         children=[
             # Left: Brand & Case Selector
             html.Div(
-                style={"display": "flex", "alignItems": "center", "gap": "14px"},
+                style={"display": "flex", "alignItems": "center", "gap": "10px"},
                 children=[
                     html.Div(
                         style={"display": "flex", "alignItems": "center", "gap": "6px", "cursor": "pointer"},
                         children=[
-                            html.Span("🛡️", style={"fontSize": "20px"}),
-                            html.Span("CrimeNet", style={"fontWeight": "900", "fontSize": "17px", "color": "#f7fafc", "letterSpacing": "1px"}),
-                            html.Span("CASE OS", style={"fontSize": "9px", "fontWeight": "800", "backgroundColor": "rgba(99, 179, 237, 0.2)", "color": "#63b3ed", "padding": "2px 6px", "borderRadius": "3px", "letterSpacing": "1px"})
+                            icon_shield(color="#2563eb", size=18),
+                            html.Span("CrimeNet", style={"fontWeight": "800", "fontSize": "16px", "color": "#0f172a", "letterSpacing": "-0.2px"}),
                         ]
                     ),
-                    html.Span("|", style={"color": "#2d3748"}),
-                    # Prominent CASE Selector
+                    html.Span("/", style={"color": "#cbd5e1", "fontSize": "15px", "fontWeight": "300"}),
+                    # CASE Selector
                     html.Div(
-                        style={"display": "flex", "alignItems": "center", "gap": "8px"},
+                        style={"display": "flex", "alignItems": "center", "gap": "6px"},
                         children=[
-                            html.Span("CASE:", style={"fontWeight": "900", "fontSize": "12px", "color": "#38bdf8", "letterSpacing": "1px"}),
+                            html.Span("CASE:", style={"fontWeight": "700", "fontSize": "11px", "color": "#64748b", "letterSpacing": "0.5px"}),
                             dcc.Dropdown(
                                 id="global-case-selector",
                                 options=case_options,
@@ -1210,58 +1213,106 @@ def build_global_nav_bar() -> html.Div:
                                 clearable=False,
                                 searchable=True,
                                 style={
-                                    "width": "350px",
+                                    "width": "240px",
                                     "fontSize": "12px",
                                     "fontWeight": "600",
-                                    "color": "#1a202c",
                                 }
                             )
                         ]
-                    )
-                ]
-            ),
-
-            # Center: Active Case Context Banner Pill
-            html.Div(
-                id="active-case-header-display",
-                style={"display": "flex", "alignItems": "center", "gap": "8px"},
-                children=[
-                    html.Span("CASE-BF-2026-001", style={"fontSize": "11px", "fontFamily": "monospace", "fontWeight": "700", "color": "#cbd5e0", "backgroundColor": "#1e293b", "padding": "3px 8px", "borderRadius": "4px"}),
-                    html.Span("CRITICAL", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "rgba(239, 68, 68, 0.2)", "color": "#fca5a5", "padding": "2px 7px", "borderRadius": "4px"}),
-                    html.Span("ACTIVE", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "rgba(16, 185, 129, 0.2)", "color": "#86efac", "padding": "2px 7px", "borderRadius": "4px"}),
-                    html.Span("25 Entities • 26 Links • 4 Alerts", style={"fontSize": "11px", "color": "#94a3b8", "marginLeft": "4px"})
-                ]
-            ),
-
-            # Right: Operator / Officer Info & Actions
-            html.Div(
-                style={"display": "flex", "alignItems": "center", "gap": "10px"},
-                children=[
-                    dbc.Button(
-                        "📁 Case Directory",
-                        id="nav-btn-case-directory",
-                        color="secondary",
-                        size="sm",
-                        outline=True,
-                        style={"fontSize": "11px", "fontWeight": "600", "padding": "4px 10px"}
                     ),
-                    dbc.Button(
-                        "+ New Case",
-                        id="nav-btn-new-case",
-                        color="success",
-                        size="sm",
-                        outline=True,
-                        style={"fontSize": "11px", "fontWeight": "600", "padding": "4px 10px"}
-                    ),
-                    html.Span("|", style={"color": "#2d3748"}),
-                    html.Span("🟢 MySQL Connected", style={"fontSize": "11px", "color": "#68d391", "fontWeight": "600"}),
+                    # Active Case badge pill
                     html.Div(
-                        style={"display": "none"},
+                        id="active-case-header-display",
+                        style={"display": "flex", "alignItems": "center", "gap": "6px"},
                         children=[
-                            dbc.Button("Dashboard", id="nav-btn-dashboard"),
-                            dbc.Button("Workspace", id="nav-btn-workspace"),
+                            html.Span("CASE-BF-2026-001", style={"fontSize": "11px", "fontFamily": "monospace", "fontWeight": "700", "color": "#1e293b", "backgroundColor": "#f1f5f9", "padding": "2px 6px", "borderRadius": "4px", "border": "1px solid #e2e8f0"}),
+                            html.Span("CRITICAL", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "#fef2f2", "color": "#991b1b", "border": "1px solid #fecaca", "padding": "1px 6px", "borderRadius": "4px"}),
+                            html.Span("ACTIVE", style={"fontSize": "10px", "fontWeight": "800", "backgroundColor": "#f0fdf4", "color": "#166534", "border": "1px solid #bbf7d0", "padding": "1px 6px", "borderRadius": "4px"}),
                         ]
                     )
+                ]
+            ),
+
+            # Center: Global Search Bar
+            html.Div(
+                id="global-search-container",
+                style={"flex": "1", "maxWidth": "360px", "margin": "0 14px"},
+                children=[
+                    dcc.Dropdown(
+                        id="ws-search-entity-dropdown",
+                        placeholder="Search person, phone, vehicle, account, case...",
+                        options=[],
+                        clearable=True,
+                        style={"fontSize": "12px"}
+                    )
+                ]
+            ),
+
+            # Right: Ask CrimeNet trigger & Three-Dot More Menu
+            html.Div(
+                style={"display": "flex", "alignItems": "center", "gap": "8px"},
+                children=[
+                    # Ask CrimeNet compact trigger
+                    dbc.Button(
+                        children=[
+                            icon_sparkles(color="#2563eb", size=14),
+                            html.Span("Ask CrimeNet", style={"marginLeft": "5px", "fontWeight": "600", "fontSize": "12px", "color": "#1e40af"})
+                        ],
+                        id="btn-open-ask-crimenet",
+                        color="light",
+                        size="sm",
+                        style={
+                            "backgroundColor": "#eff6ff",
+                            "border": "1px solid #bfdbfe",
+                            "borderRadius": "5px",
+                            "padding": "4px 9px",
+                            "display": "flex",
+                            "alignItems": "center"
+                        }
+                    ),
+                    # Three-Dot More Menu
+                    dbc.DropdownMenu(
+                        label=[icon_more_dots(color="#475569", size=16)],
+                        id="top-nav-more-menu",
+                        color="light",
+                        size="sm",
+                        align_end=True,
+                        toggle_style={
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #cbd5e1",
+                            "borderRadius": "5px",
+                            "padding": "4px 8px",
+                            "boxShadow": "none",
+                            "display": "flex",
+                            "alignItems": "center"
+                        },
+                        children=[
+                            dbc.DropdownMenuItem([icon_folder(color="#475569", size=14), html.Span("Case Directory", style={"marginLeft": "8px", "fontSize": "12px"})], id="nav-btn-case-directory"),
+                            dbc.DropdownMenuItem([icon_plus(color="#475569", size=14), html.Span("New Case", style={"marginLeft": "8px", "fontSize": "12px"})], id="nav-btn-new-case"),
+                            dbc.DropdownMenuItem(divider=True),
+                            html.A(
+                                dbc.DropdownMenuItem([icon_download(color="#475569", size=14), html.Span("Save Network State", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-save-network-btn"),
+                                href="/downloadNetwork", download="network_state.json", style={"textDecoration": "none"}
+                            ),
+                            html.A(
+                                dbc.DropdownMenuItem([icon_download(color="#475569", size=14), html.Span("Export Network", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-export-network-btn"),
+                                href="/exportNetwork", download="network_export.json", style={"textDecoration": "none"}
+                            ),
+                            dbc.DropdownMenuItem([icon_file(color="#475569", size=14), html.Span("Export Image", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-export-image-btn"),
+                            dbc.DropdownMenuItem(divider=True),
+                            dbc.DropdownMenuItem([icon_audit(color="#475569", size=14), html.Span("Audit Trail", style={"marginLeft": "8px", "fontSize": "12px"})], id="ws-sec-nav-audit"),
+                            dbc.DropdownMenuItem([icon_report(color="#475569", size=14), html.Span("Generate Report", style={"marginLeft": "8px", "fontSize": "12px"})], id="ws-sec-nav-reports"),
+                            html.A(
+                                dbc.DropdownMenuItem([icon_link(color="#475569", size=14), html.Span("User Documentation", style={"marginLeft": "8px", "fontSize": "12px"})], id="menu-docs-item"),
+                                href="/userDocumentation", target="_blank", style={"textDecoration": "none"}
+                            ),
+                        ]
+                    ),
+                    # Hidden bridge buttons so legacy navigation callbacks keep working without changes
+                    html.Div(style={"display": "none"}, children=[
+                        dbc.Button(id="nav-btn-dashboard"),
+                        dbc.Button(id="nav-btn-workspace"),
+                    ])
                 ]
             )
         ]
@@ -1269,56 +1320,70 @@ def build_global_nav_bar() -> html.Div:
 
 
 def build_top_ask_crimenet_bar() -> html.Div:
-    """Build the prominent top Ask CrimeNet query bar spanning the workspace."""
+    """Hidden query container keeping inputs & quick prompts active for callbacks."""
     return html.Div(
         id="top-ask-crimenet-container",
+        style={"display": "none"},
+        children=[
+            dbc.Input(id="top-ask-crimenet-input", type="text", value=""),
+            dbc.Button("Ask Agent", id="top-ask-crimenet-submit-btn"),
+            dbc.Button("Prompt 1", id="top-ask-chip-1"),
+            dbc.Button("Prompt 2", id="top-ask-chip-2"),
+            dbc.Button("Prompt 3", id="top-ask-chip-3"),
+            dbc.Button("Prompt 4", id="top-ask-chip-4"),
+        ]
+    )
+
+
+def build_directory_case_card(c: Dict[str, Any]) -> html.Div:
+    """Build a distinct card for the modal Case Directory to prevent duplicate component IDs."""
+    case_id = c["id"]
+    c_num = c.get("case_number") or case_id[:12]
+    title = c.get("title") or "Untitled Investigation"
+    desc = c.get("description") or "No case narrative entered."
+    if len(desc) > 110:
+        desc = desc[:107] + "..."
+
+    ent_count = c.get("entity_count", 0)
+    rel_count = c.get("relationship_count", 0)
+
+    return html.Div(
+        className="case-dir-card",
+        id=f"dir-case-card-container-{case_id}",
         style={
-            "backgroundColor": "#121620",
-            "borderBottom": "1px solid #2a3447",
-            "padding": "7px 20px",
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #e2e8f0",
+            "borderRadius": "8px",
+            "padding": "16px 18px",
+            "transition": "all 0.15s ease",
+            "boxShadow": "0 1px 3px rgba(0,0,0,0.03)",
             "display": "flex",
-            "alignItems": "center",
-            "justifyContent": "space-between",
-            "gap": "14px",
-            "flexWrap": "wrap",
+            "flexDirection": "column",
+            "justifyContent": "space-between"
         },
         children=[
-            # Query bar input
+            html.Div([
+                html.Div(
+                    style={"display": "flex", "justifyContent": "space-between", "alignItems": "center", "marginBottom": "6px"},
+                    children=[
+                        html.Span(c_num, style={"color": "#2563eb", "fontWeight": "700", "fontSize": "12px", "fontFamily": "monospace"}),
+                        get_priority_badge(c.get("priority", "MEDIUM")),
+                    ]
+                ),
+                html.H6(title, style={"fontWeight": "700", "fontSize": "13px", "color": "#0f172a", "marginBottom": "6px", "lineHeight": "1.3"}),
+                html.P(desc, style={"fontSize": "12px", "color": "#64748b", "marginBottom": "12px", "lineHeight": "1.4"}),
+            ]),
             html.Div(
-                style={"display": "flex", "alignItems": "center", "gap": "8px", "flex": "1", "minWidth": "340px"},
+                style={"display": "flex", "justifyContent": "space-between", "alignItems": "center", "borderTop": "1px solid #f1f5f9", "paddingTop": "10px"},
                 children=[
-                    html.Span("🤖", style={"fontSize": "18px"}),
-                    dbc.Input(
-                        id="top-ask-crimenet-input",
-                        type="text",
-                        placeholder="Ask CrimeNet... (e.g. 'Why is Rahul connected to Amit?', 'Trace Hawala money flow', 'Show unverified AI links')",
-                        style={
-                            "backgroundColor": "#0c0f17",
-                            "color": "#f7fafc",
-                            "border": "1px solid #2d3748",
-                            "borderRadius": "6px",
-                            "padding": "5px 12px",
-                            "fontSize": "12px",
-                        }
-                    ),
+                    html.Span(f"{ent_count} Entities · {rel_count} Connections", style={"fontSize": "11px", "color": "#64748b"}),
                     dbc.Button(
-                        [html.Span("⚡ "), "Ask Agent"],
-                        id="top-ask-crimenet-submit-btn",
-                        color="primary",
+                        "Open Case →",
+                        id={"type": "btn-open-dir-case", "index": case_id},
                         size="sm",
-                        style={"fontWeight": "700", "fontSize": "11.5px", "padding": "5px 14px", "whiteSpace": "nowrap"}
+                        color="primary",
+                        style={"fontSize": "11px", "padding": "4px 10px", "fontWeight": "600", "backgroundColor": "#2563eb", "borderColor": "#2563eb"}
                     )
-                ]
-            ),
-            # Suggestion Chips
-            html.Div(
-                style={"display": "flex", "alignItems": "center", "gap": "6px", "flexWrap": "wrap"},
-                children=[
-                    html.Span("Quick Prompts:", style={"color": "#718096", "fontSize": "10.5px", "fontWeight": "700"}),
-                    dbc.Button("Why is Rahul connected to Amit?", id="top-ask-chip-1", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#3182ce", "color": "#90cdf4"}),
-                    dbc.Button("Hawala Money Flow", id="top-ask-chip-2", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#2f855a", "color": "#9ae6b4"}),
-                    dbc.Button("Uncorroborated Claims", id="top-ask-chip-3", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#dd6b20", "color": "#fbd38d"}),
-                    dbc.Button("High Risk Suspects", id="top-ask-chip-4", size="sm", color="secondary", outline=True, style={"fontSize": "10.5px", "padding": "2px 8px", "borderRadius": "10px", "borderColor": "#e53e3e", "color": "#feb2b2"}),
                 ]
             )
         ]
@@ -1340,28 +1405,28 @@ def build_case_directory_modal() -> html.Div:
                     html.Div(
                         style={"display": "flex", "alignItems": "center", "gap": "10px"},
                         children=[
-                            html.Span("📁", style={"fontSize": "22px"}),
+                            icon_folder(color="#2563eb", size=20),
                             html.Div([
-                                html.H5("Investigation Cases Directory", style={"margin": "0", "fontWeight": "800", "color": "#f7fafc"}),
-                                html.Span("Select an investigation case to focus the central graph and intelligence workspace.", style={"fontSize": "11px", "color": "#a0aec0"}),
+                                html.H5("Investigation Cases Directory", style={"margin": "0", "fontWeight": "800", "color": "#0f172a", "fontSize": "16px"}),
+                                html.Span("Select an investigation case to focus the central graph and intelligence workspace.", style={"fontSize": "11px", "color": "#64748b"}),
                             ])
                         ]
                     ),
-                    style={"backgroundColor": "#1a202c", "borderBottom": "1px solid #2d3748"}
+                    style={"backgroundColor": "#f8fafc", "borderBottom": "1px solid #e2e8f0"}
                 ),
                 dbc.ModalBody(
-                    style={"backgroundColor": "#0f1117", "color": "#cbd5e0", "padding": "18px"},
+                    style={"backgroundColor": "#ffffff", "color": "#0f172a", "padding": "18px"},
                     children=[
                         html.Div(
                             id="case-directory-grid",
                             style={"display": "grid", "gridTemplateColumns": "repeat(auto-fill, minmax(320px, 1fr))", "gap": "14px"},
-                            children=[build_case_card(c) for c in cases]
+                            children=[build_directory_case_card(c) for c in cases]
                         )
                     ]
                 ),
                 dbc.ModalFooter(
-                    dbc.Button("Close", id="btn-close-case-directory", color="secondary", size="sm"),
-                    style={"backgroundColor": "#1a202c", "borderTop": "1px solid #2d3748"}
+                    dbc.Button("Close", id="btn-close-case-directory", color="light", size="sm", style={"border": "1px solid #cbd5e1"}),
+                    style={"backgroundColor": "#f8fafc", "borderTop": "1px solid #e2e8f0"}
                 )
             ]
         )
@@ -1659,20 +1724,36 @@ def register_dashboard_callbacks(dash_app) -> None:
             Input("nav-btn-case-directory", "n_clicks"),
             Input("btn-close-case-directory", "n_clicks"),
             Input({"type": "btn-open-case", "index": ALL}, "n_clicks"),
+            Input({"type": "btn-open-dir-case", "index": ALL}, "n_clicks"),
         ],
         [State("modal-case-directory", "is_open")],
         prevent_initial_call=True
     )
-    def toggle_case_directory_modal(open_clicks, close_clicks, select_clicks, is_open):
+    def toggle_case_directory_modal(open_clicks, close_clicks, select_clicks, dir_select_clicks, is_open):
         triggered = ctx.triggered_id
         if triggered == "nav-btn-case-directory":
             return not is_open
         elif triggered == "btn-close-case-directory":
             return False
-        elif isinstance(triggered, dict) and triggered.get("type") == "btn-open-case":
-            if any(select_clicks) if isinstance(select_clicks, (list, tuple)) else bool(select_clicks):
+        elif isinstance(triggered, dict) and triggered.get("type") in ("btn-open-case", "btn-open-dir-case"):
+            clicks = dir_select_clicks if triggered.get("type") == "btn-open-dir-case" else select_clicks
+            if any(clicks) if isinstance(clicks, (list, tuple)) else bool(clicks):
                 return False
         return is_open
+
+    # 4c. Select Case from Directory Modal
+    @dash_app.callback(
+        Output("global-case-selector", "value", allow_duplicate=True),
+        Input({"type": "btn-open-dir-case", "index": ALL}, "n_clicks"),
+        prevent_initial_call=True
+    )
+    def handle_dir_case_select(clicks):
+        if not clicks or not any(clicks):
+            return no_update
+        triggered = ctx.triggered_id
+        if isinstance(triggered, dict) and triggered.get("type") == "btn-open-dir-case":
+            return triggered.get("index")
+        return no_update
 
     # 5. Selected Evidence File Banner indicator
     @dash_app.callback(

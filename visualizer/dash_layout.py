@@ -25,585 +25,520 @@ from visualizer.actions_workflow_modal import build_actions_workflow_modal
 from visualizer.relationship_panel import build_edge_source_modal
 from visualizer.financial_workflow_panel import build_financial_workflow_modal
 from visualizer.case_timeline_panel import build_case_timeline_modal
+from visualizer.svg_icons import (
+    icon_nodes, icon_edges, icon_labels, icon_filter, icon_link,
+    icon_expand, icon_focus, icon_fit, icon_reset, icon_more_dots,
+    icon_search, icon_sparkles
+)
 
 
 def build_workspace_secondary_nav():
-    """Bottom secondary navigation: Analysis, Evidence, Reports, Audit."""
+    """Hidden bridge container for secondary navigation callbacks."""
     return html.Div(
         id='workspace-secondary-nav',
-        style={
-            'display': 'flex',
-            'alignItems': 'center',
-            'justifyContent': 'space-between',
-            'backgroundColor': '#131722',
-            'borderTop': '1px solid #2a3447',
-            'padding': '6px 14px',
-            'boxShadow': '0 -2px 6px rgba(0,0,0,0.3)',
-            'flexWrap': 'wrap',
-            'gap': '8px',
-            'zIndex': '10',
-        },
+        style={'display': 'none'},
         children=[
-            html.Div(
-                style={'display': 'flex', 'alignItems': 'center', 'gap': '8px', 'flexWrap': 'wrap'},
-                children=[
-                    html.Span("INVESTIGATION CONTROLS:", style={'color': '#718096', 'fontSize': '10px', 'fontWeight': '800', 'letterSpacing': '0.5px'}),
-                    # 1. Analysis
-                    dbc.Button(
-                        [html.Span("🔬 "), "Analysis"],
-                        id="ws-sec-nav-actions",
-                        size="sm",
-                        color="primary",
-                        outline=False,
-                        style={'fontSize': '11px', 'padding': '4px 12px', 'fontWeight': '700', 'backgroundColor': '#2563eb', 'borderColor': '#2563eb'}
-                    ),
-                    # 2. Evidence (triggers right panel switch to Evidence tab)
-                    dbc.Button(
-                        [html.Span("📁 "), "Evidence"],
-                        id="bottom-nav-btn-evidence",
-                        size="sm",
-                        color="info",
-                        outline=True,
-                        style={'fontSize': '11px', 'padding': '4px 12px', 'fontWeight': '700', 'borderColor': '#38bdf8', 'color': '#38bdf8'}
-                    ),
-                    # 3. Reports
-                    dbc.Button(
-                        [html.Span("📋 "), "Reports"],
-                        id="ws-sec-nav-reports",
-                        size="sm",
-                        color="secondary",
-                        outline=True,
-                        style={'fontSize': '11px', 'padding': '4px 12px', 'fontWeight': '600', 'borderColor': '#4a5568', 'color': '#cbd5e0'}
-                    ),
-                    # 4. Audit
-                    dbc.Button(
-                        [html.Span("🛡️ "), "Audit"],
-                        id="ws-sec-nav-audit",
-                        size="sm",
-                        color="secondary",
-                        outline=True,
-                        style={'fontSize': '11px', 'padding': '4px 12px', 'fontWeight': '600', 'borderColor': '#4a5568', 'color': '#cbd5e0'}
-                    ),
-                    html.Span("|", style={'color': '#2a3447', 'margin': '0 4px'}),
-                    # Supplementary quick actions
-                    dbc.Button(
-                        "💸 Money Flow",
-                        id="ws-sec-nav-financial",
-                        size="sm",
-                        color="success",
-                        outline=True,
-                        style={'fontSize': '10.5px', 'padding': '3px 9px', 'fontWeight': '600'}
-                    ),
-                    dbc.Button(
-                        "📅 Timeline",
-                        id="ws-sec-nav-timeline",
-                        size="sm",
-                        color="warning",
-                        outline=True,
-                        style={'fontSize': '10.5px', 'padding': '3px 9px', 'fontWeight': '600'}
-                    ),
-                    dbc.Tooltip("Launch analytical workflows, community detection & GNN inference", target="ws-sec-nav-actions", placement="top"),
-                    dbc.Tooltip("Open evidentiary exhibits & source documents in right rail", target="bottom-nav-btn-evidence", placement="top"),
-                    dbc.Tooltip("Generate court-ready non-repudiable case dossier reports", target="ws-sec-nav-reports", placement="top"),
-                    dbc.Tooltip("Inspect tamper-evident SHA-256 chain of custody audit log", target="ws-sec-nav-audit", placement="top"),
-                    dbc.Tooltip("Analyze financial transactions and Hawala structuring", target="ws-sec-nav-financial", placement="top"),
-                    dbc.Tooltip("View chronological timeline of case events and telecommunications", target="ws-sec-nav-timeline", placement="top"),
-                ]
-            ),
-            html.Div(
-                style={'display': 'flex', 'alignItems': 'center', 'gap': '8px'},
-                children=[
-                    html.Span("🔒 Non-repudiation audit trail active", style={'color': '#718096', 'fontSize': '10px', 'fontStyle': 'italic'}),
-                ]
-            )
-        ]
-    )
-
-
-def build_case_workspace_toolbar():
-    """Case-Specific Investigation Workspace interactive toolbar."""
-    return html.Div(
-        id='case-workspace-toolbar',
-        style={
-            'backgroundColor': '#1a202c',
-            'border': '1px solid #2d3748',
-            'borderRadius': '6px',
-            'padding': '10px 14px',
-            'marginBottom': '10px',
-            'display': 'flex',
-            'flexDirection': 'column',
-            'gap': '8px',
-            'boxShadow': '0 2px 4px rgba(0,0,0,0.25)'
-        },
-        children=[
-            # Top row: Quick Entity Search & Filters
-            html.Div(
-                style={'display': 'flex', 'alignItems': 'center', 'gap': '10px', 'flexWrap': 'wrap'},
-                children=[
-                    html.Div(
-                        style={'flex': '1.3', 'minWidth': '220px'},
-                        children=[
-                            dcc.Dropdown(
-                                id='ws-search-entity-dropdown',
-                                placeholder='🔍 Search & select entity in case...',
-                                options=[],
-                                clearable=True,
-                                style={'color': '#1a202c', 'fontSize': '12px'}
-                            )
-                        ]
-                    ),
-                    html.Div(
-                        style={'flex': '1', 'minWidth': '180px'},
-                        children=[
-                            dcc.Dropdown(
-                                id='ws-filter-entity-type',
-                                placeholder='Filter Entity Types...',
-                                options=[
-                                    {'label': '👤 Person', 'value': 'person'},
-                                    {'label': '📱 Phone', 'value': 'phone'},
-                                    {'label': '🚗 Vehicle', 'value': 'vehicle'},
-                                    {'label': '📍 Location', 'value': 'location'},
-                                    {'label': '🏢 Organization', 'value': 'organization'},
-                                    {'label': '💳 Account', 'value': 'account'},
-                                    {'label': '💼 Case', 'value': 'case'},
-                                    {'label': '📅 Event', 'value': 'event'},
-                                ],
-                                multi=True,
-                                style={'color': '#1a202c', 'fontSize': '12px'}
-                            )
-                        ]
-                    ),
-                    html.Div(
-                        style={'flex': '1.1', 'minWidth': '190px'},
-                        children=[
-                            dcc.Dropdown(
-                                id='ws-filter-modality',
-                                placeholder='Filter Modality...',
-                                options=[
-                                    {'label': 'All Modalities', 'value': 'ALL'},
-                                    {'label': '🟢 Observed Fact (CDR/Direct)', 'value': 'OBSERVED'},
-                                    {'label': '🟣 Extracted (Document NLP)', 'value': 'EXTRACTED'},
-                                    {'label': '🟡 Predicted (AI Link)', 'value': 'PREDICTED'},
-                                    {'label': '🔵 Inferred (Reasoning/Rules)', 'value': 'INFERRED'},
-                                ],
-                                value='ALL',
-                                clearable=False,
-                                style={'color': '#1a202c', 'fontSize': '12px'}
-                            )
-                        ]
-                    ),
-                    html.Div(
-                        style={'flex': '0.9', 'minWidth': '160px'},
-                        children=[
-                            dcc.Dropdown(
-                                id='ws-filter-acceptance',
-                                placeholder='Acceptance Status...',
-                                options=[
-                                    {'label': 'All Relationships', 'value': 'ALL'},
-                                    {'label': '✅ Confirmed Only', 'value': 'CONFIRMED'},
-                                    {'label': '⏳ Proposed (Review)', 'value': 'PROPOSED'},
-                                ],
-                                value='ALL',
-                                clearable=False,
-                                style={'color': '#1a202c', 'fontSize': '12px'}
-                            )
-                        ]
-                    ),
-                ]
-            ),
-            # Middle row: Graph Exploration Tools: N-Hop, Shortest Path, Neighbors, Labels, Highlights
-            html.Div(
-                style={'display': 'flex', 'alignItems': 'center', 'gap': '10px', 'flexWrap': 'wrap', 'justifyContent': 'space-between'},
-                children=[
-                    # N-Hop exploration
-                    html.Div(
-                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
-                        children=[
-                            html.Span("N-Hop:", style={'color': '#a0aec0', 'fontSize': '11px', 'fontWeight': '700'}),
-                            dbc.ButtonGroup(size='sm', children=[
-                                dbc.Button("1-Hop", id="ws-btn-nhop-1", outline=True, color="primary", style={'fontSize': '11px', 'padding': '2px 8px'}),
-                                dbc.Button("2-Hop", id="ws-btn-nhop-2", outline=True, color="primary", style={'fontSize': '11px', 'padding': '2px 8px'}),
-                                dbc.Button("3-Hop", id="ws-btn-nhop-3", outline=True, color="primary", style={'fontSize': '11px', 'padding': '2px 8px'}),
-                            ]),
-                            dbc.Button("Expand Neighbors", id="ws-btn-expand-neighbors", size="sm", color="secondary", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
-                            dbc.Button("Restore View", id="ws-btn-reset-view", size="sm", color="secondary", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
-                        ]
-                    ),
-                    # Shortest Path controls
-                    html.Div(
-                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
-                        children=[
-                            html.Span("Shortest Path:", style={'color': '#a0aec0', 'fontSize': '11px', 'fontWeight': '700'}),
-                            dcc.Dropdown(
-                                id='ws-path-source',
-                                placeholder='Source...',
-                                options=[],
-                                style={'minWidth': '130px', 'color': '#1a202c', 'fontSize': '11px'}
-                            ),
-                            html.Span("➔", style={'color': '#718096', 'fontSize': '12px'}),
-                            dcc.Dropdown(
-                                id='ws-path-target',
-                                placeholder='Target...',
-                                options=[],
-                                style={'minWidth': '130px', 'color': '#1a202c', 'fontSize': '11px'}
-                            ),
-                            dbc.Button("Trace Path", id="ws-btn-find-path", size="sm", color="info", style={'fontSize': '11px', 'padding': '2px 8px', 'fontWeight': '600'}),
-                        ]
-                    ),
-                    # Label controls
-                    html.Div(
-                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
-                        children=[
-                            html.Span("Labels:", style={'color': '#a0aec0', 'fontSize': '11px', 'fontWeight': '700'}),
-                            dcc.RadioItems(
-                                id='ws-label-mode',
-                                options=[
-                                    {'label': ' Name', 'value': 'name'},
-                                    {'label': ' Name+Type', 'value': 'name_type'},
-                                    {'label': ' None', 'value': 'none'}
-                                ],
-                                value='name',
-                                inline=True,
-                                style={'color': '#cbd5e0', 'fontSize': '11px', 'display': 'flex', 'gap': '6px'}
-                            )
-                        ]
-                    ),
-                    # Analysis highlights
-                    html.Div(
-                        style={'display': 'flex', 'alignItems': 'center', 'gap': '6px'},
-                        children=[
-                            dbc.Button("💸 Money Flow", id="ws-btn-money-flow-toolbar", size="sm", color="success", outline=True, style={'fontSize': '11px', 'padding': '2px 8px', 'fontWeight': '700'}),
-                            dbc.Button("Highlight Bridges", id="ws-btn-highlight-bridges", size="sm", color="warning", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
-                            dbc.Button("Highlight Predicted", id="ws-btn-highlight-predicted", size="sm", color="warning", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
-                            dbc.Button("Clear Highlight", id="ws-btn-clear-highlights", size="sm", color="light", outline=True, style={'fontSize': '11px', 'padding': '2px 8px'}),
-                        ]
-                    ),
-                ]
-            ),
-            # Bottom row: Modality Legend Bar
-            html.Div(
-                style={
-                    'display': 'flex',
-                    'alignItems': 'center',
-                    'gap': '14px',
-                    'fontSize': '11px',
-                    'color': '#cbd5e0',
-                    'borderTop': '1px solid #2d3748',
-                    'paddingTop': '6px',
-                    'flexWrap': 'wrap'
-                },
-                children=[
-                    html.B("EVIDENTIARY MODALITY:", style={'fontSize': '10px', 'color': '#a0aec0', 'letterSpacing': '0.5px'}),
-                    html.Span([html.Span("―", style={'color': '#10b981', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Observed Fact (CDR/Direct)"], style={'display': 'flex', 'alignItems': 'center'}),
-                    html.Span([html.Span("―", style={'color': '#8b5cf6', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Extracted (FIR / Document NLP)"], style={'display': 'flex', 'alignItems': 'center'}),
-                    html.Span([html.Span("- -", style={'color': '#f59e0b', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Predicted (AI Link Prediction)"], style={'display': 'flex', 'alignItems': 'center'}),
-                    html.Span([html.Span("·····", style={'color': '#06b6d4', 'fontWeight': '900', 'fontSize': '14px', 'marginRight': '4px'}), "Inferred (Reasoning / Rules)"], style={'display': 'flex', 'alignItems': 'center'}),
-                    html.Span("🔒 Unaccepted AI edges are PROPOSED and never sent to Neo4j until investigator validates.", style={'marginLeft': 'auto', 'color': '#718096', 'fontSize': '10px', 'fontStyle': 'italic'}),
-                ]
-            ),
-            # Tooltips for toolbar controls
-            dbc.Tooltip("Search entities by name, phone number, vehicle plate, or account ID", target="ws-search-entity-dropdown", placement="top"),
-            dbc.Tooltip("Filter visible nodes by entity category (Person, Phone, Vehicle...)", target="ws-filter-entity-type", placement="top"),
-            dbc.Tooltip("Filter visible links by evidentiary modality standard", target="ws-filter-modality", placement="top"),
-            dbc.Tooltip("Filter relationships by human investigator validation state", target="ws-filter-acceptance", placement="top"),
-            dbc.Tooltip("Filter network to immediate 1-hop connections of active entity", target="ws-btn-nhop-1", placement="bottom"),
-            dbc.Tooltip("Expand to 2-hop radius to discover secondary intermediaries", target="ws-btn-nhop-2", placement="bottom"),
-            dbc.Tooltip("Expand to 3-hop radius to reveal broader syndicate perimeter", target="ws-btn-nhop-3", placement="bottom"),
-            dbc.Tooltip("Expand all direct neighbors of currently selected entity", target="ws-btn-expand-neighbors", placement="bottom"),
-            dbc.Tooltip("Restore full case network and clear visual focus isolate", target="ws-btn-reset-view", placement="bottom"),
-            dbc.Tooltip("Calculate shortest forensic path between selected source and target", target="ws-btn-find-path", placement="bottom"),
-            dbc.Tooltip("Analyze and trace illicit financial money flows", target="ws-btn-money-flow-toolbar", placement="bottom"),
-            dbc.Tooltip("Highlight critical broker nodes and structural cut-vertices", target="ws-btn-highlight-bridges", placement="bottom"),
-            dbc.Tooltip("Highlight proposed AI link prediction hypotheses", target="ws-btn-highlight-predicted", placement="bottom"),
-            dbc.Tooltip("Clear all active highlight overlays", target="ws-btn-clear-highlights", placement="bottom"),
+            dbc.Button(id="bottom-nav-btn-evidence"),
         ]
     )
 
 
 def init_layout(style, dataset_list, external_dataset_list= []):
     """
-    The whole layout needed to initialize a Dash app.
-    Unified Cockpit:
-      • Pinned Top Area: CASE selector + [Ask CrimeNet...] query bar
-      • Left Rail (300px): [NETWORK] [ANALYSIS] [INTELLIGENCE]
-      • Central Stage (Flex-1): Cytoscape Graph + Secondary Navigation (Analysis, Evidence, Reports, Audit)
-      • Right Rail (380px): Dedicated 6-Tab Intelligence Panel (AI Intel, Dossier, Hidden Links, Alerts, Evidence, Timeline)
-    :return: Layout for Dash app.
+    Standard CrimeNet Investigation Workspace Cockpit Layout.
+    - Single 48px Top Navigation Bar with CASE selector, Status Pill, Global Search, Ask CrimeNet, and Three-Dot Menu
+    - Compact 54px Left Icon Rail with Popovers for Nodes, Edges, Labels, and Filters
+    - Dominant Central Graph Canvas (>70% width) with pure white background, floating 5-action toolbar + [⋯ More], and zoom HUD
+    - Right Intelligence Rail (360px) with 6 clean tabs (AI Intel, Dossier, Links, Alerts, Evidence, Timeline)
     """
     workspace_content = html.Div(
         id='crimenet-workspace-cockpit',
         style={
             'display': 'flex',
             'flexDirection': 'row',
-            'height': 'calc(100vh - 110px)',
+            'height': 'calc(100vh - 48px)',
             'width': '100%',
             'overflow': 'hidden',
-            'backgroundColor': '#0c0f17',
+            'backgroundColor': '#ffffff',
             'boxSizing': 'border-box',
         },
         children=[
             dcc.Store(id='inspected-edge-store', data=None),
 
-            # ── 1. LEFT RAIL: NETWORK, ANALYSIS, INTELLIGENCE TABS ──────────
+            # ── 1. COMPACT 54PX LEFT RAIL WITH FLYOUT POPOVERS ──────────
             html.Div(
                 id='sidebar',
                 className='workspace-left-rail',
                 style={
-                    'width': '290px',
-                    'minWidth': '270px',
-                    'maxWidth': '320px',
+                    'width': '54px',
+                    'minWidth': '54px',
+                    'maxWidth': '54px',
                     'height': '100%',
-                    'overflowY': 'auto',
-                    'backgroundColor': '#131722',
-                    'borderRight': '1px solid #2a3447',
+                    'backgroundColor': '#f8fafc',
+                    'borderRight': '1px solid #e2e8f0',
                     'display': 'flex',
                     'flexDirection': 'column',
+                    'alignItems': 'center',
+                    'padding': '12px 0',
+                    'gap': '12px',
                     'boxSizing': 'border-box',
-                    'padding': '8px 10px',
+                    'zIndex': '20',
+                    'position': 'relative',
                 },
                 children=[
-                    dcc.Tabs(
-                        id='tabs',
-                        value='tab-network',
-                        parent_className='crimenet-tabs-parent',
-                        className='crimenet-tabs-bar',
-                        content_className='crimenet-tabs-content',
+                    # 1. Nodes button + Popover
+                    dbc.Button(
+                        icon_nodes(color="#2563eb", size=18),
+                        id="btn-rail-nodes",
+                        className="btn-rail-icon",
+                        style={"padding": "8px", "borderRadius": "8px", "backgroundColor": "#ffffff", "border": "1px solid #e2e8f0", "boxShadow": "0 1px 2px rgba(0,0,0,0.05)"},
+                    ),
+                    dbc.Tooltip("Node Configuration & Types", target="btn-rail-nodes", placement="right"),
+                    dbc.Popover(
+                        id="popover-rail-nodes",
+                        target="btn-rail-nodes",
+                        trigger="legacy",
+                        placement="right-start",
+                        is_open=False,
+                        style={"width": "340px", "maxWidth": "360px", "border": "1px solid #cbd5e1", "borderRadius": "8px", "boxShadow": "0 10px 25px rgba(0,0,0,0.12)", "backgroundColor": "#ffffff", "zIndex": 1050},
                         children=[
-                            dcc.Tab(label='NETWORK', className='tab', id='network-tab', value='tab-network', children=[
-                                html.Div(className='input-div', children=[
-                                    dcc.Dropdown(id='choose-network', className='inputs',
-                                                 options=dash_formatter.dash_dataset_options(external_dataset_list, dataset_list),
-                                                 placeholder='Select network ...'),
-                                    dcc.Dropdown(className='inputs', id='choose-entities',
-                                                 options=[],
-                                                 placeholder="Select entities ...",
-                                                 multi=True),
-                                    html.Button('Load Network', className='inputs', id='load-network-button', n_clicks=0),
-                                    dcc.Upload(
-                                        id='upload',
-                                        className='inputs crimenet-upload-wrapper',
-                                        children=html.Button('Upload CSV / File', className='inputs', id='upload-button'),
-                                        multiple=False
-                                    ),
-                                    html.Button('Load From File', className='inputs',
-                                                id='load-file-button', n_clicks=0),
-                                    html.Hr(),
-                                    html.A(html.Button('Save Network State', id='save-network-button', className='inputs'),
-                                           id='download-link', href='/downloadNetwork', download='network_state.json', className='inputs'),
-                                    html.A(html.Button('Export Network', id='export-network-button', className='inputs'),
-                                           id='export-link', href='/exportNetwork', download='network_export.json', className='inputs'),
-                                    html.Hr(),
-                                    html.Button('Export Image', className='inputs', id='export-image-button', n_clicks=0),
-                                    html.Hr()
-                                ])
-                            ]),
-                            dcc.Tab(label='ANALYSIS', className='tab', id='analysis-tab', value='tab-analysis', children=[
-                                html.Div(className='input-div', id="analysis-input", children=[
-                                    dcc.Dropdown(className='inputs',
-                                                 id='choose-analysis',
-                                                 placeholder='Choose analysis function...',
-                                                 options=dash_formatter.dash_analysis_options(),
-                                                 multi=False),
-                                    dcc.Dropdown(className='inputs',
-                                                 id='analysis-algorithm',
-                                                 placeholder='Choose algorithm...',
-                                                 options=[],
-                                                 multi=False),
-                                    html.Div(className='inputs', id='parameter-div', children=[
-                                        html.Div(id='parameter-title', children='PARAMETER'),
-                                        dcc.Dropdown(className='parameter',
-                                                     id='parameter-1',
-                                                     placeholder='Select algorithm first ...',
-                                                     options=[],
-                                                     value=None,
-                                                     multi=False,
-                                                     disabled=True)
-                                    ]),
-                                    html.Div(className='inputs', id='analysis-scope-div', children=[
-                                        html.Div('EXECUTION SCOPE', id='analysis-scope-title', style={'fontSize': '10px', 'fontWeight': 'bold', 'color': '#a0aec0', 'letterSpacing': '0.5px', 'marginBottom': '4px'}),
-                                        dcc.Dropdown(
-                                            id='analysis-scope',
-                                            className='parameter',
-                                            placeholder='Select scope...',
-                                            options=[
-                                                {'label': '🌐 Full Network', 'value': 'FULL_NETWORK'},
-                                                {'label': '🎯 Selected Entity', 'value': 'SELECTED_ENTITY'},
-                                                {'label': '🕸️ Selected Subgraph', 'value': 'SELECTED_SUBGRAPH'},
-                                                {'label': '🔗 Selected Pair', 'value': 'SELECTED_PAIR'},
-                                            ],
-                                            value='FULL_NETWORK',
-                                            clearable=False,
-                                            multi=False
+                            dbc.PopoverHeader("Node Types & Visibility", style={"backgroundColor": "#f8fafc", "borderBottom": "1px solid #e2e8f0", "fontWeight": "700", "fontSize": "13px", "color": "#0f172a"}),
+                            dbc.PopoverBody([
+                                html.Div(
+                                    style={"display": "flex", "gap": "6px", "marginBottom": "10px"},
+                                    children=[
+                                        dbc.Button("Show All", id="show-all-button", size="sm", color="primary", style={"fontSize": "11px", "padding": "3px 8px"}),
+                                        dbc.Button("Expand All", id="expand-all-button", size="sm", color="secondary", outline=True, style={"fontSize": "11px", "padding": "3px 8px"}),
+                                    ]
+                                ),
+                                html.Div(
+                                    id='node-interaction-div',
+                                    className='element-interaction-div',
+                                    style={"maxHeight": "240px", "overflowY": "auto"},
+                                    children=[
+                                        html.Table(id='node-interaction-table', className='element-interaction-table', children=[
+                                            html.Tr(children=[html.Th('TYPE'), html.Th('SHOW'), html.Th('HIGHLIGHT')])
+                                        ])
+                                    ]
+                                )
+                            ])
+                        ]
+                    ),
+
+                    # 2. Edges button + Popover
+                    dbc.Button(
+                        icon_edges(color="#2563eb", size=18),
+                        id="btn-rail-edges",
+                        className="btn-rail-icon",
+                        style={"padding": "8px", "borderRadius": "8px", "backgroundColor": "#ffffff", "border": "1px solid #e2e8f0", "boxShadow": "0 1px 2px rgba(0,0,0,0.05)"},
+                    ),
+                    dbc.Tooltip("Edge Configuration & Thresholds", target="btn-rail-edges", placement="right"),
+                    dbc.Popover(
+                        id="popover-rail-edges",
+                        target="btn-rail-edges",
+                        trigger="legacy",
+                        placement="right-start",
+                        is_open=False,
+                        style={"width": "340px", "maxWidth": "360px", "border": "1px solid #cbd5e1", "borderRadius": "8px", "boxShadow": "0 10px 25px rgba(0,0,0,0.12)", "backgroundColor": "#ffffff", "zIndex": 1050},
+                        children=[
+                            dbc.PopoverHeader("Edge Types & Thresholds", style={"backgroundColor": "#f8fafc", "borderBottom": "1px solid #e2e8f0", "fontWeight": "700", "fontSize": "13px", "color": "#0f172a"}),
+                            dbc.PopoverBody([
+                                html.Div(
+                                    id='edge-interaction-div',
+                                    className='element-interaction-div',
+                                    style={"maxHeight": "200px", "overflowY": "auto", "marginBottom": "12px"},
+                                    children=[
+                                        html.Table(id='edge-interaction-table', className='element-interaction-table', children=[
+                                            html.Tr(children=[html.Th('TYPE'), html.Th('SHOW'), html.Th('HIGHLIGHT')])
+                                        ])
+                                    ]
+                                ),
+                                html.Div(
+                                    id='edge-prop-slider-div',
+                                    children=[
+                                        html.P(id='edge-prop-label', children=['Set edge probability threshold:'], style={"fontSize": "11px", "fontWeight": "600", "color": "#475569", "marginBottom": "4px"}),
+                                        dcc.Slider(
+                                            id='edge-prob-slider', min=0, max=1, value=0.00, step=0.05,
+                                            updatemode='drag',
+                                            marks={0.00: '0.00', 0.25: '0.25', 0.50: '0.50', 0.75: '0.75', 1.00: '1.00'}
                                         ),
-                                    ]),
-                                    html.Div(style={'marginTop': '8px', 'marginBottom': '8px', 'padding': '6px 10px', 'backgroundColor': '#1e293b', 'borderRadius': '4px', 'border': '1px solid #334155'}, children=[
-                                        dcc.Checklist(
-                                            id='save-analysis-to-case',
-                                            options=[{'label': ' 💾 Save Run to Case Record', 'value': 'SAVE'}],
-                                            value=['SAVE'],
-                                            style={'fontSize': '11px', 'color': '#cbd5e0', 'fontWeight': '500', 'cursor': 'pointer'}
-                                        )
-                                    ]),
-                                    html.Button('Analyze', className='inputs', id='analysis-button', n_clicks=0),
-                                    html.Div(id='analysis-summary', className='analysis-summary-box'),
-                                    html.Div(id='hierarchical-tree-data', style={'display': 'none'}),
-                                    html.Div(id='hierarchical-tree-view-wrapper', className='hierarchical-tree-wrapper'),
-                                    html.Hr()
-                                ])
-                            ]),
-                            dcc.Tab(label='INTELLIGENCE', className='tab', id='intelligence-tab', value='tab-intelligence', children=[
-                                html.Div(id='unbound-panel-wrapper', children=[
-                                    html.Div(id='unbound-insights-panel', children=[
-                                        html.Div('CrimeNet AI Intelligence Initializing...',
-                                                 style={'padding': '20px', 'color': '#999', 'textAlign': 'center', 'fontSize': '12px'})
-                                    ])
+                                    ]
+                                )
+                            ])
+                        ]
+                    ),
+
+                    # 3. Labels button + Popover
+                    dbc.Button(
+                        icon_labels(color="#2563eb", size=18),
+                        id="btn-rail-labels",
+                        className="btn-rail-icon",
+                        style={"padding": "8px", "borderRadius": "8px", "backgroundColor": "#ffffff", "border": "1px solid #e2e8f0", "boxShadow": "0 1px 2px rgba(0,0,0,0.05)"},
+                    ),
+                    dbc.Tooltip("Label Display Modes", target="btn-rail-labels", placement="right"),
+                    dbc.Popover(
+                        id="popover-rail-labels",
+                        target="btn-rail-labels",
+                        trigger="legacy",
+                        placement="right-start",
+                        is_open=False,
+                        style={"width": "320px", "maxWidth": "340px", "border": "1px solid #cbd5e1", "borderRadius": "8px", "boxShadow": "0 10px 25px rgba(0,0,0,0.12)", "backgroundColor": "#ffffff", "zIndex": 1050},
+                        children=[
+                            dbc.PopoverHeader("Label Visibility", style={"backgroundColor": "#f8fafc", "borderBottom": "1px solid #e2e8f0", "fontWeight": "700", "fontSize": "13px", "color": "#0f172a"}),
+                            dbc.PopoverBody([
+                                html.Div(style={"marginBottom": "10px"}, children=[
+                                    html.Label("Label Mode:", style={"fontSize": "11px", "fontWeight": "700", "color": "#475569", "marginBottom": "4px", "display": "block"}),
+                                    dcc.RadioItems(
+                                        id='ws-label-mode',
+                                        options=[
+                                            {'label': ' Name', 'value': 'name'},
+                                            {'label': ' Name + Type', 'value': 'name_type'},
+                                            {'label': ' None', 'value': 'none'}
+                                        ],
+                                        value='name',
+                                        inline=True,
+                                        style={'color': '#1e293b', 'fontSize': '12px', 'display': 'flex', 'gap': '12px'}
+                                    )
+                                ]),
+                                html.Div(
+                                    id='label-interaction-div',
+                                    className='element-interaction-div',
+                                    style={"maxHeight": "200px", "overflowY": "auto"},
+                                    children=[
+                                        html.Table(id='label-interaction-table', className='element-interaction-table', children=[
+                                            html.Tr(children=[html.Th('VARIABLE', className="label-variable"), html.Th('DISPLAY')])
+                                        ])
+                                    ]
+                                )
+                            ])
+                        ]
+                    ),
+
+                    # 4. Filters button + Popover
+                    dbc.Button(
+                        icon_filter(color="#2563eb", size=18),
+                        id="btn-rail-filters",
+                        className="btn-rail-icon",
+                        style={"padding": "8px", "borderRadius": "8px", "backgroundColor": "#ffffff", "border": "1px solid #e2e8f0", "boxShadow": "0 1px 2px rgba(0,0,0,0.05)"},
+                    ),
+                    dbc.Tooltip("Entity & Modality Filters", target="btn-rail-filters", placement="right"),
+                    dbc.Popover(
+                        id="popover-rail-filters",
+                        target="btn-rail-filters",
+                        trigger="legacy",
+                        placement="right-start",
+                        is_open=False,
+                        style={"width": "320px", "maxWidth": "340px", "border": "1px solid #cbd5e1", "borderRadius": "8px", "boxShadow": "0 10px 25px rgba(0,0,0,0.12)", "backgroundColor": "#ffffff", "zIndex": 1050},
+                        children=[
+                            dbc.PopoverHeader("Graph Investigation Filters", style={"backgroundColor": "#f8fafc", "borderBottom": "1px solid #e2e8f0", "fontWeight": "700", "fontSize": "13px", "color": "#0f172a"}),
+                            dbc.PopoverBody([
+                                html.Div(style={"marginBottom": "10px"}, children=[
+                                    html.Label("Entity Types:", style={"fontSize": "11px", "fontWeight": "700", "color": "#475569", "marginBottom": "4px", "display": "block"}),
+                                    dcc.Dropdown(
+                                        id='ws-filter-entity-type',
+                                        placeholder='Filter Entity Types...',
+                                        options=[
+                                            {'label': 'Person', 'value': 'person'},
+                                            {'label': 'Phone', 'value': 'phone'},
+                                            {'label': 'Vehicle', 'value': 'vehicle'},
+                                            {'label': 'Location', 'value': 'location'},
+                                            {'label': 'Organization', 'value': 'organization'},
+                                            {'label': 'Account', 'value': 'account'},
+                                            {'label': 'Case', 'value': 'case'},
+                                            {'label': 'Event', 'value': 'event'},
+                                        ],
+                                        multi=True,
+                                        style={'fontSize': '12px'}
+                                    )
+                                ]),
+                                html.Div(style={"marginBottom": "10px"}, children=[
+                                    html.Label("Evidentiary Modality:", style={"fontSize": "11px", "fontWeight": "700", "color": "#475569", "marginBottom": "4px", "display": "block"}),
+                                    dcc.Dropdown(
+                                        id='ws-filter-modality',
+                                        placeholder='Filter Modality...',
+                                        options=[
+                                            {'label': 'All Modalities', 'value': 'ALL'},
+                                            {'label': 'Observed Fact (CDR/Direct)', 'value': 'OBSERVED'},
+                                            {'label': 'Extracted (Document NLP)', 'value': 'EXTRACTED'},
+                                            {'label': 'Predicted (AI Link)', 'value': 'PREDICTED'},
+                                            {'label': 'Inferred (Reasoning/Rules)', 'value': 'INFERRED'},
+                                        ],
+                                        value='ALL',
+                                        clearable=False,
+                                        style={'fontSize': '12px'}
+                                    )
+                                ]),
+                                html.Div(children=[
+                                    html.Label("Acceptance Status:", style={"fontSize": "11px", "fontWeight": "700", "color": "#475569", "marginBottom": "4px", "display": "block"}),
+                                    dcc.Dropdown(
+                                        id='ws-filter-acceptance',
+                                        placeholder='Acceptance Status...',
+                                        options=[
+                                            {'label': 'All Relationships', 'value': 'ALL'},
+                                            {'label': 'Confirmed Only', 'value': 'CONFIRMED'},
+                                            {'label': 'Proposed (Review)', 'value': 'PROPOSED'},
+                                        ],
+                                        value='ALL',
+                                        clearable=False,
+                                        style={'fontSize': '12px'}
+                                    )
                                 ])
                             ])
                         ]
                     ),
-                    html.Div(id='info-wrapper', style={'marginTop': '10px'}, children=[
-                        html.Div(id='info-table-div', className='element-interaction-div', children=[
-                            html.Table(
-                                id='info-table',
-                                className='element-interaction-table',
-                                children=[
-                                    html.Tr(children=[
-                                        html.Th('VARIABLE'),
-                                        html.Th('VALUE'),
-                                        html.Th('SHOW'),
+
+                    # 5. Documentation Icon Link at bottom
+                    html.A(
+                        icon_link(color="#64748b", size=18),
+                        id="btn-rail-docs",
+                        href="/userDocumentation",
+                        target="_blank",
+                        style={"marginTop": "auto", "padding": "8px", "borderRadius": "8px", "backgroundColor": "#ffffff", "border": "1px solid #e2e8f0", "display": "flex", "alignItems": "center", "justifyContent": "center"},
+                    ),
+                    dbc.Tooltip("User Documentation", target="btn-rail-docs", placement="right"),
+
+                    # Hidden Bridge for Legacy Inputs / Tables required by dash_io.py and callbacks
+                    html.Div(
+                        id="legacy-left-rail-bridge",
+                        style={"display": "none"},
+                        children=[
+                            dcc.Tabs(id='tabs', value='tab-network', children=[
+                                dcc.Tab(label='NETWORK', id='network-tab', value='tab-network', children=[
+                                    dcc.Dropdown(id='choose-network', options=dash_formatter.dash_dataset_options(external_dataset_list, dataset_list)),
+                                    dcc.Dropdown(id='choose-entities', options=[], multi=True),
+                                    html.Button('Load Network', id='load-network-button'),
+                                    dcc.Upload(id='upload', children=html.Button(id='upload-button'), multiple=False),
+                                    html.Button('Load From File', id='load-file-button'),
+                                    html.A(html.Button(id='save-network-button'), id='download-link', href='/downloadNetwork', download='network_state.json'),
+                                    html.A(html.Button(id='export-network-button'), id='export-link', href='/exportNetwork', download='network_export.json'),
+                                    html.Button(id='export-image-button'),
+                                    html.Button(id='documentation-button'),
+                                ]),
+                                dcc.Tab(label='ANALYSIS', id='analysis-tab', value='tab-analysis', children=[
+                                    html.Div(id="analysis-input", children=[
+                                        dcc.Dropdown(id='choose-analysis', options=dash_formatter.dash_analysis_options()),
+                                        dcc.Dropdown(id='analysis-algorithm', options=[]),
+                                        html.Div(id='parameter-div', children=[dcc.Dropdown(id='parameter-1')]),
+                                        html.Div(id='analysis-scope-div', children=[dcc.Dropdown(id='analysis-scope', value='FULL_NETWORK')]),
+                                        dcc.Checklist(id='save-analysis-to-case', value=['SAVE']),
+                                        html.Button(id='analysis-button'),
+                                        html.Div(id='analysis-summary'),
+                                        html.Div(id='hierarchical-tree-data'),
+                                        html.Div(id='hierarchical-tree-view-wrapper'),
                                     ])
+                                ]),
+                                dcc.Tab(label='INTELLIGENCE', id='intelligence-tab', value='tab-intelligence', children=[
+                                    html.Div(id='unbound-panel-wrapper', children=[html.Div(id='unbound-insights-panel')])
+                                ])
+                            ]),
+                            html.Div(id='info-wrapper', children=[
+                                html.Div(id='info-table-div', children=[html.Table(id='info-table')]),
+                                html.Div(id='network-info'),
+                            ]),
+                            html.Div(id='element-interaction-container', hidden=True),
+                            html.Div(id="original_network_button_div", hidden=True, children=[
+                                dbc.Button(id='unaltered-collapse-button')
+                            ]),
+                            html.Div(id='warning-div'),
+                            html.Div(id='search-div', hidden=True, children=[
+                                dbc.Button(id='filter-button')
+                            ]),
+                            dbc.Tooltip(id="search-tooltip", target="filter-button"),
+                            html.Div(id='interaction-div', hidden=True, children=[
+                                dbc.Button(id='test-button'),
+                                dbc.Button(id='open-edit-element'),
+                                dbc.Button(id='open-add-element'),
+                                dbc.Button(id='open-delete-element'),
+                                dbc.Button(id='open-merge-element'),
+                                dbc.Button(id='exclude-button'),
+                                dbc.Button(id='isolate-button'),
+                                dbc.Button(id='expand-button')
                             ])
-                        ]),
-                        html.Div(id='evidence-inspector-card', style={'marginTop': '10px'}),
-                        html.Div(id='network-info'),
-                    ]),
-                    html.A(html.Button('User Documentation', className='inputs', id='documentation-button', style={'marginTop': 'auto'}),
-                           target="_blank", rel="noopener noreferrer", href='/userDocumentation', className='inputs'),
+                        ]
+                    )
                 ]
             ),
 
-            # ── 2. CENTER STAGE: CENTRAL CYTOSCAPE GRAPH & TOOLBARS ──────────
+            # ── 2. CENTER STAGE: DOMINANT CYTOSCAPE CANVAS (>70% WIDTH) ────
             html.Div(
                 id='main',
                 className='workspace-center-stage',
                 style={
                     'flex': '1 1 0%',
-                    'minWidth': '420px',
+                    'minWidth': '480px',
                     'height': '100%',
-                    'display': 'flex',
-                    'flexDirection': 'column',
-                    'backgroundColor': '#0a0d14',
-                    'overflow': 'hidden',
                     'position': 'relative',
+                    'backgroundColor': '#ffffff',
+                    'overflow': 'hidden',
                     'boxSizing': 'border-box',
                 },
                 children=[
-                    # Workspace Investigation Toolbar
-                    build_case_workspace_toolbar(),
-
-                    # Central Graph Canvas
+                    # Floating Graph Action Toolbar (Top Center)
                     html.Div(
-                        id='cytoscape-stage-wrapper',
-                        style={'flex': '1 1 0%', 'width': '100%', 'position': 'relative', 'overflow': 'hidden'},
+                        id="graph-floating-toolbar",
+                        className="graph-floating-toolbar",
+                        style={
+                            "position": "absolute",
+                            "top": "12px",
+                            "left": "50%",
+                            "transform": "translateX(-50%)",
+                            "zIndex": "100",
+                            "display": "flex",
+                            "alignItems": "center",
+                            "gap": "6px",
+                            "backgroundColor": "rgba(255, 255, 255, 0.96)",
+                            "backdropFilter": "blur(8px)",
+                            "border": "1px solid #cbd5e1",
+                            "borderRadius": "8px",
+                            "padding": "4px 8px",
+                            "boxShadow": "0 2px 10px rgba(15, 23, 42, 0.08)",
+                        },
                         children=[
-                            # Floating Graph Viewport Controls
-                            html.Div(
-                                className='graph-viewport-controls',
+                            dbc.Button([icon_nodes(color="#2563eb", size=13), html.Span("1-Hop", style={"marginLeft": "5px", "fontSize": "11px", "fontWeight": "600"})], id="ws-btn-nhop-1", size="sm", color="light", style={"padding": "3px 8px", "border": "1px solid #e2e8f0"}),
+                            dbc.Button([icon_expand(color="#475569", size=13), html.Span("Expand", style={"marginLeft": "5px", "fontSize": "11px", "fontWeight": "600"})], id="ws-btn-expand-neighbors", size="sm", color="light", style={"padding": "3px 8px", "border": "1px solid #e2e8f0"}),
+                            dbc.Button([icon_focus(color="#475569", size=13), html.Span("Focus", style={"marginLeft": "5px", "fontSize": "11px", "fontWeight": "600"})], id="btn-cyto-center-selected", size="sm", color="light", style={"padding": "3px 8px", "border": "1px solid #e2e8f0"}),
+                            dbc.Button([icon_fit(color="#475569", size=13), html.Span("Fit", style={"marginLeft": "5px", "fontSize": "11px", "fontWeight": "600"})], id="btn-cyto-fit", size="sm", color="light", style={"padding": "3px 8px", "border": "1px solid #e2e8f0"}),
+                            dbc.Button([icon_reset(color="#64748b", size=13), html.Span("Reset", style={"marginLeft": "5px", "fontSize": "11px", "fontWeight": "600"})], id="ws-btn-reset-view", size="sm", color="light", style={"padding": "3px 8px", "border": "1px solid #e2e8f0"}),
+                            html.Span("|", style={"color": "#cbd5e1", "margin": "0 2px"}),
+                            dbc.Button([html.Span("Path ➔", style={"fontSize": "11px", "fontWeight": "600", "color": "#2563eb"})], id="btn-open-path-popover", size="sm", color="light", style={"padding": "3px 8px", "border": "1px solid #e2e8f0"}),
+                            dbc.Popover(
+                                id="popover-shortest-path",
+                                target="btn-open-path-popover",
+                                trigger="legacy",
+                                placement="bottom",
+                                is_open=False,
+                                style={"width": "300px", "border": "1px solid #cbd5e1", "borderRadius": "8px", "boxShadow": "0 10px 25px rgba(0,0,0,0.12)", "backgroundColor": "#ffffff", "zIndex": 1050},
                                 children=[
-                                    html.Button("⛶ Fit", id="btn-cyto-fit", className="graph-viewport-btn"),
-                                    html.Button("➕", id="btn-cyto-zoom-in", className="graph-viewport-btn"),
-                                    html.Button("➖", id="btn-cyto-zoom-out", className="graph-viewport-btn"),
-                                    html.Button("🎯 Center", id="btn-cyto-center-selected", className="graph-viewport-btn"),
-                                    html.Button("🔄 Re-layout", id="btn-cyto-relayout", className="graph-viewport-btn"),
+                                    dbc.PopoverHeader("Trace Shortest Evidentiary Path", style={"fontSize": "12px", "fontWeight": "700"}),
+                                    dbc.PopoverBody([
+                                        html.Div(style={"marginBottom": "8px"}, children=[
+                                            html.Label("Source Entity:", style={"fontSize": "11px", "fontWeight": "600"}),
+                                            dcc.Dropdown(id='ws-path-source', placeholder='Select Source...', options=[], style={'fontSize': '11px'})
+                                        ]),
+                                        html.Div(style={"marginBottom": "10px"}, children=[
+                                            html.Label("Target Entity:", style={"fontSize": "11px", "fontWeight": "600"}),
+                                            dcc.Dropdown(id='ws-path-target', placeholder='Select Target...', options=[], style={'fontSize': '11px'})
+                                        ]),
+                                        dbc.Button("Trace Connecting Path", id="ws-btn-find-path", size="sm", color="primary", style={"width": "100%", "fontSize": "11px", "fontWeight": "600"})
+                                    ])
                                 ]
                             ),
-                            dbc.Tooltip("Fit full syndicate graph into active viewport", target="btn-cyto-fit", placement="bottom"),
-                            dbc.Tooltip("Zoom in network view", target="btn-cyto-zoom-in", placement="bottom"),
-                            dbc.Tooltip("Zoom out network view", target="btn-cyto-zoom-out", placement="bottom"),
-                            dbc.Tooltip("Center viewport on selected focal entity", target="btn-cyto-center-selected", placement="bottom"),
-                            dbc.Tooltip("Re-execute force-directed physics layout", target="btn-cyto-relayout", placement="bottom"),
-
-                            dcc.Loading(
-                                id='loading-cytoscape',
-                                type='dot',
-                                color='#38bdf8',
+                            dbc.DropdownMenu(
+                                label="⋯ More",
+                                size="sm",
+                                color="light",
+                                id="ws-toolbar-more-menu",
+                                toggle_style={"padding": "3px 8px", "fontSize": "11px", "fontWeight": "600", "border": "1px solid #e2e8f0"},
                                 children=[
-                                    cyto.Cytoscape(
-                                        className='four coloums cytoscape-unaltered-hidden',
-                                        id='cytoscape-unaltered',
-                                        stylesheet=style.stylesheet,
-                                        layout={'name': 'cose-bilkent'},
-                                        elements=[],
-                                        responsive=True,
-                                        minZoom=0.2,
-                                        maxZoom=2.2,
-                                    ),
-                                    cyto.Cytoscape(
-                                        className='cytoscape',
-                                        id='cytoscape',
-                                        stylesheet=style.stylesheet,
-                                        layout={'name': 'cose-bilkent'},
-                                        elements=[],
-                                        responsive=True,
-                                        minZoom=0.2,
-                                        maxZoom=2.2,
-                                        style={'width': '100%', 'height': '100%', 'backgroundColor': '#0a0d14'}
-                                    ),
+                                    dbc.DropdownMenuItem("2-Hop Radius", id="ws-btn-nhop-2"),
+                                    dbc.DropdownMenuItem("3-Hop Perimeter", id="ws-btn-nhop-3"),
+                                    dbc.DropdownMenuItem(divider=True),
+                                    dbc.DropdownMenuItem("Highlight Money Flow", id="ws-btn-money-flow-toolbar"),
+                                    dbc.DropdownMenuItem("Highlight Key Bridges", id="ws-btn-highlight-bridges"),
+                                    dbc.DropdownMenuItem("Highlight AI Predictions", id="ws-btn-highlight-predicted"),
+                                    dbc.DropdownMenuItem("Clear Highlights", id="ws-btn-clear-highlights"),
+                                    dbc.DropdownMenuItem(divider=True),
+                                    dbc.DropdownMenuItem("Analytical Workflows", id="ws-sec-nav-actions"),
+                                    dbc.DropdownMenuItem("Financial Workflow", id="ws-sec-nav-financial"),
+                                    dbc.DropdownMenuItem("Event Timeline", id="ws-sec-nav-timeline"),
+                                    dbc.DropdownMenuItem("Re-execute Force Layout", id="btn-cyto-relayout"),
                                 ]
-                            )
+                            ),
+                        ]
+                    ),
+                    dbc.Tooltip("Filter visible graph to 1-hop connections", target="ws-btn-nhop-1", placement="bottom"),
+                    dbc.Tooltip("Expand direct neighbors of selected entity", target="ws-btn-expand-neighbors", placement="bottom"),
+                    dbc.Tooltip("Center viewport on selected entity", target="btn-cyto-center-selected", placement="bottom"),
+                    dbc.Tooltip("Fit full case network in viewport", target="btn-cyto-fit", placement="bottom"),
+                    dbc.Tooltip("Reset view and clear focus isolate", target="ws-btn-reset-view", placement="bottom"),
+
+                    # Floating Zoom Controls (Bottom Right)
+                    html.Div(
+                        id="graph-floating-zoom",
+                        className="graph-floating-zoom",
+                        style={
+                            "position": "absolute",
+                            "bottom": "16px",
+                            "right": "16px",
+                            "zIndex": "100",
+                            "display": "flex",
+                            "alignItems": "center",
+                            "backgroundColor": "rgba(255, 255, 255, 0.96)",
+                            "backdropFilter": "blur(8px)",
+                            "border": "1px solid #cbd5e1",
+                            "borderRadius": "20px",
+                            "boxShadow": "0 2px 8px rgba(15, 23, 42, 0.08)",
+                            "overflow": "hidden",
+                        },
+                        children=[
+                            dbc.Button("−", id="btn-cyto-zoom-out", size="sm", color="light", style={"border": "none", "borderRadius": "0", "fontWeight": "700", "padding": "4px 10px", "fontSize": "12px"}),
+                            html.Span("100%", style={"fontSize": "10px", "fontWeight": "700", "color": "#64748b", "padding": "0 6px"}),
+                            dbc.Button("+", id="btn-cyto-zoom-in", size="sm", color="light", style={"border": "none", "borderRadius": "0", "fontWeight": "700", "padding": "4px 10px", "fontSize": "12px"}),
                         ]
                     ),
 
-                    # Bottom secondary navigation: [Analysis] [Evidence] [Reports] [Audit]
-                    build_workspace_secondary_nav(),
+                    # Modality Legend (Bottom Left)
+                    html.Div(
+                        id="graph-modality-legend",
+                        style={
+                            "position": "absolute",
+                            "bottom": "16px",
+                            "left": "16px",
+                            "zIndex": "100",
+                            "display": "flex",
+                            "alignItems": "center",
+                            "gap": "12px",
+                            "backgroundColor": "rgba(255, 255, 255, 0.94)",
+                            "backdropFilter": "blur(8px)",
+                            "border": "1px solid #e2e8f0",
+                            "borderRadius": "6px",
+                            "padding": "4px 10px",
+                            "boxShadow": "0 1px 4px rgba(0,0,0,0.04)",
+                            "fontSize": "10.5px",
+                            "color": "#475569",
+                            "fontWeight": "600",
+                        },
+                        children=[
+                            html.Span([html.Span("―", style={"color": "#10b981", "fontWeight": "900", "fontSize": "14px", "marginRight": "4px"}), "Observed"]),
+                            html.Span([html.Span("―", style={"color": "#8b5cf6", "fontWeight": "900", "fontSize": "14px", "marginRight": "4px"}), "Extracted"]),
+                            html.Span([html.Span("- -", style={"color": "#f59e0b", "fontWeight": "900", "fontSize": "14px", "marginRight": "4px"}), "Predicted"]),
+                            html.Span([html.Span("····", style={"color": "#06b6d4", "fontWeight": "900", "fontSize": "14px", "marginRight": "4px"}), "Inferred"]),
+                        ]
+                    ),
 
-                    # Hidden elements for callback support
-                    html.Div(id="original_network_button_div", hidden=True, children=[
-                        dbc.Button('Open Original Network', id='unaltered-collapse-button', className="interaction-button")
-                    ]),
-                    html.Div(id='element-interaction-container', hidden=True, children=[
-                        html.Div(id='node-interaction-div', className='element-interaction-div', children=[
-                            html.Div('NODES', className='element-interaction-title'),
-                            html.Table(id='node-interaction-table', className='element-interaction-table', children=[
-                                html.Tr(children=[html.Th('TYPE'), html.Th('SHOW'), html.Th('HIGHLIGHT')])
-                            ])
-                        ]),
-                        html.Div(id='edge-interaction-div', className='element-interaction-div', children=[
-                            html.Div('EDGES', className='element-interaction-title'),
-                            html.Table(id='edge-interaction-table', className='element-interaction-table', children=[
-                                html.Tr(children=[html.Th('TYPE'), html.Th('SHOW'), html.Th('HIGHLIGHT')])
-                            ])
-                        ]),
-                        html.Div(id='label-interaction-div', className='element-interaction-div', children=[
-                            html.Div('LABELS', className='element-interaction-title'),
-                            html.Table(id='label-interaction-table', className='element-interaction-table', children=[
-                                html.Tr(children=[html.Th('VARIABLE', className="label-variable"), html.Th('DISPLAY')])
-                            ])
-                        ])
-                    ]),
-                    html.Div(id='edge-prop-slider-div', hidden=True, children=[
-                        html.P(id='edge-prop-label', children=['Set edge probability threshold:']),
-                        dcc.Slider(id='edge-prob-slider', min=0, max=1, value=0.00, step=0.05,
-                                   updatemode='drag',
-                                   marks={0.00: '0.00', 0.25: '0.25', 0.50: '0.50', 0.75: '0.75', 1.00: '1.00'}),
-                    ]),
-                    html.Div(id='warning-div', children=[]),
-                    html.Div(id='search-div', hidden=True, children=[
-                        dbc.Button('Search', className='interaction-button', id='filter-button', disabled=False)
-                    ]),
-                    dbc.Tooltip("Search and filter network elements", id="search-tooltip", target="filter-button"),
-                    html.Div(id='interaction-div', hidden=True, children=[
-                        dbc.Button('Test Button', className='interaction-button', id='test-button', style={'display': 'none'}),
-                        dbc.Button('Edit Element', className='interaction-button', id='open-edit-element'),
-                        dbc.Button('Add Element', className='interaction-button', id='open-add-element'),
-                        dbc.Button('Delete Elements', className='interaction-button', id='open-delete-element'),
-                        dbc.Button('Merge Elements', className='interaction-button', id='open-merge-element'),
-                        dbc.Button('Exclude Elements', className='interaction-button', id='exclude-button'),
-                        dbc.Button('Clear View', className='interaction-button', id='isolate-button'),
-                        dbc.Button('Show All Nodes', className='interaction-button', id='show-all-button'),
-                        dbc.Button('Expand All Nodes', className='interaction-button', id='expand-all-button'),
-                        dbc.Button('Expand Node(s)', className='node-buttons', id='expand-button')
-                    ])
+                    # Cytoscape Graph Elements
+                    dcc.Loading(
+                        id='loading-cytoscape',
+                        type='dot',
+                        color='#2563eb',
+                        style={'width': '100%', 'height': '100%'},
+                        children=[
+                            cyto.Cytoscape(
+                                className='four coloums cytoscape-unaltered-hidden',
+                                id='cytoscape-unaltered',
+                                stylesheet=style.stylesheet,
+                                layout={'name': 'cose-bilkent'},
+                                elements=[],
+                                responsive=True,
+                                minZoom=0.2,
+                                maxZoom=2.2,
+                            ),
+                            cyto.Cytoscape(
+                                className='cytoscape',
+                                id='cytoscape',
+                                stylesheet=style.stylesheet,
+                                layout={'name': 'cose-bilkent'},
+                                elements=[],
+                                responsive=True,
+                                minZoom=0.2,
+                                maxZoom=2.2,
+                                style={'width': '100%', 'height': '100%', 'backgroundColor': '#ffffff'}
+                            ),
+                        ]
+                    ),
+
+                    # Secondary Nav Hidden Bridge
+                    build_workspace_secondary_nav(),
                 ]
             ),
 
@@ -616,30 +551,31 @@ def init_layout(style, dataset_list, external_dataset_list= []):
                     'maxWidth': '420px',
                     'height': '100%',
                     'overflow': 'hidden',
-                    'backgroundColor': '#131722',
-                    'borderLeft': '1px solid #2a3447',
+                    'backgroundColor': '#ffffff',
+                    'borderLeft': '1px solid #e2e8f0',
                     'display': 'flex',
                     'flexDirection': 'column',
                     'boxSizing': 'border-box',
                 },
                 children=[
-                    build_right_side_panel()
+                    build_right_side_panel(),
+                    html.Div(id='evidence-inspector-card', style={'display': 'none'})
                 ]
             )
         ]
     )
 
-    return html.Div(id='crimenet-root-app', style={'backgroundColor': '#0c0f17', 'minHeight': '100vh', 'overflow': 'hidden'}, children=[
+    return html.Div(id='crimenet-root-app', style={'backgroundColor': '#ffffff', 'minHeight': '100vh', 'overflow': 'hidden'}, children=[
         dcc.Store(id='active-case-store', storage_type='session', data=None),
         dcc.Store(id='dossier-active-case-id-store', storage_type='session', data=None),
         # 1. Top CASE Bar
         build_global_nav_bar(),
-        # 2. Top [Ask CrimeNet...] Query Bar
+        # 2. Top [Ask CrimeNet...] Query Bar (Hidden bridge)
         build_top_ask_crimenet_bar(),
         # 3. Main Central Investigation Cockpit
         html.Div(
             id='workspace-view',
-            style={'display': 'block', 'height': 'calc(100vh - 105px)', 'overflow': 'hidden'},
+            style={'display': 'block', 'height': 'calc(100vh - 48px)', 'overflow': 'hidden'},
             children=[workspace_content]
         ),
         # 4. Secondary Case Directory / Management (Accessed via Case Directory Modal without leaving workspace)
@@ -739,7 +675,7 @@ add_node = html.Div([
                                   placeholder='Name (Label, Descriptor) of the element ...', type='text'),
                         html.Button('-', id={
                             'type': 'remove-input-field',
-                            'id': 'remove-element-name'
+                            'id': 'remove-addnode-name'
                             }, className='remove-property-button')
                         ])
                 ]),
@@ -779,7 +715,7 @@ add_edge = html.Div([
                                   placeholder='Name (Label, Descriptor) of the element ...', type='text'),
                         html.Button('-', id={
                             'type': 'remove-input-field',
-                            'id': 'remove-element-name'
+                            'id': 'remove-addedge-name'
                             }, className='remove-property-button')
                     ])
                 ]),
@@ -934,7 +870,7 @@ confirm_file_load = html.Div([
 confirm_file_load2 = html.Div([
     dbc.Modal(
         [
-            dbc.ModalHeader("Loading new network from file...", id='confirm-load2-header'),
+            dbc.ModalHeader("Loading new network from file...", id='confirm-file-load2-header'),
             dbc.ModalBody("Loading big networks may take some time.", className="centered-modal-body"),
             dbc.ModalFooter(
                 [dbc.Button("Continue", id="confirm-file-load-button2", className="single-modal-button")]

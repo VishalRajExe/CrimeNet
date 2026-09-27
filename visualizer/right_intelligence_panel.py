@@ -24,22 +24,23 @@ import networkx as nx
 
 from storage.case_data_service import CaseDataService
 from visualizer.entity_dossier_panel import build_entity_dossier
+from visualizer.svg_icons import icon_folder, icon_sparkles, icon_user, icon_link, icon_alert, icon_file, icon_timeline
 
 logger = logging.getLogger("CrimeNet.RightIntelligencePanel")
 
-# ── Color tokens ─────────────────────────────────────────────────────────────
-DARK_BG    = "#0c0f17"
-PANEL_BG   = "#151922"
-CARD_BG    = "#1c2230"
-BORDER_COL = "#2a3447"
-TEXT_MAIN  = "#f7fafc"
-TEXT_DIM   = "#a0aec0"
-TEXT_MUTED = "#718096"
-CYAN_ACC   = "#38bdf8"
-EMERALD    = "#10b981"
-AMBER      = "#f59e0b"
-PURPLE     = "#a855f7"
-RED        = "#ef4444"
+# ── Light Color tokens ────────────────────────────────────────────────────────
+DARK_BG    = "#ffffff"
+PANEL_BG   = "#ffffff"
+CARD_BG    = "#f8fafc"
+BORDER_COL = "#e2e8f0"
+TEXT_MAIN  = "#0f172a"
+TEXT_DIM   = "#475569"
+TEXT_MUTED = "#94a3b8"
+CYAN_ACC   = "#2563eb"
+EMERALD    = "#166534"
+AMBER      = "#92400e"
+PURPLE     = "#6b21a8"
+RED        = "#991b1b"
 
 
 def build_right_side_panel() -> html.Div:
@@ -60,8 +61,8 @@ def build_right_side_panel() -> html.Div:
             html.Div(
                 id="right-panel-context-banner",
                 style={
-                    "padding": "10px 14px",
-                    "backgroundColor": "#10141d",
+                    "padding": "9px 14px",
+                    "backgroundColor": "#f8fafc",
                     "borderBottom": f"1px solid {BORDER_COL}",
                     "display": "flex",
                     "alignItems": "center",
@@ -73,22 +74,22 @@ def build_right_side_panel() -> html.Div:
                         id="right-panel-context-title",
                         style={"display": "flex", "alignItems": "center", "gap": "8px", "overflow": "hidden"},
                         children=[
-                            html.Span("📁", style={"fontSize": "15px"}),
+                            icon_folder(color="#2563eb", size=15),
                             html.Span("ACTIVE CASE: Operation Black Falcon", style={"fontWeight": "700", "fontSize": "12px", "color": TEXT_MAIN, "whiteSpace": "nowrap", "textOverflow": "ellipsis", "overflow": "hidden"}),
                         ]
                     ),
                     html.Div(
                         id="right-panel-context-badge",
                         children=[
-                            html.Span("CASE CONTEXT", style={"fontSize": "9px", "fontWeight": "800", "backgroundColor": "rgba(56, 189, 248, 0.15)", "color": CYAN_ACC, "padding": "2px 6px", "borderRadius": "4px", "letterSpacing": "0.5px"})
+                            html.Span("CASE CONTEXT", style={"fontSize": "9px", "fontWeight": "800", "backgroundColor": "#eff6ff", "color": "#1d4ed8", "border": "1px solid #bfdbfe", "padding": "2px 6px", "borderRadius": "4px", "letterSpacing": "0.5px"})
                         ]
                     )
                 ]
             ),
 
-            # Right Side 6 Tabs Navigation
+            # Right Side 6 Tabs Navigation - Clean Text without Emojis
             html.Div(
-                style={"backgroundColor": "#10141d", "borderBottom": f"1px solid {BORDER_COL}"},
+                style={"backgroundColor": "#ffffff", "borderBottom": f"1px solid {BORDER_COL}"},
                 children=[
                     dcc.Tabs(
                         id="right-panel-tabs",
@@ -96,12 +97,12 @@ def build_right_side_panel() -> html.Div:
                         parent_className="crimenet-tabs-parent",
                         className="crimenet-tabs-bar",
                         children=[
-                            dcc.Tab(label="🧠 AI Intel", value="rp-tab-ai-intel", className="tab", selected_className="tab--selected", style={"padding": "7px 9px", "fontSize": "11px", "fontWeight": "700"}),
-                            dcc.Tab(label="👤 Dossier", value="rp-tab-dossier", className="tab", selected_className="tab--selected", style={"padding": "7px 9px", "fontSize": "11px", "fontWeight": "700"}),
-                            dcc.Tab(label="🔗 Links", value="rp-tab-hidden-links", className="tab", selected_className="tab--selected", style={"padding": "7px 9px", "fontSize": "11px", "fontWeight": "700"}),
-                            dcc.Tab(label="🚨 Alerts", value="rp-tab-alerts", className="tab", selected_className="tab--selected", style={"padding": "7px 9px", "fontSize": "11px", "fontWeight": "700"}),
-                            dcc.Tab(label="📁 Evidence", value="rp-tab-evidence", className="tab", selected_className="tab--selected", style={"padding": "7px 9px", "fontSize": "11px", "fontWeight": "700"}),
-                            dcc.Tab(label="📅 Timeline", value="rp-tab-timeline", className="tab", selected_className="tab--selected", style={"padding": "7px 9px", "fontSize": "11px", "fontWeight": "700"}),
+                            dcc.Tab(label="AI Intel", value="rp-tab-ai-intel", className="tab", selected_className="tab--selected", style={"padding": "8px 9px", "fontSize": "11px", "fontWeight": "700"}),
+                            dcc.Tab(label="Dossier", value="rp-tab-dossier", className="tab", selected_className="tab--selected", style={"padding": "8px 9px", "fontSize": "11px", "fontWeight": "700"}),
+                            dcc.Tab(label="Links", value="rp-tab-hidden-links", className="tab", selected_className="tab--selected", style={"padding": "8px 9px", "fontSize": "11px", "fontWeight": "700"}),
+                            dcc.Tab(label="Alerts", value="rp-tab-alerts", className="tab", selected_className="tab--selected", style={"padding": "8px 9px", "fontSize": "11px", "fontWeight": "700"}),
+                            dcc.Tab(label="Evidence", value="rp-tab-evidence", className="tab", selected_className="tab--selected", style={"padding": "8px 9px", "fontSize": "11px", "fontWeight": "700"}),
+                            dcc.Tab(label="Timeline", value="rp-tab-timeline", className="tab", selected_className="tab--selected", style={"padding": "8px 9px", "fontSize": "11px", "fontWeight": "700"}),
                         ]
                     )
                 ]
@@ -175,20 +176,20 @@ def render_ai_intelligence_view(case_id: str, selected_node_data: Optional[Dict[
 
         return html.Div([
             html.Div(
-                style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "14px", "marginBottom": "12px", "boxShadow": "0 2px 8px rgba(0,0,0,0.25)"},
+                style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "14px", "marginBottom": "12px", "boxShadow": "0 1px 3px rgba(0,0,0,0.05)"},
                 children=[
                     html.Div(style={"display": "flex", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "8px"}, children=[
-                        html.Span("🤖 ENTITY AI SYNTHESIS", style={"fontSize": "10px", "fontWeight": "800", "color": CYAN_ACC, "letterSpacing": "0.5px"}),
-                        html.Span("GROUNDED ANALYSIS", style={"fontSize": "9px", "fontWeight": "700", "backgroundColor": "rgba(56, 189, 248, 0.15)", "color": CYAN_ACC, "padding": "2px 6px", "borderRadius": "3px"}),
+                        html.Span("ENTITY AI SYNTHESIS", style={"fontSize": "10px", "fontWeight": "800", "color": CYAN_ACC, "letterSpacing": "0.5px"}),
+                        html.Span("GROUNDED ANALYSIS", style={"fontSize": "9px", "fontWeight": "700", "backgroundColor": "#eff6ff", "color": CYAN_ACC, "border": "1px solid #bfdbfe", "padding": "2px 6px", "borderRadius": "3px"}),
                     ]),
                     html.H5(f"{name}", style={"color": TEXT_MAIN, "fontWeight": "700", "fontSize": "15px", "margin": "0 0 4px 0", "letterSpacing": "-0.2px"}),
                     html.Div(f"Type: {ntype} • Case: {c_num}", style={"color": TEXT_DIM, "fontSize": "11px", "marginBottom": "10px", "fontFamily": "monospace"}),
                     html.P(
                         entity_summary,
-                        style={"fontSize": "12px", "color": "#cbd5e0", "lineHeight": "1.5", "margin": "0 0 10px 0"}
+                        style={"fontSize": "12px", "color": "#334155", "lineHeight": "1.5", "margin": "0 0 10px 0"}
                     ),
                     dbc.Button(
-                        f"🔍 Ask Agent about {name}",
+                        f"Ask Agent about {name}",
                         id="btn-open-ask-crimenet-entity",
                         color="primary",
                         size="sm",
@@ -197,15 +198,15 @@ def render_ai_intelligence_view(case_id: str, selected_node_data: Optional[Dict[
                 ]
             ),
             html.Div(
-                style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "boxShadow": "0 2px 8px rgba(0,0,0,0.25)"},
+                style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "boxShadow": "0 1px 3px rgba(0,0,0,0.05)"},
                 children=[
                     html.Div("STRUCTURAL & TOPOLOGICAL METRICS", style={"fontSize": "10px", "fontWeight": "800", "color": TEXT_DIM, "letterSpacing": "0.5px", "marginBottom": "8px"}),
                     html.Div(style={"display": "grid", "gridTemplateColumns": "1fr 1fr", "gap": "8px"}, children=[
-                        html.Div(style={"backgroundColor": PANEL_BG, "padding": "8px 10px", "borderRadius": "6px", "border": f"1px solid {BORDER_COL}"}, children=[
+                        html.Div(style={"backgroundColor": "#ffffff", "padding": "8px 10px", "borderRadius": "6px", "border": f"1px solid {BORDER_COL}"}, children=[
                             html.Div("Direct Links", style={"fontSize": "10px", "color": TEXT_MUTED}),
                             html.Div(f"{degree} Conns", style={"fontSize": "16px", "fontWeight": "800", "color": EMERALD}),
                         ]),
-                        html.Div(style={"backgroundColor": PANEL_BG, "padding": "8px 10px", "borderRadius": "6px", "border": f"1px solid {BORDER_COL}"}, children=[
+                        html.Div(style={"backgroundColor": "#ffffff", "padding": "8px 10px", "borderRadius": "6px", "border": f"1px solid {BORDER_COL}"}, children=[
                             html.Div("Threat Rank", style={"fontSize": "10px", "color": TEXT_MUTED}),
                             html.Div(threat_tier, style={"fontSize": "11.5px", "fontWeight": "800", "color": threat_color}),
                         ]),
@@ -219,7 +220,7 @@ def render_ai_intelligence_view(case_id: str, selected_node_data: Optional[Dict[
         return html.Div(
             className="crimenet-empty-state",
             children=[
-                html.Div("📂", className="empty-icon"),
+                html.Div([icon_folder(color="#94a3b8", size=32)], style={"marginBottom": "8px"}),
                 html.Div("Empty Case Workspace", className="empty-title"),
                 html.Div("This case has no graph entities yet. Ingest forensic evidence files or load a pre-built syndicate to begin analysis.", className="empty-desc"),
             ]
@@ -246,29 +247,29 @@ def render_ai_intelligence_view(case_id: str, selected_node_data: Optional[Dict[
 
     return html.Div([
         html.Div(
-            style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "14px", "marginBottom": "12px", "boxShadow": "0 2px 8px rgba(0,0,0,0.25)"},
+            style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "14px", "marginBottom": "12px", "boxShadow": "0 1px 3px rgba(0,0,0,0.05)"},
             children=[
                 html.Div(style={"display": "flex", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "8px"}, children=[
-                    html.Span("🧠 SYNDICATE INTELLIGENCE", style={"fontSize": "10px", "fontWeight": "800", "color": CYAN_ACC, "letterSpacing": "0.5px"}),
-                    html.Span(c_num, style={"fontSize": "9px", "fontWeight": "700", "backgroundColor": "#2a3447", "color": TEXT_DIM, "padding": "2px 6px", "borderRadius": "3px", "fontFamily": "monospace"}),
+                    html.Span("SYNDICATE INTELLIGENCE", style={"fontSize": "10px", "fontWeight": "800", "color": CYAN_ACC, "letterSpacing": "0.5px"}),
+                    html.Span(c_num, style={"fontSize": "9px", "fontWeight": "700", "backgroundColor": "#f1f5f9", "color": TEXT_DIM, "padding": "2px 6px", "borderRadius": "3px", "fontFamily": "monospace"}),
                 ]),
                 html.H5(case_title, style={"color": TEXT_MAIN, "fontWeight": "700", "fontSize": "14px", "margin": "0 0 6px 0"}),
                 html.P(
                     case_desc,
-                    style={"fontSize": "12px", "color": "#cbd5e0", "lineHeight": "1.5", "margin": "0 0 10px 0"}
+                    style={"fontSize": "12px", "color": "#334155", "lineHeight": "1.5", "margin": "0 0 10px 0"}
                 ),
                 html.Div(style={"display": "flex", "gap": "6px", "flexWrap": "wrap"}, children=[
-                    html.Span(f"👥 {len(nodes)} Entities Tracked", style={"fontSize": "10px", "backgroundColor": "#1e293b", "color": "#93c5fd", "padding": "3px 8px", "borderRadius": "4px", "fontWeight": "600"}),
-                    html.Span(f"🔗 {len(edges)} Relationships", style={"fontSize": "10px", "backgroundColor": "#1e293b", "color": "#86efac", "padding": "3px 8px", "borderRadius": "4px", "fontWeight": "600"}),
-                    html.Span(f"🚨 {len(alerts)} Active Alerts", style={"fontSize": "10px", "backgroundColor": "#1e293b", "color": "#fca5a5", "padding": "3px 8px", "borderRadius": "4px", "fontWeight": "600"}),
+                    html.Span(f"{len(nodes)} Entities Tracked", style={"fontSize": "10px", "backgroundColor": "#eff6ff", "color": "#1d4ed8", "border": "1px solid #bfdbfe", "padding": "2px 7px", "borderRadius": "4px", "fontWeight": "600"}),
+                    html.Span(f"{len(edges)} Relationships", style={"fontSize": "10px", "backgroundColor": "#f0fdf4", "color": "#166534", "border": "1px solid #bbf7d0", "padding": "2px 7px", "borderRadius": "4px", "fontWeight": "600"}),
+                    html.Span(f"{len(alerts)} Active Alerts", style={"fontSize": "10px", "backgroundColor": "#fef2f2", "color": "#991b1b", "border": "1px solid #fecaca", "padding": "2px 7px", "borderRadius": "4px", "fontWeight": "600"}),
                 ])
             ]
         ),
         html.Div(
-            style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "boxShadow": "0 2px 8px rgba(0,0,0,0.25)"},
+            style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "boxShadow": "0 1px 3px rgba(0,0,0,0.05)"},
             children=[
                 html.Div("KEY DISRUPTION TARGETS", style={"fontSize": "10px", "fontWeight": "800", "color": TEXT_DIM, "letterSpacing": "0.5px", "marginBottom": "8px"}),
-                html.Ul(style={"margin": "0", "paddingLeft": "18px", "fontSize": "11.5px", "color": "#cbd5e0", "lineHeight": "1.6"}, children=target_items)
+                html.Ul(style={"margin": "0", "paddingLeft": "18px", "fontSize": "11.5px", "color": "#334155", "lineHeight": "1.6"}, children=target_items)
             ]
         )
     ])
@@ -295,7 +296,7 @@ def render_dossier_view(case_id: str, selected_node_data: Optional[Dict[str, Any
             className="crimenet-empty-state",
             style={"marginBottom": "14px"},
             children=[
-                html.Div("👤", className="empty-icon"),
+                html.Div([icon_user(color="#94a3b8", size=32)], style={"marginBottom": "8px"}),
                 html.Div("No Entity Selected", className="empty-title"),
                 html.Div("Click any node on the central network graph or pick a key suspect below to inspect their evidentiary dossier.", className="empty-desc"),
             ]
@@ -356,7 +357,7 @@ def render_hidden_links_view(case_id: str, selected_node_data: Optional[Dict[str
         return html.Div(
             className="crimenet-empty-state",
             children=[
-                html.Div("🔮", className="empty-icon"),
+                html.Div([icon_link(color="#94a3b8", size=32)], style={"marginBottom": "8px"}),
                 html.Div("No Predicted Link Hypotheses", className="empty-title"),
                 html.Div("The link prediction model (Jaccard, Adamic-Adar, Resource Allocation) did not find any statistical relationship candidates exceeding confidence thresholds for this scope.", className="empty-desc"),
             ]
@@ -364,21 +365,21 @@ def render_hidden_links_view(case_id: str, selected_node_data: Optional[Dict[str
 
     return html.Div([
         html.Div(
-            style={"backgroundColor": "#1a1625", "border": f"1px solid #6b46c1", "borderRadius": "6px", "padding": "8px 12px", "marginBottom": "12px"},
+            style={"backgroundColor": "#faf5ff", "border": "1px solid #e9d5ff", "borderRadius": "6px", "padding": "8px 12px", "marginBottom": "12px"},
             children=[
-                html.Div("🔮 AI LINK PREDICTION (STATISTICAL HYPOTHESES)", style={"fontSize": "10px", "fontWeight": "800", "color": "#d6bcfa", "letterSpacing": "0.5px"}),
-                html.Div("Predicted relationships are machine hypotheses. They are flagged as PROPOSED and are not written to Neo4j until investigator acceptance.", style={"fontSize": "10px", "color": "#b794f4", "marginTop": "2px"}),
+                html.Div("AI LINK PREDICTION (STATISTICAL HYPOTHESES)", style={"fontSize": "10px", "fontWeight": "800", "color": "#6b21a8", "letterSpacing": "0.5px"}),
+                html.Div("Predicted relationships are machine hypotheses. They are flagged as PROPOSED and are not written to Neo4j until investigator acceptance.", style={"fontSize": "10px", "color": "#7e22ce", "marginTop": "2px"}),
             ]
         ),
         html.Div(id="hidden-links-feedback-banner", style={"display": "none"}),
         html.Div(
             children=[
                 html.Div(
-                    style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "marginBottom": "10px", "boxShadow": "0 2px 6px rgba(0,0,0,0.25)"},
+                    style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "marginBottom": "10px", "boxShadow": "0 1px 3px rgba(0,0,0,0.05)"},
                     children=[
                         html.Div(style={"display": "flex", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "6px"}, children=[
                             html.Span(f"{e.get('type', 'POTENTIAL_LINK')}", style={"fontSize": "11px", "fontWeight": "800", "color": AMBER}),
-                            html.Span(f"Confidence: {int(float(e.get('confidence', 0.8)) * 100)}%", style={"fontSize": "10px", "fontWeight": "700", "color": "#9ae6b4"}),
+                            html.Span(f"Confidence: {int(float(e.get('confidence', 0.8)) * 100)}%", style={"fontSize": "10px", "fontWeight": "700", "color": EMERALD, "backgroundColor": "#f0fdf4", "padding": "1px 6px", "borderRadius": "3px", "border": "1px solid #bbf7d0"}),
                         ]),
                         html.Div(
                             style={"display": "flex", "alignItems": "center", "gap": "6px", "fontSize": "11px", "fontWeight": "700", "color": TEXT_MAIN, "marginBottom": "6px"},
@@ -390,8 +391,8 @@ def render_hidden_links_view(case_id: str, selected_node_data: Optional[Dict[str
                         ),
                         html.P(e.get("rationale") or e.get("heuristic") or "High co-occurrence score across extracted evidence.", style={"fontSize": "11px", "color": TEXT_DIM, "margin": "0 0 10px 0"}),
                         html.Div(style={"display": "flex", "gap": "6px"}, children=[
-                            dbc.Button("✅ Accept to Neo4j", id={"type": "btn-accept-pred-link", "index": str(e.get("id"))}, size="sm", color="success", style={"fontSize": "10px", "padding": "3px 8px", "fontWeight": "700"}),
-                            dbc.Button("❌ Dismiss", id={"type": "btn-dismiss-pred-link", "index": str(e.get("id"))}, size="sm", color="secondary", outline=True, style={"fontSize": "10px", "padding": "3px 8px"}),
+                            dbc.Button("Accept to Neo4j", id={"type": "btn-accept-pred-link", "index": str(e.get("id"))}, size="sm", color="success", style={"fontSize": "10px", "padding": "3px 8px", "fontWeight": "700"}),
+                            dbc.Button("Dismiss", id={"type": "btn-dismiss-pred-link", "index": str(e.get("id"))}, size="sm", color="secondary", outline=True, style={"fontSize": "10px", "padding": "3px 8px"}),
                         ])
                     ]
                 )
@@ -416,17 +417,17 @@ def render_alerts_view(case_id: str, selected_node_data: Optional[Dict[str, Any]
         ]
 
     severity_colors = {
-        "CRITICAL": {"bg": "rgba(239, 68, 68, 0.15)", "text": "#fca5a5", "border": "#ef4444"},
-        "HIGH":     {"bg": "rgba(245, 158, 11, 0.15)", "text": "#fcd34d", "border": "#f59e0b"},
-        "MEDIUM":   {"bg": "rgba(59, 130, 246, 0.15)", "text": "#93c5fd", "border": "#3b82f6"},
-        "LOW":      {"bg": "rgba(107, 114, 128, 0.15)", "text": "#d1d5db", "border": "#6b7280"},
+        "CRITICAL": {"bg": "#fef2f2", "text": "#991b1b", "border": "#fecaca"},
+        "HIGH":     {"bg": "#fffbeb", "text": "#92400e", "border": "#fef3c7"},
+        "MEDIUM":   {"bg": "#eff6ff", "text": "#1e40af", "border": "#bfdbfe"},
+        "LOW":      {"bg": "#f1f5f9", "text": "#475569", "border": "#cbd5e1"},
     }
 
     if not alerts:
         return html.Div(
             className="crimenet-empty-state",
             children=[
-                html.Div("🛡️", className="empty-icon"),
+                html.Div([icon_alert(color="#94a3b8", size=32)], style={"marginBottom": "8px"}),
                 html.Div("No Forensic Anomaly Alerts", className="empty-title"),
                 html.Div("Isolation Forest, smurfing, and rapid transaction engines detected no statistical outliers for the current scope.", className="empty-desc"),
             ]
@@ -435,7 +436,7 @@ def render_alerts_view(case_id: str, selected_node_data: Optional[Dict[str, Any]
     return html.Div(
         children=[
             html.Div(
-                style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "marginBottom": "10px", "boxShadow": "0 2px 6px rgba(0,0,0,0.25)"},
+                style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "12px", "marginBottom": "10px", "boxShadow": "0 1px 3px rgba(0,0,0,0.05)"},
                 children=[
                     html.Div(style={"display": "flex", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "6px"}, children=[
                         html.Span(
@@ -471,12 +472,11 @@ def render_evidence_view(case_id: str, selected_node_data: Optional[Dict[str, An
     evidence_list = svc.list_evidence(case_id)
 
     upload_block = html.Div(
-        style={"backgroundColor": "#171923", "border": f"1px dashed {BORDER_COL}", "borderRadius": "6px", "padding": "10px", "textAlign": "center", "marginBottom": "12px"},
+        style={"backgroundColor": "#f8fafc", "border": f"1px dashed {BORDER_COL}", "borderRadius": "6px", "padding": "10px", "textAlign": "center", "marginBottom": "12px"},
         children=[
             dcc.Upload(
                 id="right-panel-evidence-upload",
                 children=html.Div([
-                    html.Span("📄 ", style={"fontSize": "16px"}),
                     html.Span("+ Ingest Exhibit (PDF, TXT, CSV, JSON)", style={"fontSize": "11px", "fontWeight": "700", "color": CYAN_ACC})
                 ]),
                 style={"cursor": "pointer"}
@@ -498,7 +498,7 @@ def render_evidence_view(case_id: str, selected_node_data: Optional[Dict[str, An
             html.Div(
                 className="crimenet-empty-state",
                 children=[
-                    html.Div("📁", className="empty-icon"),
+                    html.Div([icon_file(color="#94a3b8", size=32)], style={"marginBottom": "8px"}),
                     html.Div("No Evidence Exhibits Found", className="empty-title"),
                     html.Div("No forensic files, FIR exhibits, or telecom logs are linked to this entity. Use the upload box above to ingest court documents.", className="empty-desc"),
                 ]
@@ -510,11 +510,11 @@ def render_evidence_view(case_id: str, selected_node_data: Optional[Dict[str, An
         html.Div(
             children=[
                 html.Div(
-                    style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "10px 12px", "marginBottom": "8px", "boxShadow": "0 2px 6px rgba(0,0,0,0.25)"},
+                    style={"backgroundColor": CARD_BG, "border": f"1px solid {BORDER_COL}", "borderRadius": "8px", "padding": "10px 12px", "marginBottom": "8px", "boxShadow": "0 1px 3px rgba(0,0,0,0.05)"},
                     children=[
                         html.Div(style={"display": "flex", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "4px"}, children=[
-                            html.Span(f"📁 {e.get('evidence_type', 'EXHIBIT')}", style={"fontSize": "10px", "fontWeight": "800", "color": CYAN_ACC}),
-                            html.Span("VERIFIED SHA-256", style={"fontSize": "9px", "fontWeight": "700", "color": EMERALD, "backgroundColor": "rgba(16, 185, 129, 0.15)", "padding": "1px 5px", "borderRadius": "3px"}),
+                            html.Span(f"{e.get('evidence_type', 'EXHIBIT')}", style={"fontSize": "10px", "fontWeight": "800", "color": CYAN_ACC}),
+                            html.Span("VERIFIED SHA-256", style={"fontSize": "9px", "fontWeight": "700", "color": EMERALD, "backgroundColor": "#f0fdf4", "border": "1px solid #bbf7d0", "padding": "1px 5px", "borderRadius": "3px"}),
                         ]),
                         html.Div(e.get("title") or e.get("filename") or "Exhibited Document", style={"color": TEXT_MAIN, "fontWeight": "700", "fontSize": "12px", "marginBottom": "3px"}),
                         html.Div(f"Hash: {str(e.get('sha256_hash') or '')[:16]}... • Entities: {e.get('entity_count', 0)}", style={"fontSize": "10px", "color": TEXT_MUTED, "marginBottom": "6px", "fontFamily": "monospace"}),
@@ -544,7 +544,7 @@ def render_timeline_view(case_id: str, selected_node_data: Optional[Dict[str, An
         return html.Div(
             className="crimenet-empty-state",
             children=[
-                html.Div("📅", className="empty-icon"),
+                html.Div([icon_timeline(color="#94a3b8", size=32)], style={"marginBottom": "8px"}),
                 html.Div("No Timeline Events Recorded", className="empty-title"),
                 html.Div("No chronological telecommunications events, dated transactions, or arrest milestones were logged for this scope.", className="empty-desc"),
             ]
@@ -556,7 +556,6 @@ def render_timeline_view(case_id: str, selected_node_data: Optional[Dict[str, An
                 style={"borderLeft": f"2px solid {CYAN_ACC}", "paddingLeft": "12px", "marginBottom": "10px", "position": "relative"},
                 children=[
                     html.Div(style={"display": "flex", "alignItems": "center", "gap": "6px", "marginBottom": "2px"}, children=[
-                        html.Span(str(ev.get("icon") or "📅")),
                         html.Span(ev.get("event_type") or "EVENT", style={"fontSize": "9px", "fontWeight": "800", "color": CYAN_ACC}),
                         html.Span(str(ev.get("ts") or "")[:16], style={"fontSize": "10px", "color": TEXT_MUTED, "marginLeft": "auto", "fontFamily": "monospace"}),
                     ]),

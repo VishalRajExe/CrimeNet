@@ -140,7 +140,8 @@ def test_live_dash_endpoints():
             {'id': 'btn-dossier-launch-workspace', 'property': 'n_clicks', 'value': 0},
             {'id': 'nav-btn-dashboard', 'property': 'n_clicks', 'value': 0},
             {'id': 'nav-btn-workspace', 'property': 'n_clicks', 'value': 0},
-            {'id': 'btn-switch-to-workspace-direct', 'property': 'n_clicks', 'value': 0}
+            {'id': 'btn-switch-to-workspace-direct', 'property': 'n_clicks', 'value': 0},
+            {'id': 'global-case-selector', 'property': 'value', 'value': 'case-sih-001'}
         ],
         'state': [
             {'id': 'dossier-active-case-id-store', 'property': 'data', 'value': 'case-sih-001'},
